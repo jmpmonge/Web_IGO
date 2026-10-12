@@ -1,4 +1,4 @@
-/* IGO language selector. Desktop (≥60em): dropdown (<details>) alone on the right of the header, on a discreet light ground, with less visual weight than Products.
+/* IGO language selector. Desktop (≥60em): dropdown (<details>) alone on the right of the header, plain text, with less visual weight than Products.
    Compact header and phones: inline ES · EN · FR inside the menu. */
 .lang{ display:none; }
 .lang-inline{ display:flex; gap:1.5rem; padding:.25rem 0; }
@@ -7,10 +7,8 @@
 
 @media (min-width:60em){
   .lang{ display:block; position:relative; }
-  .lang summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:.375rem; min-height:44px; padding:.5rem .875rem; font-size:.875rem; font-weight:400; letter-spacing:.06em; color:var(--c-ink); background:rgba(247,245,241,.78); border-radius:12px; -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); transition:background-color 200ms ease; }
-  .lang summary:hover,.lang[open] summary{ background:rgba(247,245,241,.95); }
-  .site-header.is-scrolled .lang summary{ background:transparent; -webkit-backdrop-filter:none; backdrop-filter:none; }
-  .site-header.is-scrolled .lang summary:hover,.site-header.is-scrolled .lang[open] summary{ background:rgba(20,27,36,.06); }
+  .lang summary{ list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:.375rem; min-height:44px; padding:.5rem .25rem; font-size:.875rem; font-weight:400; letter-spacing:.06em; opacity:.85; transition:opacity 200ms ease; }
+  .lang summary:hover,.lang[open] summary{ opacity:1; }
   .lang summary::-webkit-details-marker{ display:none; }
   .lang__caret{ transition:transform 200ms ease; }
   .lang[open] .lang__caret{ transform:rotate(180deg); }
