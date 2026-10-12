@@ -189,3 +189,14 @@
   .pband__sub{ margin-top:clamp(.75rem,1.2vw,1.25rem); color:var(--c-graphite); }
   .pband__cta{ margin-top:clamp(1.25rem,2.2vw,2.25rem); }
 }
+
+/* ---------- Motion (Home): same data-motion system as igo.js. Initial states exist only under html.motion (JS ready + no reduced-motion). ----------
+   Text: fade + short rise. Photos: fade only. Wellness photo: fade + 1.02 → 1 (desktop only). */
+html.motion body.home [data-motion="text"]:not(.is-in){ opacity:0; transform:translateY(var(--rise)); }
+html.motion body.home [data-motion="visual"]{ transition-duration:700ms; }
+html.motion body.home [data-motion="visual"]:not(.is-in){ opacity:0; transform:none; }
+html.motion body.home .scene > .wrap.is-in{ opacity:1; }   /* neutralises the scroll-linked dimming from igo.css on the Home */
+@media (min-width:48em){
+  html.motion body.home .wband__media[data-motion="visual"]{ transition-duration:900ms; }
+  html.motion body.home .wband__media[data-motion="visual"]:not(.is-in){ transform:scale(1.02); }
+}

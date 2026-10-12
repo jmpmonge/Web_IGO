@@ -1,0 +1,36 @@
+/* IGO Products: entry page to the two categories. Loads after igo.css, footer.css and hero.css (header system). Scoped to body.page--products. */
+body.page--products{ --rise:14px; --hero-nav-h:72px; }
+@media (min-width:48em){ body.page--products{ --hero-nav-h:76px; } }
+@media (max-width:47.99em){ body.page--products{ --rise:10px; } }
+
+.page--products main{ background:var(--c-warm); }
+.page--products main:focus{ outline:none; }
+
+.prod-intro{ padding-top:calc(var(--hero-nav-h) + clamp(3.5rem,9vw,7rem)); padding-bottom:clamp(2.5rem,6vw,5rem); }
+.prod-intro .kicker{ margin-bottom:1.25rem; }
+.prod-intro__title{ font-size:clamp(2.5rem,1.6rem + 4.4vw,5rem); font-weight:300; line-height:1.04; letter-spacing:-.04em; max-width:14ch; }
+.prod-intro__sub{ margin-top:1.5rem; max-width:30rem; color:var(--c-muted); font-size:clamp(1.0625rem,.95rem + .5vw,1.3125rem); line-height:1.5; }
+
+.prod{ padding-bottom:clamp(3.5rem,8vw,7rem); }
+.prod__head{ display:grid; gap:1.25rem; margin-bottom:clamp(1.5rem,3vw,2.5rem); }
+.prod__title{ font-size:var(--fs-h2); font-weight:300; letter-spacing:-.03em; line-height:1.08; }
+.prod__models{ color:var(--c-muted); font-size:clamp(1.0625rem,.95rem + .5vw,1.25rem); line-height:1.5; }
+.prod__models span{ display:block; }
+.prod__side{ display:grid; gap:1rem; align-content:start; }
+.prod__status{ margin-top:-.5rem; font-size:var(--fs-small); letter-spacing:.04em; color:var(--c-muted); opacity:.8; }   /* discreet: planned, no date implied */
+.prod__media{ display:block; overflow:hidden; aspect-ratio:2/1; background:var(--c-ink); }
+.prod__media img{ width:100%; height:100%; object-fit:cover; display:block; }
+.prod--vision .prod__media img{ object-position:50% 60%; }
+.prod--wellness .prod__media img{ object-position:70% center; }
+
+@media (min-width:48em){
+  .prod__head{ grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:2rem 3rem; align-items:end; }
+  .prod__side{ justify-items:start; }
+  .prod__media{ aspect-ratio:2.3/1; }
+}
+.page--products .cta{ align-self:start; justify-self:start; }
+
+/* Motion: same data-motion system as igo.js. Text fade + short rise; photos fade only. Initial states only under html.motion. */
+html.motion body.page--products [data-motion="text"]:not(.is-in){ opacity:0; transform:translateY(var(--rise)); }
+html.motion body.page--products [data-motion="visual"]{ transition-duration:700ms; }
+html.motion body.page--products [data-motion="visual"]:not(.is-in){ opacity:0; transform:none; }
