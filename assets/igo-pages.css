@@ -1,0 +1,27 @@
+/* IGO inner pages (vision/, wellness/, technology/, about/).
+   Loads AFTER igo.css and only on inner pages. Every rule is scoped to body.page
+   or to classes that do not exist on the Home, so Home rules are never overridden. No !important. */
+
+/* Active page in header and footer navigation */
+.page .site-nav a[aria-current="page"],
+.page .site-footer a[aria-current="page"]{ text-decoration:underline; text-underline-offset:.35em; text-decoration-thickness:1px; }
+
+.page main:focus{ outline:none; }
+
+.page-hero{ padding-block:clamp(4rem,10vw,8rem) clamp(2.5rem,6vw,4rem); border-bottom:1px solid var(--c-line); }
+.page-hero__title{ font-size:var(--fs-h2); max-width:18ch; }
+.page-notice{ margin-top:1.5rem; color:var(--c-muted); font-size:var(--fs-small); }
+.page-notice .pending-note{ margin-left:0; margin-right:.5rem; }
+
+.page-section{ padding-block:clamp(3rem,8vw,6rem); }
+.page-section__title{ font-size:var(--fs-h3); margin-bottom:clamp(1.5rem,3vw,2.5rem); max-width:36ch; }
+.page-grid{ display:grid; gap:var(--gap); }
+@media (min-width:48em){
+  .page-grid--2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .page-grid--3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+.page-item__name{ margin-top:1.25rem; font-size:var(--fs-h3); }
+.page-levels dt{ font-size:var(--fs-kicker); letter-spacing:.2em; text-transform:uppercase; font-weight:500; margin-bottom:.5rem; }
+.page-levels dd{ color:var(--c-muted); max-width:30ch; }
+.page-levels .pending-note{ margin:.5rem 0 0; }
+.page-ph--narrow{ max-width:30rem; }

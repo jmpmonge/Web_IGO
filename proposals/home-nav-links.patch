@@ -1,0 +1,32 @@
+--- a/index.html	2026-10-12 20:18:33.706534261 +0200
++++ b/index.html	2026-10-12 20:18:33.714534261 +0200
+@@ -33,10 +33,10 @@
+     </button>
+     <nav id="site-nav" class="site-nav" aria-label="Main">
+       <ul>
+-        <li><a href="#vision">Vision</a></li>
+-        <li><a href="#wellness">Wellness</a></li>
+-        <li><a href="#technology">Technology</a></li>
+-        <li><a href="#about">About</a></li>
++        <li><a href="vision/index.html">Vision</a></li>
++        <li><a href="wellness/index.html">Wellness</a></li>
++        <li><a href="technology/index.html">Technology</a></li>
++        <li><a href="about/index.html">About</a></li>
+       </ul>
+     </nav>
+   </div>
+@@ -158,10 +158,10 @@
+     <img src="assets/igo/igo-logo-white.svg" alt="IGO" width="56" height="31">
+     <nav aria-label="Footer">
+       <ul>
+-        <li><a href="#vision">Vision</a></li>
+-        <li><a href="#wellness">Wellness</a></li>
+-        <li><a href="#technology">Technology</a></li>
+-        <li><a href="#about">About</a></li>
++        <li><a href="vision/index.html">Vision</a></li>
++        <li><a href="wellness/index.html">Wellness</a></li>
++        <li><a href="technology/index.html">Technology</a></li>
++        <li><a href="about/index.html">About</a></li>
+       </ul>
+     </nav>
+     <p class="site-footer__contact">Contact <span class="pending-note pending-note--dark">Pending</span></p>
