@@ -1,367 +1,171 @@
 <!DOCTYPE html>
-<html lang="en" data-page-lang="en" data-lang-en="./index.html" data-lang-es="./es/index.html">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Personalised English practice with guided feedback, memory and adaptive learning designed to help what you learn today stay with you tomorrow.">
-<meta name="theme-color" content="#245dd8">
-<title>Seivol — English that stays with you.</title>
-<link rel="icon" href="./assets/images/logo.svg" type="image/svg+xml">
-<link rel="icon" href="./assets/images/favicon-32.png" type="image/png" sizes="32x32">
-<link rel="icon" href="./assets/images/favicon-16.png" type="image/png" sizes="16x16">
-<link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png" sizes="180x180">
-<link rel="alternate" hreflang="en" href="./index.html">
-<link rel="alternate" hreflang="es" href="./es/index.html">
-<link rel="alternate" hreflang="x-default" href="./index.html">
-<link rel="stylesheet" href="./assets/styles.css">
-<link rel="stylesheet" href="./assets/education.css?v=201">
+<!-- PROVISIONAL BUILD: visuals are placeholders; final domain, canonical and social URLs pending. Do not publish. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="IGO. Designed for life. Powered by intelligence.">
+<meta name="theme-color" content="#141B24">
+<title>IGO — Designed for life. Powered by intelligence.</title>
+<link rel="icon" href="assets/igo/igo-logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/igo.css">
 <script>
-(function () {
-  var KEY = 'seivol-lang';
-  var page = document.documentElement.getAttribute('data-page-lang') || 'en';
-  var toEn = document.documentElement.getAttribute('data-lang-en') || './index.html';
-  var toEs = document.documentElement.getAttribute('data-lang-es') || './es/index.html';
-  var stored = null;
-  try { stored = localStorage.getItem(KEY); } catch (e) {}
-  function go(lang) {
-    if (lang === page) return;
-    location.replace(lang === 'es' ? toEs : toEn);
-  }
-  if (stored === 'en' || stored === 'es') {
-    go(stored);
-    return;
-  }
-  var nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-  go(/^es\b/i.test(nav) ? 'es' : 'en');
-})();
+  /* Hide animated elements before first paint only when motion is allowed; failsafe reveals everything if igo.js does not start. */
+  (function (d) {
+    d.classList.add('js');
+    if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      d.classList.add('motion');
+      setTimeout(function () { if (!d.classList.contains('motion-ready')) d.classList.remove('motion'); }, 3000);
+    }
+  })(document.documentElement);
 </script>
-<script src="./assets/script.js?v=5" defer></script>
-<meta property="og:title" content="Seivol — English that stays with you.">
-<meta property="og:description" content="Personalised English practice with guided feedback, memory and adaptive learning designed to help what you learn today stay with you tomorrow.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://jmpmonge.github.io/seivol-web/">
-<meta property="og:image" content="https://jmpmonge.github.io/seivol-web/assets/images/og-hero.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Seivol app on a phone with floating practice cards and progress insights">
-<meta property="og:locale" content="en_GB">
-<meta property="og:locale:alternate" content="es_ES">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Seivol — English that stays with you.">
-<meta name="twitter:description" content="Personalised English practice with guided feedback, memory and adaptive learning designed to help what you learn today stay with you tomorrow.">
-<meta name="twitter:image" content="https://jmpmonge.github.io/seivol-web/assets/images/og-hero.jpg">
-<meta name="twitter:image:alt" content="Seivol app on a phone with floating practice cards and progress insights">
+<script src="assets/igo.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="header">
-  <div class="container nav">
-    <a class="brand" href="./index.html" aria-label="Seivol home">Seivol</a>
-    <div class="lang-switch" role="group" aria-label="Language">
-      <a class="lang-switch__link is-active" href="./index.html" hreflang="en" lang="en" data-lang="en" aria-current="page">EN</a>
-      <a class="lang-switch__link" href="./es/index.html" hreflang="es" lang="es" data-lang="es">ES</a>
-    </div>
-    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navigation">
-      <svg class="menu-toggle-icon" width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true" focusable="false">
-        <path d="M1 1.5h22M1 9h22M1 16.5h22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+
+<header class="site-header" id="top">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="#hero" aria-label="IGO home"><img src="assets/igo/igo-logo.svg" alt="" width="68" height="38"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-toggle__icon" aria-hidden="true"></span><span class="menu-toggle__label">Menu</span>
     </button>
-    <nav id="navigation" aria-label="Primary">
-      <a href="#learning">How it works</a>
-      <a href="#support">Support</a>
-      <a href="#experience">Experience</a>
-      <a class="nav-cta" href="#contact">Early Access Request</a>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#wellness">Wellness</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
     </nav>
   </div>
 </header>
+
 <main id="main">
-  <section class="hero hero-bleed" aria-labelledby="hero-title">
-    <div class="container hero-split">
-      <div class="hero-copy">
-        <h1 id="hero-title">Real practice.<br><em>Lasting learning.</em></h1>
-        <p class="lead">Personalised English practice that helps you remember more, use what you learn and gradually become more independent.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#contact">Early Access Request</a>
-        </div>
-      </div>
-      <figure class="hero-visual is-loaded">
-        <picture>
-          <source media="(max-width:767px)" type="image/webp" srcset="./assets/images/seivol-hero-mobile-1080x1300.webp" width="1080" height="1300">
-          <source media="(max-width:767px)" type="image/png" srcset="./assets/images/seivol-hero-mobile-1080x1300.png" width="1080" height="1300">
-          <source type="image/webp" srcset="./assets/images/image-hero-grande.webp" width="1672" height="941">
-          <img src="./assets/images/image-hero-grande.png" alt="Seivol app on a phone with floating practice cards and progress insights" width="1672" height="941" decoding="async" fetchpriority="high">
-        </picture>
+  <!-- 1 · Hero -->
+  <section id="hero" class="scene hero" aria-labelledby="hero-title" tabindex="-1">
+    <div class="hero__media" data-hero-media data-video-src="" data-video-src-mobile="">
+      <!-- Poster / static image. Replace the placeholder with the approved IGO hero image (also used as video poster). -->
+      <div class="ph ph--hero" role="img" aria-label="Provisional placeholder for the hero image"></div>
+      <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" disablepictureinpicture hidden></video>
+      <button class="hero__toggle" type="button" hidden>Pause video</button>
+    </div>
+    <div class="wrap hero__copy">
+      <h1 id="hero-title" class="hero__title" data-motion="text">Designed for life.</h1>
+      <p class="hero__sub" data-motion="text" style="--i:1">Powered by intelligence.</p>
+    </div>
+    <p class="ph-label ph-label--hero">Placeholder · hero image / video (9–12 s) pending</p>
+  </section>
+
+  <!-- 2 · IGO Vision -->
+  <section id="vision" class="scene band band--vision" aria-labelledby="vision-title" tabindex="-1">
+    <div class="wrap">
+      <header class="band__head" data-motion="text">
+        <p class="kicker">IGO Vision</p>
+        <h2 id="vision-title" class="band__title">See beyond the moment.</h2>
+      </header>
+      <figure class="band__hero-visual" data-motion="visual">
+        <div class="ph ph--photo ph--wide" role="img" aria-label="Provisional placeholder: context photo, person wearing glasses"></div>
+        <figcaption class="ph-label">Placeholder · context photo (person with glasses) pending</figcaption>
       </figure>
+      <ul class="models" role="list">
+        <li class="model" data-motion="visual">
+          <div class="ph ph--product" role="img" aria-label="Provisional placeholder: Sport Casual product image"></div>
+          <h3 class="model__name">Sport Casual</h3>
+          <p class="ph-label">Placeholder · product image pending</p>
+        </li>
+        <li class="model" data-motion="visual" style="--i:1">
+          <div class="ph ph--product" role="img" aria-label="Provisional placeholder: Sport Mask product image"></div>
+          <h3 class="model__name">Sport Mask</h3>
+          <p class="ph-label">Placeholder · product image pending</p>
+        </li>
+      </ul>
+      <p class="band__cta" data-motion="text"><a class="cta" href="#vision" data-pending="vision-page">Explore Vision <span aria-hidden="true">→</span></a> <span class="pending-note">Page pending</span></p>
     </div>
   </section>
 
-  <section id="learning" class="section learning-section">
-    <div class="container">
-      <div class="cycle-compose">
-        <header class="cycle-intro-copy">
-          <p class="eyebrow">THE LEARNING CYCLE</p>
-          <h2>Understand it.<br><em>Make it yours.</em></h2>
-          <p class="cycle-lead section-lead">Learning does not happen in a single encounter. Seivol brings language back through meaningful exposure, retrieval, use and review — adapting practice as you progress.</p>
-          <p class="cycle-example">Threaded through every step: <em>mounting pressure</em></p>
-        </header>
-
-        <ol class="cycle-path" aria-label="Four moments of the learning cycle">
-          <li class="cycle-path-item cycle-path-item--1">
-            <span class="cycle-path-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 4.4h5.8c1.7 0 3 1.3 3 3v2.8"/>
-                <path d="M4.6 8.9h9.4c1.55 0 2.8 1.25 2.8 2.8v4c0 1.55-1.25 2.8-2.8 2.8H9.6l-2.6 1.85c-.42.3-1.02-.04-1.02-.55v-1.3h-.38c-1.55 0-2.8-1.25-2.8-2.8v-4c0-1.55 1.25-2.8 2.8-2.8z"/>
-                <circle cx="7.6" cy="13.6" r=".7" fill="currentColor" stroke="none"/>
-                <circle cx="10.4" cy="13.6" r=".7" fill="currentColor" stroke="none"/>
-                <circle cx="13.2" cy="13.6" r=".7" fill="currentColor" stroke="none"/>
-              </svg>
-            </span>
-            <div class="cycle-path-body">
-              <span class="cycle-path-num">01</span>
-              <h3>Encounter</h3>
-              <p>Meet language in a meaningful context.</p>
-            </div>
-          </li>
-          <li class="cycle-path-item cycle-path-item--2">
-            <span class="cycle-path-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 4a7 7 0 0 1 7 7c0 2.6-1.4 4.4-3.2 5.8-.7.5-1.3 1.2-1.5 2.1H9.7c-.2-.9-.8-1.6-1.5-2.1C6.4 15.4 5 13.6 5 11a7 7 0 0 1 7-7z"/>
-                <path d="M10 21h4"/>
-              </svg>
-            </span>
-            <div class="cycle-path-body">
-              <span class="cycle-path-num">02</span>
-              <h3>Recall</h3>
-              <p>Bring it back later — with support when needed.</p>
-            </div>
-          </li>
-          <li class="cycle-path-item cycle-path-item--3">
-            <span class="cycle-path-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 19v-6a2 2 0 0 1 2-2h7l4 4v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
-                <path d="M9 11V7a2 2 0 0 1 2-2h5l4 4v6"/>
-              </svg>
-            </span>
-            <div class="cycle-path-body">
-              <span class="cycle-path-num">03</span>
-              <h3>Use</h3>
-              <p>Apply it in speaking, writing and new situations.</p>
-            </div>
-          </li>
-          <li class="cycle-path-item cycle-path-item--4">
-            <span class="cycle-path-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3L20 9"/>
-                <path d="M20 4v5h-5"/>
-                <path d="M19.5 12a7.5 7.5 0 0 1-12.8 5.3L4 15"/>
-                <path d="M4 20v-5h5"/>
-              </svg>
-            </span>
-            <div class="cycle-path-body">
-              <span class="cycle-path-num">04</span>
-              <h3>Revisit</h3>
-              <p>Return over time and strengthen what you have learned.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <section class="section practice-look-section" aria-labelledby="practice-look-title">
-    <div class="container">
-      <div class="app-showcase app-showcase-blend">
-        <figure class="closer-look-visual" data-reveal>
-          <picture>
-            <source media="(max-width:767px)" type="image/webp" srcset="./assets/images/seivol-closer-look-mobile.webp?v=8" width="1080" height="1300">
-            <source media="(max-width:767px)" type="image/png" srcset="./assets/images/seivol-closer-look-mobile.png?v=8" width="1080" height="1300">
-            <source type="image/webp" srcset="./assets/images/seivol-closer-look.webp" width="1672" height="941">
-            <img src="./assets/images/seivol-closer-look.png" alt="Seivol practice: try, get a hint, try again, with AI feedback cards" width="1672" height="941" loading="lazy" decoding="async">
-          </picture>
-        </figure>
-        <div class="closer-look-fade" aria-hidden="true"></div>
-        <div class="app-copy">
-          <p class="eyebrow">IN PRACTICE</p>
-          <h2 id="practice-look-title">Try again.<br>Keep moving.</h2>
-          <p class="section-lead">When you get stuck, Seivol can give you a contextual hint — then room to reformulate and continue.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="support" class="support-section">
-    <div class="container feature-grid support-layout">
-      <div class="support-right">
-        <div class="support-example">
-          <div class="panel-heading"><span>IN THE MOMENT</span><span class="tiny-tag">Example</span></div>
-          <ol>
-            <li><span>1</span><div><h3>Attempt</h3><p>“I have been in Seville <em>since</em> three years.”</p></div></li>
-            <li><span>2</span><div><h3>Contextual hint</h3><p>Use <strong>for</strong> with a period of time.</p></div></li>
-            <li><span>3</span><div><h3>Try again</h3><p>Space to rebuild the response — without solving it all.</p></div></li>
-          </ol>
-        </div>
-      </div>
-      <div class="support-copy">
-        <p class="eyebrow">SUPPORT WHEN YOU NEED IT</p>
-        <h2>A little help.<br><em>At the right moment.</em></h2>
-        <p class="feature-lead section-lead">When you get stuck, Seivol can give you a contextual hint rather than simply giving you the answer. Try again, reformulate and keep moving.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="speaking" class="section speaking-section">
-    <div class="container speaking-blend speaking-text-left">
-      <div class="speaking-copy">
-        <p class="eyebrow">SPEAKING PRACTICE</p>
-        <h2>Speak it out.<br><em>Make it clearer.</em></h2>
-        <p class="section-lead">Have conversations, receive focused feedback and discover clearer or more natural ways to express what you mean.</p>
-        <ul class="benefit-list">
-          <li>Realistic conversation</li>
-          <li>Focused feedback</li>
-          <li>Personal error review</li>
-          <li>Vocabulary and expressions worth revisiting</li>
-        </ul>
-      </div>
-      <figure class="speaking-visual">
-        <picture>
-          <source media="(max-width:767px)" type="image/webp" srcset="./assets/images/seivol-speaking-mobile.webp?v=10" width="1080" height="1300">
-          <source media="(max-width:767px)" type="image/png" srcset="./assets/images/seivol-speaking-mobile.png?v=10" width="1080" height="1300">
-          <source type="image/webp" srcset="./assets/images/seivol-speaking.webp?v=11" width="1143" height="1376">
-          <img src="./assets/images/seivol-speaking.png?v=11" alt="Phone and feedback cards: Original, Better and Tip during speaking practice" width="1143" height="1376" loading="lazy" decoding="async">
-        </picture>
-        <div class="speaking-fade" aria-hidden="true"></div>
+  <!-- 3 · IGO Wellness -->
+  <section id="wellness" class="scene band band--wellness" aria-labelledby="wellness-title" tabindex="-1">
+    <div class="wrap">
+      <header class="band__head" data-motion="text">
+        <p class="kicker">IGO Wellness</p>
+        <h2 id="wellness-title" class="band__title">Understand your body.</h2>
+      </header>
+      <figure class="band__hero-visual" data-motion="visual">
+        <div class="ph ph--ring ph--wide" role="img" aria-label="Provisional placeholder: ring product image"></div>
+        <figcaption class="ph-label">Placeholder · ring image pending</figcaption>
       </figure>
-    </div>
-  </section>
-
-  <section id="experience" class="section experience-section">
-    <div class="container experience-intro">
-      <div class="experience-intro-copy">
-        <p class="eyebrow">CONNECTED EXPERIENCE</p>
-        <h2>Speak. Write.<br><em>Practise. Remember.</em></h2>
-        <p class="experience-intro-lead section-lead">Your activities are not isolated exercises. Speaking, writing, vocabulary, reading, errors and review contribute to the same learning history, so what happens in one activity can shape what comes next.</p>
-      </div>
-      <aside class="experience-label" aria-label="Parts of the connected journey">
-        <div class="experience-label-head">
-          <span>IN ONE JOURNEY</span>
-        </div>
-        <ul class="experience-label-list">
-          <li class="experience-label-item experience-label-item--1">
-            <strong>Reading</strong>
-            <span>Meet it in a meaningful context</span>
-          </li>
-          <li class="experience-label-item experience-label-item--2">
-            <strong>Retrieval</strong>
-            <span>Bring it back when needed</span>
-          </li>
-          <li class="experience-label-item experience-label-item--3">
-            <strong>Speaking</strong>
-            <span>Use it in real conversation</span>
-          </li>
-          <li class="experience-label-item experience-label-item--4">
-            <strong>Writing</strong>
-            <span>Shape it with clearer form</span>
-          </li>
-          <li class="experience-label-item experience-label-item--5">
-            <strong>Review</strong>
-            <span>Return over time and strengthen it</span>
-          </li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <section id="foundation" class="section foundation-section foundation-bleed" aria-labelledby="foundation-title">
-    <div class="container foundation-split">
-      <div class="foundation-copy">
-        <p class="eyebrow">PEDAGOGY COMES FIRST</p>
-        <h2 id="foundation-title">Technology in the background.<br><em>Learning at the centre.</em></h2>
-        <p class="foundation-lead section-lead">Seivol combines learning principles, learner evidence and adaptive technology to decide what may be useful to practise, revisit or reinforce next. The technology is there to support the learning process — not replace it.</p>
-      </div>
-      <figure class="foundation-visual">
-        <picture>
-          <source media="(max-width:767px)" type="image/webp" srcset="./assets/images/ultima-web.webp?v=1" width="1143" height="1376">
-          <source media="(max-width:767px)" type="image/png" srcset="./assets/images/ultima-web.png?v=1" width="1143" height="1376">
-          <source type="image/webp" srcset="./assets/images/ultima.webp?v=1" width="1536" height="1024">
-          <img src="./assets/images/ultima.png?v=1" alt="Seivol Progress screen with Known, Saved for review and In progress cards" width="1536" height="1024" loading="lazy" decoding="async">
-        </picture>
+      <p class="pillars" data-motion="text">Sleep <span aria-hidden="true">·</span> Activity <span aria-hidden="true">·</span> Recovery</p>
+      <figure class="band__secondary" data-motion="visual">
+        <div class="ph ph--photo ph--secondary" role="img" aria-label="Provisional placeholder: ring in use"></div>
+        <figcaption class="ph-label">Placeholder · usage image (optional) pending</figcaption>
       </figure>
+      <p class="band__cta" data-motion="text"><a class="cta" href="#wellness" data-pending="wellness-page">Explore Wellness <span aria-hidden="true">→</span></a> <span class="pending-note">Page pending</span></p>
     </div>
   </section>
 
-  <section id="contact" class="section contact-section">
-    <div class="container contact-panel">
-      <div class="contact-layout">
-        <div class="contact-copy">
-          <p class="eyebrow">NEXT STEP</p>
-          <h2>Be among the first to try Seivol.</h2>
-          <p class="contact-lead section-lead">Join early access and see how guided practice, memory and feedback can work together in one learning journey.</p>
-        </div>
-        <form class="contact-form" id="early-access-form" action="mailto:jmpmonge@gmail.com" method="post" enctype="text/plain" novalidate>
-          <div class="contact-field">
-            <label for="contact-name">Name</label>
-            <input id="contact-name" name="Name" type="text" autocomplete="name" required>
-          </div>
-          <div class="contact-field">
-            <label for="contact-email">Email</label>
-            <input id="contact-email" name="Email" type="email" autocomplete="email" required>
-          </div>
-          <div class="contact-field">
-            <label for="contact-role">Role / Institution <span class="optional">(optional)</span></label>
-            <input id="contact-role" name="Role / Institution" type="text" autocomplete="organization">
-          </div>
-          <div class="contact-field">
-            <label for="contact-message">Message <span class="optional">(optional)</span></label>
-            <textarea id="contact-message" name="Message" rows="4"></textarea>
-          </div>
-          <div class="contact-honeypot" aria-hidden="true">
-            <label for="contact-company">Company</label>
-            <input id="contact-company" name="company" type="text" tabindex="-1" autocomplete="off">
-          </div>
-          <div class="contact-field contact-captcha">
-            <label for="contact-captcha">Quick check: <span id="contact-captcha-question">3 + 4</span> =</label>
-            <input id="contact-captcha" name="captcha" type="text" inputmode="numeric" autocomplete="off" required>
-            <p class="contact-form-error" id="contact-form-error" hidden>Please solve the check to continue.</p>
-          </div>
-          <button class="button button-primary contact-submit" type="submit">Send request</button>
-        </form>
+  <!-- 4 · Technology -->
+  <section id="technology" class="scene band band--tech" aria-labelledby="tech-title" tabindex="-1">
+    <div class="wrap">
+      <header class="band__head" data-motion="text">
+        <p class="kicker">Technology</p>
+        <h2 id="tech-title" class="band__title">Intelligence in use.</h2>
+      </header>
+      <ul class="trio" role="list">
+        <li class="trio__item" data-motion="visual">
+          <div class="ph ph--object" role="img" aria-label="Provisional placeholder: glasses"></div>
+          <h3 class="trio__name">Vision</h3>
+          <p class="ph-label">Placeholder · glasses</p>
+        </li>
+        <li class="trio__item" data-motion="visual" style="--i:1">
+          <div class="ph ph--object ph--phone" role="img" aria-label="Provisional placeholder: IGO App concept"></div>
+          <h3 class="trio__name">IGO App</h3>
+          <p class="ph-label">Concept · in development</p>
+        </li>
+        <li class="trio__item" data-motion="visual" style="--i:2">
+          <div class="ph ph--object" role="img" aria-label="Provisional placeholder: ring"></div>
+          <h3 class="trio__name">Wellness</h3>
+          <p class="ph-label">Placeholder · ring</p>
+        </li>
+      </ul>
+      <dl class="levels">
+        <div class="levels__item" data-motion="text"><dt>Hardware</dt><dd>Devices designed to integrate into daily life.</dd></div>
+        <div class="levels__item" data-motion="text" style="--i:1"><dt>Intelligence</dt><dd>The layer that turns hardware capabilities into useful functions.</dd></div>
+        <div class="levels__item" data-motion="text" style="--i:2"><dt>Experience</dt><dd>The app as the interface.</dd></div>
+      </dl>
+      <p class="band__cta" data-motion="text"><a class="cta" href="#technology" data-pending="technology-page">Explore Technology <span aria-hidden="true">→</span></a> <span class="pending-note">Page pending</span></p>
+    </div>
+  </section>
+
+  <!-- 5 · Philosophy (nav: About) -->
+  <section id="about" class="scene band band--philosophy" aria-labelledby="about-title" tabindex="-1">
+    <div class="wrap philosophy">
+      <figure class="philosophy__visual" data-motion="visual">
+        <div class="ph ph--material" role="img" aria-label="Provisional placeholder: material detail photograph"></div>
+        <figcaption class="ph-label">Placeholder · material detail image pending</figcaption>
+      </figure>
+      <div class="philosophy__copy" data-motion="text">
+        <h2 id="about-title" class="band__title">Designed with purpose.</h2>
+        <p class="philosophy__text">Technology should feel natural. Design should be intentional.</p>
       </div>
     </div>
   </section>
 </main>
+
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="footer-logo" href="./index.html" aria-label="Seivol home">Seivol</a>
-        <p class="footer-tagline">English that stays with you.</p>
-        <p class="footer-blurb">Personalised English practice built around practice, memory and meaningful use.</p>
-      </div>
-      <div class="footer-col">
-        <h3 class="footer-heading">Explore</h3>
-        <ul class="footer-list">
-          <li><a href="#learning">How it works</a></li>
-          <li><a href="#support">Support</a></li>
-          <li><a href="#experience">Experience</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h3 class="footer-heading">Connect</h3>
-        <ul class="footer-list">
-          <li><a href="#contact">Early Access Request</a></li>
-          <li><a href="mailto:hello@seivol.com">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bar">
-      <p class="footer-copy">© 2026 Seivol</p>
-      <div class="footer-legal">
-        <a href="#" aria-disabled="true" tabindex="-1">Privacy</a>
-        <a href="#" aria-disabled="true" tabindex="-1">Terms</a>
-      </div>
-      <a class="footer-top" href="#main">Back to top <span aria-hidden="true">↑</span></a>
-    </div>
+  <div class="wrap site-footer__inner">
+    <img src="assets/igo/igo-logo-white.svg" alt="IGO" width="56" height="31">
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#wellness">Wellness</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <p class="site-footer__contact">Contact <span class="pending-note pending-note--dark">Pending</span></p>
+    <p class="site-footer__legal">© 2026 IGO</p>
   </div>
 </footer>
 </body>
