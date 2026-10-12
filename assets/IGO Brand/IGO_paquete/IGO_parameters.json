@@ -1,0 +1,18 @@
+{
+ "nombre": "IGO",
+ "version": "1.0",
+ "unidad_base": "D = diámetro exterior de la G y la O; todas las medidas son fracciones de D",
+ "constantes": {
+  "phi": {"expresion": "(1 + sqrt(5)) / 2", "descripcion": "Número áureo"}
+ },
+ "parametros": {
+  "K_TRAZO":  {"expresion": "20 / 212",    "descripcion": "Grosor del trazo / D (diseño aprobado)"},
+  "APERTURA": {"expresion": "52.52",       "descripcion": "Apertura de la G desde la horizontal, en grados"},
+  "K_BARRA":  {"expresion": "phi ** -2",   "descripcion": "Barra de la G, desde la unión con el círculo hacia el centro"},
+  "K_IG":     {"expresion": "phi ** -2.5", "descripcion": "Hueco I–G, borde a borde"},
+  "K_GO":     {"expresion": "phi ** -3.5", "descripcion": "Hueco G–O, borde a borde (K_IG / K_GO = phi)"},
+  "K_OVER":   {"expresion": "3 / 212",     "descripcion": "Ajuste óptico: la I se acorta esto por cada extremo"},
+  "K_MARGEN": {"expresion": "0.5",         "descripcion": "Margen de seguridad alrededor del logotipo"}
+ },
+ "colores": {"azul_noche": "#141B24", "grafito": "#2B2F35", "blanco": "#FFFFFF"}
+}

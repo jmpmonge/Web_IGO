@@ -1,0 +1,13 @@
+IGO — Plano vectorial paramétrico
+
+igo_parametrico.py        Script: todas las medidas derivan del diámetro D.
+                          Uso: python igo_parametrico.py <D> <carpeta>
+                          Requisitos: pip install cairosvg ezdxf numpy pillow
+salida_D1000/IGO.svg      Contornos exactos (relleno), D = 1000.
+salida_D1000/IGO.dxf      Para CAD: arcos y rectas reales, unidades mm, capas
+                          IGO_CONTORNO e IGO_CONSTRUCCION. Origen: borde izquierdo de la I, eje y = 0.
+salida_D1000/IGO.pdf      Vector para imprenta.
+salida_D1000/verificacion.json  Fórmula frente a medida real.
+IGO_ficha_parametrica.pdf Ficha con fórmulas, valores y verificación.
+
+Para cambiar una proporción, edita los parámetros K_* al principio del script.

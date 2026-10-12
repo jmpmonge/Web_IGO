@@ -11,8 +11,11 @@
 <link rel="icon" href="../assets/igo/igo-logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/igo.css">
 <link rel="stylesheet" href="../assets/igo-pages.css">
+<link rel="stylesheet" href="../assets/hero.css">
+<link rel="preload" as="image" href="../assets/images/images_igo/vision_hero.webp" type="image/webp" media="(min-width:48em) and (orientation:landscape)">
 <script>document.documentElement.classList.add('js');</script>
 <script src="../assets/igo.js" defer></script>
+<script src="../assets/hero.js" defer></script>
 </head>
 <body class="page page--vision">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -25,7 +28,7 @@
     </button>
     <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul>
-        <li><a href="../index.html">Home</a></li>
+        <li class="site-nav__home"><a href="../index.html">Home</a></li>
         <li><a href="../vision/index.html" aria-current="page">Vision</a></li>
         <li><a href="../wellness/index.html">Wellness</a></li>
         <li><a href="../technology/index.html">Technology</a></li>
@@ -37,16 +40,27 @@
 
 <main id="main" tabindex="-1">
   <article aria-labelledby="page-title">
-    <header class="page-hero page-hero--image">
-      <img class="page-hero__image" src="../assets/images/images_igo/mujer_hero_left.png" alt="" width="1774" height="887" fetchpriority="high">
-      <div class="wrap page-hero__copy">
-        <p class="kicker">IGO Vision</p>
-        <h1 id="page-title" class="page-hero__title">See beyond the moment.</h1>
-        <p class="page-notice"><span class="pending-note">Provisional</span> This page is in preparation. Content pending approval.</p>
+    <section class="hero hero--vision" aria-labelledby="page-title">
+      <div class="hero__media">
+        <picture>
+          <source media="(max-width:47.99em), (orientation:portrait)" srcset="../assets/images/images_igo/vision_hero_mobile.webp" type="image/webp">
+          <source srcset="../assets/images/images_igo/vision_hero.webp" type="image/webp">
+          <img class="hero__image" src="../assets/images/images_igo/mujer_hero_left.png" alt="Woman wearing IGO smart glasses in a city at sunset" width="1774" height="887" fetchpriority="high" decoding="async">
+        </picture>
       </div>
-    </header>
+      <div class="wrap hero__copy">
+       <div class="hero__copy-inner">
+        <p class="hero__kicker" data-hero-in style="--d:150ms">IGO Vision</p>
+        <h1 id="page-title" class="hero__title" data-hero-in style="--d:250ms"><span class="hero__line">See beyond</span> <span class="hero__line">the moment.</span></h1>
+        <p class="hero__sub" data-hero-in style="--d:450ms">Smart eyewear designed for the way you live.</p>
+        <div class="hero__actions" data-hero-in style="--d:650ms">
+          <a class="hero__btn" href="#models">Explore the collection <span aria-hidden="true">→</span></a>
+        </div>
+       </div>
+      </div>
+    </section>
 
-    <section class="page-section" aria-labelledby="models-title">
+    <section id="models" class="page-section" aria-labelledby="models-title">
       <div class="wrap">
         <h2 id="models-title" class="page-section__title">Models</h2>
         <ul class="page-grid page-grid--2" role="list">

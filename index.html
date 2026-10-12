@@ -10,6 +10,10 @@
 <title>IGO — Designed for life. Powered by intelligence.</title>
 <link rel="icon" href="assets/igo/igo-logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/igo.css">
+<link rel="stylesheet" href="assets/home.css">
+<link rel="stylesheet" href="assets/footer.css">
+<link rel="stylesheet" href="assets/hero.css">
+<link rel="preload" as="image" href="assets/images/images_igo/home_hero.webp" type="image/webp" media="(min-width:48em) and (orientation:landscape)">
 <script>
   /* Hide animated elements before first paint only when motion is allowed; failsafe reveals everything if igo.js does not start. */
   (function (d) {
@@ -21,8 +25,9 @@
   })(document.documentElement);
 </script>
 <script src="assets/igo.js" defer></script>
+<script src="assets/hero.js" defer></script>
 </head>
-<body>
+<body class="home">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header" id="top">
@@ -33,141 +38,145 @@
     </button>
     <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="site-nav__home"><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="vision/index.html">Vision</a></li>
         <li><a href="wellness/index.html">Wellness</a></li>
         <li><a href="technology/index.html">Technology</a></li>
         <li><a href="about/index.html">About</a></li>
       </ul>
     </nav>
+    <a class="header-cta" href="#vision">Explore IGO <span aria-hidden="true">→</span></a>
   </div>
 </header>
 
 <main id="main">
   <!-- 1 · Hero -->
-  <section id="hero" class="scene hero" aria-labelledby="hero-title" tabindex="-1">
+  <section id="hero" class="scene hero hero--home" aria-labelledby="hero-title" tabindex="-1">
     <div class="hero__media" data-hero-media data-video-src="" data-video-src-mobile="">
-      <!-- Poster / static image. Replace the placeholder with the approved IGO hero image (also used as video poster). -->
-      <div class="ph ph--hero" role="img" aria-label="Provisional placeholder for the hero image"></div>
+      <!-- Final photograph. Mobile/portrait uses a crop of the same photo. Later: set data-video-src to swap in the optimized film; this image stays as poster. -->
+      <picture>
+        <source media="(max-width:47.99em), (orientation:portrait)" srcset="assets/images/images_igo/home_hero_mobile.webp" type="image/webp">
+        <source srcset="assets/images/images_igo/home_hero.webp" type="image/webp">
+        <img class="hero__image" src="assets/images/images_igo/home_hero.webp" alt="Man wearing IGO smart glasses and ring, looking out over a coastal city at sunset" width="1774" height="887" fetchpriority="high" decoding="async">
+      </picture>
       <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" disablepictureinpicture hidden></video>
       <button class="hero__toggle" type="button" hidden>Pause video</button>
     </div>
     <div class="wrap hero__copy">
-      <h1 id="hero-title" class="hero__title" data-motion="text">Designed for life.</h1>
-      <p class="hero__sub" data-motion="text" style="--i:1">Powered by intelligence.</p>
+      <h1 id="hero-title" class="hero__title" data-hero-in style="--d:250ms"><span class="hero__line">Technology</span> <span class="hero__line">for a wider life.</span></h1>
+      <p class="hero__sub" data-hero-in style="--d:450ms">See more. Move freely. Live fully.</p>
+      <div class="hero__actions" data-hero-in style="--d:650ms">
+        <a class="hero__btn" href="#vision">Discover IGO <span aria-hidden="true">→</span></a>
+        <button class="hero__film" type="button" data-film-open aria-haspopup="dialog" aria-expanded="false">
+          <span class="hero__film-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"/></svg></span>Watch the film
+        </button>
+      </div>
     </div>
-    <p class="ph-label ph-label--hero">Placeholder · hero image / video (9–12 s) pending</p>
+    <div class="wrap hero__features-wrap" data-hero-in style="--d:850ms">
+      <ul class="hero__features" role="list" aria-label="IGO capabilities">
+        <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="hero__feature-name">Capture</span><span class="hero__feature-text">Your perspective</span></li>
+        <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/></svg></span><span class="hero__feature-name">Listen</span><span class="hero__feature-text">Stay connected</span></li>
+        <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span><span class="hero__feature-name">AI</span><span class="hero__feature-text">Real support, when you need it</span></li>
+        <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="hero__feature-name">Go further</span><span class="hero__feature-text">In everyday life</span></li>
+      </ul>
+    </div>
+
+    <dialog id="film-modal" class="film-modal" aria-label="IGO film" data-film-src="">
+      <div class="film-modal__body">
+        <button class="film-modal__close" type="button" data-film-close aria-label="Close film">×</button>
+        <video class="film-modal__video" controls playsinline preload="none" hidden></video>
+        <p class="film-modal__empty">The film is coming soon.</p>
+      </div>
+    </dialog>
   </section>
 
   <!-- 2 · IGO Vision -->
-  <section id="vision" class="scene band band--vision" aria-labelledby="vision-title" tabindex="-1">
-    <div class="wrap">
-      <header class="band__head" data-motion="text">
-        <p class="kicker">IGO Vision</p>
-        <h2 id="vision-title" class="band__title">See beyond the moment.</h2>
-      </header>
-      <figure class="band__hero-visual" data-motion="visual">
-        <div class="ph ph--photo ph--wide" role="img" aria-label="Provisional placeholder: context photo, person wearing glasses"></div>
-        <figcaption class="ph-label">Placeholder · context photo (person with glasses) pending</figcaption>
-      </figure>
-      <ul class="models" role="list">
-        <li class="model" data-motion="visual">
-          <div class="ph ph--product" role="img" aria-label="Provisional placeholder: Sport Casual product image"></div>
-          <h3 class="model__name">Sport Casual</h3>
-          <p class="ph-label">Placeholder · product image pending</p>
-        </li>
-        <li class="model" data-motion="visual" style="--i:1">
-          <div class="ph ph--product" role="img" aria-label="Provisional placeholder: Sport Mask product image"></div>
-          <h3 class="model__name">Sport Mask</h3>
-          <p class="ph-label">Placeholder · product image pending</p>
-        </li>
-      </ul>
-      <p class="band__cta" data-motion="text"><a class="cta" href="#vision" data-pending="vision-page">Explore Vision <span aria-hidden="true">→</span></a> <span class="pending-note">Page pending</span></p>
+  <section id="vision" class="scene band band--vision vband" aria-labelledby="vision-title" tabindex="-1">
+    <div class="wrap vband__head" data-motion="text">
+      <p class="kicker">IGO Vision</p>
+      <h2 id="vision-title" class="band__title">See beyond the moment.</h2>
+      <p class="vband__sub">Smart eyewear designed for the way you live.</p>
+      <p class="vband__cta"><a class="hero__btn" href="vision/index.html">Explore Vision <span aria-hidden="true">→</span></a></p>
     </div>
+    <figure class="vband__stage" data-motion="visual">
+      <img src="assets/images/images_igo/vision_band.webp" alt="IGO Sport Casual and Sport Mask smart glasses on a stone terrace above the sea" width="1983" height="793" loading="lazy" decoding="async">
+      <figcaption>
+        <ul class="vband__models" role="list">
+          <li><h3 class="vband__name">Sport Casual</h3><p class="vband__desc">Everyday. Everywhere.</p></li>
+          <li><h3 class="vband__name">Sport Mask</h3><p class="vband__desc">Performance. Without limits.</p></li>
+        </ul>
+      </figcaption>
+    </figure>
   </section>
 
   <!-- 3 · IGO Wellness -->
-  <section id="wellness" class="scene band band--wellness" aria-labelledby="wellness-title" tabindex="-1">
-    <div class="wrap">
-      <header class="band__head" data-motion="text">
-        <p class="kicker">IGO Wellness</p>
-        <h2 id="wellness-title" class="band__title">Understand your body.</h2>
-      </header>
-      <figure class="band__hero-visual" data-motion="visual">
-        <div class="ph ph--ring ph--wide" role="img" aria-label="Provisional placeholder: ring product image"></div>
-        <figcaption class="ph-label">Placeholder · ring image pending</figcaption>
-      </figure>
-      <p class="pillars" data-motion="text">Sleep <span aria-hidden="true">·</span> Activity <span aria-hidden="true">·</span> Recovery</p>
-      <figure class="band__secondary" data-motion="visual">
-        <div class="ph ph--photo ph--secondary" role="img" aria-label="Provisional placeholder: ring in use"></div>
-        <figcaption class="ph-label">Placeholder · usage image (optional) pending</figcaption>
-      </figure>
-      <p class="band__cta" data-motion="text"><a class="cta" href="#wellness" data-pending="wellness-page">Explore Wellness <span aria-hidden="true">→</span></a> <span class="pending-note">Page pending</span></p>
+  <section id="wellness" class="scene band band--wellness wband" aria-labelledby="wellness-title" tabindex="-1">
+    <div class="wrap wband__copy" data-motion="text">
+      <p class="kicker">IGO Wellness</p>
+      <h2 id="wellness-title" class="band__title"><span class="wband__line">Understand</span> <span class="wband__line">your body.</span></h2>
+      <p class="wband__sub"><span class="wband__line">Better sleep. More energy.</span> <span class="wband__line">A healthier you.</span></p>
+      <p class="wband__cta"><a class="hero__btn" href="wellness/index.html">Explore Wellness <span aria-hidden="true">→</span></a></p>
+    </div>
+    <div class="wband__media">
+      <img src="assets/images/images_igo/wellness_band.webp" alt="IGO Wellness ring floating above a stone surface in warm light" width="2103" height="748" loading="lazy" decoding="async">
     </div>
   </section>
 
   <!-- 4 · Technology -->
-  <section id="technology" class="scene band band--tech" aria-labelledby="tech-title" tabindex="-1">
-    <div class="wrap">
-      <header class="band__head" data-motion="text">
-        <p class="kicker">Technology</p>
-        <h2 id="tech-title" class="band__title">Intelligence in use.</h2>
-      </header>
-      <ul class="trio" role="list">
-        <li class="trio__item" data-motion="visual">
-          <div class="ph ph--object" role="img" aria-label="Provisional placeholder: glasses"></div>
-          <h3 class="trio__name">Vision</h3>
-          <p class="ph-label">Placeholder · glasses</p>
-        </li>
-        <li class="trio__item" data-motion="visual" style="--i:1">
-          <div class="ph ph--object ph--phone" role="img" aria-label="Provisional placeholder: IGO App concept"></div>
-          <h3 class="trio__name">IGO App</h3>
-          <p class="ph-label">Concept · in development</p>
-        </li>
-        <li class="trio__item" data-motion="visual" style="--i:2">
-          <div class="ph ph--object" role="img" aria-label="Provisional placeholder: ring"></div>
-          <h3 class="trio__name">Wellness</h3>
-          <p class="ph-label">Placeholder · ring</p>
-        </li>
-      </ul>
-      <dl class="levels">
-        <div class="levels__item" data-motion="text"><dt>Hardware</dt><dd>Devices designed to integrate into daily life.</dd></div>
-        <div class="levels__item" data-motion="text" style="--i:1"><dt>Intelligence</dt><dd>The layer that turns hardware capabilities into useful functions.</dd></div>
-        <div class="levels__item" data-motion="text" style="--i:2"><dt>Experience</dt><dd>The app as the interface.</dd></div>
-      </dl>
-      <p class="band__cta" data-motion="text"><a class="cta" href="#technology" data-pending="technology-page">Explore Technology <span aria-hidden="true">→</span></a> <span class="pending-note">Page pending</span></p>
+  <section id="technology" class="scene band band--tech vband vband--tech" aria-labelledby="tech-title" tabindex="-1">
+    <div class="wrap vband__head" data-motion="text">
+      <p class="kicker">IGO Technology</p>
+      <h2 id="tech-title" class="band__title">Intelligence in use.</h2>
+      <p class="vband__sub">Devices, insights and experiences designed to work together.</p>
+      <p class="vband__cta"><a class="hero__btn" href="technology/index.html">Explore Technology <span aria-hidden="true">→</span></a></p>
     </div>
+    <figure class="vband__stage" data-motion="visual">
+      <img src="assets/images/images_igo/technology_band.webp" alt="IGO smart glasses, the IGO app on a phone and the IGO ring on a stone terrace at sunset" width="1983" height="793" loading="lazy" decoding="async">
+    </figure>
   </section>
 
   <!-- 5 · Philosophy (nav: About) -->
-  <section id="about" class="scene band band--philosophy" aria-labelledby="about-title" tabindex="-1">
-    <div class="wrap philosophy">
-      <figure class="philosophy__visual" data-motion="visual">
-        <div class="ph ph--material" role="img" aria-label="Provisional placeholder: material detail photograph"></div>
-        <figcaption class="ph-label">Placeholder · material detail image pending</figcaption>
-      </figure>
-      <div class="philosophy__copy" data-motion="text">
-        <h2 id="about-title" class="band__title">Designed with purpose.</h2>
-        <p class="philosophy__text">Technology should feel natural. Design should be intentional.</p>
-      </div>
+  <section id="about" class="scene band pband" aria-labelledby="about-title" tabindex="-1">
+    <div class="wrap pband__copy" data-motion="text">
+      <p class="kicker">IGO Philosophy</p>
+      <h2 id="about-title" class="band__title"><span class="pband__line">Designed</span> <span class="pband__line">with purpose.</span></h2>
+      <p class="pband__sub"><span class="pband__line">Technology should feel natural.</span> <span class="pband__line">Design should be intentional.</span></p>
+      <p class="pband__cta"><a class="hero__btn" href="about/index.html">Discover our philosophy <span aria-hidden="true">→</span></a></p>
+    </div>
+    <div class="pband__media">
+      <img src="assets/images/images_igo/philosophy_band.webp" alt="IGO ring and smart glasses on a stone ledge facing a sunset over the sea" width="1983" height="793" loading="lazy" decoding="async">
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap site-footer__inner">
-    <img src="assets/igo/igo-logo-white.svg" alt="IGO" width="56" height="31">
-    <nav aria-label="Footer">
+<footer class="ft">
+  <div class="wrap ft__top">
+    <div class="ft__brand">
+      <a class="ft__logo" href="index.html" aria-label="IGO home"><img src="assets/igo/igo-logo-white.svg" alt="IGO" width="112" height="63"></a>
+      <p class="ft__tagline">Technology for a wider life.</p>
+    </div>
+    <nav class="ft__nav" aria-label="Footer">
       <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="vision/index.html">Vision</a></li>
         <li><a href="wellness/index.html">Wellness</a></li>
         <li><a href="technology/index.html">Technology</a></li>
         <li><a href="about/index.html">About</a></li>
       </ul>
     </nav>
-    <p class="site-footer__contact">Contact <span class="pending-note pending-note--dark">Pending</span></p>
-    <p class="site-footer__legal">© 2026 IGO</p>
+    <div class="ft__side">
+      <a class="ft__contact" data-pending="contact">Contact</a>
+      <ul class="ft__social" role="list">
+        <li><a data-pending="instagram">Instagram</a></li>
+        <li><a data-pending="linkedin">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap ft__bottom">
+    <p class="ft__legal">© 2026 IGO. All rights reserved.</p>
+    <ul class="ft__policy" role="list">
+      <li><a data-pending="privacy">Privacy</a></li>
+      <li><a data-pending="terms">Terms</a></li>
+    </ul>
   </div>
 </footer>
 </body>

@@ -1,0 +1,17 @@
+{
+ "Diámetro exterior D (medido O)": 1000.0,
+ "Trazo": 94.33962264150944,
+ "Trazo/D": 0.09433962264150944,
+ "I–G fórmula": 300.2831060007776,
+ "I–G medido": 300.0,
+ "G–O fórmula": 185.58516575586805,
+ "G–O medido": 185.5,
+ "I–G/G–O medido": 1.6172506738544474,
+ "Barra fórmula": 381.96601125010517,
+ "Barra medida": 382.2831060007775,
+ "Apertura G (grados)": 52.52,
+ "Altura I": 972.0,
+ "Ajuste I por extremo": 14.150943396226415,
+ "Ancho logo": 2580.207894398155,
+ "IoU": 0.9996076668567444
+}

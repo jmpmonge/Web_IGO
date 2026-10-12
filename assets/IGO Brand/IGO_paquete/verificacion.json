@@ -1,0 +1,38 @@
+{
+ "Diámetro D": {
+  "formula": 1000.0,
+  "medido": 1000.0
+ },
+ "Trazo": {
+  "formula": 94.33962264150944,
+  "medido": null
+ },
+ "Hueco I–G = φ^-2,5·D": {
+  "formula": 300.2831060007776,
+  "medido": 300.0
+ },
+ "Hueco G–O = φ^-3,5·D": {
+  "formula": 185.58516575586805,
+  "medido": 185.5
+ },
+ "Relación I–G / G–O = φ": {
+  "formula": 1.618033988749895,
+  "medido": 1.6172506738544474
+ },
+ "Barra G = φ^-2·D": {
+  "formula": 381.96601125010517,
+  "medido": 382.2831060007775
+ },
+ "Apertura G (°)": {
+  "formula": 52.52,
+  "medido": null
+ },
+ "Altura I = D − 2·ajuste": {
+  "formula": 971.6981132075472,
+  "medido": 972.0
+ },
+ "Tolerancia de medida": {
+  "formula": 0.5,
+  "medido": null
+ }
+}
