@@ -695,7 +695,8 @@ body{background:#fff;font-family:var(--sans);line-height:1.7}h1,h2,h3,h4{font-fa
   margin-right:0!important;
   padding-block:48px!important;
   padding-inline:0!important;
-  max-width:var(--split-copy)!important;
+  /* Nunca más ancho que su columna (antes se salía por la derecha entre 801 y ~1080 px) */
+  max-width:min(var(--split-copy),calc(100% - var(--band-text-inset,20px)))!important;
   box-sizing:border-box;
 }
 .practice-look-section .app-copy h2,
@@ -1401,9 +1402,9 @@ body{background:#fff;font-family:var(--sans);line-height:1.7}h1,h2,h3,h4{font-fa
   width:100%!important;
   max-width:var(--bleed-max-width)!important;
   margin-inline:auto!important;
-  height:var(--image-band-height)!important;
+  height:auto!important;
   min-height:var(--image-band-height)!important;
-  max-height:var(--image-band-height)!important;
+  max-height:none!important;
   padding:0!important;
   overflow:hidden;
   background:#fff;
@@ -1968,9 +1969,10 @@ html{scroll-padding-top:88px}
 @media(min-width:801px){
   .header #navigation{
     /* Ancho fijo (EN ≈ ES): el selector de idioma no salta al cambiar */
-    flex:0 0 36rem;
+    /* Puede encogerse cuando no cabe (801–~840 px) en lugar de salirse del viewport */
+    flex:0 1 36rem;
     width:36rem;
-    min-width:36rem;
+    min-width:0;
     max-width:36rem;
   }
 }
@@ -2277,6 +2279,11 @@ html{scroll-padding-top:88px}
     margin-inline:auto!important;
     box-sizing:border-box;
   }
+  /* Foundation: min-height en vez de altura fija; crece si el texto no cabe (antes se recortaba a 801–900 px) */
+  .foundation-bleed .foundation-split{
+    height:auto!important;
+    max-height:none!important;
+  }
   .practice-look-section .app-showcase-blend{
     height:100%!important;
     min-height:100%!important;
@@ -2470,9 +2477,9 @@ body{
   position:relative;
 }
 @media(max-width:800px){
+  /* clip (no hidden): hidden convertía html/body en contenedor de scroll y rompía la cabecera sticky */
   html,body{
-    overflow-x:hidden;
-    touch-action:pan-y;
+    overflow-x:clip;
   }
   img,svg,video,canvas{
     max-width:100%;
