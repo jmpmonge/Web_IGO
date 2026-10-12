@@ -36,6 +36,11 @@ body.home .site-header.is-scrolled .site-header__inner,body.page--products .site
   }
 }
 
+/* Header Buy button (gold) and Home hero button (deep blue) */
+:root{ --c-navy:#234B6C; --c-navy-hover:#1C3D58; --c-gold:#F2C14E; --c-gold-hover:#EBB535; }
+body.home .hero .hero__btn{ background:var(--c-navy); border-color:var(--c-navy); }
+body.home .hero .hero__btn:hover{ background:var(--c-navy-hover); border-color:var(--c-navy-hover); }
+
 /* Header tools (language + Products): only used by the desktop layout. */
 .site-header__tools{ display:none; }
 
@@ -72,10 +77,10 @@ body.home .site-header.is-scrolled .site-header__inner,body.page--products .site
   :is(body.home,body.page--vision,body.page--products) .header-cta{
     position:relative; display:inline-flex; align-items:center; gap:.5rem; margin-left:2.5rem; min-height:40px; padding:.4375rem 1.125rem;
     font-size:.875rem; font-weight:500; letter-spacing:.015em; text-decoration:none; white-space:nowrap;
-    color:var(--c-white); background:var(--c-ink); border:1px solid var(--c-ink); border-radius:12px; transition:background-color 200ms ease,border-color 200ms ease;
+    color:var(--c-navy); background:var(--c-gold); border:1px solid var(--c-gold); border-radius:12px; transition:background-color 200ms ease,border-color 200ms ease;
   }
   :is(body.home,body.page--vision,body.page--products) .header-cta::before{ content:""; position:absolute; inset:-3px 0; }   /* keeps a 44px hit area on a 40px button */
-  :is(body.home,body.page--vision,body.page--products) .header-cta:hover{ background:var(--c-graphite); border-color:var(--c-graphite); }
+  :is(body.home,body.page--vision,body.page--products) .header-cta:hover{ background:var(--c-gold-hover); border-color:var(--c-gold-hover); }
   :is(body.home,body.page--vision,body.page--products) .header-cta span{ transition:transform 200ms var(--hero-ease); }
   :is(body.home,body.page--vision,body.page--products) .header-cta:hover span{ transform:translateX(3px); }
 }
