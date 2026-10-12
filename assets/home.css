@@ -1,0 +1,202 @@
+/* IGO Home — structural refinement of bands 2–5 (Vision, Wellness, Technology, Philosophy).
+   Loaded AFTER igo.css, ONLY by the Home. Uses igo.css tokens; defines NO colours; no !important.
+   Does not touch header, footer, navigation, hero or igo.js. Placeholders stay until final assets exist.
+   Breakpoints (same as igo.css): 48em (768px) · 60em (960px). */
+
+.home-band{ --home-space:clamp(3.5rem,7vw,6.5rem); --home-row:clamp(1.5rem,3.5vw,2.5rem); }
+.band.home-band{ min-height:0; padding-block:var(--home-space); }
+
+/* ---------- Shared two-column composition (Vision, Wellness) ---------- */
+.home-split{ display:grid; grid-template-columns:minmax(0,1fr); row-gap:var(--home-row); column-gap:clamp(2rem,5vw,4.5rem); align-items:start; }
+.home-split > *{ min-width:0; }
+.home-split .band__head{ max-width:none; margin:0; }
+.home-split .band__hero-visual{ margin:0; }
+.home-split .models,
+.home-split .pillars,
+.home-split .band__secondary,
+.home-split .band__cta{ margin:0; }
+
+/* Wide visuals: shorter than before (was 21:9 / 16:9 / 4:3) */
+.ph.home-wide{ aspect-ratio:3/2; }
+@media (min-width:48em){ .ph.home-wide{ aspect-ratio:2/1; } }
+
+/* ---------- 2 Vision ---------- */
+.home-models{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--gap); }
+.home-models .ph--product{ aspect-ratio:1/1; }
+.home-models .model__name{ margin-top:.875rem; }
+.home-models .ph-label{ font-size:.8125rem; }
+@media (min-width:48em){
+  .home-models .ph--product{ aspect-ratio:4/3; }
+  .home-models .model__name{ margin-top:1.25rem; }
+  .home-models .ph-label{ font-size:var(--fs-small); }
+}
+
+/* ---------- 3 Wellness ---------- */
+.home-split--wellness .pillars{ font-size:clamp(1.25rem,1rem + 1vw,1.75rem); }
+.home-split--wellness .band__secondary{ max-width:none; }
+.home-split--wellness .ph--secondary{ aspect-ratio:16/10; }
+@media (min-width:48em){ .home-split--wellness .ph--secondary{ aspect-ratio:4/3; } }
+@media (min-width:48em) and (max-width:59.99em){ .home-split--wellness .band__secondary{ max-width:32rem; } }
+
+@media (min-width:60em){
+  .home-split--vision{
+    grid-template-columns:minmax(0,4fr) minmax(0,8fr);
+    grid-template-areas:"head visual" "cta models";
+  }
+  .home-split--vision .band__head{ grid-area:head; }
+  .home-split--vision .band__hero-visual{ grid-area:visual; }
+  .home-split--vision .home-models{ grid-area:models; }
+  .home-split--vision .band__cta{ grid-area:cta; align-self:end; }
+  .home-split--vision .ph.home-wide{ aspect-ratio:2/1; }
+
+  /* Wellness mirrors Vision: visual left, text column right (same weight, different rhythm) */
+  .home-split--wellness{
+    grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+    grid-template-rows:auto auto auto 1fr;
+    grid-template-areas:"visual head" "visual pillars" "visual secondary" "visual cta";
+  }
+  .home-split--wellness .band__head{ grid-area:head; }
+  .home-split--wellness .band__hero-visual{ grid-area:visual; }
+  .home-split--wellness .pillars{ grid-area:pillars; }
+  .home-split--wellness .band__secondary{ grid-area:secondary; }
+  .home-split--wellness .band__cta{ grid-area:cta; align-self:end; }
+  .home-split--wellness .ph.home-wide{ aspect-ratio:4/5; }
+}
+
+/* ---------- 4 Technology: one stage + editorial sequence (no tiles, no KPI look) ---------- */
+.home-stage{ margin:0; }
+.home-stage .ph{ aspect-ratio:3/2; }
+@media (min-width:48em){ .home-stage .ph{ aspect-ratio:2/1; } }
+@media (min-width:60em){ .home-stage .ph{ aspect-ratio:5/2; } }
+.home-stage__legend{ display:flex; flex-wrap:wrap; gap:.375rem 1.75rem; margin-top:.75rem; font-size:var(--fs-small); color:var(--c-muted); }
+.home-stage__name{ font-weight:500; color:var(--c-ink); margin-right:.375rem; }
+.band--tech .levels{ display:block; margin-top:clamp(2rem,4vw,3.5rem); padding-top:0; border-top:0; }
+.band--tech .levels__item{ display:grid; gap:.375rem; padding-block:1.25rem; border-top:1px solid var(--c-line); }
+.band--tech .levels__item:last-child{ border-bottom:1px solid var(--c-line); }
+.band--tech .levels dt{ margin:0; font-size:var(--fs-h3); font-weight:500; letter-spacing:-.01em; text-transform:none; }
+.band--tech .levels dd{ max-width:none; }
+.band--tech .band__cta{ margin-top:clamp(2rem,4vw,3rem); }
+@media (min-width:48em){
+  .band--tech .levels__item{ grid-template-columns:minmax(0,4fr) minmax(0,8fr); column-gap:var(--gap); align-items:baseline; padding-block:1.75rem; }
+}
+.band--tech .band__head{ margin-bottom:clamp(1.5rem,3.5vw,2.5rem); }
+
+/* ---------- 5 Philosophy: copy first in the DOM; image left on ≥48em ---------- */
+.band.home-band--philosophy{ padding-block:calc(var(--home-space) * 1.15); }
+.home-philosophy{ gap:var(--home-row); }
+.home-philosophy .ph--material{ aspect-ratio:4/3; }
+@media (min-width:48em){
+  .home-philosophy{ gap:clamp(2.5rem,6vw,6rem); grid-template-areas:"visual copy"; }
+  .home-philosophy .philosophy__visual{ grid-area:visual; }
+  .home-philosophy .philosophy__copy{ grid-area:copy; }
+  .home-philosophy .ph--material{ aspect-ratio:4/5; }
+}
+
+
+/* ---------- Vision band (Home, section 2): product photograph with the copy set inside it (≥48em); stacked below ---------- */
+.band.vband{ position:relative; min-height:0; padding-block:clamp(3rem,7vw,5rem) 0; overflow:hidden; background:var(--c-warm); }
+.vband__head{ display:flex; flex-direction:column; align-items:center; text-align:center; }
+.vband .kicker{ margin-bottom:1.25rem; letter-spacing:.3em; }
+.vband .band__title{ max-width:none; font-weight:300; letter-spacing:-.03em; font-size:clamp(2.25rem,1.3rem + 4vw,4.25rem); }
+.vband__sub{ margin-top:1rem; max-width:32rem; color:var(--c-muted); font-size:clamp(1.0625rem,.95rem + .5vw,1.3125rem); }
+.vband__cta{ margin-top:1.75rem; }
+.vband .hero__btn{ border-radius:999px; min-height:48px; padding:.75rem 1.5rem; }
+.vband__stage{ position:relative; margin-top:clamp(2rem,4vw,3rem); }
+.vband__stage img{ width:100%; height:auto; aspect-ratio:1983/793; }
+.vband__stage::before{ content:""; position:absolute; z-index:1; inset:0 0 auto 0; height:24%; pointer-events:none; background:linear-gradient(to bottom,var(--c-warm),rgba(247,245,241,0)); }
+.vband__models{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--gap); padding:1.5rem var(--gutter) 3rem; text-align:center; background:var(--c-warm); }
+.vband__name{ font-size:var(--fs-h3); font-weight:400; }
+.vband__desc{ margin-top:.25rem; font-size:var(--fs-small); color:var(--c-muted); }
+.vband__desc::after{ content:""; display:block; width:2.5rem; height:1px; margin:1rem auto 0; background:var(--c-muted); opacity:.6; }
+@media (min-width:64em){
+  .vband__models{ position:absolute; inset:auto 0 0 0; display:block; padding:0; background:none; }
+  .vband__models li{ position:absolute; bottom:clamp(1rem,4.5vw,4rem); transform:translateX(-50%); width:max-content; }
+  .vband__models li:first-child{ left:28%; }
+  .vband__models li:last-child{ left:74%; }
+  .vband__name{ font-size:clamp(1.125rem,1.5vw,1.75rem); }
+  .vband__desc{ color:var(--c-graphite); }
+  .vband__desc::after{ background:var(--c-graphite); }
+}
+@media (min-width:48em){
+  /* headroom above the photo; the copy sits over it and the photo's pale sky */
+  .band.vband{ padding-block:0; }
+  .vband__stage{ margin-top:0; padding-top:max(5.5vw,calc(13rem - 10vw)); background:var(--c-warm); }
+  .vband__stage::before{ top:max(5.5vw,calc(13rem - 10vw)); height:30%; }
+  .vband__head{ position:absolute; z-index:2; inset:clamp(1.75rem,2.6vw,3rem) 0 auto 0; }
+  .vband .kicker{ margin-bottom:clamp(.5rem,1.1vw,1.25rem); }
+  .vband .band__title{ font-size:clamp(2rem,4.2vw,3.75rem); }
+  .vband__sub{ margin-top:clamp(.5rem,.9vw,1rem); font-size:clamp(1rem,1.5vw,1.3125rem); max-width:none; color:var(--c-graphite); }
+  .vband__cta{ margin-top:clamp(.875rem,1.6vw,1.75rem); }
+  .vband .hero__btn{ min-height:44px; padding:.625rem 1.375rem; }
+}
+
+
+/* ---------- Wellness band (Home, section 3): ring photograph with the copy set inside it (≥64em); stacked below ---------- */
+.band.wband{ position:relative; min-height:0; padding-block:clamp(3rem,7vw,5rem) 0; background:var(--c-ink); color:var(--c-white); overflow:hidden; }
+.wband__copy{ position:relative; z-index:1; padding-bottom:2rem; }
+.wband .kicker{ color:var(--c-muted-dark); letter-spacing:.3em; margin-bottom:1.25rem; }
+.wband .band__title{ font-weight:300; letter-spacing:-.03em; font-size:clamp(2.25rem,1.3rem + 4vw,4.25rem); }
+.wband__line{ display:block; }
+.wband__sub{ margin-top:1rem; color:#D9DDE3; font-size:clamp(1.0625rem,.95rem + .5vw,1.3125rem); }
+.wband__cta{ margin-top:1.75rem; }
+.wband .hero__btn{ border-radius:999px; min-height:48px; padding:.75rem 1.5rem; background:var(--c-ink); border-color:rgba(255,255,255,.4); }
+.wband .hero__btn:hover{ background:var(--c-graphite); border-color:rgba(255,255,255,.5); }
+.wband :focus-visible{ outline-color:var(--c-white); }
+.wband__media{ position:relative; aspect-ratio:4/3; }
+.wband__media img{ width:100%; height:100%; object-fit:cover; object-position:68% center; }
+@media (min-width:48em){ .wband__media{ aspect-ratio:16/9; } }
+@media (min-width:64em){
+  .band.wband{ display:flex; align-items:center; padding-block:0; min-height:max(30rem,35.6vw); }
+  .wband__media{ position:absolute; inset:0; aspect-ratio:auto; z-index:0; }
+  .wband__media img{ object-position:70% center; }
+  .wband__media::after{ content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(90deg,rgba(20,27,36,.55),rgba(20,27,36,0) 55%); }
+  .wband__copy{ padding-block:3rem; }
+  .wband__copy > *{ max-width:30rem; }
+  .wband .band__title{ font-size:clamp(2.5rem,4.6vw,4.75rem); }
+  .wband__sub{ margin-top:clamp(.75rem,1.2vw,1.25rem); }
+  .wband__cta{ margin-top:clamp(1.25rem,2.2vw,2.25rem); }
+}
+
+
+/* Technology band reuses the Vision band layout on a white ground */
+.band.vband--tech{ background:var(--c-white); }
+.vband--tech .vband__stage::before{ background:linear-gradient(to bottom,var(--c-white),rgba(255,255,255,0)); }
+@media (min-width:48em){ .vband--tech .vband__stage{ background:var(--c-white); } }
+
+
+/* ---------- Philosophy band (Home, section 5): photograph with the copy set inside it (≥64em); stacked below ---------- */
+.band.pband{ position:relative; min-height:0; padding-block:clamp(3rem,7vw,5rem) 0; background:var(--c-warm); overflow:hidden; }
+.pband__copy{ position:relative; z-index:1; padding-bottom:2rem; }
+.pband .kicker{ margin-bottom:1.25rem; letter-spacing:.3em; }
+.pband .band__title{ font-weight:300; letter-spacing:-.03em; font-size:clamp(2.25rem,1.3rem + 4vw,4.25rem); }
+.pband__line{ display:block; }
+.pband__sub{ margin-top:1rem; color:var(--c-muted); font-size:clamp(1.0625rem,.95rem + .5vw,1.3125rem); }
+.pband__cta{ margin-top:1.75rem; }
+.pband .hero__btn{ border-radius:999px; min-height:48px; padding:.75rem 1.5rem; }
+.pband__media{ position:relative; aspect-ratio:4/3; }
+.pband__media img{ width:100%; height:100%; object-fit:cover; object-position:60% center; }
+/* Philosophy → Footer: the photograph dissolves into the footer ground, no hard edge */
+.pband__media::after{ content:""; position:absolute; inset:auto 0 0 0; height:90px; pointer-events:none; background:linear-gradient(to bottom,rgba(17,24,32,0),#111820); }
+@media (min-width:48em){ .pband__media{ aspect-ratio:16/9; } }
+@media (min-width:64em){
+  .band.pband{ display:flex; align-items:center; padding-block:0; min-height:max(30rem,40vw); }
+  .pband__media{ position:absolute; inset:0; aspect-ratio:auto; z-index:0; }
+  .pband__media img{ object-position:50% center; }
+  .pband__media::after{ inset:0; height:auto; background:linear-gradient(to bottom,rgba(17,24,32,0),#111820) bottom / 100% 90px no-repeat,linear-gradient(90deg,rgba(247,245,241,.6),rgba(247,245,241,0) 45%); }
+  .pband__copy{ padding-block:3rem; }
+  .pband__copy > *{ max-width:26rem; }
+  .pband .band__title{ font-size:clamp(2.5rem,4.6vw,4.75rem); }
+  .pband__sub{ margin-top:clamp(.75rem,1.2vw,1.25rem); color:var(--c-graphite); }
+  .pband__cta{ margin-top:clamp(1.25rem,2.2vw,2.25rem); }
+}
+
+/* ---------- Motion (Home): same data-motion system as igo.js. Initial states exist only under html.motion (JS ready + no reduced-motion). ----------
+   Text: fade + short rise. Photos: fade only. Wellness photo: fade + 1.02 → 1 (desktop only). */
+html.motion body.home [data-motion="text"]:not(.is-in){ opacity:0; transform:translateY(var(--rise)); }
+html.motion body.home [data-motion="visual"]{ transition-duration:700ms; }
+html.motion body.home [data-motion="visual"]:not(.is-in){ opacity:0; transform:none; }
+html.motion body.home .scene > .wrap.is-in{ opacity:1; }   /* neutralises the scroll-linked dimming from igo.css on the Home */
+@media (min-width:48em){
+  html.motion body.home .wband__media[data-motion="visual"]{ transition-duration:900ms; }
+  html.motion body.home .wband__media[data-motion="visual"]:not(.is-in){ transform:scale(1.02); }
+}

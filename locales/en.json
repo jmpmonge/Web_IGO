@@ -1,0 +1,89 @@
+{
+  "common": {
+    "skip": "Skip to content",
+    "brandAria": "IGO home",
+    "menu": "Menu",
+    "navAria": "Main",
+    "langLabel": "Language"
+  },
+  "nav": {
+    "home": "Home",
+    "vision": "Vision",
+    "wellness": "Wellness",
+    "technology": "Technology",
+    "about": "About",
+    "products": "Products"
+  },
+  "footer": {
+    "aria": "Footer",
+    "tagline": "Technology for a wider life.",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "legal": "© 2026 IGO. All rights reserved."
+  },
+  "home": {
+    "meta": {
+      "title": "IGO — Designed for life. Powered by intelligence.",
+      "description": "IGO. Designed for life. Powered by intelligence."
+    },
+    "hero": {
+      "alt": "Man wearing IGO smart glasses and ring, looking out over a coastal city at sunset",
+      "title": "Technology\nfor a wider life.",
+      "sub": "See more. Move freely. Live fully.",
+      "cta": "Explore products",
+      "film": "Watch the film",
+      "pause": "Pause video"
+    },
+    "features": {
+      "aria": "IGO capabilities",
+      "capture": { "name": "Capture", "text": "Your perspective" },
+      "listen": { "name": "Listen", "text": "Stay connected" },
+      "ai": { "name": "AI", "text": "Real support, when you need it" },
+      "further": { "name": "Go further", "text": "In everyday life" }
+    },
+    "film": {
+      "aria": "IGO film",
+      "close": "Close film",
+      "empty": "The film is coming soon."
+    },
+    "vision": {
+      "title": "See beyond the moment.",
+      "sub": "Smart eyewear designed for the way you live.",
+      "cta": "Explore Vision",
+      "alt": "IGO Sport Casual and Sport Mask smart glasses on a stone terrace above the sea",
+      "casual": "Everyday. Everywhere.",
+      "mask": "Performance. Without limits."
+    },
+    "wellness": {
+      "title": "Understand\nyour body.",
+      "sub": "Better sleep. More energy.\nA healthier you.",
+      "cta": "Explore Wellness",
+      "alt": "IGO Wellness ring floating above a stone surface in warm light"
+    },
+    "tech": {
+      "title": "Intelligence in use.",
+      "sub": "Devices, insights and experiences designed to work together.",
+      "cta": "Explore Technology",
+      "alt": "IGO smart glasses, the IGO app on a phone and the IGO ring on a stone terrace at sunset"
+    },
+    "about": {
+      "kicker": "Philosophy",
+      "title": "Designed\nwith purpose.",
+      "sub": "Technology should feel natural.\nDesign should be intentional.",
+      "cta": "Discover our philosophy",
+      "alt": "IGO ring and smart glasses on a stone ledge facing a sunset over the sea"
+    }
+  },
+  "products": {
+    "meta": {
+      "title": "Products — IGO",
+      "description": "IGO Products: smart glasses and a smart ring."
+    },
+    "title": "The IGO range.",
+    "sub": "Smart eyewear and a smart ring, designed to work together.",
+    "status": "Coming soon",
+    "vision": { "title": "Smart glasses", "cta": "Explore Vision" },
+    "wellness": { "title": "Smart ring", "cta": "Explore Wellness" }
+  }
+}
