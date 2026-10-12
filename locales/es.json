@@ -1,0 +1,89 @@
+{
+  "common": {
+    "skip": "Saltar al contenido",
+    "brandAria": "Inicio de IGO",
+    "menu": "Menú",
+    "navAria": "Principal",
+    "langLabel": "Idioma"
+  },
+  "nav": {
+    "home": "Inicio",
+    "vision": "Vision",
+    "wellness": "Wellness",
+    "technology": "Tecnología",
+    "about": "Nosotros",
+    "products": "Productos"
+  },
+  "footer": {
+    "aria": "Pie de página",
+    "tagline": "Tecnología para vivir más.",
+    "contact": "Contacto",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "legal": "© 2026 IGO. Todos los derechos reservados."
+  },
+  "home": {
+    "meta": {
+      "title": "IGO — Diseñado para la vida. Impulsado por inteligencia.",
+      "description": "IGO. Diseñado para la vida. Impulsado por inteligencia."
+    },
+    "hero": {
+      "alt": "Hombre con gafas inteligentes y anillo IGO, mirando una ciudad costera al atardecer",
+      "title": "Tecnología\npara vivir más.",
+      "sub": "Mira más. Muévete libre. Vive plenamente.",
+      "cta": "Explorar productos",
+      "film": "Ver el vídeo",
+      "pause": "Pausar vídeo"
+    },
+    "features": {
+      "aria": "Capacidades de IGO",
+      "capture": { "name": "Captura", "text": "Tu perspectiva" },
+      "listen": { "name": "Escucha", "text": "Sigue conectado" },
+      "ai": { "name": "IA", "text": "Apoyo real, cuando lo necesitas" },
+      "further": { "name": "Ve más lejos", "text": "En tu día a día" }
+    },
+    "film": {
+      "aria": "Vídeo de IGO",
+      "close": "Cerrar vídeo",
+      "empty": "El vídeo estará disponible próximamente."
+    },
+    "vision": {
+      "title": "Mira más allá.",
+      "sub": "Gafas inteligentes pensadas para tu forma de vivir.",
+      "cta": "Explorar Vision",
+      "alt": "Gafas inteligentes IGO Sport Casual y Sport Mask sobre una terraza de piedra frente al mar",
+      "casual": "Cada día. En cualquier lugar.",
+      "mask": "Rendimiento. Sin límites."
+    },
+    "wellness": {
+      "title": "Conoce mejor\ntu cuerpo.",
+      "sub": "Mejor descanso. Más energía.\nUna versión más sana de ti.",
+      "cta": "Explorar Wellness",
+      "alt": "Anillo IGO Wellness suspendido sobre una superficie de piedra bajo una luz cálida"
+    },
+    "tech": {
+      "title": "Inteligencia en uso.",
+      "sub": "Dispositivos, datos y experiencias diseñados para funcionar juntos.",
+      "cta": "Explorar Tecnología",
+      "alt": "Gafas inteligentes IGO, la app de IGO en un teléfono y el anillo IGO sobre una terraza de piedra al atardecer"
+    },
+    "about": {
+      "kicker": "Filosofía",
+      "title": "Diseño\ncon propósito.",
+      "sub": "La tecnología debe sentirse natural.\nEl diseño debe ser intencionado.",
+      "cta": "Descubre nuestra filosofía",
+      "alt": "Anillo y gafas inteligentes IGO sobre un saliente de piedra frente a un atardecer sobre el mar"
+    }
+  },
+  "products": {
+    "meta": {
+      "title": "Productos — IGO",
+      "description": "Productos IGO: gafas inteligentes y un anillo inteligente."
+    },
+    "title": "La gama IGO.",
+    "sub": "Gafas y anillo inteligentes, diseñados para funcionar juntos.",
+    "status": "Próximamente",
+    "vision": { "title": "Gafas inteligentes", "cta": "Explorar Vision" },
+    "wellness": { "title": "Anillo inteligente", "cta": "Explorar Wellness" }
+  }
+}

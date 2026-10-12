@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>IGO</title>
+<link rel="icon" href="assets/igo/igo-logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="en/index.html">
+<link rel="alternate" hreflang="es" href="es/index.html">
+<link rel="alternate" hreflang="fr" href="fr/index.html">
+<link rel="alternate" hreflang="x-default" href="en/index.html">
+<noscript><meta http-equiv="refresh" content="0;url=en/index.html"></noscript>
+<script>
+(function () {
+  var supported = ["en","es","fr"], fallback = "en", pick = fallback;
+  try { var saved = localStorage.getItem("igo-lang"); if (saved && supported.indexOf(saved) > -1) pick = saved; else throw 0; }
+  catch (e) {
+    var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || fallback];
+    for (var i = 0; i < prefs.length; i++) { var c = String(prefs[i]).toLowerCase().split("-")[0]; if (supported.indexOf(c) > -1) { pick = c; break; } }
+  }
+  location.replace(pick + "/index.html" + location.hash);
+})();
+</script>
+</head>
+<body>
+<p style="font:16px/1.5 system-ui,sans-serif;padding:2rem"><a href="en/index.html">English</a> · <a href="es/index.html">Español</a> · <a href="fr/index.html">Français</a></p>
+</body>
+</html>

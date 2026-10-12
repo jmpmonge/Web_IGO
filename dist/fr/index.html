@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PROVISIONAL BUILD: generated from src/ by scripts/build.js. Final domain pending. Do not publish. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="IGO. Conçu pour la vie. Propulsé par l'intelligence.">
+<meta name="theme-color" content="#141B24">
+<title>IGO — Conçu pour la vie. Propulsé par l'intelligence.</title>
+<!-- SEO: relative URLs; set "siteUrl" in scripts/site.json once the domain is final -->
+<link rel="canonical" href="index.html">
+<link rel="alternate" hreflang="en" href="../en/index.html">
+<link rel="alternate" hreflang="es" href="../es/index.html">
+<link rel="alternate" hreflang="fr" href="../fr/index.html">
+<link rel="alternate" hreflang="x-default" href="../index.html">
+<link rel="icon" href="../assets/igo/igo-logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/igo.css">
+<link rel="stylesheet" href="../assets/home.css">
+<link rel="stylesheet" href="../assets/footer.css">
+<link rel="stylesheet" href="../assets/hero.css">
+<link rel="stylesheet" href="../assets/lang.css">
+<link rel="preload" as="image" href="../assets/images/images_igo/home_hero.webp" type="image/webp" media="(min-width:48em) and (orientation:landscape)">
+<script>
+  /* Hide animated elements before first paint only when motion is allowed; failsafe reveals everything if igo.js does not start. */
+  (function (d) {
+    d.classList.add('js');
+    if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      d.classList.add('motion');
+      setTimeout(function () { if (!d.classList.contains('motion-ready')) d.classList.remove('motion'); }, 3000);
+    }
+  })(document.documentElement);
+</script>
+<script src="../assets/igo.js" defer></script>
+<script src="../assets/hero.js" defer></script>
+<script src="../assets/lang.js" defer></script>
+</head>
+<body class="home">
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="site-header" id="top">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="#hero" aria-label="Accueil IGO"><img src="../assets/igo/igo-logo.svg" alt="" width="68" height="38"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-toggle__icon" aria-hidden="true"></span><span class="menu-toggle__label">Menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Principale">
+      <ul>
+        <li class="site-nav__home"><a href="#hero" aria-current="page">Accueil</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#wellness">Wellness</a></li>
+        <li><a href="#technology">Technologie</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li class="site-nav__products"><a href="products/index.html">Produits</a></li>
+        <li class="site-nav__lang"><span class="lang-inline" role="group" aria-label="Langue"><a href="../en/index.html" lang="en" hreflang="en" data-lang-switch="en" aria-label="English">EN</a><a href="../es/index.html" lang="es" hreflang="es" data-lang-switch="es" aria-label="Español">ES</a><a href="../fr/index.html" lang="fr" hreflang="fr" data-lang-switch="fr" aria-label="Français" aria-current="true">FR</a></span></li>
+      </ul>
+    </nav>
+    <details class="lang" data-lang-menu><summary aria-label="Langue: Français"><span class="lang__current" aria-hidden="true">FR</span><svg class="lang__caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.25"/></svg></summary><ul class="lang__list" role="list"><li><a href="../en/index.html" lang="en" hreflang="en" data-lang-switch="en">English</a></li><li><a href="../es/index.html" lang="es" hreflang="es" data-lang-switch="es">Español</a></li><li><a href="../fr/index.html" lang="fr" hreflang="fr" data-lang-switch="fr" aria-current="true">Français</a></li></ul></details>
+    <a class="header-cta" href="products/index.html">Produits <span aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- 1 · Hero -->
+  <section id="hero" class="scene hero hero--home" aria-labelledby="hero-title" tabindex="-1">
+    <div class="hero__media" data-hero-media data-video-src="" data-video-src-mobile="">
+      <!-- Final photograph. Mobile/portrait uses a crop of the same photo. Later: set data-video-src to swap in the optimized film; this image stays as poster. -->
+      <picture>
+        <source media="(max-width:47.99em), (orientation:portrait)" srcset="../assets/images/images_igo/home_hero_mobile.webp" type="image/webp">
+        <source srcset="../assets/images/images_igo/home_hero.webp" type="image/webp">
+        <img class="hero__image" src="../assets/images/images_igo/home_hero.webp" alt="Homme portant des lunettes connectées et une bague IGO, face à une ville côtière au coucher du soleil" width="1774" height="887" fetchpriority="high" decoding="async">
+      </picture>
+      <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" disablepictureinpicture hidden></video>
+      <button class="hero__toggle" type="button" hidden>Mettre la vidéo en pause</button>
+    </div>
+    <div class="wrap hero__copy">
+      <h1 id="hero-title" class="hero__title" data-hero-in style="--d:120ms"><span class="hero__line">La technologie</span> <span class="hero__line">pour vivre plus grand.</span></h1>
+      <p class="hero__sub" data-hero-in style="--d:240ms">Voyez plus. Bougez librement. Vivez pleinement.</p>
+      <div class="hero__actions" data-hero-in style="--d:360ms">
+        <a class="hero__btn" href="products/index.html">Découvrir les produits <span aria-hidden="true">→</span></a>
+        <button class="hero__film" type="button" data-film-open aria-haspopup="dialog" aria-expanded="false">
+          <span class="hero__film-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"/></svg></span>Voir le film
+        </button>
+      </div>
+    </div>
+    <div class="wrap hero__features-wrap" data-hero-in style="--d:480ms">
+      <ul class="hero__features" role="list" aria-label="Les atouts d'IGO">
+        <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="hero__feature-name">Capturer</span><span class="hero__feature-text">Votre point de vue</span></li>
+        <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/></svg></span><span class="hero__feature-name">Écouter</span><span class="hero__feature-text">Restez connecté</span></li>
+        <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span><span class="hero__feature-name">IA</span><span class="hero__feature-text">Un vrai soutien, quand il le faut</span></li>
+        <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="hero__feature-name">Aller plus loin</span><span class="hero__feature-text">Au quotidien</span></li>
+      </ul>
+    </div>
+
+    <dialog id="film-modal" class="film-modal" aria-label="Film IGO" data-film-src="">
+      <div class="film-modal__body">
+        <button class="film-modal__close" type="button" data-film-close aria-label="Fermer le film">×</button>
+        <video class="film-modal__video" controls playsinline preload="none" hidden></video>
+        <p class="film-modal__empty">Le film sera bientôt disponible.</p>
+      </div>
+    </dialog>
+  </section>
+
+  <!-- 2 · IGO Vision -->
+  <section id="vision" class="scene band band--vision vband" aria-labelledby="vision-title" tabindex="-1">
+    <div class="wrap vband__head" data-motion="text">
+      <p class="kicker">IGO Vision</p>
+      <h2 id="vision-title" class="band__title">Voyez au-delà de l'instant.</h2>
+      <p class="vband__sub">Des lunettes connectées pensées pour votre façon de vivre.</p>
+      <p class="vband__cta"><a class="hero__btn" href="../vision/index.html">Découvrir Vision <span aria-hidden="true">→</span></a></p>
+    </div>
+    <figure class="vband__stage" data-motion="visual">
+      <img src="../assets/images/images_igo/vision_band.webp" alt="Lunettes connectées IGO Sport Casual et Sport Mask sur une terrasse de pierre face à la mer" width="1983" height="793" loading="lazy" decoding="async">
+      <figcaption>
+        <ul class="vband__models" role="list">
+          <li><h3 class="vband__name">Sport Casual</h3><p class="vband__desc">Au quotidien. Partout.</p></li>
+          <li><h3 class="vband__name">Sport Mask</h3><p class="vband__desc">Performance. Sans limites.</p></li>
+        </ul>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- 3 · IGO Wellness -->
+  <section id="wellness" class="scene band band--wellness wband" aria-labelledby="wellness-title" tabindex="-1">
+    <div class="wrap wband__copy" data-motion="text">
+      <p class="kicker">IGO Wellness</p>
+      <h2 id="wellness-title" class="band__title"><span class="wband__line">Comprenez</span> <span class="wband__line">votre corps.</span></h2>
+      <p class="wband__sub"><span class="wband__line">Un meilleur sommeil. Plus d'énergie.</span> <span class="wband__line">Une version plus sereine de vous.</span></p>
+      <p class="wband__cta"><a class="hero__btn" href="../wellness/index.html">Découvrir Wellness <span aria-hidden="true">→</span></a></p>
+    </div>
+    <div class="wband__media" data-motion="visual">
+      <img src="../assets/images/images_igo/wellness_band.webp" alt="Bague IGO Wellness en suspension au-dessus d'une surface de pierre sous une lumière chaude" width="2103" height="748" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- 4 · Technology -->
+  <section id="technology" class="scene band band--tech vband vband--tech" aria-labelledby="tech-title" tabindex="-1">
+    <div class="wrap vband__head" data-motion="text">
+      <p class="kicker">IGO Technologie</p>
+      <h2 id="tech-title" class="band__title">L'intelligence en action.</h2>
+      <p class="vband__sub">Des appareils, des données et des expériences conçus pour fonctionner ensemble.</p>
+      <p class="vband__cta"><a class="hero__btn" href="../technology/index.html">Découvrir la Technologie <span aria-hidden="true">→</span></a></p>
+    </div>
+    <figure class="vband__stage" data-motion="visual">
+      <img src="../assets/images/images_igo/technology_band.webp" alt="Lunettes connectées IGO, application IGO sur un téléphone et bague IGO sur une terrasse de pierre au coucher du soleil" width="1983" height="793" loading="lazy" decoding="async">
+    </figure>
+  </section>
+
+  <!-- 5 · Philosophy (nav: About) -->
+  <section id="about" class="scene band pband" aria-labelledby="about-title" tabindex="-1">
+    <div class="wrap pband__copy" data-motion="text">
+      <p class="kicker">IGO Philosophie</p>
+      <h2 id="about-title" class="band__title"><span class="pband__line">Conçu</span> <span class="pband__line">avec intention.</span></h2>
+      <p class="pband__sub"><span class="pband__line">La technologie doit sembler naturelle.</span> <span class="pband__line">Le design doit être intentionnel.</span></p>
+      <p class="pband__cta"><a class="hero__btn" href="../about/index.html">Découvrir notre philosophie <span aria-hidden="true">→</span></a></p>
+    </div>
+    <div class="pband__media">
+      <img src="../assets/images/images_igo/philosophy_band.webp" alt="Bague et lunettes connectées IGO sur un rebord de pierre face à un coucher de soleil sur la mer" width="1983" height="793" loading="lazy" decoding="async">
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft__top">
+    <div class="ft__brand">
+      <a class="ft__logo" href="index.html" aria-label="Accueil IGO"><img src="../assets/igo/igo-logo-white.svg" alt="IGO" width="112" height="63"></a>
+      <p class="ft__tagline">La technologie pour vivre plus grand.</p>
+    </div>
+    <nav class="ft__nav" aria-label="Pied de page">
+      <ul>
+        <li><a href="../vision/index.html">Vision</a></li>
+        <li><a href="../wellness/index.html">Wellness</a></li>
+        <li><a href="../technology/index.html">Technologie</a></li>
+        <li><a href="../about/index.html">À propos</a></li>
+      </ul>
+    </nav>
+    <div class="ft__side">
+      <a class="ft__contact" data-pending="contact">Contact</a>
+      <ul class="ft__social" role="list">
+        <li><a data-pending="instagram">Instagram</a></li>
+        <li><a data-pending="linkedin">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap ft__bottom">
+    <p class="ft__legal">© 2026 IGO. Tous droits réservés.</p>
+    <ul class="ft__policy" role="list">
+      <li><a data-pending="privacy">Confidentialité</a></li>
+      <li><a data-pending="terms">Conditions</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

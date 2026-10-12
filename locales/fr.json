@@ -1,0 +1,89 @@
+{
+  "common": {
+    "skip": "Aller au contenu",
+    "brandAria": "Accueil IGO",
+    "menu": "Menu",
+    "navAria": "Principale",
+    "langLabel": "Langue"
+  },
+  "nav": {
+    "home": "Accueil",
+    "vision": "Vision",
+    "wellness": "Wellness",
+    "technology": "Technologie",
+    "about": "À propos",
+    "products": "Produits"
+  },
+  "footer": {
+    "aria": "Pied de page",
+    "tagline": "La technologie pour vivre plus grand.",
+    "contact": "Contact",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "legal": "© 2026 IGO. Tous droits réservés."
+  },
+  "home": {
+    "meta": {
+      "title": "IGO — Conçu pour la vie. Propulsé par l'intelligence.",
+      "description": "IGO. Conçu pour la vie. Propulsé par l'intelligence."
+    },
+    "hero": {
+      "alt": "Homme portant des lunettes connectées et une bague IGO, face à une ville côtière au coucher du soleil",
+      "title": "La technologie\npour vivre plus grand.",
+      "sub": "Voyez plus. Bougez librement. Vivez pleinement.",
+      "cta": "Découvrir les produits",
+      "film": "Voir le film",
+      "pause": "Mettre la vidéo en pause"
+    },
+    "features": {
+      "aria": "Les atouts d'IGO",
+      "capture": { "name": "Capturer", "text": "Votre point de vue" },
+      "listen": { "name": "Écouter", "text": "Restez connecté" },
+      "ai": { "name": "IA", "text": "Un vrai soutien, quand il le faut" },
+      "further": { "name": "Aller plus loin", "text": "Au quotidien" }
+    },
+    "film": {
+      "aria": "Film IGO",
+      "close": "Fermer le film",
+      "empty": "Le film sera bientôt disponible."
+    },
+    "vision": {
+      "title": "Voyez au-delà de l'instant.",
+      "sub": "Des lunettes connectées pensées pour votre façon de vivre.",
+      "cta": "Découvrir Vision",
+      "alt": "Lunettes connectées IGO Sport Casual et Sport Mask sur une terrasse de pierre face à la mer",
+      "casual": "Au quotidien. Partout.",
+      "mask": "Performance. Sans limites."
+    },
+    "wellness": {
+      "title": "Comprenez\nvotre corps.",
+      "sub": "Un meilleur sommeil. Plus d'énergie.\nUne version plus sereine de vous.",
+      "cta": "Découvrir Wellness",
+      "alt": "Bague IGO Wellness en suspension au-dessus d'une surface de pierre sous une lumière chaude"
+    },
+    "tech": {
+      "title": "L'intelligence en action.",
+      "sub": "Des appareils, des données et des expériences conçus pour fonctionner ensemble.",
+      "cta": "Découvrir la Technologie",
+      "alt": "Lunettes connectées IGO, application IGO sur un téléphone et bague IGO sur une terrasse de pierre au coucher du soleil"
+    },
+    "about": {
+      "kicker": "Philosophie",
+      "title": "Conçu\navec intention.",
+      "sub": "La technologie doit sembler naturelle.\nLe design doit être intentionnel.",
+      "cta": "Découvrir notre philosophie",
+      "alt": "Bague et lunettes connectées IGO sur un rebord de pierre face à un coucher de soleil sur la mer"
+    }
+  },
+  "products": {
+    "meta": {
+      "title": "Produits — IGO",
+      "description": "Produits IGO : des lunettes connectées et une bague connectée."
+    },
+    "title": "La gamme IGO.",
+    "sub": "Des lunettes et une bague connectées, conçues pour fonctionner ensemble.",
+    "status": "Bientôt disponible",
+    "vision": { "title": "Lunettes connectées", "cta": "Découvrir Vision" },
+    "wellness": { "title": "Bague connectée", "cta": "Découvrir Wellness" }
+  }
+}
