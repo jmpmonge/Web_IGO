@@ -24,10 +24,9 @@ const PAGES = [
   { id: 'products', file: 'products/index.html' }
   /* next: vision, wellness, technology, about (add a template in src/ and a block in each locale) */
 ];
-const COPY_AS_IS = ['vision', 'wellness', 'technology', 'about'];   /* not migrated yet: copied unchanged to dist/<name>/ */
+const COPY_AS_IS = ['vision', 'wellness', 'technology', 'about'];   /* src/<name>/index.html: provisional pages, copied unchanged (not translated yet) to dist/<name>/ */
 
 const siteUrl = (JSON.parse(fs.readFileSync(path.join(__dirname, 'site.json'), 'utf8')).siteUrl || '').replace(/\/+$/, '');
-const warnings = [];
 const posix = (p) => p.split(path.sep).join('/');
 
 /* ---------- locales ---------- */
@@ -39,14 +38,18 @@ function flatten(obj, prefix, out) {
   });
   return out;
 }
-const dict = {};
-LANGS.forEach((l) => { dict[l.code] = flatten(JSON.parse(fs.readFileSync(path.join(LOCALES, l.code + '.json'), 'utf8')), '', {}); });
-Object.keys(dict[SOURCE]).forEach((k) => {
-  LANGS.forEach((l) => {
-    if (/[<>]/.test(dict[l.code][k] || '')) throw new Error('HTML is not allowed in locale values: ' + l.code + ' ' + k);
-    if (l.code !== SOURCE && dict[l.code][k] === undefined) warnings.push('missing ' + l.code + ': ' + k + ' (falling back to ' + SOURCE + ')');
+let dict = {};
+let warnings = [];
+function loadLocales() {
+  dict = {};
+  LANGS.forEach((l) => { dict[l.code] = flatten(JSON.parse(fs.readFileSync(path.join(LOCALES, l.code + '.json'), 'utf8')), '', {}); });
+  Object.keys(dict[SOURCE]).forEach((k) => {
+    LANGS.forEach((l) => {
+      if (/[<>]/.test(dict[l.code][k] || '')) throw new Error('HTML is not allowed in locale values: ' + l.code + ' ' + k);
+      if (l.code !== SOURCE && dict[l.code][k] === undefined) warnings.push('missing ' + l.code + ': ' + k + ' (falling back to ' + SOURCE + ')');
+    });
   });
-});
+}
 function t(lang, key) {
   if (dict[lang][key] !== undefined) return dict[lang][key];
   if (dict[SOURCE][key] !== undefined) return dict[SOURCE][key];
@@ -103,60 +106,85 @@ function render(page, lang, tpl) {
 
 /* ---------- output ---------- */
 function write(file, data) { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, data); }
-const generated = [];
+function build() {
+  warnings = [];
+  loadLocales();
+  const generated = [];
 
-PAGES.forEach((page) => {
-  const tpl = fs.readFileSync(path.join(SRC, page.file), 'utf8');
-  LANGS.forEach((l) => {
-    const html = render(page, l.code, tpl);
-    const left = html.match(/\{\{[^}]*\}\}/);
-    if (left) throw new Error('Unresolved token ' + left[0] + ' in ' + l.code + '/' + page.file);
-    const out = path.join(DIST, l.code, page.file);
-    write(out, html);
-    generated.push(out);
+  PAGES.forEach((page) => {
+    const tpl = fs.readFileSync(path.join(SRC, page.file), 'utf8');
+    LANGS.forEach((l) => {
+      const html = render(page, l.code, tpl);
+      const left = html.match(/\{\{[^}]*\}\}/);
+      if (left) throw new Error('Unresolved token ' + left[0] + ' in ' + l.code + '/' + page.file);
+      const out = path.join(DIST, l.code, page.file);
+      write(out, html);
+      generated.push(out);
+    });
   });
-});
 
-/* neutral entry: detects the language, never overrides a specific URL */
-const codes = LANGS.map((l) => l.code);
-const entry = '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="robots" content="noindex, nofollow">\n<title>IGO</title>\n'
-  + '<link rel="icon" href="assets/igo/igo-logo.svg" type="image/svg+xml">\n'
-  + LANGS.map((l) => '<link rel="alternate" hreflang="' + l.code + '" href="' + (siteUrl ? siteUrl + '/' + l.code + '/' : l.code + '/index.html') + '">').join('\n') + '\n'
-  + '<link rel="alternate" hreflang="x-default" href="' + (siteUrl ? siteUrl + '/en/' : 'en/index.html') + '">\n'
-  + '<noscript><meta http-equiv="refresh" content="0;url=' + SOURCE + '/index.html"></noscript>\n'
-  + '<script>\n(function () {\n  var supported = ' + JSON.stringify(codes) + ', fallback = ' + JSON.stringify(SOURCE) + ', pick = fallback;\n'
-  + '  try { var saved = localStorage.getItem("igo-lang"); if (saved && supported.indexOf(saved) > -1) pick = saved; else throw 0; }\n'
-  + '  catch (e) {\n    var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || fallback];\n'
-  + '    for (var i = 0; i < prefs.length; i++) { var c = String(prefs[i]).toLowerCase().split("-")[0]; if (supported.indexOf(c) > -1) { pick = c; break; } }\n  }\n'
-  + '  location.replace(pick + "/index.html" + location.hash);\n})();\n</script>\n</head>\n<body>\n'
-  + '<p style="font:16px/1.5 system-ui,sans-serif;padding:2rem"><a href="en/index.html">English</a> · <a href="es/index.html">Español</a> · <a href="fr/index.html">Français</a></p>\n</body>\n</html>\n';
-write(path.join(DIST, 'index.html'), entry);
-generated.push(path.join(DIST, 'index.html'));
+  /* neutral entry: detects the language, never overrides a specific URL */
+  const codes = LANGS.map((l) => l.code);
+  const entry = '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="robots" content="noindex, nofollow">\n<title>IGO</title>\n'
+    + '<link rel="icon" href="assets/igo/igo-logo.svg" type="image/svg+xml">\n'
+    + LANGS.map((l) => '<link rel="alternate" hreflang="' + l.code + '" href="' + (siteUrl ? siteUrl + '/' + l.code + '/' : l.code + '/index.html') + '">').join('\n') + '\n'
+    + '<link rel="alternate" hreflang="x-default" href="' + (siteUrl ? siteUrl + '/en/' : 'en/index.html') + '">\n'
+    + '<noscript><meta http-equiv="refresh" content="0;url=' + SOURCE + '/index.html"></noscript>\n'
+    + '<script>\n(function () {\n  var supported = ' + JSON.stringify(codes) + ', fallback = ' + JSON.stringify(SOURCE) + ', pick = fallback;\n'
+    + '  try { var saved = localStorage.getItem("igo-lang"); if (saved && supported.indexOf(saved) > -1) pick = saved; else throw 0; }\n'
+    + '  catch (e) {\n    var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || fallback];\n'
+    + '    for (var i = 0; i < prefs.length; i++) { var c = String(prefs[i]).toLowerCase().split("-")[0]; if (supported.indexOf(c) > -1) { pick = c; break; } }\n  }\n'
+    + '  location.replace(pick + "/index.html" + location.hash);\n})();\n</script>\n</head>\n<body>\n'
+    + '<p style="font:16px/1.5 system-ui,sans-serif;padding:2rem"><a href="en/index.html">English</a> · <a href="es/index.html">Español</a> · <a href="fr/index.html">Français</a></p>\n</body>\n</html>\n';
+  write(path.join(DIST, 'index.html'), entry);
+  generated.push(path.join(DIST, 'index.html'));
 
-/* pages not migrated yet: copied unchanged (same relative layout, so ../assets keeps working) */
-COPY_AS_IS.forEach((name) => {
-  const from = path.join(ROOT, name, 'index.html');
-  if (!fs.existsSync(from)) { warnings.push('not found, skipped: ' + name + '/index.html'); return; }
-  const to = path.join(DIST, name, 'index.html');
-  write(to, fs.readFileSync(from));
-  generated.push(to);
-});
+  /* pages not migrated yet: copied unchanged (same relative layout, so ../assets keeps working) */
+  COPY_AS_IS.forEach((name) => {
+    const from = path.join(SRC, name, 'index.html');
+    if (!fs.existsSync(from)) { warnings.push('not found, skipped: src/' + name + '/index.html'); return; }
+    const to = path.join(DIST, name, 'index.html');
+    write(to, fs.readFileSync(from));
+    generated.push(to);
+  });
 
-/* copy only the assets that the generated pages reference */
-const refs = new Set(['assets/igo/igo-logo.svg', 'assets/igo/igo-logo-white.svg']);
-generated.forEach((f) => {
-  const text = fs.readFileSync(f, 'utf8');
-  (text.match(/assets\/[^"'\s,)<>]+/g) || []).forEach((r) => refs.add(r));
-});
-let copied = 0;
-refs.forEach((r) => {
-  const from = path.join(ROOT, r);
-  if (!fs.existsSync(from) || !fs.statSync(from).isFile()) { warnings.push('missing asset: ' + r); return; }
-  const to = path.join(DIST, r);
-  fs.mkdirSync(path.dirname(to), { recursive: true });
-  fs.copyFileSync(from, to);
-  copied++;
-});
+  /* copy only the assets that the generated pages reference */
+  const refs = new Set(['assets/igo/igo-logo.svg', 'assets/igo/igo-logo-white.svg']);
+  generated.forEach((f) => {
+    const text = fs.readFileSync(f, 'utf8');
+    (text.match(/assets\/[^"'\s,)<>]+/g) || []).forEach((r) => refs.add(r));
+  });
+  let copied = 0;
+  refs.forEach((r) => {
+    const from = path.join(ROOT, r);
+    if (!fs.existsSync(from) || !fs.statSync(from).isFile()) { warnings.push('missing asset: ' + r); return; }
+    const to = path.join(DIST, r);
+    fs.mkdirSync(path.dirname(to), { recursive: true });
+    fs.copyFileSync(from, to);
+    copied++;
+  });
 
-console.log('Built ' + generated.length + ' pages (' + LANGS.map((l) => l.code).join(', ') + '), copied ' + copied + ' assets → dist/');
-warnings.forEach((w) => console.warn('warning: ' + w));
+
+  console.log('Built ' + generated.length + ' pages (' + LANGS.map((l) => l.code).join(', ') + '), copied ' + copied + ' assets → dist/');
+  warnings.forEach((w) => console.warn('warning: ' + w));
+
+}
+
+/* ---------- run / watch ---------- */
+build();
+if (process.argv.includes('--watch')) {
+  /* Watches templates, locales, scripts/site.json and assets. dist/ is never watched, so a build cannot trigger another build.
+     The build only writes inside dist/: it never modifies src/ or locales/. */
+  const targets = [SRC, LOCALES, path.join(ROOT, 'assets'), path.join(__dirname, 'site.json')];
+  let timer = null;
+  const trigger = (why) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { try { build(); } catch (e) { console.error('build failed: ' + e.message); } }, 200);
+  };
+  targets.forEach((tg) => {
+    if (!fs.existsSync(tg)) return;
+    try { fs.watch(tg, { recursive: fs.statSync(tg).isDirectory() }, (ev, name) => { if (name && /\.DS_Store$/.test(name)) return; trigger(name); }); }
+    catch (e) { console.error('cannot watch ' + tg + ': ' + e.message); }
+  });
+  console.log('Watching src/, locales/, assets/ and scripts/site.json… (Ctrl+C to stop)');
+}
