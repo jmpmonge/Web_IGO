@@ -65,6 +65,11 @@ body.home .ea__submit[disabled]:hover span{ transform:none; }
 }
 
 /* ---------- Privacy notice page ---------- */
+/* Legal page header: a calm title (not a hero), with a kicker that holds its own next to it */
+.prod-intro--legal{ padding-top:calc(var(--hero-nav-h) + clamp(2.5rem,6vw,4.5rem)); padding-bottom:clamp(1.5rem,3.5vw,2.5rem); }
+.prod-intro--legal .kicker{ margin-bottom:1rem; font-size:.9375rem; letter-spacing:.3em; }
+.prod-intro--legal .prod-intro__title{ max-width:none; font-size:clamp(2rem,1.45rem + 2.4vw,3.25rem); letter-spacing:-.03em; }
+.prod-intro--legal .prod-intro__sub{ margin-top:1rem; font-size:clamp(1rem,.95rem + .3vw,1.125rem); }
 .legal{ padding-bottom:var(--space); }
 .legal__inner{ max-width:var(--wrap); }
 .legal__inner > *{ max-width:44rem; }
