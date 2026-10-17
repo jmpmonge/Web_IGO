@@ -12,7 +12,8 @@
     "wellness": "Wellness",
     "technology": "Technology",
     "about": "About",
-    "products": "Products"
+    "products": "Products",
+    "earlyAccess": "Early access"
   },
   "footer": {
     "aria": "Footer",
@@ -39,7 +40,7 @@
       "aria": "IGO capabilities",
       "capture": { "name": "Capture", "text": "Your perspective" },
       "listen": { "name": "Listen", "text": "Stay connected" },
-      "ai": { "name": "AI", "text": "Real support, when you need it" },
+      "ai": { "name": "AI", "text": "Real support" },
       "further": { "name": "Go further", "text": "In everyday life" }
     },
     "film": {
@@ -85,5 +86,75 @@
     "status": "Coming soon",
     "vision": { "title": "Smart glasses", "cta": "Explore Vision" },
     "wellness": { "title": "Smart ring", "cta": "Explore Wellness" }
+  },
+  "cta": {
+    "request": "Request early access"
+  },
+  "form": {
+    "kicker": "Early access",
+    "title": "Be among the first.",
+    "sub": "IGO is in pre-launch. Leave your details and we will get in touch when early access opens.",
+    "aria": "Early access request form",
+    "name": "Full name",
+    "email": "Email",
+    "organization": "Company or organisation (optional)",
+    "role": "Role (optional)",
+    "interest": "I am interested in",
+    "interestVision": "IGO Vision (smart glasses)",
+    "interestWellness": "IGO Wellness (smart ring)",
+    "interestBoth": "Both",
+    "message": "Message (optional)",
+    "consentBefore": "I agree that IGO may use my details to contact me about early access, as explained in the",
+    "consentLink": "privacy notice",
+    "consentAfter": ".",
+    "submit": "Request early access",
+    "sending": "Sending…",
+    "doneTitle": "Thank you, we have received your request.",
+    "doneBefore": "We will write to you at",
+    "doneAfter": ".",
+    "another": "Send another request",
+    "error": "We could not send your request. Please try again in a moment.",
+    "invalid": "Please complete the required fields.",
+    "unavailable": "The form is not available yet. Please try again later.",
+    "subject": "IGO early access request",
+    "note": "We only use your details to reply to this request."
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy — IGO",
+      "description": "How IGO handles the details sent through the early access form."
+    },
+    "title": "Privacy notice",
+    "sub": "How we handle the details you send through the early access form.",
+    "updated": "Last updated: October 2026",
+    "controller": {
+      "title": "Who is responsible",
+      "text": "The data controller is José Manuel Pérez Monge (IGO Tech project). Contact: igotech@gmail.com."
+    },
+    "data": {
+      "title": "What we collect",
+      "text": "The details you enter in the early access form: your name, email address and product interest, and optionally your company, role and a message."
+    },
+    "purpose": {
+      "title": "Why we use it",
+      "text": "To reply to your request and to contact you about early access to IGO. We do not use your details for anything else."
+    },
+    "basis": {
+      "title": "Legal basis",
+      "text": "Your consent, which you give by ticking the box in the form. You can withdraw it at any time."
+    },
+    "recipients": {
+      "title": "Who receives it",
+      "text": "A form-processing service provider receives each request on our behalf and forwards it to us by email. We do not sell your details."
+    },
+    "retention": {
+      "title": "How long we keep it",
+      "text": "Only as long as needed to handle your request and early access communications, or until you ask us to delete it."
+    },
+    "rights": {
+      "title": "Your rights",
+      "text": "You can ask us to access, correct or delete your details, to restrict or object to their use, or to withdraw your consent, by contacting the controller above. You can also complain to your data protection authority."
+    },
+    "back": "Back to home"
   }
 }

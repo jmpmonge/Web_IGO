@@ -56,11 +56,11 @@ for source in root.rglob('*.css'):
         check(source, ref.strip())
 
 for lang in ('es', 'en', 'fr'):
-    for name in ('index.html', 'products/index.html'):
+    for name in ('index.html', 'products/index.html', 'privacy/index.html'):
         path = root / lang / name
         if path not in pages or pages[path].lang != lang:
             errors.append(f'Wrong or missing language: {lang}/{name}')
 
 if errors:
     raise SystemExit('\n'.join(errors))
-print(f'PASS: {len(pages)} pages; {checks} local links/resources; ES/EN/FR Home and Products.')
+print(f'PASS: {len(pages)} pages; {checks} local links/resources; ES/EN/FR Home, Products and Privacy.')

@@ -12,7 +12,8 @@
     "wellness": "Wellness",
     "technology": "Tecnología",
     "about": "Nosotros",
-    "products": "Productos"
+    "products": "Productos",
+    "earlyAccess": "Acceso anticipado"
   },
   "footer": {
     "aria": "Pie de página",
@@ -39,7 +40,7 @@
       "aria": "Capacidades de IGO",
       "capture": { "name": "Captura", "text": "Tu perspectiva" },
       "listen": { "name": "Escucha", "text": "Sigue conectado" },
-      "ai": { "name": "IA", "text": "Apoyo real, cuando lo necesitas" },
+      "ai": { "name": "IA", "text": "Apoyo real" },
       "further": { "name": "Ve más lejos", "text": "En tu día a día" }
     },
     "film": {
@@ -85,5 +86,75 @@
     "status": "Próximamente",
     "vision": { "title": "Gafas inteligentes", "cta": "Explorar Vision" },
     "wellness": { "title": "Anillo inteligente", "cta": "Explorar Wellness" }
+  },
+  "cta": {
+    "request": "Solicitar acceso anticipado"
+  },
+  "form": {
+    "kicker": "Acceso anticipado",
+    "title": "Sé de los primeros.",
+    "sub": "IGO está en pre-lanzamiento. Déjanos tus datos y te escribiremos cuando se abra el acceso anticipado.",
+    "aria": "Formulario de solicitud de acceso anticipado",
+    "name": "Nombre y apellidos",
+    "email": "Correo electrónico",
+    "organization": "Empresa u organización (opcional)",
+    "role": "Cargo (opcional)",
+    "interest": "Me interesa",
+    "interestVision": "IGO Vision (gafas inteligentes)",
+    "interestWellness": "IGO Wellness (anillo inteligente)",
+    "interestBoth": "Ambos",
+    "message": "Mensaje (opcional)",
+    "consentBefore": "Acepto que IGO use mis datos para contactarme sobre el acceso anticipado, según se explica en el",
+    "consentLink": "aviso de privacidad",
+    "consentAfter": ".",
+    "submit": "Solicitar acceso anticipado",
+    "sending": "Enviando…",
+    "doneTitle": "Gracias, hemos recibido tu solicitud.",
+    "doneBefore": "Te escribiremos a",
+    "doneAfter": ".",
+    "another": "Enviar otra solicitud",
+    "error": "No hemos podido enviar tu solicitud. Inténtalo de nuevo en unos minutos.",
+    "invalid": "Completa los campos obligatorios.",
+    "unavailable": "El formulario aún no está disponible. Inténtalo más tarde.",
+    "subject": "Solicitud de acceso anticipado IGO",
+    "note": "Solo usamos tus datos para responder a esta solicitud."
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacidad — IGO",
+      "description": "Cómo trata IGO los datos enviados mediante el formulario de acceso anticipado."
+    },
+    "title": "Aviso de privacidad",
+    "sub": "Cómo tratamos los datos que envías mediante el formulario de acceso anticipado.",
+    "updated": "Última actualización: octubre de 2026",
+    "controller": {
+      "title": "Quién es el responsable",
+      "text": "El responsable del tratamiento es José Manuel Pérez Monge (proyecto IGO Tech). Contacto: igotech@gmail.com."
+    },
+    "data": {
+      "title": "Qué datos recogemos",
+      "text": "Los que introduces en el formulario de acceso anticipado: nombre, correo electrónico e interés por producto y, opcionalmente, empresa, cargo y un mensaje."
+    },
+    "purpose": {
+      "title": "Para qué los usamos",
+      "text": "Para responder a tu solicitud y contactarte sobre el acceso anticipado a IGO. No los usamos para ninguna otra finalidad."
+    },
+    "basis": {
+      "title": "Base legal",
+      "text": "Tu consentimiento, que das al marcar la casilla del formulario. Puedes retirarlo en cualquier momento."
+    },
+    "recipients": {
+      "title": "Quién los recibe",
+      "text": "Un proveedor de servicios de formularios recibe cada solicitud por encargo nuestro y nos la reenvía por correo electrónico. No vendemos tus datos."
+    },
+    "retention": {
+      "title": "Cuánto tiempo los conservamos",
+      "text": "Solo el tiempo necesario para atender tu solicitud y las comunicaciones del acceso anticipado, o hasta que nos pidas eliminarlos."
+    },
+    "rights": {
+      "title": "Tus derechos",
+      "text": "Puedes pedirnos acceso, rectificación o supresión de tus datos, la limitación u oposición a su uso, o retirar tu consentimiento, contactando con el responsable indicado arriba. También puedes reclamar ante tu autoridad de protección de datos."
+    },
+    "back": "Volver al inicio"
   }
 }
