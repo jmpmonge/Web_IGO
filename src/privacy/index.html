@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PROVISIONAL: generated from src/ by scripts/build.js. Draft privacy notice for the early access form: the data controller details must be completed and the text reviewed before launch. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="{{privacy.meta.description}}">
+<meta name="theme-color" content="#141B24">
+<title>{{privacy.meta.title}}</title>
+{{seo}}
+<link rel="icon" href="{{root}}assets/igo/igo-logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="{{root}}assets/igo.css">
+<link rel="stylesheet" href="{{root}}assets/footer.css">
+<link rel="stylesheet" href="{{root}}assets/hero.css">
+<link rel="stylesheet" href="{{root}}assets/products.css">
+<link rel="stylesheet" href="{{root}}assets/lang.css">
+<link rel="stylesheet" href="{{root}}assets/early-access.css">
+<script>
+  /* Hide animated elements before first paint only when motion is allowed; failsafe reveals everything if igo.js does not start. */
+  (function (d) {
+    d.classList.add('js');
+    if ('IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      d.classList.add('motion');
+      setTimeout(function () { if (!d.classList.contains('motion-ready')) d.classList.remove('motion'); }, 3000);
+    }
+  })(document.documentElement);
+</script>
+<script src="{{root}}assets/igo.js" defer></script>
+<script src="{{root}}assets/hero.js" defer></script>
+<script src="{{root}}assets/lang.js" defer></script>
+</head>
+<body class="page page--products">
+<a class="skip-link" href="#main">{{common.skip}}</a>
+
+<header class="site-header" id="top">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="{{link:home}}" aria-label="{{common.brandAria}}"><img src="{{root}}assets/igo/igo-logo.svg" alt="" width="68" height="38"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-toggle__icon" aria-hidden="true"></span><span class="menu-toggle__label">{{common.menu}}</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="{{common.navAria}}">
+      <ul>
+        <li class="site-nav__home"><a href="{{link:home}}">{{nav.home}}</a></li>
+        <li><a href="{{link:home}}#vision">{{nav.vision}}</a></li>
+        <li><a href="{{link:home}}#wellness">{{nav.wellness}}</a></li>
+        <li><a href="{{link:home}}#technology">{{nav.technology}}</a></li>
+        <li><a href="{{link:home}}#about">{{nav.about}}</a></li>
+        <li class="site-nav__products"><a href="{{link:home}}#early-access">{{nav.earlyAccess}}</a></li>
+        <li class="site-nav__lang">{{langInline}}</li>
+      </ul>
+    </nav>
+    {{langMenu}}
+    <a class="header-cta" href="{{link:home}}#early-access">{{nav.earlyAccess}} <span aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="prod-intro" aria-labelledby="page-title">
+    <div class="wrap" data-motion="text">
+      <p class="kicker">IGO</p>
+      <h1 id="page-title" class="prod-intro__title">{{privacy.title}}</h1>
+      <p class="prod-intro__sub">{{privacy.sub}}</p>
+    </div>
+  </section>
+
+  <section class="legal" aria-label="{{privacy.title}}">
+    <div class="wrap legal__inner">
+      <p class="legal__meta">{{privacy.updated}}</p>
+      <div class="legal__block"><h2>{{privacy.controller.title}}</h2><p>{{privacy.controller.text}}</p></div>
+      <div class="legal__block"><h2>{{privacy.data.title}}</h2><p>{{privacy.data.text}}</p></div>
+      <div class="legal__block"><h2>{{privacy.purpose.title}}</h2><p>{{privacy.purpose.text}}</p></div>
+      <div class="legal__block"><h2>{{privacy.basis.title}}</h2><p>{{privacy.basis.text}}</p></div>
+      <div class="legal__block"><h2>{{privacy.recipients.title}}</h2><p>{{privacy.recipients.text}}</p></div>
+      <div class="legal__block"><h2>{{privacy.retention.title}}</h2><p>{{privacy.retention.text}}</p></div>
+      <div class="legal__block"><h2>{{privacy.rights.title}}</h2><p>{{privacy.rights.text}}</p></div>
+      <p class="legal__back"><a href="{{link:home}}">{{privacy.back}}</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft__top">
+    <div class="ft__brand">
+      <a class="ft__logo" href="{{link:home}}" aria-label="{{common.brandAria}}"><img src="{{root}}assets/igo/igo-logo-white.svg" alt="IGO" width="112" height="63"></a>
+      <p class="ft__tagline">{{footer.tagline}}</p>
+    </div>
+    <nav class="ft__nav" aria-label="{{footer.aria}}">
+      <ul>
+        <li><a href="{{link:home}}#vision">{{nav.vision}}</a></li>
+        <li><a href="{{link:home}}#wellness">{{nav.wellness}}</a></li>
+        <li><a href="{{link:home}}#technology">{{nav.technology}}</a></li>
+        <li><a href="{{link:home}}#about">{{nav.about}}</a></li>
+      </ul>
+    </nav>
+    <div class="ft__side">
+      <a class="ft__contact" href="{{link:home}}#early-access">{{footer.contact}}</a>
+    </div>
+  </div>
+  <div class="wrap ft__bottom">
+    <p class="ft__legal">{{footer.legal}}</p>
+    <ul class="ft__policy" role="list">
+      <li><a href="{{link:privacy}}" aria-current="page">{{footer.privacy}}</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

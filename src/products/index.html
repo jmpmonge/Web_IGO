@@ -45,11 +45,11 @@
         <li><a href="{{link:home}}#wellness">{{nav.wellness}}</a></li>
         <li><a href="{{link:home}}#technology">{{nav.technology}}</a></li>
         <li><a href="{{link:home}}#about">{{nav.about}}</a></li>
-        <li class="site-nav__products"><a href="{{link:products}}" aria-current="page">{{nav.buy}}</a></li>
+        <li class="site-nav__products"><a href="{{link:home}}#early-access">{{nav.earlyAccess}}</a></li>
         <li class="site-nav__lang">{{langInline}}</li>
       </ul>
     </nav>
-    <a class="header-cta" href="{{link:products}}" aria-current="page">{{nav.buy}} <span aria-hidden="true">→</span></a>
+    <a class="header-cta" href="{{link:home}}#early-access">{{nav.earlyAccess}} <span aria-hidden="true">→</span></a>
     <div class="site-header__tools">
       {{langMenu}}
     </div>
@@ -112,25 +112,20 @@
     </div>
     <nav class="ft__nav" aria-label="{{footer.aria}}">
       <ul>
-        <li><a href="{{root}}vision/index.html">{{nav.vision}}</a></li>
-        <li><a href="{{root}}wellness/index.html">{{nav.wellness}}</a></li>
-        <li><a href="{{root}}technology/index.html">{{nav.technology}}</a></li>
-        <li><a href="{{root}}about/index.html">{{nav.about}}</a></li>
+        <li><a href="{{link:home}}#vision">{{nav.vision}}</a></li>
+        <li><a href="{{link:home}}#wellness">{{nav.wellness}}</a></li>
+        <li><a href="{{link:home}}#technology">{{nav.technology}}</a></li>
+        <li><a href="{{link:home}}#about">{{nav.about}}</a></li>
       </ul>
     </nav>
     <div class="ft__side">
-      <a class="ft__contact" data-pending="contact">{{footer.contact}}</a>
-      <ul class="ft__social" role="list">
-        <li><a data-pending="instagram">Instagram</a></li>
-        <li><a data-pending="linkedin">LinkedIn</a></li>
-      </ul>
+      <a class="ft__contact" href="{{link:home}}#early-access">{{footer.contact}}</a>
     </div>
   </div>
   <div class="wrap ft__bottom">
     <p class="ft__legal">{{footer.legal}}</p>
     <ul class="ft__policy" role="list">
-      <li><a data-pending="privacy">{{footer.privacy}}</a></li>
-      <li><a data-pending="terms">{{footer.terms}}</a></li>
+      <li><a href="{{link:privacy}}">{{footer.privacy}}</a></li>
     </ul>
   </div>
 </footer>

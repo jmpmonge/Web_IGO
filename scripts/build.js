@@ -21,12 +21,15 @@ const LANGS = [
 const SOURCE = 'en';   /* editorial source language and fallback */
 const PAGES = [
   { id: 'home', file: 'index.html' },
-  { id: 'products', file: 'products/index.html' }
+  { id: 'products', file: 'products/index.html' },
+  { id: 'privacy', file: 'privacy/index.html' }
   /* next: vision, wellness, technology, about (add a template in src/ and a block in each locale) */
 ];
 const COPY_AS_IS = ['vision', 'wellness', 'technology', 'about'];   /* src/<name>/index.html: provisional pages, copied unchanged (not translated yet) to dist/<name>/ */
 
 const siteUrl = (JSON.parse(fs.readFileSync(path.join(__dirname, 'site.json'), 'utf8')).siteUrl || '').replace(/\/+$/, '');
+/* Early access form endpoint (form-handling service). Read on every build so --watch picks up changes to scripts/site.json. */
+const formEndpoint = () => String(JSON.parse(fs.readFileSync(path.join(__dirname, 'site.json'), 'utf8')).formEndpoint || '').trim();
 const posix = (p) => p.split(path.sep).join('/');
 
 /* ---------- locales ---------- */
@@ -89,6 +92,7 @@ function render(page, lang, tpl) {
     if (tok === 'lang') return lang;
     if (tok === 'root') return rootOf(page);
     if (tok === 'seo') return seo(page, lang);
+    if (tok === 'formAction') return esc(formEndpoint());
     if (tok === 'langMenu') return langMenu(page, lang);
     if (tok === 'langInline') return langInline(page, lang);
     if (tok.startsWith('link:')) {
@@ -109,6 +113,7 @@ function write(file, data) { fs.mkdirSync(path.dirname(file), { recursive: true 
 function build() {
   warnings = [];
   loadLocales();
+  if (!/^https:\/\//.test(formEndpoint())) warnings.push('formEndpoint is empty or not https in scripts/site.json: the early access form will NOT send until it is set');
   const generated = [];
 
   PAGES.forEach((page) => {

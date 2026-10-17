@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="../assets/footer.css">
 <link rel="stylesheet" href="../assets/hero.css">
 <link rel="stylesheet" href="../assets/lang.css">
+<link rel="stylesheet" href="../assets/early-access.css">
 <link rel="preload" as="image" href="../assets/images/images_igo/home_hero.webp" type="image/webp" media="(min-width:48em) and (orientation:landscape)">
 <script>
   /* Hide animated elements before first paint only when motion is allowed; failsafe reveals everything if igo.js does not start. */
@@ -34,6 +35,7 @@
 <script src="../assets/igo.js" defer></script>
 <script src="../assets/hero.js" defer></script>
 <script src="../assets/lang.js" defer></script>
+<script src="../assets/early-access.js" defer></script>
 </head>
 <body class="home">
 <a class="skip-link" href="#main">Aller au contenu</a>
@@ -51,11 +53,11 @@
         <li><a href="#wellness">Wellness</a></li>
         <li><a href="#technology">Technologie</a></li>
         <li><a href="#about">À propos</a></li>
-        <li class="site-nav__products"><a href="products/index.html">Acheter</a></li>
+        <li class="site-nav__products"><a href="#early-access">Accès anticipé</a></li>
         <li class="site-nav__lang"><span class="lang-inline" role="group" aria-label="Langue"><a href="../en/index.html" lang="en" hreflang="en" data-lang-switch="en" aria-label="English">EN</a><a href="../es/index.html" lang="es" hreflang="es" data-lang-switch="es" aria-label="Español">ES</a><a href="../fr/index.html" lang="fr" hreflang="fr" data-lang-switch="fr" aria-label="Français" aria-current="true">FR</a></span></li>
       </ul>
     </nav>
-    <a class="header-cta" href="products/index.html">Acheter <span aria-hidden="true">→</span></a>
+    <a class="header-cta" href="#early-access">Accès anticipé <span aria-hidden="true">→</span></a>
     <div class="site-header__tools">
       <details class="lang" data-lang-menu><summary aria-label="Langue: Français"><span class="lang__current" aria-hidden="true">FR</span><svg class="lang__caret" viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.25"/></svg></summary><ul class="lang__list" role="list"><li><a href="../en/index.html" lang="en" hreflang="en" data-lang-switch="en">English</a></li><li><a href="../es/index.html" lang="es" hreflang="es" data-lang-switch="es">Español</a></li><li><a href="../fr/index.html" lang="fr" hreflang="fr" data-lang-switch="fr" aria-current="true">Français</a></li></ul></details>
     </div>
@@ -79,28 +81,17 @@
       <h1 id="hero-title" class="hero__title" data-hero-in style="--d:120ms"><span class="hero__line">La technologie</span> <span class="hero__line">pour vivre plus grand.</span></h1>
       <p class="hero__sub" data-hero-in style="--d:240ms">Voyez plus. Bougez librement. Vivez pleinement.</p>
       <div class="hero__actions" data-hero-in style="--d:360ms">
-        <a class="hero__btn" href="products/index.html">Découvrir les produits <span aria-hidden="true">→</span></a>
-        <button class="hero__film" type="button" data-film-open aria-haspopup="dialog" aria-expanded="false">
-          <span class="hero__film-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"/></svg></span>Voir le film
-        </button>
+        <a class="hero__btn" href="#early-access">Demander un accès anticipé <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <div class="wrap hero__features-wrap" data-hero-in style="--d:480ms">
       <ul class="hero__features" role="list" aria-label="Les atouts d'IGO">
         <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span class="hero__feature-name">Capturer</span><span class="hero__feature-text">Votre point de vue</span></li>
         <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/></svg></span><span class="hero__feature-name">Écouter</span><span class="hero__feature-text">Restez connecté</span></li>
-        <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span><span class="hero__feature-name">IA</span><span class="hero__feature-text">Un vrai soutien, quand il le faut</span></li>
+        <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span><span class="hero__feature-name">IA</span><span class="hero__feature-text">Un vrai soutien</span></li>
         <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="hero__feature-name">Aller plus loin</span><span class="hero__feature-text">Au quotidien</span></li>
       </ul>
     </div>
-
-    <dialog id="film-modal" class="film-modal" aria-label="Film IGO" data-film-src="">
-      <div class="film-modal__body">
-        <button class="film-modal__close" type="button" data-film-close aria-label="Fermer le film">×</button>
-        <video class="film-modal__video" controls playsinline preload="none" hidden></video>
-        <p class="film-modal__empty">Le film sera bientôt disponible.</p>
-      </div>
-    </dialog>
   </section>
 
   <!-- 2 · IGO Vision -->
@@ -109,7 +100,7 @@
       <p class="kicker">IGO Vision</p>
       <h2 id="vision-title" class="band__title">Voyez au-delà de l'instant.</h2>
       <p class="vband__sub">Des lunettes connectées pensées pour votre façon de vivre.</p>
-      <p class="vband__cta"><a class="hero__btn" href="../vision/index.html">Découvrir Vision <span aria-hidden="true">→</span></a></p>
+      <p class="vband__cta"><a class="hero__btn" href="#early-access">Demander un accès anticipé <span aria-hidden="true">→</span></a></p>
     </div>
     <figure class="vband__stage" data-motion="visual">
       <img src="../assets/images/images_igo/vision_band.webp" alt="Lunettes connectées IGO Sport Casual et Sport Mask sur une terrasse de pierre face à la mer" width="1983" height="793" loading="lazy" decoding="async">
@@ -128,7 +119,7 @@
       <p class="kicker">IGO Wellness</p>
       <h2 id="wellness-title" class="band__title"><span class="wband__line">Comprenez</span> <span class="wband__line">votre corps.</span></h2>
       <p class="wband__sub"><span class="wband__line">Un meilleur sommeil. Plus d'énergie.</span> <span class="wband__line">Une version plus sereine de vous.</span></p>
-      <p class="wband__cta"><a class="hero__btn" href="../wellness/index.html">Découvrir Wellness <span aria-hidden="true">→</span></a></p>
+      <p class="wband__cta"><a class="hero__btn" href="#early-access">Demander un accès anticipé <span aria-hidden="true">→</span></a></p>
     </div>
     <div class="wband__media" data-motion="visual">
       <img src="../assets/images/images_igo/wellness_band.webp" alt="Bague IGO Wellness en suspension au-dessus d'une surface de pierre sous une lumière chaude" width="2103" height="748" loading="lazy" decoding="async">
@@ -141,7 +132,7 @@
       <p class="kicker">IGO Technologie</p>
       <h2 id="tech-title" class="band__title">L'intelligence en action.</h2>
       <p class="vband__sub">Des appareils, des données et des expériences conçus pour fonctionner ensemble.</p>
-      <p class="vband__cta"><a class="hero__btn" href="../technology/index.html">Découvrir la Technologie <span aria-hidden="true">→</span></a></p>
+      <p class="vband__cta"><a class="hero__btn" href="#early-access">Demander un accès anticipé <span aria-hidden="true">→</span></a></p>
     </div>
     <figure class="vband__stage" data-motion="visual">
       <img src="../assets/images/images_igo/technology_band.webp" alt="Lunettes connectées IGO, application IGO sur un téléphone et bague IGO sur une terrasse de pierre au coucher du soleil" width="1983" height="793" loading="lazy" decoding="async">
@@ -154,10 +145,51 @@
       <p class="kicker">IGO Philosophie</p>
       <h2 id="about-title" class="band__title"><span class="pband__line">Conçu</span> <span class="pband__line">avec intention.</span></h2>
       <p class="pband__sub"><span class="pband__line">La technologie doit sembler naturelle.</span> <span class="pband__line">Le design doit être intentionnel.</span></p>
-      <p class="pband__cta"><a class="hero__btn" href="../about/index.html">Découvrir notre philosophie <span aria-hidden="true">→</span></a></p>
+      <p class="pband__cta"><a class="hero__btn" href="#early-access">Demander un accès anticipé <span aria-hidden="true">→</span></a></p>
     </div>
     <div class="pband__media">
       <img src="../assets/images/images_igo/philosophy_band.webp" alt="Bague et lunettes connectées IGO sur un rebord de pierre face à un coucher de soleil sur la mer" width="1983" height="793" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- 6 · Early access request -->
+  <section id="early-access" class="ea" aria-labelledby="ea-title" tabindex="-1">
+    <div class="wrap ea__inner">
+      <div class="ea__intro">
+        <p class="kicker">Accès anticipé</p>
+        <h2 id="ea-title" class="ea__title">Soyez parmi les premiers.</h2>
+        <p class="ea__sub">IGO est en pré-lancement. Laissez-nous vos coordonnées et nous vous écrirons à l'ouverture de l'accès anticipé.</p>
+      </div>
+      <form class="ea__form" data-ea-form method="post" action="" data-endpoint="" aria-label="Formulaire de demande d'accès anticipé"
+            data-msg-sending="Envoi en cours…" data-msg-success="Merci. Nous avons bien reçu votre demande." data-msg-error="Nous n'avons pas pu envoyer votre demande. Veuillez réessayer dans quelques instants." data-msg-invalid="Veuillez renseigner les champs obligatoires." data-msg-unavailable="Le formulaire n'est pas encore disponible. Veuillez réessayer plus tard.">
+        <input type="hidden" name="_subject" value="Demande d'accès anticipé IGO">
+        <input type="hidden" name="lang" value="fr">
+        <div class="ea__trap" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+        <div class="ea__row ea__row--2">
+          <div class="ea__field"><label for="ea-name">Nom et prénom</label><input id="ea-name" name="name" type="text" autocomplete="name" required maxlength="120"></div>
+          <div class="ea__field"><label for="ea-email">E-mail</label><input id="ea-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
+        </div>
+        <div class="ea__row ea__row--2">
+          <div class="ea__field"><label for="ea-org">Entreprise ou organisation (facultatif)</label><input id="ea-org" name="organization" type="text" autocomplete="organization" maxlength="160"></div>
+          <div class="ea__field"><label for="ea-role">Fonction (facultatif)</label><input id="ea-role" name="role" type="text" autocomplete="organization-title" maxlength="120"></div>
+        </div>
+        <div class="ea__field">
+          <label for="ea-interest">Je m'intéresse à</label>
+          <select id="ea-interest" name="interest">
+            <option value="Both" selected>Les deux</option>
+            <option value="IGO Vision">IGO Vision (lunettes intelligentes)</option>
+            <option value="IGO Wellness">IGO Wellness (bague intelligente)</option>
+          </select>
+        </div>
+        <div class="ea__field"><label for="ea-message">Message (facultatif)</label><textarea id="ea-message" name="message" rows="4" maxlength="2000"></textarea></div>
+        <div class="ea__consent">
+          <input id="ea-consent" name="consent" type="checkbox" value="yes" required>
+          <label for="ea-consent">J'accepte qu'IGO utilise mes données pour me contacter au sujet de l'accès anticipé, comme expliqué dans notre <a href="privacy/index.html">avis de confidentialité</a>.</label>
+        </div>
+        <button class="hero__btn ea__submit" type="submit">Demander un accès anticipé <span aria-hidden="true">→</span></button>
+        <p class="ea__status" role="status" aria-live="polite" data-ea-status></p>
+        <p class="ea__note">Nous n'utilisons vos données que pour répondre à cette demande.</p>
+      </form>
     </div>
   </section>
 </main>
@@ -170,25 +202,20 @@
     </div>
     <nav class="ft__nav" aria-label="Pied de page">
       <ul>
-        <li><a href="../vision/index.html">Vision</a></li>
-        <li><a href="../wellness/index.html">Wellness</a></li>
-        <li><a href="../technology/index.html">Technologie</a></li>
-        <li><a href="../about/index.html">À propos</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#wellness">Wellness</a></li>
+        <li><a href="#technology">Technologie</a></li>
+        <li><a href="#about">À propos</a></li>
       </ul>
     </nav>
     <div class="ft__side">
-      <a class="ft__contact" data-pending="contact">Contact</a>
-      <ul class="ft__social" role="list">
-        <li><a data-pending="instagram">Instagram</a></li>
-        <li><a data-pending="linkedin">LinkedIn</a></li>
-      </ul>
+      <a class="ft__contact" href="#early-access">Contact</a>
     </div>
   </div>
   <div class="wrap ft__bottom">
     <p class="ft__legal">© 2026 IGO. Tous droits réservés.</p>
     <ul class="ft__policy" role="list">
-      <li><a data-pending="privacy">Confidentialité</a></li>
-      <li><a data-pending="terms">Conditions</a></li>
+      <li><a href="privacy/index.html">Confidentialité</a></li>
     </ul>
   </div>
 </footer>

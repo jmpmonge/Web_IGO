@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="{{root}}assets/footer.css">
 <link rel="stylesheet" href="{{root}}assets/hero.css">
 <link rel="stylesheet" href="{{root}}assets/lang.css">
+<link rel="stylesheet" href="{{root}}assets/early-access.css">
 <link rel="preload" as="image" href="{{root}}assets/images/images_igo/home_hero.webp" type="image/webp" media="(min-width:48em) and (orientation:landscape)">
 <script>
   /* Hide animated elements before first paint only when motion is allowed; failsafe reveals everything if igo.js does not start. */
@@ -29,6 +30,7 @@
 <script src="{{root}}assets/igo.js" defer></script>
 <script src="{{root}}assets/hero.js" defer></script>
 <script src="{{root}}assets/lang.js" defer></script>
+<script src="{{root}}assets/early-access.js" defer></script>
 </head>
 <body class="home">
 <a class="skip-link" href="#main">{{common.skip}}</a>
@@ -46,11 +48,11 @@
         <li><a href="#wellness">{{nav.wellness}}</a></li>
         <li><a href="#technology">{{nav.technology}}</a></li>
         <li><a href="#about">{{nav.about}}</a></li>
-        <li class="site-nav__products"><a href="{{link:products}}">{{nav.buy}}</a></li>
+        <li class="site-nav__products"><a href="#early-access">{{nav.earlyAccess}}</a></li>
         <li class="site-nav__lang">{{langInline}}</li>
       </ul>
     </nav>
-    <a class="header-cta" href="{{link:products}}">{{nav.buy}} <span aria-hidden="true">→</span></a>
+    <a class="header-cta" href="#early-access">{{nav.earlyAccess}} <span aria-hidden="true">→</span></a>
     <div class="site-header__tools">
       {{langMenu}}
     </div>
@@ -74,10 +76,7 @@
       <h1 id="hero-title" class="hero__title" data-hero-in style="--d:120ms">{{lines:home.hero.title|hero__line}}</h1>
       <p class="hero__sub" data-hero-in style="--d:240ms">{{home.hero.sub}}</p>
       <div class="hero__actions" data-hero-in style="--d:360ms">
-        <a class="hero__btn" href="{{link:products}}">{{home.hero.cta}} <span aria-hidden="true">→</span></a>
-        <button class="hero__film" type="button" data-film-open aria-haspopup="dialog" aria-expanded="false">
-          <span class="hero__film-icon" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"/></svg></span>{{home.hero.film}}
-        </button>
+        <a class="hero__btn" href="#early-access">{{cta.request}} <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <div class="wrap hero__features-wrap" data-hero-in style="--d:480ms">
@@ -88,14 +87,6 @@
         <li class="hero__feature"><span class="hero__feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="hero__feature-name">{{home.features.further.name}}</span><span class="hero__feature-text">{{home.features.further.text}}</span></li>
       </ul>
     </div>
-
-    <dialog id="film-modal" class="film-modal" aria-label="{{home.film.aria}}" data-film-src="">
-      <div class="film-modal__body">
-        <button class="film-modal__close" type="button" data-film-close aria-label="{{home.film.close}}">×</button>
-        <video class="film-modal__video" controls playsinline preload="none" hidden></video>
-        <p class="film-modal__empty">{{home.film.empty}}</p>
-      </div>
-    </dialog>
   </section>
 
   <!-- 2 · IGO Vision -->
@@ -104,7 +95,7 @@
       <p class="kicker">IGO Vision</p>
       <h2 id="vision-title" class="band__title">{{home.vision.title}}</h2>
       <p class="vband__sub">{{home.vision.sub}}</p>
-      <p class="vband__cta"><a class="hero__btn" href="{{root}}vision/index.html">{{home.vision.cta}} <span aria-hidden="true">→</span></a></p>
+      <p class="vband__cta"><a class="hero__btn" href="#early-access">{{cta.request}} <span aria-hidden="true">→</span></a></p>
     </div>
     <figure class="vband__stage" data-motion="visual">
       <img src="{{root}}assets/images/images_igo/vision_band.webp" alt="{{home.vision.alt}}" width="1983" height="793" loading="lazy" decoding="async">
@@ -123,7 +114,7 @@
       <p class="kicker">IGO Wellness</p>
       <h2 id="wellness-title" class="band__title">{{lines:home.wellness.title|wband__line}}</h2>
       <p class="wband__sub">{{lines:home.wellness.sub|wband__line}}</p>
-      <p class="wband__cta"><a class="hero__btn" href="{{root}}wellness/index.html">{{home.wellness.cta}} <span aria-hidden="true">→</span></a></p>
+      <p class="wband__cta"><a class="hero__btn" href="#early-access">{{cta.request}} <span aria-hidden="true">→</span></a></p>
     </div>
     <div class="wband__media" data-motion="visual">
       <img src="{{root}}assets/images/images_igo/wellness_band.webp" alt="{{home.wellness.alt}}" width="2103" height="748" loading="lazy" decoding="async">
@@ -136,7 +127,7 @@
       <p class="kicker">IGO {{nav.technology}}</p>
       <h2 id="tech-title" class="band__title">{{home.tech.title}}</h2>
       <p class="vband__sub">{{home.tech.sub}}</p>
-      <p class="vband__cta"><a class="hero__btn" href="{{root}}technology/index.html">{{home.tech.cta}} <span aria-hidden="true">→</span></a></p>
+      <p class="vband__cta"><a class="hero__btn" href="#early-access">{{cta.request}} <span aria-hidden="true">→</span></a></p>
     </div>
     <figure class="vband__stage" data-motion="visual">
       <img src="{{root}}assets/images/images_igo/technology_band.webp" alt="{{home.tech.alt}}" width="1983" height="793" loading="lazy" decoding="async">
@@ -149,10 +140,51 @@
       <p class="kicker">IGO {{home.about.kicker}}</p>
       <h2 id="about-title" class="band__title">{{lines:home.about.title|pband__line}}</h2>
       <p class="pband__sub">{{lines:home.about.sub|pband__line}}</p>
-      <p class="pband__cta"><a class="hero__btn" href="{{root}}about/index.html">{{home.about.cta}} <span aria-hidden="true">→</span></a></p>
+      <p class="pband__cta"><a class="hero__btn" href="#early-access">{{cta.request}} <span aria-hidden="true">→</span></a></p>
     </div>
     <div class="pband__media">
       <img src="{{root}}assets/images/images_igo/philosophy_band.webp" alt="{{home.about.alt}}" width="1983" height="793" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- 6 · Early access request -->
+  <section id="early-access" class="ea" aria-labelledby="ea-title" tabindex="-1">
+    <div class="wrap ea__inner">
+      <div class="ea__intro">
+        <p class="kicker">{{form.kicker}}</p>
+        <h2 id="ea-title" class="ea__title">{{form.title}}</h2>
+        <p class="ea__sub">{{form.sub}}</p>
+      </div>
+      <form class="ea__form" data-ea-form method="post" action="{{formAction}}" data-endpoint="{{formAction}}" aria-label="{{form.aria}}"
+            data-msg-sending="{{form.sending}}" data-msg-success="{{form.success}}" data-msg-error="{{form.error}}" data-msg-invalid="{{form.invalid}}" data-msg-unavailable="{{form.unavailable}}">
+        <input type="hidden" name="_subject" value="{{form.subject}}">
+        <input type="hidden" name="lang" value="{{lang}}">
+        <div class="ea__trap" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+        <div class="ea__row ea__row--2">
+          <div class="ea__field"><label for="ea-name">{{form.name}}</label><input id="ea-name" name="name" type="text" autocomplete="name" required maxlength="120"></div>
+          <div class="ea__field"><label for="ea-email">{{form.email}}</label><input id="ea-email" name="email" type="email" autocomplete="email" required maxlength="160"></div>
+        </div>
+        <div class="ea__row ea__row--2">
+          <div class="ea__field"><label for="ea-org">{{form.organization}}</label><input id="ea-org" name="organization" type="text" autocomplete="organization" maxlength="160"></div>
+          <div class="ea__field"><label for="ea-role">{{form.role}}</label><input id="ea-role" name="role" type="text" autocomplete="organization-title" maxlength="120"></div>
+        </div>
+        <div class="ea__field">
+          <label for="ea-interest">{{form.interest}}</label>
+          <select id="ea-interest" name="interest">
+            <option value="Both" selected>{{form.interestBoth}}</option>
+            <option value="IGO Vision">{{form.interestVision}}</option>
+            <option value="IGO Wellness">{{form.interestWellness}}</option>
+          </select>
+        </div>
+        <div class="ea__field"><label for="ea-message">{{form.message}}</label><textarea id="ea-message" name="message" rows="4" maxlength="2000"></textarea></div>
+        <div class="ea__consent">
+          <input id="ea-consent" name="consent" type="checkbox" value="yes" required>
+          <label for="ea-consent">{{form.consentBefore}} <a href="{{link:privacy}}">{{form.consentLink}}</a>{{form.consentAfter}}</label>
+        </div>
+        <button class="hero__btn ea__submit" type="submit">{{form.submit}} <span aria-hidden="true">→</span></button>
+        <p class="ea__status" role="status" aria-live="polite" data-ea-status></p>
+        <p class="ea__note">{{form.note}}</p>
+      </form>
     </div>
   </section>
 </main>
@@ -165,25 +197,20 @@
     </div>
     <nav class="ft__nav" aria-label="{{footer.aria}}">
       <ul>
-        <li><a href="{{root}}vision/index.html">{{nav.vision}}</a></li>
-        <li><a href="{{root}}wellness/index.html">{{nav.wellness}}</a></li>
-        <li><a href="{{root}}technology/index.html">{{nav.technology}}</a></li>
-        <li><a href="{{root}}about/index.html">{{nav.about}}</a></li>
+        <li><a href="#vision">{{nav.vision}}</a></li>
+        <li><a href="#wellness">{{nav.wellness}}</a></li>
+        <li><a href="#technology">{{nav.technology}}</a></li>
+        <li><a href="#about">{{nav.about}}</a></li>
       </ul>
     </nav>
     <div class="ft__side">
-      <a class="ft__contact" data-pending="contact">{{footer.contact}}</a>
-      <ul class="ft__social" role="list">
-        <li><a data-pending="instagram">Instagram</a></li>
-        <li><a data-pending="linkedin">LinkedIn</a></li>
-      </ul>
+      <a class="ft__contact" href="#early-access">{{footer.contact}}</a>
     </div>
   </div>
   <div class="wrap ft__bottom">
     <p class="ft__legal">{{footer.legal}}</p>
     <ul class="ft__policy" role="list">
-      <li><a data-pending="privacy">{{footer.privacy}}</a></li>
-      <li><a data-pending="terms">{{footer.terms}}</a></li>
+      <li><a href="{{link:privacy}}">{{footer.privacy}}</a></li>
     </ul>
   </div>
 </footer>
