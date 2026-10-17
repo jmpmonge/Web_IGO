@@ -160,8 +160,9 @@
         <h2 id="ea-title" class="ea__title">Soyez parmi les premiers.</h2>
         <p class="ea__sub">IGO est en pré-lancement. Laissez-nous vos coordonnées et nous vous écrirons à l'ouverture de l'accès anticipé.</p>
       </div>
+      <div class="ea__main">
       <form class="ea__form" data-ea-form method="post" action="https://formspree.io/f/xnpjwkwj" data-endpoint="https://formspree.io/f/xnpjwkwj" aria-label="Formulaire de demande d'accès anticipé"
-            data-msg-sending="Envoi en cours…" data-msg-success="Merci. Nous avons bien reçu votre demande." data-msg-error="Nous n'avons pas pu envoyer votre demande. Veuillez réessayer dans quelques instants." data-msg-invalid="Veuillez renseigner les champs obligatoires." data-msg-unavailable="Le formulaire n'est pas encore disponible. Veuillez réessayer plus tard.">
+            data-msg-sending="Envoi en cours…" data-msg-error="Nous n'avons pas pu envoyer votre demande. Veuillez réessayer dans quelques instants." data-msg-invalid="Veuillez renseigner les champs obligatoires." data-msg-unavailable="Le formulaire n'est pas encore disponible. Veuillez réessayer plus tard.">
         <input type="hidden" name="_subject" value="Demande d'accès anticipé IGO">
         <input type="hidden" name="lang" value="fr">
         <div class="ea__trap" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
@@ -190,6 +191,13 @@
         <p class="ea__status" role="status" aria-live="polite" data-ea-status></p>
         <p class="ea__note">Nous n'utilisons vos données que pour répondre à cette demande.</p>
       </form>
+      <div class="ea__done" data-ea-done hidden tabindex="-1" aria-labelledby="ea-done-title">
+        <span class="ea__done-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <h3 id="ea-done-title" class="ea__done-title">Merci, nous avons bien reçu votre demande.</h3>
+        <p class="ea__done-text">Nous vous écrirons à <strong data-ea-email></strong>.</p>
+        <button class="ea__again" type="button" data-ea-again>Envoyer une autre demande</button>
+      </div>
+      </div>
     </div>
   </section>
 </main>

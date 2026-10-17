@@ -160,8 +160,9 @@
         <h2 id="ea-title" class="ea__title">Be among the first.</h2>
         <p class="ea__sub">IGO is in pre-launch. Leave your details and we will get in touch when early access opens.</p>
       </div>
+      <div class="ea__main">
       <form class="ea__form" data-ea-form method="post" action="https://formspree.io/f/xnpjwkwj" data-endpoint="https://formspree.io/f/xnpjwkwj" aria-label="Early access request form"
-            data-msg-sending="Sending…" data-msg-success="Thank you. We have received your request." data-msg-error="We could not send your request. Please try again in a moment." data-msg-invalid="Please complete the required fields." data-msg-unavailable="The form is not available yet. Please try again later.">
+            data-msg-sending="Sending…" data-msg-error="We could not send your request. Please try again in a moment." data-msg-invalid="Please complete the required fields." data-msg-unavailable="The form is not available yet. Please try again later.">
         <input type="hidden" name="_subject" value="IGO early access request">
         <input type="hidden" name="lang" value="en">
         <div class="ea__trap" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
@@ -190,6 +191,13 @@
         <p class="ea__status" role="status" aria-live="polite" data-ea-status></p>
         <p class="ea__note">We only use your details to reply to this request.</p>
       </form>
+      <div class="ea__done" data-ea-done hidden tabindex="-1" aria-labelledby="ea-done-title">
+        <span class="ea__done-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <h3 id="ea-done-title" class="ea__done-title">Thank you, we have received your request.</h3>
+        <p class="ea__done-text">We will write to you at <strong data-ea-email></strong>.</p>
+        <button class="ea__again" type="button" data-ea-again>Send another request</button>
+      </div>
+      </div>
     </div>
   </section>
 </main>

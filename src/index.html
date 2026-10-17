@@ -155,8 +155,9 @@
         <h2 id="ea-title" class="ea__title">{{form.title}}</h2>
         <p class="ea__sub">{{form.sub}}</p>
       </div>
+      <div class="ea__main">
       <form class="ea__form" data-ea-form method="post" action="{{formAction}}" data-endpoint="{{formAction}}" aria-label="{{form.aria}}"
-            data-msg-sending="{{form.sending}}" data-msg-success="{{form.success}}" data-msg-error="{{form.error}}" data-msg-invalid="{{form.invalid}}" data-msg-unavailable="{{form.unavailable}}">
+            data-msg-sending="{{form.sending}}" data-msg-error="{{form.error}}" data-msg-invalid="{{form.invalid}}" data-msg-unavailable="{{form.unavailable}}">
         <input type="hidden" name="_subject" value="{{form.subject}}">
         <input type="hidden" name="lang" value="{{lang}}">
         <div class="ea__trap" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
@@ -185,6 +186,13 @@
         <p class="ea__status" role="status" aria-live="polite" data-ea-status></p>
         <p class="ea__note">{{form.note}}</p>
       </form>
+      <div class="ea__done" data-ea-done hidden tabindex="-1" aria-labelledby="ea-done-title">
+        <span class="ea__done-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <h3 id="ea-done-title" class="ea__done-title">{{form.doneTitle}}</h3>
+        <p class="ea__done-text">{{form.doneBefore}} <strong data-ea-email></strong>{{form.doneAfter}}</p>
+        <button class="ea__again" type="button" data-ea-again>{{form.another}}</button>
+      </div>
+      </div>
     </div>
   </section>
 </main>
