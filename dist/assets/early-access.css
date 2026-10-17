@@ -66,7 +66,8 @@ body.home .ea__submit[disabled]:hover span{ transform:none; }
 
 /* ---------- Privacy notice page ---------- */
 .legal{ padding-bottom:var(--space); }
-.legal__inner{ max-width:50rem; }
+.legal__inner{ max-width:var(--wrap); }
+.legal__inner > *{ max-width:44rem; }
 .legal__meta{ margin-bottom:.5rem; font-size:var(--fs-small); color:var(--c-muted); }
 .legal__block{ margin-top:2rem; }
 .legal__block h2{ font-size:var(--fs-h3); font-weight:500; letter-spacing:-.01em; }
