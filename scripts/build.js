@@ -22,6 +22,7 @@ const SOURCE = 'en';   /* editorial source language and fallback */
 const PAGES = [
   { id: 'home', file: 'index.html' },
   { id: 'products', file: 'products/index.html' },
+  { id: 'science', file: 'science/index.html' },
   { id: 'privacy', file: 'privacy/index.html' }
   /* next: vision, wellness, technology, about (add a template in src/ and a block in each locale) */
 ];

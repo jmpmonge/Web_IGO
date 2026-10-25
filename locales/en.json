@@ -11,6 +11,7 @@
     "vision": "Vision",
     "wellness": "Wellness",
     "technology": "Technology",
+    "science": "Science",
     "about": "About",
     "products": "Products",
     "earlyAccess": "Early access"
@@ -156,5 +157,43 @@
       "text": "You can ask us to access, correct or delete your details, to restrict or object to their use, or to withdraw your consent, by contacting the controller above. You can also complain to your data protection authority."
     },
     "back": "Back to home"
+  },
+  "science": {
+    "meta": {
+      "title": "Science — IGO",
+      "description": "The IGO library. Concepts, questions and evidence, by subject. A piece appears once it is approved."
+    },
+    "kicker": "Science",
+    "title": "What can be\nexplained.",
+    "sub": "A library by subject, not a list by date. A piece appears here once it is approved.",
+    "areasAria": "Areas",
+    "health": {
+      "name": "Health & Performance",
+      "text": "Sleep, recovery, activity, and how far a metric can go."
+    },
+    "vision": {
+      "name": "Vision & Technology",
+      "text": "Glasses, interfaces and wearable technology. Hardware is not published here."
+    },
+    "lab": {
+      "name": "IGO Lab",
+      "text": "Tests and design, only what has already been done."
+    },
+    "empty": "No published pieces",
+    "kindsAria": "How a piece arrives",
+    "kindsTitle": "Three forms",
+    "concept": {
+      "name": "Knowledge",
+      "text": "A stable concept. It is updated on the same page."
+    },
+    "article": {
+      "name": "Article",
+      "text": "A question, when it adds something that was not here."
+    },
+    "evidence": {
+      "name": "Evidence",
+      "text": "A claim and its scope. One measurement does not cover the whole system."
+    },
+    "close": "What cannot be published stays out. This page is waiting for the first piece."
   }
 }

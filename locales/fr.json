@@ -11,6 +11,7 @@
     "vision": "Vision",
     "wellness": "Wellness",
     "technology": "Technologie",
+    "science": "Science",
     "about": "À propos",
     "products": "Produits",
     "earlyAccess": "Accès anticipé"
@@ -156,5 +157,43 @@
       "text": "Vous pouvez demander l'accès, la rectification ou l'effacement de vos données, la limitation ou l'opposition à leur utilisation, ou retirer votre consentement, en contactant le responsable indiqué ci-dessus. Vous pouvez aussi introduire une réclamation auprès de votre autorité de protection des données."
     },
     "back": "Retour à l'accueil"
+  },
+  "science": {
+    "meta": {
+      "title": "Science — IGO",
+      "description": "La bibliothèque IGO. Concepts, questions et preuves, par thème. Une pièce apparaît lorsqu'elle est approuvée."
+    },
+    "kicker": "Science",
+    "title": "Ce qui peut\ns'expliquer.",
+    "sub": "Une bibliothèque par thème, pas une liste par date. Une pièce apparaît ici lorsqu'elle est approuvée.",
+    "areasAria": "Domaines",
+    "health": {
+      "name": "Corps et performance",
+      "text": "Sommeil, récupération, activité, et la portée d'une mesure."
+    },
+    "vision": {
+      "name": "Vision et technologie",
+      "text": "Lunettes, interfaces et technologie portable. Le matériel n'est pas publié ici."
+    },
+    "lab": {
+      "name": "IGO Lab",
+      "text": "Essais et design, seulement ce qui a déjà été fait."
+    },
+    "empty": "Aucune pièce publiée",
+    "kindsAria": "Comment une pièce entre",
+    "kindsTitle": "Trois formes",
+    "concept": {
+      "name": "Connaissance",
+      "text": "Un concept stable. Il se met à jour sur la même page."
+    },
+    "article": {
+      "name": "Article",
+      "text": "Une question, lorsqu'elle apporte quelque chose qui n'y était pas."
+    },
+    "evidence": {
+      "name": "Preuve",
+      "text": "Une affirmation et sa portée. Une mesure ne couvre pas tout le système."
+    },
+    "close": "Ce qui ne peut pas être publié reste dehors. Cette page attend la première pièce."
   }
 }

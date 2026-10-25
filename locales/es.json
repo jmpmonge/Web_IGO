@@ -11,6 +11,7 @@
     "vision": "Vision",
     "wellness": "Wellness",
     "technology": "Tecnología",
+    "science": "Ciencia",
     "about": "Nosotros",
     "products": "Productos",
     "earlyAccess": "Acceso anticipado"
@@ -156,5 +157,43 @@
       "text": "Puedes pedirnos acceso, rectificación o supresión de tus datos, la limitación u oposición a su uso, o retirar tu consentimiento, contactando con el responsable indicado arriba. También puedes reclamar ante tu autoridad de protección de datos."
     },
     "back": "Volver al inicio"
+  },
+  "science": {
+    "meta": {
+      "title": "Ciencia — IGO",
+      "description": "La biblioteca de IGO. Conceptos, cuestiones y evidencias, por temas. Una ficha aparece cuando está aprobada."
+    },
+    "kicker": "Ciencia",
+    "title": "Lo que se puede\nexplicar.",
+    "sub": "Una biblioteca por temas, no una lista por fechas. Una ficha aparece aquí cuando está aprobada.",
+    "areasAria": "Áreas",
+    "health": {
+      "name": "Cuerpo y rendimiento",
+      "text": "Sueño, recuperación, actividad y el alcance de una métrica."
+    },
+    "vision": {
+      "name": "Visión y tecnología",
+      "text": "Gafas, interfaces y tecnología que se lleva puesta. El hardware no se publica aquí."
+    },
+    "lab": {
+      "name": "IGO Lab",
+      "text": "Pruebas y diseño, solo lo que ya se ha hecho."
+    },
+    "empty": "Sin fichas publicadas",
+    "kindsAria": "Cómo entra una pieza",
+    "kindsTitle": "Tres formas",
+    "concept": {
+      "name": "Conocimiento",
+      "text": "Un concepto estable. Se actualiza en la misma página."
+    },
+    "article": {
+      "name": "Artículo",
+      "text": "Una cuestión, cuando aporta algo que no estaba."
+    },
+    "evidence": {
+      "name": "Evidencia",
+      "text": "Una afirmación y su alcance. Una medición no cubre todo el sistema."
+    },
+    "close": "Lo que no se puede publicar se queda fuera. Esta página espera la primera ficha."
   }
 }
