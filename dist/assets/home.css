@@ -139,8 +139,8 @@
 .wband__line{ display:block; }
 .wband__sub{ margin-top:1rem; color:#D9DDE3; font-size:clamp(1.0625rem,.95rem + .5vw,1.3125rem); }
 .wband__cta{ margin-top:1.75rem; }
-.wband .hero__btn{ border-radius:999px; min-height:48px; padding:.75rem 1.5rem; background:var(--c-ink); border-color:rgba(255,255,255,.4); }
-.wband .hero__btn:hover{ background:var(--c-graphite); border-color:rgba(255,255,255,.5); }
+.wband .hero__btn{ border-radius:999px; min-height:48px; padding:.75rem 1.5rem; background:var(--c-navy); border-color:var(--c-navy); }
+.wband .hero__btn:hover{ background:var(--c-navy-hover); border-color:var(--c-navy-hover); }
 .wband :focus-visible{ outline-color:var(--c-white); }
 .wband__media{ position:relative; aspect-ratio:4/3; }
 .wband__media img{ width:100%; height:100%; object-fit:cover; object-position:68% center; }

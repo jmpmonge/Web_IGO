@@ -36,7 +36,7 @@ body.home .site-header.is-scrolled .site-header__inner,body.page--products .site
   }
 }
 
-/* Header Buy button (gold) and Home hero button (deep blue) */
+/* Shared CTA colour. Every button matches the early-access submit: navy pill. */
 :root{ --c-navy:#234B6C; --c-navy-hover:#1C3D58; --c-gold:#F2C14E; --c-gold-hover:#EBB535; }
 body.home .hero .hero__btn{ background:var(--c-navy); border-color:var(--c-navy); }
 body.home .hero .hero__btn:hover{ background:var(--c-navy-hover); border-color:var(--c-navy-hover); }
@@ -77,10 +77,10 @@ body.home .hero .hero__btn:hover{ background:var(--c-navy-hover); border-color:v
   :is(body.home,body.page--vision,body.page--products) .header-cta{
     position:relative; display:inline-flex; align-items:center; gap:.5rem; margin-left:2.5rem; min-height:40px; padding:.4375rem 1.125rem;
     font-size:.875rem; font-weight:500; letter-spacing:.015em; text-decoration:none; white-space:nowrap;
-    color:var(--c-navy); background:var(--c-gold); border:1px solid var(--c-gold); border-radius:12px; transition:background-color 200ms ease,border-color 200ms ease;
+    color:var(--c-white); background:var(--c-navy); border:1px solid var(--c-navy); border-radius:999px; transition:background-color 200ms ease,border-color 200ms ease;
   }
   :is(body.home,body.page--vision,body.page--products) .header-cta::before{ content:""; position:absolute; inset:-3px 0; }   /* keeps a 44px hit area on a 40px button */
-  :is(body.home,body.page--vision,body.page--products) .header-cta:hover{ background:var(--c-gold-hover); border-color:var(--c-gold-hover); }
+  :is(body.home,body.page--vision,body.page--products) .header-cta:hover{ background:var(--c-navy-hover); border-color:var(--c-navy-hover); }
   :is(body.home,body.page--vision,body.page--products) .header-cta span{ transition:transform 200ms var(--hero-ease); }
   :is(body.home,body.page--vision,body.page--products) .header-cta:hover span{ transform:translateX(3px); }
 }
@@ -102,11 +102,11 @@ body.home .hero .hero__btn:hover{ background:var(--c-navy-hover); border-color:v
 :is(body.home,body.page--vision,body.page--products) .hero__btn{
   display:inline-flex; align-items:center; gap:.625rem; min-height:52px; padding:.875rem 1.75rem;
   font:inherit; font-size:1rem; font-weight:400; letter-spacing:.01em; text-decoration:none; color:var(--c-white);
-  background:var(--c-ink); border:1px solid var(--c-ink); border-radius:14px; cursor:pointer;
+  background:var(--c-navy); border:1px solid var(--c-navy); border-radius:999px; cursor:pointer;
   transition:background-color 200ms ease,border-color 200ms ease;
 }
 :is(body.home,body.page--vision,body.page--products) .hero__btn span{ display:inline-block; transition:transform 200ms var(--hero-ease); }
-:is(body.home,body.page--vision,body.page--products) .hero__btn:hover{ background:var(--c-graphite); border-color:var(--c-graphite); }
+:is(body.home,body.page--vision,body.page--products) .hero__btn:hover{ background:var(--c-navy-hover); border-color:var(--c-navy-hover); }
 :is(body.home,body.page--vision,body.page--products) .hero__btn:hover span{ transform:translateX(4px); }
 
 :is(body.home,body.page--vision,body.page--products) .hero__film{
@@ -169,7 +169,7 @@ body.home .hero .hero__btn:hover{ background:var(--c-navy-hover); border-color:v
   :is(body.home,body.page--vision,body.page--products) .hero__title{ font-size:clamp(2.75rem,4.9vw,5.5rem); }
   :is(body.home,body.page--vision,body.page--products) .hero__features-wrap{ position:absolute; inset:auto 0 0 0; z-index:1; max-width:120rem; margin-inline:auto; padding-bottom:clamp(1rem,3vh,2rem); color:var(--c-white); }
   :is(body.home,body.page--vision,body.page--products) .hero__features{ grid-template-columns:repeat(4,minmax(0,1fr)); max-width:68rem; margin-inline:auto; }
-  :is(body.home,body.page--vision,body.page--products) .hero__feature{ grid-template-columns:auto auto; justify-content:center; padding:.5rem clamp(.75rem,2vw,2rem); }
+  :is(body.home,body.page--vision,body.page--products) .hero__feature{ grid-template-columns:auto auto; justify-content:start; padding:.5rem clamp(.75rem,2vw,2rem); }
   :is(body.home,body.page--vision,body.page--products) .hero__feature-name,:is(body.home,body.page--vision,body.page--products) .hero__feature-text{ text-wrap:balance; }
   :is(body.home,body.page--vision,body.page--products) .hero__feature + .hero__feature{ border-left:1px solid rgba(255,255,255,.28); }
   :is(body.home,body.page--vision,body.page--products) .hero__features-wrap :focus-visible{ outline-color:var(--c-white); }
