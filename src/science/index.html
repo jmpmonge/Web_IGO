@@ -10,12 +10,10 @@
 {{seo}}
 <link rel="icon" href="{{root}}assets/igo/igo-logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{{root}}assets/igo.css">
-<link rel="stylesheet" href="{{root}}assets/home.css">
 <link rel="stylesheet" href="{{root}}assets/footer.css">
 <link rel="stylesheet" href="{{root}}assets/hero.css">
 <link rel="stylesheet" href="{{root}}assets/lang.css">
 <link rel="stylesheet" href="{{root}}assets/science.css">
-<link rel="preload" as="image" href="{{root}}assets/images/images_igo/vision_hero.webp" type="image/webp" media="(min-width:48em) and (orientation:landscape)">
 <script>
   (function (d) {
     d.classList.add('js');
@@ -58,55 +56,51 @@
 </header>
 
 <main id="main" tabindex="-1">
-  <section class="scene hero" aria-labelledby="page-title">
-    <div class="hero__media">
-      <picture>
-        <source media="(max-width:47.99em), (orientation:portrait)" srcset="{{root}}assets/images/images_igo/vision_hero_mobile.webp" type="image/webp">
-        <source srcset="{{root}}assets/images/images_igo/vision_hero.webp" type="image/webp">
-        <img class="hero__image" src="{{root}}assets/images/images_igo/vision_hero.webp" alt="{{science.heroAlt}}" width="1774" height="887" fetchpriority="high" decoding="async">
-      </picture>
-    </div>
-    <div class="wrap hero__copy">
-      <p class="kicker" data-hero-in style="--d:120ms">{{science.kicker}}</p>
-      <h1 id="page-title" class="hero__title" data-hero-in style="--d:240ms">{{lines:science.title|hero__line}}</h1>
-      <p class="hero__sub" data-hero-in style="--d:360ms">{{science.sub}}</p>
+  <section class="ciencia-hero" aria-labelledby="page-title">
+    <div class="wrap">
+      <p class="ciencia-kicker">{{science.kicker}}</p>
+      <h1 id="page-title">{{lines:science.title|ciencia-line}}</h1>
+      <p class="ciencia-sub">{{science.sub}}</p>
     </div>
   </section>
 
-  <section class="scene band band--wellness wband" aria-labelledby="ciencia-salud">
-    <div class="wrap wband__copy" data-motion="text">
-      <p class="kicker">01</p>
-      <h2 id="ciencia-salud" class="band__title">{{lines:science.health.name|wband__line}}</h2>
-      <p class="wband__sub">{{science.health.text}}</p>
-      <p class="ciencia-note">{{science.empty}}</p>
-    </div>
-    <div class="wband__media" data-motion="visual">
-      <img src="{{root}}assets/images/images_igo/wellness_band.webp" alt="{{home.wellness.alt}}" width="2103" height="748" loading="lazy" decoding="async">
-    </div>
-  </section>
-
-  <section class="scene band vband" aria-labelledby="ciencia-vision">
-    <div class="wrap vband__head" data-motion="text">
-      <p class="kicker">02</p>
-      <h2 id="ciencia-vision" class="band__title">{{science.vision.name}}</h2>
-      <p class="vband__sub">{{science.vision.text}}</p>
-      <p class="ciencia-note">{{science.empty}}</p>
-    </div>
-    <figure class="vband__stage" data-motion="visual">
-      <img src="{{root}}assets/images/images_igo/vision_band.webp" alt="{{home.vision.alt}}" width="1983" height="793" loading="lazy" decoding="async">
-    </figure>
-  </section>
-
-  <section class="scene band vband vband--tech" aria-labelledby="ciencia-lab">
-    <div class="wrap vband__head" data-motion="text">
-      <p class="kicker">03</p>
-      <h2 id="ciencia-lab" class="band__title">{{science.lab.name}}</h2>
-      <p class="vband__sub">{{science.lab.text}}</p>
-      <p class="ciencia-note">{{science.empty}}</p>
-    </div>
-    <figure class="vband__stage" data-motion="visual">
-      <img src="{{root}}assets/images/images_igo/technology_band.webp" alt="{{home.tech.alt}}" width="1983" height="793" loading="lazy" decoding="async">
-    </figure>
+  <section class="laminas" aria-label="{{science.areasAria}}">
+    <article class="lamina" aria-labelledby="ciencia-salud">
+      <header class="lamina__titulo">
+        <p class="lamina__indice">01</p>
+        <h2 id="ciencia-salud">{{science.health.name}}</h2>
+        <p>{{science.health.text}}</p>
+      </header>
+      <dl class="lamina__info">
+        <div><dt>{{science.fields.enters}}</dt><dd>{{science.health.enters}}</dd></div>
+        <div><dt>{{science.fields.stays}}</dt><dd>{{science.health.stays}}</dd></div>
+        <div><dt>{{science.fields.out}}</dt><dd>{{science.health.out}}</dd></div>
+      </dl>
+    </article>
+    <article class="lamina" aria-labelledby="ciencia-vision">
+      <header class="lamina__titulo">
+        <p class="lamina__indice">02</p>
+        <h2 id="ciencia-vision">{{science.vision.name}}</h2>
+        <p>{{science.vision.text}}</p>
+      </header>
+      <dl class="lamina__info">
+        <div><dt>{{science.fields.enters}}</dt><dd>{{science.vision.enters}}</dd></div>
+        <div><dt>{{science.fields.stays}}</dt><dd>{{science.vision.stays}}</dd></div>
+        <div><dt>{{science.fields.out}}</dt><dd>{{science.vision.out}}</dd></div>
+      </dl>
+    </article>
+    <article class="lamina lamina--lab" aria-labelledby="ciencia-lab">
+      <header class="lamina__titulo">
+        <p class="lamina__indice">03</p>
+        <h2 id="ciencia-lab">{{science.lab.name}}</h2>
+        <p>{{science.lab.text}}</p>
+      </header>
+      <dl class="lamina__info">
+        <div><dt>{{science.fields.enters}}</dt><dd>{{science.lab.enters}}</dd></div>
+        <div><dt>{{science.fields.stays}}</dt><dd>{{science.lab.stays}}</dd></div>
+        <div><dt>{{science.fields.out}}</dt><dd>{{science.lab.out}}</dd></div>
+      </dl>
+    </article>
   </section>
 
   <section class="ciencia-kinds" aria-label="{{science.kindsAria}}">

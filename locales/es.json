@@ -168,17 +168,31 @@
     "title": "Lo que se puede\nexplicar.",
     "sub": "Una biblioteca por temas, no una lista por fechas. Una ficha aparece aquí cuando está aprobada.",
     "areasAria": "Áreas",
+    "fields": {
+      "enters": "Qué entra",
+      "stays": "Cómo vive",
+      "out": "Qué no entra"
+    },
     "health": {
       "name": "Cuerpo y rendimiento",
-      "text": "Sueño, recuperación, actividad y el alcance de una métrica."
+      "text": "Sueño, recuperación, actividad y el alcance de una métrica.",
+      "enters": "Sueño, recuperación y actividad, explicados como concepto.",
+      "stays": "La ficha se actualiza en la misma página cuando el concepto se precisa.",
+      "out": "Un diagnóstico, o una medición tomada por todo el cuerpo."
     },
     "vision": {
       "name": "Visión y tecnología",
-      "text": "Gafas, interfaces y tecnología que se lleva puesta. El hardware no se publica aquí."
+      "text": "Gafas, interfaces y tecnología que se lleva puesta. El hardware no se publica aquí.",
+      "enters": "El uso de las gafas, las interfaces y la tecnología que se lleva puesta.",
+      "stays": "Se explica el uso. El hardware no se publica aquí.",
+      "out": "El diseño interno, los proveedores y lo que no está autorizado."
     },
     "lab": {
       "name": "IGO Lab",
-      "text": "Pruebas y diseño, solo lo que ya se ha hecho."
+      "text": "Pruebas y diseño, solo lo que ya se ha hecho.",
+      "enters": "Pruebas y diseño, solo lo que ya se ha hecho.",
+      "stays": "Cada afirmación lleva su alcance.",
+      "out": "Lo que no se puede publicar se queda fuera."
     },
     "empty": "Sin fichas publicadas",
     "kindsAria": "Cómo entra una pieza",

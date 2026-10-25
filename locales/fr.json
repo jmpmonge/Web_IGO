@@ -168,17 +168,31 @@
     "title": "Ce qui peut\ns'expliquer.",
     "sub": "Une bibliothèque par thème, pas une liste par date. Une pièce apparaît ici lorsqu'elle est approuvée.",
     "areasAria": "Domaines",
+    "fields": {
+      "enters": "Ce qui entre",
+      "stays": "Comment elle vit",
+      "out": "Ce qui reste dehors"
+    },
     "health": {
       "name": "Corps et performance",
-      "text": "Sommeil, récupération, activité, et la portée d'une mesure."
+      "text": "Sommeil, récupération, activité, et la portée d'une mesure.",
+      "enters": "Sommeil, récupération et activité, expliqués comme un concept.",
+      "stays": "La pièce se met à jour sur la même page lorsque le concept se précise.",
+      "out": "Un diagnostic, ou une mesure prise pour tout le corps."
     },
     "vision": {
       "name": "Vision et technologie",
-      "text": "Lunettes, interfaces et technologie portable. Le matériel n'est pas publié ici."
+      "text": "Lunettes, interfaces et technologie portable. Le matériel n'est pas publié ici.",
+      "enters": "L'usage des lunettes, des interfaces et de la technologie portable.",
+      "stays": "On explique l'usage. Le matériel n'est pas publié ici.",
+      "out": "La conception interne, les fournisseurs, et ce qui n'est pas autorisé."
     },
     "lab": {
       "name": "IGO Lab",
-      "text": "Essais et design, seulement ce qui a déjà été fait."
+      "text": "Essais et design, seulement ce qui a déjà été fait.",
+      "enters": "Essais et design, seulement ce qui a déjà été fait.",
+      "stays": "Chaque affirmation porte sa portée.",
+      "out": "Ce qui ne peut pas être publié reste dehors."
     },
     "empty": "Aucune pièce publiée",
     "kindsAria": "Comment une pièce entre",

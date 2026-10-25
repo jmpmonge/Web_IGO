@@ -168,17 +168,31 @@
     "title": "What can be\nexplained.",
     "sub": "A library by subject, not a list by date. A piece appears here once it is approved.",
     "areasAria": "Areas",
+    "fields": {
+      "enters": "What goes in",
+      "stays": "How it lives",
+      "out": "What stays out"
+    },
     "health": {
       "name": "Health & Performance",
-      "text": "Sleep, recovery, activity, and how far a metric can go."
+      "text": "Sleep, recovery, activity, and how far a metric can go.",
+      "enters": "Sleep, recovery and activity, explained as a concept.",
+      "stays": "The piece is updated on the same page when the concept is made clearer.",
+      "out": "A diagnosis, or one measurement taken as the whole body."
     },
     "vision": {
       "name": "Vision & Technology",
-      "text": "Glasses, interfaces and wearable technology. Hardware is not published here."
+      "text": "Glasses, interfaces and wearable technology. Hardware is not published here.",
+      "enters": "The use of the glasses, the interfaces and wearable technology.",
+      "stays": "The use is explained. Hardware is not published here.",
+      "out": "Internal design, suppliers, and anything not authorized."
     },
     "lab": {
       "name": "IGO Lab",
-      "text": "Tests and design, only what has already been done."
+      "text": "Tests and design, only what has already been done.",
+      "enters": "Tests and design, only what has already been done.",
+      "stays": "Every claim carries its scope.",
+      "out": "What cannot be published stays out."
     },
     "empty": "No published pieces",
     "kindsAria": "How a piece arrives",

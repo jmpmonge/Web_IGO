@@ -1,30 +1,107 @@
-/* IGO Ciencia. The bands come from home.css. This file only adjusts the hero and the reading strip. */
+/* IGO Ciencia. A knowledge plate is the image: text that informs. No product photography. */
 
+.page--science main{ background:var(--c-warm); }
 .page--science .site-nav a[aria-current="page"]::after{ transform:scaleX(1); }
-.page--science .hero .kicker{ margin-bottom:1rem; letter-spacing:.18em; }
 
-@media (min-width:48em) and (orientation:landscape){
-  body.page--science .hero{ display:block; min-height:0; padding:0; }
-  body.page--science .hero__media{ position:relative; inset:auto; aspect-ratio:1774/887; }
-  body.page--science .hero__media .hero__image{ object-position:center center; }
-  body.page--science .hero__copy{
-    position:absolute; inset:auto 0 0 0; z-index:1;
-    padding-block:0 clamp(2rem,5vh,4rem);
-  }
-  body.page--science .hero__media::after{
-    inset:auto 0 0 0; height:46%;
-    background:linear-gradient(to top,rgba(247,245,241,.94),rgba(247,245,241,0));
-  }
+.ciencia-hero{
+  padding:calc(var(--hero-nav-h, 76px) + clamp(3.5rem, 9vw, 7rem)) 0 clamp(2.5rem, 6vw, 4rem);
+}
+.ciencia-kicker{
+  margin:0 0 1.25rem;
+  font-size:var(--fs-kicker);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--c-muted);
+}
+.ciencia-hero h1{
+  max-width:11ch;
+  font-size:var(--fs-hero);
+  font-weight:500;
+}
+.ciencia-line{ display:block; }
+.ciencia-sub{
+  max-width:34ch;
+  margin-top:1.5rem;
+  color:var(--c-muted);
+  font-size:clamp(1.05rem, .95rem + .4vw, 1.25rem);
 }
 
-.ciencia-note{
-  margin-top:1.5rem;
-  font-size:var(--fs-small);
+.lamina{
+  display:grid;
+  gap:clamp(1.75rem, 4vw, 3rem);
+  padding:clamp(2.25rem, 5vw, 4rem) var(--gutter);
+  border-top:1px solid var(--c-line);
+  background:var(--c-warm);
+}
+.lamina__indice{
+  margin:0 0 1rem;
+  font-size:.8125rem;
+  letter-spacing:.16em;
+  color:var(--c-muted);
+}
+.lamina h2{
+  max-width:12ch;
+  margin:0 0 .75rem;
+  font-size:clamp(2.25rem, 1.4rem + 2.4vw, 3.75rem);
+  font-weight:500;
+  letter-spacing:-.03em;
+}
+.lamina__titulo p{
+  max-width:28ch;
+  margin:0;
+  color:var(--c-muted);
+}
+.lamina__info{
+  display:grid;
+  gap:0;
+  margin:0;
+}
+.lamina__info div{
+  display:grid;
+  gap:.4rem;
+  padding:1.15rem 0;
+  border-top:1px solid var(--c-line);
+}
+.lamina__info dt{
+  font-size:.75rem;
+  font-weight:500;
   letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--c-muted);
 }
-.wband .ciencia-note{ color:var(--c-muted-dark); }
+.lamina__info dd{
+  margin:0;
+  max-width:36ch;
+  font-size:clamp(1.15rem, 1rem + .5vw, 1.45rem);
+  line-height:1.35;
+  letter-spacing:-.02em;
+}
+
+.lamina--lab{
+  background:var(--c-ink);
+  color:var(--c-warm);
+  border-top:0;
+}
+.lamina--lab .lamina__indice,
+.lamina--lab .lamina__titulo p,
+.lamina--lab .lamina__info dt{ color:var(--c-muted-dark); }
+.lamina--lab h2,
+.lamina--lab .lamina__info dd{ color:var(--c-warm); }
+.lamina--lab .lamina__info div{ border-top-color:rgba(247,245,241,.18); }
+
+@media (min-width:60em){
+  .lamina{
+    grid-template-columns:minmax(16rem, .9fr) minmax(0, 1.1fr);
+    align-items:start;
+    padding-inline:max(var(--gutter), calc((100% - var(--wrap)) / 2));
+  }
+  .lamina__info div{
+    grid-template-columns:9rem minmax(0, 1fr);
+    gap:1.5rem;
+    align-items:baseline;
+    padding:1.35rem 0;
+  }
+}
 
 .ciencia-kinds{ padding:clamp(4rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5rem); background:var(--c-warm); }
 .ciencia-kinds h2{
