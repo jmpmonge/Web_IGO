@@ -212,6 +212,8 @@
 @media (min-width:60em){
   .research-hero__grid,
   .research-split{ grid-template-columns:minmax(0, 1.05fr) minmax(16rem, .85fr); }
+  .research-topics .research-split:first-child{ grid-template-columns:minmax(0, 1.35fr) minmax(16rem, .75fr); align-items:center; }
+  .research-topics .research-split:first-child > div{ order:2; }
   .research-topics .research-split:nth-child(even){ direction:rtl; }
   .research-topics .research-split:nth-child(even) > *{ direction:ltr; }
   .research-diagram__line{ display:block; }
