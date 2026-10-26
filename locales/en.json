@@ -39,10 +39,22 @@
     },
     "features": {
       "aria": "IGO capabilities",
-      "capture": { "name": "Capture", "text": "Your perspective" },
-      "listen": { "name": "Listen", "text": "Stay connected" },
-      "ai": { "name": "AI", "text": "Real support" },
-      "further": { "name": "Go further", "text": "In everyday life" }
+      "capture": {
+        "name": "Capture",
+        "text": "Your perspective"
+      },
+      "listen": {
+        "name": "Listen",
+        "text": "Stay connected"
+      },
+      "ai": {
+        "name": "AI",
+        "text": "Real support"
+      },
+      "further": {
+        "name": "Go further",
+        "text": "In everyday life"
+      }
     },
     "film": {
       "aria": "IGO film",
@@ -85,8 +97,14 @@
     "title": "The IGO range.",
     "sub": "Smart eyewear and a smart ring, designed to work together.",
     "status": "Coming soon",
-    "vision": { "title": "Smart glasses", "cta": "Explore Vision" },
-    "wellness": { "title": "Smart ring", "cta": "Explore Wellness" }
+    "vision": {
+      "title": "Smart glasses",
+      "cta": "Explore Vision"
+    },
+    "wellness": {
+      "title": "Smart ring",
+      "cta": "Explore Wellness"
+    }
   },
   "cta": {
     "request": "Request early access"
@@ -160,55 +178,105 @@
   },
   "science": {
     "meta": {
-      "title": "Science — IGO",
-      "description": "The IGO library. Concepts, questions and evidence, by subject. A piece appears once it is approved."
+      "title": "Science and technology | IGO Research",
+      "description": "Understand wearables, smart glasses and artificial intelligence: mechanisms, uses, evidence and limitations through human experience."
+    },
+    "libraryMeta": {
+      "title": "Knowledge library | IGO Research",
+      "description": "Guides to sensors, smart glasses, sleep, artificial intelligence and attention, with sources and limitations explained."
     },
     "kicker": "Science",
-    "heroAlt": "Woman wearing IGO smart glasses by the sea at sunset",
-    "title": "What can be\nexplained.",
-    "sub": "A library by subject, not a list by date. A piece appears here once it is approved.",
-    "areasAria": "Areas",
-    "fields": {
-      "enters": "What goes in",
-      "stays": "How it lives",
-      "out": "What stays out"
+    "hero": {
+      "title": "IGO Research",
+      "sub": "Technology, science and human experience.",
+      "intro": "A space to understand the technology we carry with us: how it works, what information it provides and which questions to ask before trusting its results.",
+      "cta": "How it works",
+      "library": "Explore the library",
+      "note": "Educational content and analysis of public sources on technology and human experience.",
+      "imageAlt": "Conceptual composition of glasses and a technology ring",
+      "imageCaption": "Conceptual illustration"
     },
-    "health": {
-      "name": "Health & Performance",
-      "text": "Sleep, recovery, activity, and how far a metric can go.",
-      "enters": "Sleep, recovery and activity, explained as a concept.",
-      "stays": "The piece is updated on the same page when the concept is made clearer.",
-      "out": "A diagnosis, or one measurement taken as the whole body."
+    "technology": {
+      "title": "Understand what lies behind each feature.",
+      "wearablesTitle": "Wearables",
+      "wearables": "A device can record signals and turn them into indicators. To interpret them, it helps to distinguish what the sensor detects from what the software calculates.",
+      "glassesTitle": "Smart glasses",
+      "glasses": "Audio, cameras and displays are different features. The word “smart” does not tell you which ones a model includes or how its services work.",
+      "aiTitle": "Artificial intelligence",
+      "ai": "A useful answer starts with suitable data and a well-framed question. Clarity does not prove correctness.",
+      "sensorAlt": "Conceptual view of the optical sensors inside a ring"
     },
-    "vision": {
-      "name": "Vision & Technology",
-      "text": "Glasses, interfaces and wearable technology. Hardware is not published here.",
-      "enters": "The use of the glasses, the interfaces and wearable technology.",
-      "stays": "The use is explained. Hardware is not published here.",
-      "out": "Internal design, suppliers, and anything not authorized."
+    "chain": {
+      "title": "From a signal to an interpretation.",
+      "signalRole": "Input",
+      "signalLabel": "Signal",
+      "signal": "A sensor records a physical change.",
+      "qualityRole": "Processing",
+      "qualityLabel": "Quality",
+      "quality": "The system checks whether the signal is usable.",
+      "estimateRole": "Output",
+      "estimateLabel": "Estimate",
+      "estimate": "An algorithm calculates an indicator.",
+      "readRole": "Context",
+      "readLabel": "Interpretation",
+      "read": "The result is read alongside operating conditions and limitations.",
+      "feedback": "If quality is insufficient, check placement or repeat the reading according to the manual. Repetition alone does not turn an estimate into a validated measurement.",
+      "caption": "Conceptual diagram: the actual process depends on the device.",
+      "link": "Understand signals and estimates"
     },
-    "lab": {
-      "name": "IGO Lab",
-      "text": "Tests and design, only what has already been done.",
-      "enters": "Tests and design, only what has already been done.",
-      "stays": "Every claim carries its scope.",
-      "out": "What cannot be published stays out."
+    "human": {
+      "title": "The person is part of the system.",
+      "text": "Sleep, attention and the way we interact with an interface help us ask better questions about technology. This space considers both the data and the experience of the person using it.",
+      "sleep": "Reading sleep data",
+      "attention": "Designing for attention"
     },
-    "empty": "No published pieces",
-    "kindsAria": "How a piece arrives",
-    "kindsTitle": "Three forms",
-    "concept": {
-      "name": "Knowledge",
-      "text": "A stable concept. It is updated on the same page."
+    "limits": {
+      "title": "Measuring, estimating and interpreting are different things.",
+      "text": "Before accepting a conclusion, we ask what was recorded, how the result was produced and under which conditions it was evaluated. A commercial specification describes a feature; it does not replace a performance evaluation.",
+      "q1": "What data does it use?",
+      "q2": "How was it evaluated?",
+      "q3": "What cannot be concluded?"
     },
-    "article": {
-      "name": "Article",
-      "text": "A question, when it adds something that was not here."
+    "picks": {
+      "title": "Ideas for a better understanding of technology.",
+      "text": "Short guides connecting mechanisms, uses and limitations.",
+      "all": "View all guides"
     },
-    "evidence": {
-      "name": "Evidence",
-      "text": "A claim and its scope. One measurement does not cover the whole system."
+    "igo": {
+      "title": "Understand before you choose.",
+      "text": "IGO Research brings together explanations to help you ask better questions when reading a specification: what the device records, what depends on a phone or connection, and what evidence supports each feature. Product capabilities must be checked against the documentation for that model.",
+      "cta": "Explore the knowledge library"
     },
-    "close": "What cannot be published stays out. This page is waiting for the first piece."
+    "ui": {
+      "crumbs": "Breadcrumb",
+      "libraryTitle": "Knowledge library",
+      "libraryIntro": "Explore guides to devices, data and human experience.",
+      "searchLabel": "Search the library",
+      "searchPlaceholder": "Topic or keyword",
+      "filtersArea": "Area",
+      "filtersAll": "All areas",
+      "filtersClear": "Reset",
+      "resultsZero": "No guides match this search.",
+      "resultsOne": "1 guide",
+      "resultsMany": "{count} guides",
+      "read": "Read guide",
+      "sources": "Sources",
+      "related": "Related reading",
+      "back": "Back to the library",
+      "preview": "Editorial preview",
+      "area": {
+        "technology": "Technology",
+        "health-wellness": "Health and wellbeing",
+        "artificial-intelligence": "Artificial intelligence",
+        "human-science": "Human science",
+        "innovation": "Innovation"
+      },
+      "type": {
+        "guide": "Guide",
+        "technology-analysis": "Technology analysis",
+        "evidence-review": "Evidence review",
+        "insight": "Insight"
+      }
+    }
   }
 }

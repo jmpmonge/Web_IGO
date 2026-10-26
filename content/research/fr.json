@@ -1,0 +1,145 @@
+{
+  "G01": {
+    "title": "Signaux et estimations : lire un objet connecté portable",
+    "summary": "Du capteur à l’indicateur : distinguer le signal enregistré de l’interprétation affichée à l’écran.",
+    "tags": ["PPG", "capteur", "pouls", "signal"],
+    "sections": [
+      {
+        "heading": "Entre le corps et l’écran",
+        "paragraphs": [
+          {
+            "text": "La photopléthysmographie, ou PPG, utilise la lumière pour détecter des variations liées au pouls. Le système traite ce signal pour estimer des indicateurs tels que la fréquence du pouls. Le mouvement peut introduire des interférences.",
+            "sources": ["S02", "S03"]
+          }
+        ]
+      },
+      {
+        "heading": "Un exemple pour mieux questionner",
+        "paragraphs": [
+          "Imaginez qu’une valeur change lorsque vous bougez la main. La question utile est de savoir si le système a distingué le pouls du mouvement. Cet exemple est illustratif ; il ne décrit pas un essai d’un appareil IGO."
+        ]
+      },
+      {
+        "heading": "Que vérifier ?",
+        "paragraphs": [
+          "Recherchez le modèle, la fonction et les conditions évaluées. La présence d’un capteur ne justifie pas toutes les interprétations qu’une application peut afficher. N’utilisez pas un chiffre de précision sans connaître sa référence et son contexte."
+        ]
+      }
+    ]
+  },
+  "G02": {
+    "title": "Lunettes connectées : distinguer les fonctions",
+    "summary": "Audio, caméra, affichage et assistance numérique ont des rôles distincts. Apprenez à lire une fiche technique sans les confondre.",
+    "tags": ["lunettes", "audio", "caméra", "affichage"],
+    "sections": [
+      {
+        "heading": "Une catégorie, plusieurs configurations",
+        "paragraphs": [
+          {
+            "text": "Il existe sur le marché des lunettes proposant l’audio, la capture d’images ou l’affichage d’informations. La documentation Ray-Ban/Meta distingue des configurations ; il s’agit d’un exemple externe, pas d’une description d’IGO.",
+            "sources": ["S06"]
+          }
+        ]
+      },
+      {
+        "heading": "Suivre une fonction de bout en bout",
+        "paragraphs": [
+          "Pour évaluer une fonction, suivez son parcours : entrée, traitement et sortie. Que recueille l’appareil ? Où ces données sont-elles traitées ? Comment recevez-vous le résultat ? C’est une méthode de lecture, pas une architecture attribuée à tous les modèles."
+        ]
+      },
+      {
+        "heading": "Avant de comparer",
+        "paragraphs": [
+          "Vérifiez séparément caméra, audio et affichage. Consultez les exigences relatives au téléphone, à la connexion, à l’application, à la langue et à la région dans la documentation du modèle. Pour la capture, vérifiez aussi les commandes d’enregistrement et la destination des données."
+        ]
+      }
+    ]
+  },
+  "G03": {
+    "title": "Lire les données de sommeil dans leur contexte",
+    "summary": "Les questions à poser lorsqu’une application présente une durée, des phases ou un score de sommeil.",
+    "tags": ["sommeil", "phases", "score"],
+    "sections": [
+      {
+        "heading": "Une représentation du repos",
+        "paragraphs": [
+          {
+            "text": "Les phases du sommeil sont étudiées à l’aide de signaux tels que l’activité cérébrale et les mouvements oculaires. Il est utile de demander quels signaux l’appareil considéré utilise pour produire sa représentation.",
+            "sources": ["S04"]
+          }
+        ]
+      },
+      {
+        "heading": "Un score demande une explication",
+        "paragraphs": [
+          {
+            "text": "Une valeur agrégée invite à demander ce qu’elle combine et comment elle a été validée. Dans sa prise de position de 2018, l’AASM soulignait l’importance de valider les technologies grand public avant un usage diagnostique. Ce document historique ne détermine pas le statut réglementaire de chaque produit actuel.",
+            "sources": ["S05"]
+          }
+        ]
+      },
+      {
+        "heading": "Un exemple de lecture",
+        "paragraphs": [
+          "Si une application présente une nuit différente, notez ce qui a changé dans l’utilisation et votre perception du repos. Ne déduisez pas un trouble de ce graphique. L’évaluation d’une fonction précise exige des preuves concernant ce modèle et son usage prévu."
+        ]
+      }
+    ]
+  },
+  "G04": {
+    "title": "IA : des réponses claires, des questions nécessaires",
+    "summary": "Examiner une explication générée par l’IA sans confondre aisance rédactionnelle et preuves.",
+    "tags": ["intelligence artificielle", "NIST", "réponse"],
+    "sections": [
+      {
+        "heading": "Une réponse peut être erronée",
+        "paragraphs": [
+          {
+            "text": "Les systèmes génératifs peuvent produire un contenu faux sur un ton convaincant. Le NIST identifie ce risque, y compris les références inventées.",
+            "sources": ["S07"]
+          }
+        ]
+      },
+      {
+        "heading": "Séparer les étapes",
+        "paragraphs": [
+          "Nous proposons de lire une explication en trois parties : les données disponibles, l’inférence réalisée et la conclusion présentée. Si une information manque, la réponse devrait le rendre visible plutôt que combler ce vide par une certitude."
+        ]
+      },
+      {
+        "heading": "Un exemple minimal",
+        "paragraphs": [
+          "Face à « votre récupération s’est dégradée », demandez quelles données étayent cette phrase et si une autre explication est possible. Cette question aide à évaluer la réponse ; elle ne confirme ni un diagnostic ni la capacité de l’appareil à mesurer la récupération. L’assistance par IA et les fonctions d’un capteur doivent être documentées séparément."
+        ]
+      }
+    ]
+  },
+  "G05": {
+    "title": "Concevoir pour l’attention",
+    "summary": "Une interface s’évalue aussi par le contrôle des interruptions et par la facilité à reprendre une tâche.",
+    "tags": ["attention", "interface", "interruption"],
+    "sections": [
+      {
+        "heading": "L’interaction compte",
+        "paragraphs": [
+          {
+            "text": "Les recommandations d’accessibilité cognitive du W3C préconisent de réduire les distractions et de faciliter l’orientation. Leurs modèles de conception incluent le contrôle des interruptions. Il s’agit de conseils complémentaires, pas d’une certification de produit.",
+            "sources": ["S08", "S09"]
+          }
+        ]
+      },
+      {
+        "heading": "Une proposition pratique",
+        "paragraphs": [
+          "Pour évaluer une interface, essayez une tâche simple : trouver une explication, désactiver une interruption et revenir à votre point de lecture. Observez si les commandes sont compréhensibles et si le système préserve le contexte."
+        ]
+      },
+      {
+        "heading": "Ce que cela permet de conclure",
+        "paragraphs": [
+          "Ce parcours aide à repérer des difficultés d’utilisation. Il ne démontre pas une amélioration de l’attention, de la mémoire ou de la santé mentale. De tels effets nécessiteraient des études spécifiques. IGO Research applique cette approche éditoriale avec une lecture calme, une navigation claire et aucun contenu lancé automatiquement."
+        ]
+      }
+    ]
+  }
+}

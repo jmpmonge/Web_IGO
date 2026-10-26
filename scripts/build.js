@@ -28,6 +28,7 @@ const PAGES = [
 ];
 const COPY_AS_IS = ['vision', 'wellness', 'technology', 'about'];   /* src/<name>/index.html: provisional pages, copied unchanged (not translated yet) to dist/<name>/ */
 
+const research = require('./research');
 const siteUrl = (JSON.parse(fs.readFileSync(path.join(__dirname, 'site.json'), 'utf8')).siteUrl || '').replace(/\/+$/, '');
 /* Early access form endpoint (form-handling service). Read on every build so --watch picks up changes to scripts/site.json. */
 const formEndpoint = () => String(JSON.parse(fs.readFileSync(path.join(__dirname, 'site.json'), 'utf8')).formEndpoint || '').trim();
@@ -60,6 +61,8 @@ function t(lang, key) {
   throw new Error('Unknown locale key: ' + key);
 }
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+let pageIndex = PAGES;
+let preview = false;
 
 /* ---------- helpers ---------- */
 const depth = (page) => page.file.split('/').length - 1;
@@ -97,9 +100,12 @@ function render(page, lang, tpl) {
     if (tok === 'langMenu') return langMenu(page, lang);
     if (tok === 'langInline') return langInline(page, lang);
     if (tok.startsWith('link:')) {
-      const target = PAGES.find((p) => p.id === tok.slice(5));
+      const target = pageIndex.find((p) => p.id === tok.slice(5));
       if (!target) throw new Error('Unknown page id in ' + m);
       return link(page, target);
+    }
+    if (tok.startsWith('research:')) {
+      return research.token(tok.slice(9), page, lang, { esc, t, link, pages: pageIndex, preview });
     }
     if (tok.startsWith('lines:')) {
       const [key, cls] = tok.slice(6).split('|');
@@ -111,23 +117,40 @@ function render(page, lang, tpl) {
 
 /* ---------- output ---------- */
 function write(file, data) { fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, data); }
+function emit(page, generated) {
+  const tpl = fs.readFileSync(path.join(SRC, page.template || page.file), 'utf8');
+  LANGS.forEach((l) => {
+    const html = render(page, l.code, tpl);
+    const left = html.match(/\{\{[^}]*\}\}/);
+    if (left) throw new Error('Unresolved token ' + left[0] + ' in ' + l.code + '/' + page.file);
+    const out = path.join(DIST, l.code, page.file);
+    write(out, html);
+    generated.push(out);
+  });
+}
+function cleanScience(kept) {
+  LANGS.forEach((l) => {
+    const dir = path.join(DIST, l.code, 'science');
+    if (!fs.existsSync(dir)) return;
+    fs.readdirSync(dir).forEach((name) => {
+      if (name === 'index.html' || name === 'library') return;
+      if (!kept.has(name)) fs.rmSync(path.join(dir, name), { recursive: true, force: true });
+    });
+  });
+}
 function build() {
   warnings = [];
   loadLocales();
+  preview = process.argv.includes('--preview');
+  research.load(ROOT);
+  research.assertFilter();
+  pageIndex = PAGES.concat(research.extraPages(preview));
   if (!/^https:\/\//.test(formEndpoint())) warnings.push('formEndpoint is empty or not https in scripts/site.json: the early access form will NOT send until it is set');
+  if (!siteUrl) warnings.push('siteUrl is empty in scripts/site.json: canonicals stay relative');
   const generated = [];
 
-  PAGES.forEach((page) => {
-    const tpl = fs.readFileSync(path.join(SRC, page.file), 'utf8');
-    LANGS.forEach((l) => {
-      const html = render(page, l.code, tpl);
-      const left = html.match(/\{\{[^}]*\}\}/);
-      if (left) throw new Error('Unresolved token ' + left[0] + ' in ' + l.code + '/' + page.file);
-      const out = path.join(DIST, l.code, page.file);
-      write(out, html);
-      generated.push(out);
-    });
-  });
+  pageIndex.forEach((page) => emit(page, generated));
+  cleanScience(research.slugs(preview));
 
   /* neutral entry: detects the language, never overrides a specific URL */
   const codes = LANGS.map((l) => l.code);
@@ -171,7 +194,7 @@ function build() {
   });
 
 
-  console.log('Built ' + generated.length + ' pages (' + LANGS.map((l) => l.code).join(', ') + '), copied ' + copied + ' assets → dist/');
+  console.log('Built ' + generated.length + ' pages (' + LANGS.map((l) => l.code).join(', ') + ')' + (preview ? ' [preview]' : '') + ', copied ' + copied + ' assets → dist/');
   warnings.forEach((w) => console.warn('warning: ' + w));
 
 }
@@ -181,7 +204,7 @@ build();
 if (process.argv.includes('--watch')) {
   /* Watches templates, locales, scripts/site.json and assets. dist/ is never watched, so a build cannot trigger another build.
      The build only writes inside dist/: it never modifies src/ or locales/. */
-  const targets = [SRC, LOCALES, path.join(ROOT, 'assets'), path.join(__dirname, 'site.json')];
+  const targets = [SRC, LOCALES, path.join(ROOT, 'assets'), path.join(ROOT, 'content', 'research'), path.join(__dirname, 'site.json')];
   let timer = null;
   const trigger = (why) => {
     clearTimeout(timer);

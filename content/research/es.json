@@ -1,0 +1,145 @@
+{
+  "G01": {
+    "title": "Señales y estimaciones: cómo leer un wearable",
+    "summary": "Del sensor al indicador: una guía para distinguir la señal registrada de la interpretación que aparece en pantalla.",
+    "tags": ["PPG", "sensor", "pulso", "señal"],
+    "sections": [
+      {
+        "heading": "Qué sucede entre el cuerpo y la pantalla",
+        "paragraphs": [
+          {
+            "text": "La fotopletismografía, o PPG, emplea luz para detectar cambios relacionados con el pulso. El sistema procesa esa señal para estimar indicadores como la frecuencia del pulso. El movimiento puede introducir interferencias.",
+            "sources": ["S02", "S03"]
+          }
+        ]
+      },
+      {
+        "heading": "Un ejemplo para hacer mejores preguntas",
+        "paragraphs": [
+          "Imagina que una lectura cambia al mover la mano. La pregunta útil es si el sistema distinguió el pulso del movimiento. Este ejemplo es ilustrativo: no describe una prueba de un dispositivo IGO."
+        ]
+      },
+      {
+        "heading": "Qué comprobar",
+        "paragraphs": [
+          "Busca el modelo, la función y las condiciones evaluadas. Que un aparato incluya un sensor no acredita todas las interpretaciones que una aplicación pueda mostrar. No uses una cifra de precisión sin conocer su referencia y contexto."
+        ]
+      }
+    ]
+  },
+  "G02": {
+    "title": "Gafas inteligentes: funciones que conviene distinguir",
+    "summary": "Audio, cámara, pantalla y asistencia digital cumplen funciones distintas. Aprende a leer una ficha técnica sin confundirlas.",
+    "tags": ["gafas", "audio", "cámara", "pantalla"],
+    "sections": [
+      {
+        "heading": "Una categoría, distintas configuraciones",
+        "paragraphs": [
+          {
+            "text": "En el mercado existen gafas con audio, captura de imagen o visualización de información. La documentación de Ray-Ban/Meta diferencia configuraciones; esto sirve como ejemplo externo, no como descripción de IGO.",
+            "sources": ["S06"]
+          }
+        ]
+      },
+      {
+        "heading": "Leer una función de principio a fin",
+        "paragraphs": [
+          "Para evaluar una función, sigue su recorrido: entrada, procesamiento y salida. ¿Qué recoge el dispositivo? ¿Dónde se procesa? ¿Cómo recibes el resultado? Esta es una pauta de lectura, no una arquitectura atribuida a todos los modelos."
+        ]
+      },
+      {
+        "heading": "Antes de comparar",
+        "paragraphs": [
+          "Comprueba cámara, audio y pantalla por separado. Revisa requisitos de teléfono, conexión, aplicación, idioma y región en la ficha del modelo. Para funciones de captura, consulta también los controles de grabación y el destino de los datos."
+        ]
+      }
+    ]
+  },
+  "G03": {
+    "title": "Leer los datos de sueño con contexto",
+    "summary": "Qué preguntas hacer cuando una aplicación presenta duración, fases o una puntuación de sueño.",
+    "tags": ["sueño", "fases", "puntuación"],
+    "sections": [
+      {
+        "heading": "Una representación del descanso",
+        "paragraphs": [
+          {
+            "text": "Las fases del sueño se estudian con señales como la actividad cerebral y los movimientos oculares. Conviene preguntar qué señales utiliza el dispositivo que tienes delante para generar su representación.",
+            "sources": ["S04"]
+          }
+        ]
+      },
+      {
+        "heading": "Una puntuación necesita explicación",
+        "paragraphs": [
+          {
+            "text": "Una cifra agregada invita a preguntar qué combina y cómo se ha validado. La AASM subrayó en su posición de 2018 la importancia de validar la tecnología de consumo antes de utilizarla con fines diagnósticos. Ese documento histórico no determina el estado regulatorio de cada producto actual.",
+            "sources": ["S05"]
+          }
+        ]
+      },
+      {
+        "heading": "Un ejemplo de lectura",
+        "paragraphs": [
+          "Si una aplicación muestra una noche distinta, anota qué cambió en el uso y cómo percibiste el descanso. No deduzcas un trastorno de esa gráfica. La evaluación de una función concreta exige evidencia de ese modelo y de su uso previsto."
+        ]
+      }
+    ]
+  },
+  "G04": {
+    "title": "IA: respuestas claras, preguntas necesarias",
+    "summary": "Cómo examinar una explicación generada por IA sin confundir fluidez con evidencia.",
+    "tags": ["inteligencia artificial", "NIST", "respuesta"],
+    "sections": [
+      {
+        "heading": "Una respuesta puede equivocarse",
+        "paragraphs": [
+          {
+            "text": "Los sistemas generativos pueden producir contenido falso con tono convincente. El NIST identifica este riesgo, incluidas las referencias inventadas.",
+            "sources": ["S07"]
+          }
+        ]
+      },
+      {
+        "heading": "Separar los pasos",
+        "paragraphs": [
+          "Proponemos leer cualquier explicación en tres partes: datos disponibles, inferencia realizada y conclusión presentada. Si falta información, la respuesta debería hacerlo visible en lugar de completar el hueco con certeza."
+        ]
+      },
+      {
+        "heading": "Un ejemplo mínimo",
+        "paragraphs": [
+          "Ante «tu recuperación ha empeorado», pregunta qué datos sustentan la frase y si hay otra explicación posible. La pregunta permite evaluar la respuesta; no confirma su diagnóstico ni demuestra que el dispositivo mida recuperación. La asistencia de IA y las funciones de un sensor deben documentarse por separado."
+        ]
+      }
+    ]
+  },
+  "G05": {
+    "title": "Diseñar para la atención",
+    "summary": "Una interfaz también se evalúa por el control que ofrece sobre interrupciones y por la facilidad para retomar una tarea.",
+    "tags": ["atención", "interfaz", "interrupción"],
+    "sections": [
+      {
+        "heading": "La interacción importa",
+        "paragraphs": [
+          {
+            "text": "La guía de accesibilidad cognitiva de W3C recomienda reducir distracciones y facilitar la orientación. Incluye el control de interrupciones entre sus patrones de diseño. Es orientación complementaria, no una certificación de producto.",
+            "sources": ["S08", "S09"]
+          }
+        ]
+      },
+      {
+        "heading": "Una propuesta práctica",
+        "paragraphs": [
+          "Al evaluar una interfaz, prueba una tarea sencilla: encontrar una explicación, silenciar una interrupción y volver al punto de lectura. Observa si los controles son comprensibles y si el sistema conserva el contexto."
+        ]
+      },
+      {
+        "heading": "Qué permite concluir",
+        "paragraphs": [
+          "Ese recorrido ayuda a detectar dificultades de uso. No demuestra una mejora de atención, memoria o salud mental. Para afirmar esos efectos harían falta estudios específicos. En IGO Research aplicamos esta pauta editorial con lectura tranquila, navegación clara y ausencia de contenido que se reproduzca automáticamente."
+        ]
+      }
+    ]
+  }
+}

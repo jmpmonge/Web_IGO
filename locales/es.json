@@ -39,10 +39,22 @@
     },
     "features": {
       "aria": "Capacidades de IGO",
-      "capture": { "name": "Captura", "text": "Tu perspectiva" },
-      "listen": { "name": "Escucha", "text": "Sigue conectado" },
-      "ai": { "name": "IA", "text": "Apoyo real" },
-      "further": { "name": "Ve más lejos", "text": "En tu día a día" }
+      "capture": {
+        "name": "Captura",
+        "text": "Tu perspectiva"
+      },
+      "listen": {
+        "name": "Escucha",
+        "text": "Sigue conectado"
+      },
+      "ai": {
+        "name": "IA",
+        "text": "Apoyo real"
+      },
+      "further": {
+        "name": "Ve más lejos",
+        "text": "En tu día a día"
+      }
     },
     "film": {
       "aria": "Vídeo de IGO",
@@ -85,8 +97,14 @@
     "title": "La gama IGO.",
     "sub": "Gafas y anillo inteligentes, diseñados para funcionar juntos.",
     "status": "Próximamente",
-    "vision": { "title": "Gafas inteligentes", "cta": "Explorar Vision" },
-    "wellness": { "title": "Anillo inteligente", "cta": "Explorar Wellness" }
+    "vision": {
+      "title": "Gafas inteligentes",
+      "cta": "Explorar Vision"
+    },
+    "wellness": {
+      "title": "Anillo inteligente",
+      "cta": "Explorar Wellness"
+    }
   },
   "cta": {
     "request": "Solicitar acceso anticipado"
@@ -160,55 +178,105 @@
   },
   "science": {
     "meta": {
-      "title": "Ciencia — IGO",
-      "description": "La biblioteca de IGO. Conceptos, cuestiones y evidencias, por temas. Una ficha aparece cuando está aprobada."
+      "title": "Ciencia y tecnología | IGO Research",
+      "description": "Comprende wearables, gafas inteligentes e inteligencia artificial: mecanismos, usos, evidencia y límites desde la experiencia humana."
+    },
+    "libraryMeta": {
+      "title": "Biblioteca de conocimiento | IGO Research",
+      "description": "Guías sobre sensores, gafas inteligentes, sueño, inteligencia artificial y atención, con fuentes y límites explicados."
     },
     "kicker": "Ciencia",
-    "heroAlt": "Mujer con gafas inteligentes IGO frente al mar al atardecer",
-    "title": "Lo que se puede\nexplicar.",
-    "sub": "Una biblioteca por temas, no una lista por fechas. Una ficha aparece aquí cuando está aprobada.",
-    "areasAria": "Áreas",
-    "fields": {
-      "enters": "Qué entra",
-      "stays": "Cómo vive",
-      "out": "Qué no entra"
+    "hero": {
+      "title": "IGO Research",
+      "sub": "Tecnología, ciencia y experiencia humana.",
+      "intro": "Un espacio para comprender la tecnología que llevamos con nosotros: cómo funciona, qué información ofrece y qué preguntas conviene hacer antes de confiar en sus resultados.",
+      "cta": "Cómo funciona",
+      "library": "Explorar la biblioteca",
+      "note": "Divulgación y análisis de fuentes públicas sobre tecnología y experiencia humana.",
+      "imageAlt": "Composición conceptual de unas gafas y un anillo tecnológico",
+      "imageCaption": "Ilustración conceptual"
     },
-    "health": {
-      "name": "Cuerpo y rendimiento",
-      "text": "Sueño, recuperación, actividad y el alcance de una métrica.",
-      "enters": "Sueño, recuperación y actividad, explicados como concepto.",
-      "stays": "La ficha se actualiza en la misma página cuando el concepto se precisa.",
-      "out": "Un diagnóstico, o una medición tomada por todo el cuerpo."
+    "technology": {
+      "title": "Entender lo que hay detrás de cada función.",
+      "wearablesTitle": "Wearables",
+      "wearables": "Un dispositivo puede registrar señales y convertirlas en indicadores. Para interpretarlos, conviene distinguir lo que capta el sensor de lo que calcula el software.",
+      "glassesTitle": "Gafas inteligentes",
+      "glasses": "Audio, cámara y pantalla son funciones diferentes. El término «inteligentes» no indica cuáles incluye un modelo ni cómo funcionan sus servicios.",
+      "aiTitle": "Inteligencia artificial",
+      "ai": "Una respuesta útil empieza por datos adecuados y una pregunta bien planteada. Su claridad no demuestra que sea correcta.",
+      "sensorAlt": "Vista conceptual de los sensores ópticos en el interior de un anillo"
     },
-    "vision": {
-      "name": "Visión y tecnología",
-      "text": "Gafas, interfaces y tecnología que se lleva puesta. El hardware no se publica aquí.",
-      "enters": "El uso de las gafas, las interfaces y la tecnología que se lleva puesta.",
-      "stays": "Se explica el uso. El hardware no se publica aquí.",
-      "out": "El diseño interno, los proveedores y lo que no está autorizado."
+    "chain": {
+      "title": "De una señal a una interpretación.",
+      "signalRole": "Entrada",
+      "signalLabel": "Señal",
+      "signal": "El sensor registra un cambio físico.",
+      "qualityRole": "Transformación",
+      "qualityLabel": "Calidad",
+      "quality": "El sistema comprueba si la señal es utilizable.",
+      "estimateRole": "Salida",
+      "estimateLabel": "Estimación",
+      "estimate": "Un algoritmo calcula un indicador.",
+      "readRole": "Contexto",
+      "readLabel": "Interpretación",
+      "read": "El resultado se lee junto a las condiciones de uso y sus límites.",
+      "feedback": "Si la calidad es insuficiente, revisar la colocación o repetir la lectura según el manual. Repetir no convierte por sí solo una estimación en una medida validada.",
+      "caption": "Esquema conceptual: el proceso concreto depende del dispositivo.",
+      "link": "Comprender señales y estimaciones"
     },
-    "lab": {
-      "name": "IGO Lab",
-      "text": "Pruebas y diseño, solo lo que ya se ha hecho.",
-      "enters": "Pruebas y diseño, solo lo que ya se ha hecho.",
-      "stays": "Cada afirmación lleva su alcance.",
-      "out": "Lo que no se puede publicar se queda fuera."
+    "human": {
+      "title": "La persona forma parte del sistema.",
+      "text": "El sueño, la atención y la forma de interactuar con una interfaz ayudan a formular mejores preguntas sobre la tecnología. Este espacio propone mirar tanto los datos como la experiencia de quien los utiliza.",
+      "sleep": "Leer los datos de sueño",
+      "attention": "Diseñar para la atención"
     },
-    "empty": "Sin fichas publicadas",
-    "kindsAria": "Cómo entra una pieza",
-    "kindsTitle": "Tres formas",
-    "concept": {
-      "name": "Conocimiento",
-      "text": "Un concepto estable. Se actualiza en la misma página."
+    "limits": {
+      "title": "Medir, estimar e interpretar no son lo mismo.",
+      "text": "Antes de aceptar una conclusión, preguntamos qué se ha registrado, cómo se ha obtenido el resultado y en qué condiciones se ha comprobado. Una especificación comercial describe una función; no sustituye una evaluación de su rendimiento.",
+      "q1": "¿Qué dato utiliza?",
+      "q2": "¿Cómo se ha evaluado?",
+      "q3": "¿Qué no permite concluir?"
     },
-    "article": {
-      "name": "Artículo",
-      "text": "Una cuestión, cuando aporta algo que no estaba."
+    "picks": {
+      "title": "Ideas para comprender mejor la tecnología.",
+      "text": "Guías breves para conectar mecanismos, usos y límites.",
+      "all": "Ver todas las guías"
     },
-    "evidence": {
-      "name": "Evidencia",
-      "text": "Una afirmación y su alcance. Una medición no cubre todo el sistema."
+    "igo": {
+      "title": "Comprender antes de elegir.",
+      "text": "IGO Research reúne explicaciones para leer una ficha técnica con mejores preguntas: qué registra el dispositivo, qué depende del teléfono o de la conexión y qué evidencia respalda cada función. Las capacidades de un producto deben comprobarse en la documentación de su modelo.",
+      "cta": "Explorar el conocimiento"
     },
-    "close": "Lo que no se puede publicar se queda fuera. Esta página espera la primera ficha."
+    "ui": {
+      "crumbs": "Ruta de navegación",
+      "libraryTitle": "Biblioteca de conocimiento",
+      "libraryIntro": "Explora guías sobre dispositivos, datos y experiencia humana.",
+      "searchLabel": "Buscar en la biblioteca",
+      "searchPlaceholder": "Tema o palabra clave",
+      "filtersArea": "Área",
+      "filtersAll": "Todas las áreas",
+      "filtersClear": "Restablecer",
+      "resultsZero": "No hay guías que coincidan con esta búsqueda.",
+      "resultsOne": "1 guía",
+      "resultsMany": "{count} guías",
+      "read": "Leer guía",
+      "sources": "Fuentes",
+      "related": "Lecturas relacionadas",
+      "back": "Volver a la biblioteca",
+      "preview": "Vista previa editorial",
+      "area": {
+        "technology": "Tecnología",
+        "health-wellness": "Salud y bienestar",
+        "artificial-intelligence": "Inteligencia artificial",
+        "human-science": "Ciencia humana",
+        "innovation": "Innovación"
+      },
+      "type": {
+        "guide": "Guía",
+        "technology-analysis": "Análisis tecnológico",
+        "evidence-review": "Revisión de evidencia",
+        "insight": "Perspectiva"
+      }
+    }
   }
 }

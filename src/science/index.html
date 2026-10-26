@@ -27,7 +27,7 @@
 <script src="{{root}}assets/hero.js" defer></script>
 <script src="{{root}}assets/lang.js" defer></script>
 </head>
-<body class="page page--science">
+<body class="page page--science research">
 <a class="skip-link" href="#main">{{common.skip}}</a>
 
 <header class="site-header" id="top">
@@ -56,67 +56,140 @@
 </header>
 
 <main id="main" tabindex="-1">
-  <section class="ciencia-hero" aria-labelledby="page-title">
-    <div class="wrap">
-      <p class="ciencia-kicker">{{science.kicker}}</p>
-      <h1 id="page-title">{{lines:science.title|ciencia-line}}</h1>
-      <p class="ciencia-sub">{{science.sub}}</p>
+  <section class="research-hero" aria-labelledby="page-title">
+    <div class="wrap research-hero__grid">
+      <div>
+        {{research:banner}}
+        <p class="kicker">{{science.kicker}}</p>
+        <h1 id="page-title">{{science.hero.title}}</h1>
+        <p class="research-sub">{{science.hero.sub}}</p>
+        <p>{{science.hero.intro}}</p>
+        <p class="research-note">{{science.hero.note}}</p>
+        <p class="research-actions">
+          <a class="research-btn" href="#how-it-works">{{science.hero.cta}} <span aria-hidden="true">→</span></a>
+          <a class="research-textlink" href="{{link:scienceLibrary}}">{{science.hero.library}}</a>
+        </p>
+      </div>
+      <figure class="research-hero__figure">
+        <img src="{{root}}assets/research/research-hero-concept-720.webp" srcset="{{root}}assets/research/research-hero-concept-720.webp 720w, {{root}}assets/research/research-hero-concept-1200.webp 1200w" sizes="(min-width: 60em) 36rem, calc(100vw - 2.5rem)" width="1200" height="676" alt="{{science.hero.imageAlt}}">
+        <figcaption>{{science.hero.imageCaption}}</figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="laminas" aria-label="{{science.areasAria}}">
-    <article class="lamina" aria-labelledby="ciencia-salud">
-      <header class="lamina__titulo">
-        <p class="lamina__indice">01</p>
-        <h2 id="ciencia-salud">{{science.health.name}}</h2>
-        <p>{{science.health.text}}</p>
-      </header>
-      <dl class="lamina__info">
-        <div><dt>{{science.fields.enters}}</dt><dd>{{science.health.enters}}</dd></div>
-        <div><dt>{{science.fields.stays}}</dt><dd>{{science.health.stays}}</dd></div>
-        <div><dt>{{science.fields.out}}</dt><dd>{{science.health.out}}</dd></div>
-      </dl>
-    </article>
-    <article class="lamina" aria-labelledby="ciencia-vision">
-      <header class="lamina__titulo">
-        <p class="lamina__indice">02</p>
-        <h2 id="ciencia-vision">{{science.vision.name}}</h2>
-        <p>{{science.vision.text}}</p>
-      </header>
-      <dl class="lamina__info">
-        <div><dt>{{science.fields.enters}}</dt><dd>{{science.vision.enters}}</dd></div>
-        <div><dt>{{science.fields.stays}}</dt><dd>{{science.vision.stays}}</dd></div>
-        <div><dt>{{science.fields.out}}</dt><dd>{{science.vision.out}}</dd></div>
-      </dl>
-    </article>
-    <article class="lamina lamina--lab" aria-labelledby="ciencia-lab">
-      <header class="lamina__titulo">
-        <p class="lamina__indice">03</p>
-        <h2 id="ciencia-lab">{{science.lab.name}}</h2>
-        <p>{{science.lab.text}}</p>
-      </header>
-      <dl class="lamina__info">
-        <div><dt>{{science.fields.enters}}</dt><dd>{{science.lab.enters}}</dd></div>
-        <div><dt>{{science.fields.stays}}</dt><dd>{{science.lab.stays}}</dd></div>
-        <div><dt>{{science.fields.out}}</dt><dd>{{science.lab.out}}</dd></div>
-      </dl>
-    </article>
-  </section>
-
-  <section class="ciencia-kinds" aria-label="{{science.kindsAria}}">
+  <section id="technology" class="research-block" aria-labelledby="tech-title">
     <div class="wrap">
-      <h2>{{science.kindsTitle}}</h2>
-      <ol>
-        <li><strong>{{science.concept.name}}</strong><span>{{science.concept.text}}</span></li>
-        <li><strong>{{science.article.name}}</strong><span>{{science.article.text}}</span></li>
-        <li><strong>{{science.evidence.name}}</strong><span>{{science.evidence.text}}</span></li>
-      </ol>
+      <h2 id="tech-title">{{science.technology.title}}</h2>
+      <div class="research-topics">
+        <article class="research-split">
+          <div>
+            <h3>{{science.technology.wearablesTitle}}</h3>
+            <p>{{science.technology.wearables}}</p>
+            {{research:titleLink:G01}}
+          </div>
+          <figure class="research-figure research-sensor">
+            <img src="{{root}}assets/research/research-sensor-720.webp" srcset="{{root}}assets/research/research-sensor-720.webp 720w, {{root}}assets/research/research-sensor-1200.webp 1200w" sizes="(min-width: 60em) 36rem, calc(100vw - 2.5rem)" width="1200" height="800" alt="{{science.technology.sensorAlt}}">
+            <figcaption>{{science.hero.imageCaption}}</figcaption>
+          </figure>
+        </article>
+        <article class="research-split">
+          <div>
+            <h3>{{science.technology.glassesTitle}}</h3>
+            <p>{{science.technology.glasses}}</p>
+            {{research:titleLink:G02}}
+          </div>
+          <div class="research-slot" aria-hidden="true"></div>
+        </article>
+        <article class="research-split">
+          <div>
+            <h3>{{science.technology.aiTitle}}</h3>
+            <p>{{science.technology.ai}}</p>
+            {{research:titleLink:G04}}
+          </div>
+          <div class="research-slot" aria-hidden="true"></div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="ciencia-close">
+  <section id="how-it-works" class="research-block research-block--chain" aria-labelledby="chain-title">
     <div class="wrap">
-      <p>{{science.close}}</p>
+      <h2 id="chain-title">{{science.chain.title}}</h2>
+      <div class="research-diagram">
+        <svg class="research-diagram__line" viewBox="0 0 640 12" aria-hidden="true" focusable="false">
+          <line x1="24" y1="6" x2="616" y2="6"></line>
+          <circle cx="24" cy="6" r="5"></circle>
+          <circle cx="221" cy="6" r="5"></circle>
+          <circle cx="419" cy="6" r="5"></circle>
+          <circle cx="616" cy="6" r="5"></circle>
+        </svg>
+        <ol class="research-steps">
+          <li>
+            <span>{{science.chain.signalRole}}</span>
+            <strong>{{science.chain.signalLabel}}</strong>
+            <p>{{science.chain.signal}}</p>
+          </li>
+          <li>
+            <span>{{science.chain.qualityRole}}</span>
+            <strong>{{science.chain.qualityLabel}}</strong>
+            <p>{{science.chain.quality}}</p>
+          </li>
+          <li>
+            <span>{{science.chain.estimateRole}}</span>
+            <strong>{{science.chain.estimateLabel}}</strong>
+            <p>{{science.chain.estimate}}</p>
+          </li>
+          <li>
+            <span>{{science.chain.readRole}}</span>
+            <strong>{{science.chain.readLabel}}</strong>
+            <p>{{science.chain.read}}</p>
+          </li>
+        </ol>
+      </div>
+      <p>{{science.chain.feedback}}</p>
+      <p class="research-note">{{science.chain.caption}}</p>
+      {{research:goto:G01:science.chain.link}}
+    </div>
+  </section>
+
+  <section id="human-science" class="research-block" aria-labelledby="human-title">
+    <div class="wrap research-split">
+      <div>
+        <h2 id="human-title">{{science.human.title}}</h2>
+        <p>{{science.human.text}}</p>
+        {{research:goto:G03:science.human.sleep}}
+        {{research:goto:G05:science.human.attention}}
+      </div>
+      <div class="research-slot" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section id="evidence" class="research-block" aria-labelledby="limits-title">
+    <div class="wrap">
+      <h2 id="limits-title">{{science.limits.title}}</h2>
+      <p class="research-lead">{{science.limits.text}}</p>
+      <ul class="research-questions">
+        <li>{{science.limits.q1}}</li>
+        <li>{{science.limits.q2}}</li>
+        <li>{{science.limits.q3}}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="library" class="research-block" aria-labelledby="picks-title">
+    <div class="wrap">
+      <h2 id="picks-title">{{science.picks.title}}</h2>
+      <p>{{science.picks.text}}</p>
+      <div class="research-cards">{{research:selection}}</div>
+      <p class="research-more"><a href="{{link:scienceLibrary}}">{{science.picks.all}}</a></p>
+    </div>
+  </section>
+
+  <section id="igo" class="research-close" aria-labelledby="igo-title">
+    <div class="wrap">
+      <h2 id="igo-title">{{science.igo.title}}</h2>
+      <p>{{science.igo.text}}</p>
+      <p class="research-more"><a class="research-btn" href="{{link:scienceLibrary}}">{{science.igo.cta}} <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
 </main>

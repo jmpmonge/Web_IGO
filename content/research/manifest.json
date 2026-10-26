@@ -1,0 +1,120 @@
+{
+  "sourceCheckedAt": "2026-10-25",
+  "contentVersion": 1,
+  "sources": {
+    "S02": {
+      "title": "Analog Devices, Fundamentals of Pulse Oximeter Circuits",
+      "url": "https://www.analog.com/en/resources/media-center/videos/6313213615112.html"
+    },
+    "S03": {
+      "title": "Improving Pulse Rate Measurements during Random Motion Using a Wearable Multichannel Reflectance Photoplethysmograph",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26959034/"
+    },
+    "S04": {
+      "title": "NHLBI / NIH, How Sleep Works — Sleep Phases and Stages",
+      "url": "https://www.nhlbi.nih.gov/health/sleep/stages-of-sleep"
+    },
+    "S05": {
+      "title": "AASM, Consumer Sleep Technology: An American Academy of Sleep Medicine Position Statement",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5940440/"
+    },
+    "S06": {
+      "title": "Ray-Ban / Meta, Specs & Features",
+      "url": "https://www.ray-ban.com/usa/l/discover-ray-ban-meta-ai-glasses"
+    },
+    "S07": {
+      "title": "NIST AI 600-1, Generative Artificial Intelligence Profile",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
+    },
+    "S08": {
+      "title": "W3C WAI, Help Users Focus",
+      "url": "https://www.w3.org/WAI/WCAG2/supplemental/objectives/o5-user-focus/"
+    },
+    "S09": {
+      "title": "W3C WAI, Limit Interruptions",
+      "url": "https://www.w3.org/WAI/WCAG2/supplemental/patterns/o5p01-minimal-interruptions/"
+    }
+  },
+  "articles": [
+    {
+      "id": "G01",
+      "articleId": "signals-and-estimates",
+      "area": "technology",
+      "type": "guide",
+      "sourceIds": ["S02", "S03"],
+      "relatedIds": ["G03", "G04"],
+      "imageId": "IMG02",
+      "editorialOrder": 1,
+      "status": "draft",
+      "author": null,
+      "reviewer": null,
+      "publishedAt": null,
+      "reviewedAt": null,
+      "productLinks": []
+    },
+    {
+      "id": "G02",
+      "articleId": "understanding-smart-glasses",
+      "area": "technology",
+      "type": "guide",
+      "sourceIds": ["S06"],
+      "relatedIds": ["G04", "G05"],
+      "imageId": "IMG03",
+      "editorialOrder": 2,
+      "status": "draft",
+      "author": null,
+      "reviewer": null,
+      "publishedAt": null,
+      "reviewedAt": null,
+      "productLinks": []
+    },
+    {
+      "id": "G03",
+      "articleId": "reading-sleep-data",
+      "area": "health-wellness",
+      "type": "guide",
+      "sourceIds": ["S04", "S05"],
+      "relatedIds": ["G01", "G05"],
+      "imageId": "IMG04",
+      "editorialOrder": 3,
+      "status": "draft",
+      "author": null,
+      "reviewer": null,
+      "publishedAt": null,
+      "reviewedAt": null,
+      "productLinks": []
+    },
+    {
+      "id": "G04",
+      "articleId": "ai-and-context",
+      "area": "artificial-intelligence",
+      "type": "guide",
+      "sourceIds": ["S07"],
+      "relatedIds": ["G01", "G02"],
+      "imageId": "IMG05",
+      "editorialOrder": 4,
+      "status": "draft",
+      "author": null,
+      "reviewer": null,
+      "publishedAt": null,
+      "reviewedAt": null,
+      "productLinks": []
+    },
+    {
+      "id": "G05",
+      "articleId": "designing-for-attention",
+      "area": "human-science",
+      "type": "guide",
+      "sourceIds": ["S08", "S09"],
+      "relatedIds": ["G02", "G03"],
+      "imageId": "IMG06",
+      "editorialOrder": 5,
+      "status": "draft",
+      "author": null,
+      "reviewer": null,
+      "publishedAt": null,
+      "reviewedAt": null,
+      "productLinks": []
+    }
+  ]
+}

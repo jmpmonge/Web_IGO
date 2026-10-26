@@ -1,0 +1,145 @@
+{
+  "G01": {
+    "title": "Signals and estimates: reading a wearable",
+    "summary": "From sensor to indicator: a guide to distinguishing a recorded signal from the interpretation shown on screen.",
+    "tags": ["PPG", "sensor", "pulse", "signal"],
+    "sections": [
+      {
+        "heading": "Between the body and the screen",
+        "paragraphs": [
+          {
+            "text": "Photoplethysmography, or PPG, uses light to detect changes related to the pulse. The system processes this signal to estimate indicators such as pulse rate. Movement can introduce interference.",
+            "sources": ["S02", "S03"]
+          }
+        ]
+      },
+      {
+        "heading": "An example for asking better questions",
+        "paragraphs": [
+          "Imagine a reading changing as you move your hand. A useful question is whether the system distinguished the pulse from movement. This is an illustrative example, not a test of an IGO device."
+        ]
+      },
+      {
+        "heading": "What to check",
+        "paragraphs": [
+          "Look for the model, feature and conditions evaluated. Including a sensor does not substantiate every interpretation an app might display. Do not use an accuracy figure without knowing its reference and context."
+        ]
+      }
+    ]
+  },
+  "G02": {
+    "title": "Smart glasses: distinguishing the features",
+    "summary": "Audio, cameras, displays and digital assistance serve different purposes. Learn to read a specification without conflating them.",
+    "tags": ["glasses", "audio", "camera", "display"],
+    "sections": [
+      {
+        "heading": "One category, different configurations",
+        "paragraphs": [
+          {
+            "text": "Glasses on the market offer audio, image capture or information displays. Ray-Ban/Meta documentation distinguishes configurations; this is an external example, not a description of IGO.",
+            "sources": ["S06"]
+          }
+        ]
+      },
+      {
+        "heading": "Follow a feature from start to finish",
+        "paragraphs": [
+          "To evaluate a feature, follow its path: input, processing and output. What does the device collect? Where is it processed? How do you receive the result? This is a reading framework, not an architecture attributed to every model."
+        ]
+      },
+      {
+        "heading": "Before comparing",
+        "paragraphs": [
+          "Check camera, audio and display separately. Look up phone, connectivity, app, language and regional requirements in the model's documentation. For capture features, also check recording controls and where the data goes."
+        ]
+      }
+    ]
+  },
+  "G03": {
+    "title": "Reading sleep data in context",
+    "summary": "Questions to ask when an app presents sleep duration, stages or a score.",
+    "tags": ["sleep", "stages", "score"],
+    "sections": [
+      {
+        "heading": "A representation of rest",
+        "paragraphs": [
+          {
+            "text": "Sleep stages are studied using signals such as brain activity and eye movements. It is worth asking which signals the device in front of you uses to generate its representation.",
+            "sources": ["S04"]
+          }
+        ]
+      },
+      {
+        "heading": "A score needs an explanation",
+        "paragraphs": [
+          {
+            "text": "An aggregate number invites questions about what it combines and how it was validated. In its 2018 position statement, the AASM stressed the importance of validating consumer technology before diagnostic use. That historical document does not determine the regulatory status of each current product.",
+            "sources": ["S05"]
+          }
+        ]
+      },
+      {
+        "heading": "A reading example",
+        "paragraphs": [
+          "If an app shows an unusual night, note what changed in how you used it and how you experienced your rest. Do not infer a disorder from that graph. Evaluating a particular feature requires evidence for that model and its intended use."
+        ]
+      }
+    ]
+  },
+  "G04": {
+    "title": "AI: clear answers, necessary questions",
+    "summary": "How to examine an AI-generated explanation without mistaking fluency for evidence.",
+    "tags": ["artificial intelligence", "NIST", "answer"],
+    "sections": [
+      {
+        "heading": "An answer can be wrong",
+        "paragraphs": [
+          {
+            "text": "Generative systems can produce false content in a convincing tone. NIST identifies this risk, including fabricated references.",
+            "sources": ["S07"]
+          }
+        ]
+      },
+      {
+        "heading": "Separate the steps",
+        "paragraphs": [
+          "We suggest reading an explanation in three parts: available data, the inference made and the conclusion presented. If information is missing, the response should make that visible instead of filling the gap with certainty."
+        ]
+      },
+      {
+        "heading": "A minimal example",
+        "paragraphs": [
+          "When told “your recovery has worsened”, ask what data supports the statement and whether another explanation is possible. This question helps assess the answer; it does not confirm a diagnosis or show that the device measures recovery. AI assistance and sensor features should be documented separately."
+        ]
+      }
+    ]
+  },
+  "G05": {
+    "title": "Designing for attention",
+    "summary": "An interface can also be evaluated by its control over interruptions and how easily a user can resume a task.",
+    "tags": ["attention", "interface", "interruption"],
+    "sections": [
+      {
+        "heading": "Interaction matters",
+        "paragraphs": [
+          {
+            "text": "W3C cognitive accessibility guidance recommends reducing distractions and supporting orientation. Its design patterns include controlling interruptions. This is supplementary guidance, not product certification.",
+            "sources": ["S08", "S09"]
+          }
+        ]
+      },
+      {
+        "heading": "A practical proposal",
+        "paragraphs": [
+          "When evaluating an interface, try a simple task: find an explanation, silence an interruption and return to your reading position. Observe whether controls are understandable and the system preserves context."
+        ]
+      },
+      {
+        "heading": "What this can establish",
+        "paragraphs": [
+          "That walkthrough helps identify usability difficulties. It does not demonstrate improved attention, memory or mental health. Such claims would require specific studies. IGO Research applies this editorial approach through quiet reading, clear navigation and no automatically playing content."
+        ]
+      }
+    ]
+  }
+}

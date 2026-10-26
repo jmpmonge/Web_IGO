@@ -39,10 +39,22 @@
     },
     "features": {
       "aria": "Les atouts d'IGO",
-      "capture": { "name": "Capturer", "text": "Votre point de vue" },
-      "listen": { "name": "Écouter", "text": "Restez connecté" },
-      "ai": { "name": "IA", "text": "Un vrai soutien" },
-      "further": { "name": "Aller plus loin", "text": "Au quotidien" }
+      "capture": {
+        "name": "Capturer",
+        "text": "Votre point de vue"
+      },
+      "listen": {
+        "name": "Écouter",
+        "text": "Restez connecté"
+      },
+      "ai": {
+        "name": "IA",
+        "text": "Un vrai soutien"
+      },
+      "further": {
+        "name": "Aller plus loin",
+        "text": "Au quotidien"
+      }
     },
     "film": {
       "aria": "Film IGO",
@@ -85,8 +97,14 @@
     "title": "La gamme IGO.",
     "sub": "Des lunettes et une bague connectées, conçues pour fonctionner ensemble.",
     "status": "Bientôt disponible",
-    "vision": { "title": "Lunettes connectées", "cta": "Découvrir Vision" },
-    "wellness": { "title": "Bague connectée", "cta": "Découvrir Wellness" }
+    "vision": {
+      "title": "Lunettes connectées",
+      "cta": "Découvrir Vision"
+    },
+    "wellness": {
+      "title": "Bague connectée",
+      "cta": "Découvrir Wellness"
+    }
   },
   "cta": {
     "request": "Demander un accès anticipé"
@@ -160,55 +178,105 @@
   },
   "science": {
     "meta": {
-      "title": "Science — IGO",
-      "description": "La bibliothèque IGO. Concepts, questions et preuves, par thème. Une pièce apparaît lorsqu'elle est approuvée."
+      "title": "Science et technologie | IGO Research",
+      "description": "Comprendre les objets connectés portables, les lunettes connectées et l’IA : mécanismes, usages, preuves et limites à travers l’expérience humaine."
+    },
+    "libraryMeta": {
+      "title": "Bibliothèque de connaissances | IGO Research",
+      "description": "Des guides sur les capteurs, les lunettes connectées, le sommeil, l’IA et l’attention, avec leurs sources et leurs limites."
     },
     "kicker": "Science",
-    "heroAlt": "Femme portant des lunettes connectées IGO face à la mer au coucher du soleil",
-    "title": "Ce qui peut\ns'expliquer.",
-    "sub": "Une bibliothèque par thème, pas une liste par date. Une pièce apparaît ici lorsqu'elle est approuvée.",
-    "areasAria": "Domaines",
-    "fields": {
-      "enters": "Ce qui entre",
-      "stays": "Comment elle vit",
-      "out": "Ce qui reste dehors"
+    "hero": {
+      "title": "IGO Research",
+      "sub": "Technologie, science et expérience humaine.",
+      "intro": "Un espace pour comprendre les technologies que nous portons au quotidien : leur fonctionnement, les informations qu’elles fournissent et les questions à poser avant de se fier à leurs résultats.",
+      "cta": "Comprendre le fonctionnement",
+      "library": "Explorer la bibliothèque",
+      "note": "Vulgarisation et analyse de sources publiques sur la technologie et l’expérience humaine.",
+      "imageAlt": "Composition conceptuelle de lunettes et d’une bague connectée",
+      "imageCaption": "Illustration conceptuelle"
     },
-    "health": {
-      "name": "Corps et performance",
-      "text": "Sommeil, récupération, activité, et la portée d'une mesure.",
-      "enters": "Sommeil, récupération et activité, expliqués comme un concept.",
-      "stays": "La pièce se met à jour sur la même page lorsque le concept se précise.",
-      "out": "Un diagnostic, ou une mesure prise pour tout le corps."
+    "technology": {
+      "title": "Comprendre ce qui se cache derrière chaque fonction.",
+      "wearablesTitle": "Objets connectés portables",
+      "wearables": "Un appareil peut enregistrer des signaux et les transformer en indicateurs. Pour les interpréter, il est utile de distinguer ce que le capteur détecte de ce que le logiciel calcule.",
+      "glassesTitle": "Lunettes connectées",
+      "glasses": "Audio, caméra et affichage sont des fonctions différentes. Le terme « intelligent » ne précise ni celles qu’un modèle possède ni le fonctionnement de ses services.",
+      "aiTitle": "Intelligence artificielle",
+      "ai": "Une réponse utile commence par des données adaptées et une question bien formulée. Sa clarté ne prouve pas son exactitude.",
+      "sensorAlt": "Vue conceptuelle des capteurs optiques à l’intérieur d’une bague"
     },
-    "vision": {
-      "name": "Vision et technologie",
-      "text": "Lunettes, interfaces et technologie portable. Le matériel n'est pas publié ici.",
-      "enters": "L'usage des lunettes, des interfaces et de la technologie portable.",
-      "stays": "On explique l'usage. Le matériel n'est pas publié ici.",
-      "out": "La conception interne, les fournisseurs, et ce qui n'est pas autorisé."
+    "chain": {
+      "title": "Du signal à l’interprétation.",
+      "signalRole": "Entrée",
+      "signalLabel": "Signal",
+      "signal": "Le capteur enregistre une variation physique.",
+      "qualityRole": "Traitement",
+      "qualityLabel": "Qualité",
+      "quality": "Le système vérifie si le signal est exploitable.",
+      "estimateRole": "Sortie",
+      "estimateLabel": "Estimation",
+      "estimate": "Un algorithme calcule un indicateur.",
+      "readRole": "Contexte",
+      "readLabel": "Interprétation",
+      "read": "Le résultat se lit en tenant compte des conditions d’utilisation et de ses limites.",
+      "feedback": "Si la qualité est insuffisante, vérifier le positionnement ou répéter la lecture conformément au manuel. La répétition seule ne transforme pas une estimation en mesure validée.",
+      "caption": "Schéma conceptuel : le processus réel dépend de l’appareil.",
+      "link": "Comprendre les signaux et les estimations"
     },
-    "lab": {
-      "name": "IGO Lab",
-      "text": "Essais et design, seulement ce qui a déjà été fait.",
-      "enters": "Essais et design, seulement ce qui a déjà été fait.",
-      "stays": "Chaque affirmation porte sa portée.",
-      "out": "Ce qui ne peut pas être publié reste dehors."
+    "human": {
+      "title": "La personne fait partie du système.",
+      "text": "Le sommeil, l’attention et la manière d’interagir avec une interface nous aident à mieux questionner la technologie. Cet espace s’intéresse aux données autant qu’à l’expérience de la personne qui les utilise.",
+      "sleep": "Lire les données de sommeil",
+      "attention": "Concevoir pour l’attention"
     },
-    "empty": "Aucune pièce publiée",
-    "kindsAria": "Comment une pièce entre",
-    "kindsTitle": "Trois formes",
-    "concept": {
-      "name": "Connaissance",
-      "text": "Un concept stable. Il se met à jour sur la même page."
+    "limits": {
+      "title": "Mesurer, estimer et interpréter sont des démarches différentes.",
+      "text": "Avant d’accepter une conclusion, nous demandons ce qui a été enregistré, comment le résultat a été obtenu et dans quelles conditions il a été évalué. Une fiche commerciale décrit une fonction ; elle ne remplace pas l’évaluation de ses performances.",
+      "q1": "Quelles données sont utilisées ?",
+      "q2": "Comment la fonction a-t-elle été évaluée ?",
+      "q3": "Que ne peut-on pas en conclure ?"
     },
-    "article": {
-      "name": "Article",
-      "text": "Une question, lorsqu'elle apporte quelque chose qui n'y était pas."
+    "picks": {
+      "title": "Des idées pour mieux comprendre la technologie.",
+      "text": "Des guides courts reliant mécanismes, usages et limites.",
+      "all": "Voir tous les guides"
     },
-    "evidence": {
-      "name": "Preuve",
-      "text": "Une affirmation et sa portée. Une mesure ne couvre pas tout le système."
+    "igo": {
+      "title": "Comprendre avant de choisir.",
+      "text": "IGO Research réunit des explications pour mieux interroger une fiche technique : ce que l’appareil enregistre, ce qui dépend du téléphone ou de la connexion et les éléments qui étayent chaque fonction. Les capacités d’un produit doivent être vérifiées dans la documentation de son modèle.",
+      "cta": "Explorer les connaissances"
     },
-    "close": "Ce qui ne peut pas être publié reste dehors. Cette page attend la première pièce."
+    "ui": {
+      "crumbs": "Fil d’Ariane",
+      "libraryTitle": "Bibliothèque de connaissances",
+      "libraryIntro": "Explorez des guides sur les appareils, les données et l’expérience humaine.",
+      "searchLabel": "Rechercher dans la bibliothèque",
+      "searchPlaceholder": "Thème ou mot-clé",
+      "filtersArea": "Domaine",
+      "filtersAll": "Tous les domaines",
+      "filtersClear": "Réinitialiser",
+      "resultsZero": "Aucun guide ne correspond à cette recherche.",
+      "resultsOne": "1 guide",
+      "resultsMany": "{count} guides",
+      "read": "Lire le guide",
+      "sources": "Sources",
+      "related": "Lectures associées",
+      "back": "Retour à la bibliothèque",
+      "preview": "Aperçu éditorial",
+      "area": {
+        "technology": "Technologie",
+        "health-wellness": "Santé et bien-être",
+        "artificial-intelligence": "Intelligence artificielle",
+        "human-science": "Science de l’expérience humaine",
+        "innovation": "Innovation"
+      },
+      "type": {
+        "guide": "Guide",
+        "technology-analysis": "Analyse technologique",
+        "evidence-review": "Revue des données probantes",
+        "insight": "Perspective"
+      }
+    }
   }
 }
