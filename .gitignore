@@ -11,5 +11,7 @@ Thumbs.db
 *.mp4
 Imagen de Codex*
 Captura de pantalla*
-assets/videos/
+# Card videos used by the Home are production assets
+!assets/videos/
+!assets/videos/*.mp4
 /seivol-hero.jpg
