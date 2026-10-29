@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "status": "prepared",
+  "notes": "Huecos para más adelante. Vacío a propósito: no hay palabras clave, clústeres, datos estructurados ni afirmaciones. No declara rutas que el build todavía no emite. Las páginas vivas se gobiernan en scripts/site.json, clave seo.",
+  "languages": ["es", "en", "fr"],
+  "keywords": [],
+  "clusters": [],
+  "categories": [],
+  "schemaTypes": [],
+  "images": [],
+  "editorial": [],
+  "claims": []
+}

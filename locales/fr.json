@@ -14,6 +14,7 @@
     "science": "Science",
     "about": "À propos",
     "products": "Produits",
+    "sale": "Acheter",
     "earlyAccess": "Accès anticipé"
   },
   "footer": {
@@ -69,6 +70,11 @@
       "casual": "Au quotidien. Partout.",
       "mask": "Performance. Sans limites."
     },
+    "essentials": {
+      "title": "L'essentiel, toujours avec vous.",
+      "sub": "IGO Wellness. Discret à l'extérieur, attentif à l'intérieur.",
+      "alt": "Bague IGO Wellness"
+    },
     "wellness": {
       "title": "Comprenez\nvotre corps.",
       "sub": "Un meilleur sommeil. Plus d'énergie.\nUne version plus sereine de vous.",
@@ -81,12 +87,90 @@
       "cta": "Découvrir la Technologie",
       "alt": "Lunettes connectées IGO, application IGO sur un téléphone et bague IGO sur une terrasse de pierre au coucher du soleil"
     },
+    "experiences": {
+      "title": "L'expérience IGO",
+      "sub": "La technologie se comprend mieux lorsqu'elle fait partie de votre vie.",
+      "note": "Texte d'exemple pour la mise en page. IGO ne publie pas encore d'avis de clients.",
+      "carousel": "Expériences, défilement horizontal",
+      "prev": "Expérience précédente",
+      "next": "Expérience suivante",
+      "pause": "Mettre les expériences en pause",
+      "play": "Reprendre les expériences",
+      "dots": "Expériences",
+      "dot": "Expérience {n}",
+      "rating": "Note : {n} sur 5",
+      "verified": "Achat vérifié",
+      "sourceLink": "source originale",
+      "products": {
+        "vision": "IGO Vision",
+        "visionAlt": "Lunettes IGO Vision",
+        "wellness": "IGO Wellness",
+        "wellnessAlt": "Bague IGO Wellness"
+      },
+      "sources": {
+        "sample": "Exemple",
+        "amazon": "Amazon"
+      }
+    },
+    "cards": {
+      "heading": "Découvrez l'écosystème IGO.",
+      "title": "L'écosystème IGO",
+      "cta": "Demander un accès anticipé ›",
+      "prev": "Cartes précédentes",
+      "next": "Cartes suivantes",
+      "vision": {
+        "eyebrow": "IGO Vision",
+        "title": "Regardez, filmez, continuez.",
+        "line": "Des lunettes avec caméra intégrée pour le quotidien.",
+        "alt": "Lunettes connectées IGO Vision"
+      },
+      "shield": {
+        "eyebrow": "Vision Shield",
+        "title": "Conçue pour le sport.",
+        "line": "Protection enveloppante et caméra pour vos entraînements.",
+        "alt": "Lunettes sport IGO Vision Shield"
+      },
+      "wellness": {
+        "eyebrow": "IGO Wellness",
+        "title": "Discret à l'extérieur, attentif à l'intérieur.",
+        "line": "Une bague qui suit votre repos et votre activité.",
+        "alt": "Bague connectée IGO Wellness"
+      },
+      "app": {
+        "eyebrow": "App IGO",
+        "title": "Tout au même endroit.",
+        "line": "Sommeil, activité et récupération en un coup d'œil.",
+        "alt": "Application IGO sur un téléphone"
+      }
+    },
     "about": {
       "kicker": "Philosophie",
       "title": "Conçu\navec intention.",
       "sub": "La technologie doit sembler naturelle.\nLe design doit être intentionnel.",
       "cta": "Découvrir notre philosophie",
       "alt": "Bague et lunettes connectées IGO sur un rebord de pierre face à un coucher de soleil sur la mer"
+    },
+    "vcards": {
+      "camara": {
+        "title": "Caméra intégrée",
+        "line": "Photos et vidéos de votre point de vue, sans sortir le téléphone."
+      },
+      "manoslibres": {
+        "title": "Mains libres",
+        "line": "Contrôlez les lunettes à la voix ou d'une touche sur la branche."
+      },
+      "captura": {
+        "title": "Modes de capture",
+        "line": "Filmez en mouvement avec Vision Shield."
+      },
+      "sensores": {
+        "title": "Capteurs de la bague",
+        "line": "Pouls, sommeil et activité, jour et nuit."
+      },
+      "app": {
+        "title": "Vos données dans l'app",
+        "line": "Tout ce que mesure la bague, en un coup d’œil."
+      }
     }
   },
   "products": {
@@ -105,6 +189,37 @@
       "title": "Bague connectée",
       "cta": "Découvrir Wellness"
     }
+  },
+  "sale": {
+    "meta": {
+      "title": "IGO Vision — Fiche",
+      "description": "Fiche d'IGO Vision. Accès anticipé uniquement : pas de prix et pas de commande."
+    },
+    "kicker": "IGO Vision",
+    "casual": "Sport Casual",
+    "mask": "Sport Mask",
+    "line": "Des lunettes connectées pour tous les jours.",
+    "status": "Bientôt disponible. Cette fiche n'affiche pas de prix et ne permet pas d'acheter.",
+    "try": "Essayer virtuellement",
+    "models": "Modèle",
+    "note": "La couleur et la taille seront publiées avec le produit.",
+    "cta": "Demander l'accès anticipé",
+    "also": "Cela pourrait aussi vous intéresser",
+    "select": "Voir ce modèle",
+    "more": "Découvrir",
+    "maskLine": "Le même système, avec une monture plus enveloppante.",
+    "maskAlt": "Lunettes IGO Vision Sport Mask",
+    "wellTitle": "IGO Wellness",
+    "wellLine": "La bague qui mesure et accompagne.",
+    "wellAlt": "Bague IGO Wellness",
+    "photoAlt": "Lunettes IGO Vision",
+    "aboutTitle": "Le produit",
+    "aboutText": "IGO Vision est une paire de lunettes avec caméra intégrée. Cette page présente le format de la fiche. Les matériaux et les mesures seront publiés lorsque le produit sera prêt.",
+    "boxTitle": "Ce qui est inclus",
+    "boxText": "La fiche définitive indiquera le contenu de la boîte. Aucun pack n'est publié aujourd'hui.",
+    "howTitle": "Comment le demander",
+    "howText": "Il n'y a pas de panier. Pour être parmi les premiers, demandez l'accès anticipé et nous écrirons lorsque celui-ci s'ouvrira.",
+    "entry": "Voir la fiche"
   },
   "cta": {
     "request": "Demander un accès anticipé"
@@ -135,6 +250,9 @@
     "error": "Nous n'avons pas pu envoyer votre demande. Veuillez réessayer dans quelques instants.",
     "invalid": "Veuillez renseigner les champs obligatoires.",
     "unavailable": "Le formulaire n'est pas encore disponible. Veuillez réessayer plus tard.",
+    "already": "Cette adresse est déjà enregistrée. Il n'est pas nécessaire de l'envoyer à nouveau.",
+    "phase": "Phase commerciale",
+    "otherEmail": "Utiliser une autre adresse",
     "subject": "Demande d'accès anticipé IGO",
     "note": "Nous n'utilisons vos données que pour répondre à cette demande."
   },
@@ -178,8 +296,8 @@
   },
   "science": {
     "meta": {
-      "title": "Science et technologie | IGO Research",
-      "description": "Comprendre les objets connectés portables, les lunettes connectées et l’IA : mécanismes, usages, preuves et limites à travers l’expérience humaine."
+      "title": "Science et technologie | IGO",
+      "description": "Chez IGO, la qualité n’est pas une gamme. Comment une bague intelligente enregistre des signaux, et ce qui distingue une technologie, un appareil et une certification."
     },
     "libraryMeta": {
       "title": "Bibliothèque de connaissances | IGO Research",
@@ -190,6 +308,7 @@
       "title": "IGO Research",
       "sub": "Technologie, science et expérience humaine.",
       "intro": "Un espace pour comprendre les technologies que nous portons au quotidien : leur fonctionnement, les informations qu’elles fournissent et les questions à poser avant de se fier à leurs résultats.",
+      "philosophy": "Notre philosophie",
       "cta": "Comprendre le fonctionnement",
       "library": "Explorer la bibliothèque",
       "note": "Vulgarisation et analyse de sources publiques sur la technologie et l’expérience humaine.",
@@ -247,6 +366,51 @@
       "text": "IGO Research réunit des explications pour mieux interroger une fiche technique : ce que l’appareil enregistre, ce qui dépend du téléphone ou de la connexion et les éléments qui étayent chaque fonction. Les capacités d’un produit doivent être vérifiées dans la documentation de son modèle.",
       "cta": "Explorer les connaissances"
     },
+    "philosophy": {
+      "title": "Notre philosophie de qualité",
+      "p1": "Chez IGO, nous recherchons l’excellence technologique dans chaque catégorie, de la plus accessible à la plus avancée.",
+      "p2": "Nous pensons que la qualité ne dépend pas seulement du prix ni du nombre de fonctions, mais de l’équilibre entre la technologie, l’utilité et l’expérience d’usage.",
+      "close": "IGO. La qualité n’est pas une gamme, c’est notre philosophie."
+    },
+    "rings": {
+      "title": "La technologie des bagues intelligentes",
+      "sub": "Une technologie avancée dans un format discret",
+      "p1": "Les bagues intelligentes réunissent des capteurs et des composants électroniques miniaturisés capables d’enregistrer différents signaux liés à l’activité physique et au fonctionnement de l’organisme.",
+      "p2": "Leur conception permet des mesures pendant les activités quotidiennes et le repos, en associant une technologie de suivi au confort et à la simplicité d’usage.",
+      "p3": "Les informations recueillies par les capteurs sont traitées par des algorithmes qui identifient des régularités et présentent des données compréhensibles.",
+      "sensorsTitle": "Comment fonctionnent les capteurs",
+      "sensorsIntro": "Une bague intelligente peut s’appuyer sur différentes technologies, selon le modèle et ses caractéristiques.",
+      "opticalTitle": "Capteurs optiques",
+      "optical": "Certaines bagues utilisent la photopléthysmographie (PPG), une technologie qui analyse les variations de la lumière réfléchie par les tissus pour estimer des paramètres liés au pouls.",
+      "opticalAlt": "Représentation conceptuelle d’un capteur optique, sans montrer l’intérieur de la bague",
+      "motionTitle": "Capteurs de mouvement",
+      "motion": "Les accéléromètres enregistrent les mouvements et produisent des estimations liées à l’activité physique et au repos.",
+      "motionAlt": "Espace réservé à une image du mouvement quotidien",
+      "motionCaption": "Image à venir : une activité quotidienne, sans éclaté du produit.",
+      "temperatureTitle": "Capteurs de température",
+      "temperature": "Certains appareils enregistrent les variations de la température de la peau, ce qui peut aider à repérer des tendances dans le temps.",
+      "temperatureAlt": "Espace réservé à une image de tendance de température",
+      "temperatureCaption": "Image à venir : le suivi d’une tendance, sans un graphique présenté comme une mesure réelle.",
+      "sensorsNote": "La disponibilité et la précision de ces mesures dépendent des capteurs, des algorithmes et des conditions d’utilisation.",
+      "dataTitle": "De la donnée à l’information",
+      "data1": "L’utilité d’un appareil intelligent ne tient pas seulement à sa capacité d’enregistrer des données, mais aussi à la manière dont il les interprète et les présente.",
+      "data2": "Les algorithmes transforment les signaux captés par les capteurs en estimations et en indicateurs qui facilitent le suivi de certains aspects de l’activité et du repos.",
+      "data3": "Ces indicateurs doivent être compris dans les possibilités et les limites de chaque technologie.",
+      "signalAlt": "Espace réservé au passage du signal à un indicateur",
+      "signalCaption": "Image à venir : du signal à l’indicateur, sans graphique inventé.",
+      "toLimits": "Mesurer, estimer et interpréter ne sont pas la même chose."
+    },
+    "foundation": {
+      "title": "Fondement scientifique",
+      "intro": "Valider une technologie, valider un appareil précis et détenir une certification sanitaire sont trois choses différentes. Elles ne sont pas présentées ici comme équivalentes.",
+      "techTitle": "Validation d’une technologie",
+      "tech": "Des publications qui étudient un principe, par exemple la photopléthysmographie. Cette connaissance n’établit pas, à elle seule, la précision d’un produit.",
+      "deviceTitle": "Validation d’un appareil précis",
+      "device": "Des études qui évaluent la précision d’un modèle donné, dans les conditions de cet essai. Le résultat ne s’étend pas aux autres modèles.",
+      "certTitle": "Certification sanitaire",
+      "cert": "Des autorisations applicables à un dispositif médical précis. Elles ne couvrent ni les autres produits ni la marque dans son ensemble.",
+      "note": "Les références seront ajoutées lorsqu’une source vérifiable existera, avec sa portée. Aucune n’est publiée pour le moment."
+    },
     "ui": {
       "crumbs": "Fil d’Ariane",
       "libraryTitle": "Bibliothèque de connaissances",
@@ -277,6 +441,35 @@
         "evidence-review": "Revue des données probantes",
         "insight": "Perspective"
       }
+    },
+    "layout": {
+      "index": "Sur cette page",
+      "technologies": "Technologies",
+      "evidence": "Preuves et limites"
+    }
+  },
+  "vision": {
+    "meta": {
+      "title": "Vision — IGO (provisoire)",
+      "description": "IGO Vision. Page provisoire, contenu en attente."
+    }
+  },
+  "wellness": {
+    "meta": {
+      "title": "Wellness — IGO (provisoire)",
+      "description": "IGO Wellness. Page provisoire, contenu en attente."
+    }
+  },
+  "technology": {
+    "meta": {
+      "title": "Technologie — IGO (provisoire)",
+      "description": "IGO Technologie. Page provisoire, contenu en attente."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "À propos — IGO (provisoire)",
+      "description": "À propos d’IGO. Page provisoire, contenu en attente."
     }
   }
 }

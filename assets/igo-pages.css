@@ -3,13 +3,14 @@
    or to classes that do not exist on the Home, so Home rules are never overridden. No !important. */
 
 /* Active page in header and footer navigation */
-.page .site-nav a[aria-current="page"],
 .page .site-footer a[aria-current="page"]{ text-decoration:underline; text-underline-offset:.35em; text-decoration-thickness:1px; }
 
 .page main:focus{ outline:none; }
 
 .page-hero{ padding-block:clamp(4rem,10vw,8rem) clamp(2.5rem,6vw,4rem); border-bottom:1px solid var(--c-line); }
 .page-hero__title{ font-size:var(--fs-h2); max-width:18ch; }
+/* The shared header is fixed (see hero.css): keep the plain page hero clear of it. */
+.page .page-hero:not(.page-hero--image){ padding-block-start:calc(var(--hero-nav-h,72px) + clamp(1.5rem,5vw,4rem)); }
 .page-notice{ margin-top:1.5rem; color:var(--c-muted); font-size:var(--fs-small); }
 .page-notice .pending-note{ margin-left:0; margin-right:.5rem; }
 

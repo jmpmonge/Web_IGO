@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Pruébatelas virtualmente — IGO</title>
+  <meta name="description" content="Prueba virtualmente las gafas inteligentes IGO Sport Casual y Sport Mask." />
+  <link rel="stylesheet" href="./tryon.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./vendor/three/three.module.min.js",
+      "three/addons/": "./vendor/three/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="tryon">
+    <header class="tryon__header">
+      <p class="tryon__kicker" data-i18n="kicker">IGO</p>
+      <h1 class="tryon__title" data-i18n="title">Pruébatelas virtualmente</h1>
+      <p class="tryon__lead" data-i18n="lead">Elige un modelo y actívala cámara para ver cómo te quedan.</p>
+    </header>
+
+    <div class="tryon__layout">
+    <section class="stage-card" aria-label="Vista previa">
+      <div class="stage" id="stage">
+        <video id="video" class="stage__video" playsinline muted></video>
+        <canvas id="frame" class="stage__frame" aria-hidden="true"></canvas>
+        <canvas id="overlay" class="stage__overlay"></canvas>
+        <img id="still" class="stage__still" alt="" hidden />
+        <div class="stage__placeholder" id="placeholder">
+          <svg class="stage__icon" viewBox="0 0 48 48" aria-hidden="true">
+            <rect x="6" y="14" width="36" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="24" cy="26" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 14l3-5h10l3 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p data-i18n="placeholder">Activa la cámara para empezar</p>
+        </div>
+        <div class="stage__status" id="status" role="status" aria-live="polite"></div>
+      </div>
+
+      <div class="tryon__actions">
+        <button type="button" class="btn btn--primary" id="btn-camera" data-i18n="activateCam">Activar cámara</button>
+        <button type="button" class="btn btn--ghost" id="btn-photo" disabled data-i18n="takePhoto">Hacer foto</button>
+        <label class="btn btn--ghost btn--file" id="btn-upload-label">
+          <span data-i18n="uploadPhoto">Subir una foto</span>
+          <input type="file" id="btn-upload" accept="image/*" capture="user" hidden />
+        </label>
+      </div>
+    </section>
+
+    <aside class="tryon__info" aria-labelledby="info-name">
+      <p class="info__brand"><img class="info__logo" src="../assets/igo/igo-logo.svg" alt="IGO" width="61" height="34"><span>Vision</span></p>
+      <h2 class="info__name" id="info-name">Sport Casual</h2>
+      <hr class="info__rule" />
+
+      <p class="info__tag" id="info-tag" data-i18n="visionDesc">Cada día. En cualquier lugar.</p>
+      <p class="info__line" id="info-line" data-i18n="visionLine">Gafas inteligentes para llevar cada día.</p>
+
+      <p class="info__label" data-i18n="modelT">Modelo</p>
+      <div class="tryon__models" role="tablist" aria-label="Modelos">
+        <button type="button" class="model-btn is-active" role="tab" aria-selected="true" data-model="vision" id="btn-vision">
+          <span class="model-btn__name">Sport Casual</span>
+          <span class="model-btn__desc" data-i18n="visionDesc">Cada día. En cualquier lugar.</span>
+        </button>
+        <button type="button" class="model-btn" role="tab" aria-selected="false" data-model="shield" id="btn-shield">
+          <span class="model-btn__name">Sport Mask</span>
+          <span class="model-btn__desc" data-i18n="shieldDesc">Rendimiento. Sin límites.</span>
+        </button>
+      </div>
+
+      <dl class="info__facts">
+        <div><dt data-i18n="feat1T">Cámara integrada</dt><dd data-i18n="feat1">Fotos y vídeo desde tu punto de vista, sin sacar el móvil.</dd></div>
+        <div><dt data-i18n="feat2T">Manos libres</dt><dd data-i18n="feat2">Controla las gafas con la voz o con un toque en la patilla.</dd></div>
+        <div><dt data-i18n="colorT">Color y talla</dt><dd data-i18n="note">Se publicarán con el producto.</dd></div>
+        <div><dt data-i18n="availT">Disponibilidad</dt><dd id="info-avail" data-i18n="availSoon">Próximamente. Sin precio y sin compra por ahora.</dd></div>
+      </dl>
+
+      <a class="btn btn--primary info__cta" id="info-cta" href="../es/#early-access" data-i18n="ctaEarly">Solicitar acceso anticipado</a>
+    </aside>
+    </div>
+
+    <p class="tryon__privacy" data-i18n="privacy">La imagen se procesa en tu dispositivo. No se envía ni se guarda.</p>
+    <p class="tryon__privacy tryon__credits">Modelo 3D de Sport Casual basado en <a href="https://sketchfab.com/3d-models/8f7d265819284737852ab97a53707ccd" target="_blank" rel="noopener">«Wayfarer-Style Black Glasses»</a> de islem-rd, con licencia <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Modificado por IGO.</p>
+  </main>
+
+  <script type="module" src="./tryon.js"></script>
+</body>
+</html>

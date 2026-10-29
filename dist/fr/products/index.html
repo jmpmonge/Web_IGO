@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- PROVISIONAL: generated from src/ by scripts/build.js. Entry page to the two product categories; no cart, prices or purchase buttons yet. Do not publish. -->
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex, follow">
 <meta name="description" content="Produits IGO : des lunettes connectées et une bague connectée.">
 <meta name="theme-color" content="#141B24">
 <title>Produits — IGO</title>
@@ -14,12 +14,17 @@
 <link rel="alternate" hreflang="es" href="../../es/products/index.html">
 <link rel="alternate" hreflang="fr" href="../../fr/products/index.html">
 <link rel="alternate" hreflang="x-default" href="../../index.html">
+<meta property="og:title" content="Produits — IGO">
+<meta property="og:description" content="Produits IGO : des lunettes connectées et une bague connectée.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../../assets/images/images_igo/home_hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Produits — IGO">
+<meta name="twitter:description" content="Produits IGO : des lunettes connectées et une bague connectée.">
+<meta name="twitter:image" content="../../assets/images/images_igo/home_hero.webp">
 <link rel="icon" href="../../assets/igo/igo-logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../assets/igo.css">
-<link rel="stylesheet" href="../../assets/footer.css">
-<link rel="stylesheet" href="../../assets/hero.css">
-<link rel="stylesheet" href="../../assets/products.css">
-<link rel="stylesheet" href="../../assets/lang.css">
+<link rel="preload" href="../../assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/bundle-products-3e123361.css">
 <script>
   /* Hide animated elements before first paint only when motion is allowed; failsafe reveals everything if igo.js does not start. */
   (function (d) {
@@ -32,6 +37,7 @@
 </script>
 <script src="../../assets/igo.js" defer></script>
 <script src="../../assets/hero.js" defer></script>
+<script src="../../assets/amazon-cta.js" defer></script>
 <script src="../../assets/lang.js" defer></script>
 </head>
 <body class="page page--products">
@@ -46,10 +52,12 @@
     <nav id="site-nav" class="site-nav" aria-label="Principale">
       <ul>
         <li class="site-nav__home"><a href="../index.html">Accueil</a></li>
-        <li><a href="../index.html#vision">Vision</a></li>
-        <li><a href="../index.html#wellness">Wellness</a></li>
-        <li><a href="../index.html#technology">Technologie</a></li>
-        <li><a href="../index.html#about">À propos</a></li>
+        <li><a href="../vision/index.html">Vision</a></li>
+        <li><a href="../wellness/index.html">Wellness</a></li>
+        <li><a href="../technology/index.html">Technologie</a></li>
+        <li><a href="../science/index.html">Science</a></li>
+        <li><a href="../about/index.html">À propos</a></li>
+        <li><a href="../sale/index.html">Acheter</a></li>
         <li class="site-nav__products"><a href="../index.html#early-access">Accès anticipé</a></li>
         <li class="site-nav__lang"><span class="lang-inline" role="group" aria-label="Langue"><a href="../../en/products/index.html" lang="en" hreflang="en" data-lang-switch="en" aria-label="English">EN</a><a href="../../es/products/index.html" lang="es" hreflang="es" data-lang-switch="es" aria-label="Español">ES</a><a href="../../fr/products/index.html" lang="fr" hreflang="fr" data-lang-switch="fr" aria-label="Français" aria-current="true">FR</a></span></li>
       </ul>
@@ -80,10 +88,12 @@
         <div class="prod__side">
           <p class="prod__models"><span>Sport Casual</span><span>Sport Mask</span></p>
           <p class="prod__status">Bientôt disponible</p>
-          <a class="cta" href="../../vision/index.html">Découvrir Vision <span aria-hidden="true">→</span></a>
+          <a class="cta" href="../vision/index.html">Découvrir Vision <span aria-hidden="true">→</span></a>
+          <a class="prod__sheet" href="../sale/index.html">Voir la fiche <span aria-hidden="true">→</span></a>
+          <p class="prod__buy" data-amazon-linea="vision" hidden></p>
         </div>
       </div>
-      <a class="prod__media" href="../../vision/index.html" tabindex="-1" aria-hidden="true" data-motion="visual">
+      <a class="prod__media" href="../vision/index.html" tabindex="-1" aria-hidden="true" data-motion="visual">
         <img src="../../assets/images/images_igo/vision_band.webp" alt="" width="1983" height="793" loading="lazy" decoding="async">
       </a>
     </div>
@@ -99,10 +109,11 @@
         <div class="prod__side">
           <p class="prod__models"><span>Smart Ring</span></p>
           <p class="prod__status">Bientôt disponible</p>
-          <a class="cta" href="../../wellness/index.html">Découvrir Wellness <span aria-hidden="true">→</span></a>
+          <a class="cta" href="../wellness/index.html">Découvrir Wellness <span aria-hidden="true">→</span></a>
+          <p class="prod__buy" data-amazon-linea="wellness" hidden></p>
         </div>
       </div>
-      <a class="prod__media" href="../../wellness/index.html" tabindex="-1" aria-hidden="true" data-motion="visual">
+      <a class="prod__media" href="../wellness/index.html" tabindex="-1" aria-hidden="true" data-motion="visual">
         <img src="../../assets/images/images_igo/wellness_band.webp" alt="" width="2103" height="748" loading="lazy" decoding="async">
       </a>
     </div>
@@ -117,10 +128,11 @@
     </div>
     <nav class="ft__nav" aria-label="Pied de page">
       <ul>
-        <li><a href="../index.html#vision">Vision</a></li>
-        <li><a href="../index.html#wellness">Wellness</a></li>
-        <li><a href="../index.html#technology">Technologie</a></li>
-        <li><a href="../index.html#about">À propos</a></li>
+        <li><a href="../vision/index.html">Vision</a></li>
+        <li><a href="../wellness/index.html">Wellness</a></li>
+        <li><a href="../technology/index.html">Technologie</a></li>
+        <li><a href="../science/index.html">Science</a></li>
+        <li><a href="../about/index.html">À propos</a></li>
       </ul>
     </nav>
     <div class="ft__side">

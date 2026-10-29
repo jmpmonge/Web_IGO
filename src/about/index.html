@@ -1,37 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{lang}}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- PROVISIONAL inner page: content pending approval. Do not publish. Shared header/footer: keep in sync with the other pages (see README-pages.md). -->
-<meta name="robots" content="noindex, nofollow">
-<meta name="description" content="IGO — About. Provisional page, content pending.">
+<meta name="robots" content="{{robots}}">
+<meta name="description" content="{{about.meta.description}}">
 <meta name="theme-color" content="#141B24">
-<title>About — IGO (provisional)</title>
-<link rel="icon" href="../assets/igo/igo-logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/igo.css">
-<link rel="stylesheet" href="../assets/igo-pages.css">
+<title>{{about.meta.title}}</title>
+{{seo}}
+<link rel="icon" href="{{root}}assets/igo/igo-logo.svg" type="image/svg+xml">
+<link rel="preload" href="{{root}}assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{root}}assets/igo.css">
+<link rel="stylesheet" href="{{root}}assets/igo-pages.css">
+<link rel="stylesheet" href="{{root}}assets/hero.css">
+<link rel="stylesheet" href="{{root}}assets/lang.css">
 <script>document.documentElement.classList.add('js');</script>
-<script src="../assets/igo.js" defer></script>
+<script src="{{root}}assets/igo.js" defer></script>
+<script src="{{root}}assets/hero.js" defer></script>
+<script src="{{root}}assets/lang.js" defer></script>
 </head>
 <body class="page page--about">
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{{common.skip}}</a>
 
 <header class="site-header" id="top">
   <div class="wrap site-header__inner">
-    <a class="brand" href="../index.html" aria-label="IGO home"><img src="../assets/igo/igo-logo.svg" alt="" width="68" height="38"></a>
+    <a class="brand" href="{{link:home}}" aria-label="{{common.brandAria}}"><img src="{{root}}assets/igo/igo-logo.svg" alt="" width="68" height="38"></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span class="menu-toggle__icon" aria-hidden="true"></span><span class="menu-toggle__label">Menu</span>
+      <span class="menu-toggle__icon" aria-hidden="true"></span><span class="menu-toggle__label">{{common.menu}}</span>
     </button>
-    <nav id="site-nav" class="site-nav" aria-label="Main">
+    <nav id="site-nav" class="site-nav" aria-label="{{common.navAria}}">
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../vision/index.html">Vision</a></li>
-        <li><a href="../wellness/index.html">Wellness</a></li>
-        <li><a href="../technology/index.html">Technology</a></li>
-        <li><a href="../about/index.html" aria-current="page">About</a></li>
+        <li class="site-nav__home"><a href="{{link:home}}">{{nav.home}}</a></li>
+        <li><a href="{{link:vision}}">{{nav.vision}}</a></li>
+        <li><a href="{{link:wellness}}">{{nav.wellness}}</a></li>
+        <li><a href="{{link:technology}}">{{nav.technology}}</a></li>
+        <li><a href="{{link:science}}">{{nav.science}}</a></li>
+        <li><a href="{{link:about}}" aria-current="page">{{nav.about}}</a></li>
+        <li><a href="{{link:sale}}">{{nav.sale}}</a></li>
+        <li class="site-nav__products"><a href="{{link:home}}#early-access">{{nav.earlyAccess}}</a></li>
+        <li class="site-nav__lang">{{langInline}}</li>
       </ul>
     </nav>
+    <a class="header-cta" href="{{link:home}}#early-access">{{nav.earlyAccess}} <span aria-hidden="true">→</span></a>
+    <div class="site-header__tools">
+      {{langMenu}}
+    </div>
   </div>
 </header>
 
@@ -57,7 +71,7 @@
 
 <footer class="site-footer">
   <div class="wrap site-footer__inner">
-    <img src="../assets/igo/igo-logo-white.svg" alt="IGO" width="56" height="31">
+    <img src="{{root}}assets/igo/igo-logo-white.svg" alt="IGO" width="56" height="31">
     <nav aria-label="Footer">
       <ul>
         <li><a href="../index.html">Home</a></li>

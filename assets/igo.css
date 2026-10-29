@@ -4,6 +4,16 @@
    accent used here is the brand grey-blue #8C95A3 (pending confirmation).
    Breakpoints: 48em (768px) menu → inline nav; 60em (960px) wider layouts. */
 
+/* Jost (variable weight 100-900, SIL OFL, see fonts/Jost-OFL.txt), self-hosted. The latin file is preloaded by the pages. */
+@font-face{ font-family:"Jost"; font-style:normal; font-weight:100 900; font-display:swap; src:url(fonts/jost-latin-ext-wght-normal.woff2) format("woff2"); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face{ font-family:"Jost"; font-style:normal; font-weight:100 900; font-display:swap; src:url(fonts/jost-latin-wght-normal.woff2) format("woff2"); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+/* Metric-matched fallback for Jost: while the webfont loads, text is laid out with Arial scaled to Jost's widths, so the swap does not move the header (no layout jump).
+   One face per weight band (Jost is narrower at lighter weights). ascent/descent = Jost 1.07/0.375 em divided by size-adjust. */
+@font-face{ font-family:"Jost Fallback"; font-weight:100 399; src:local("Arial"),local("Helvetica"),local("Liberation Sans"),local("Roboto"); size-adjust:93%; ascent-override:115%; descent-override:40.3%; line-gap-override:0%; }
+@font-face{ font-family:"Jost Fallback"; font-weight:400 499; src:local("Arial"),local("Helvetica"),local("Liberation Sans"),local("Roboto"); size-adjust:95.5%; ascent-override:112%; descent-override:39.3%; line-gap-override:0%; }
+@font-face{ font-family:"Jost Fallback"; font-weight:500 900; src:local("Arial"),local("Helvetica"),local("Liberation Sans"),local("Roboto"); size-adjust:99%; ascent-override:108.1%; descent-override:37.9%; line-gap-override:0%; }
+
 :root{
   --c-ink:#141B24;          /* deep black / azul noche */
   --c-graphite:#2B2F35;
@@ -15,7 +25,7 @@
   --c-line-dark:#2A333F;
   --c-accent:#8C95A3;
 
-  --font:"Jost","Avenir Next",Avenir,"Helvetica Neue","Segoe UI",system-ui,sans-serif;
+  --font:"Jost","Jost Fallback","Avenir Next",Avenir,"Helvetica Neue","Segoe UI",system-ui,sans-serif;
   --fs-hero:clamp(2.5rem,1.6rem + 5vw,5.75rem);
   --fs-h2:clamp(2rem,1.4rem + 3vw,4rem);
   --fs-h3:clamp(1.125rem,1rem + .4vw,1.375rem);
@@ -76,7 +86,8 @@ section[tabindex="-1"]:focus{ outline:none; }
   .menu-toggle[aria-expanded="true"] .menu-toggle__icon::before{ top:0; transform:rotate(45deg); }
   .menu-toggle[aria-expanded="true"] .menu-toggle__icon::after{ top:0; transform:rotate(-45deg); }
   .js .site-nav{ display:none; position:absolute; top:100%; left:0; right:0; background:var(--c-warm); border-bottom:1px solid var(--c-line); padding:.5rem var(--gutter) 1.25rem; max-height:calc(100svh - var(--header-h)); overflow-y:auto; }
-  .js .site-nav.is-open{ display:block; }
+  .js .site-nav.is-open{ display:block; overscroll-behavior:contain; }
+  .menu-open{ overflow:hidden; }                                  /* no background scroll while the mobile menu is open */
   .js .site-nav ul{ flex-direction:column; gap:0; }
   .js .site-nav a{ display:block; padding:.875rem 0; font-size:1.125rem; border-bottom:1px solid var(--c-line); }
   .js .site-nav li:last-child a{ border-bottom:0; }

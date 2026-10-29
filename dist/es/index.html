@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- PROVISIONAL BUILD: generated from src/ by scripts/build.js. Final domain pending. Do not publish. -->
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex, follow">
 <meta name="description" content="IGO. Diseñado para la vida. Impulsado por inteligencia.">
 <meta name="theme-color" content="#141B24">
 <title>IGO — Diseñado para la vida. Impulsado por inteligencia.</title>
@@ -14,13 +14,17 @@
 <link rel="alternate" hreflang="es" href="../es/index.html">
 <link rel="alternate" hreflang="fr" href="../fr/index.html">
 <link rel="alternate" hreflang="x-default" href="../index.html">
+<meta property="og:title" content="IGO — Diseñado para la vida. Impulsado por inteligencia.">
+<meta property="og:description" content="IGO. Diseñado para la vida. Impulsado por inteligencia.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/images/images_igo/home_hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IGO — Diseñado para la vida. Impulsado por inteligencia.">
+<meta name="twitter:description" content="IGO. Diseñado para la vida. Impulsado por inteligencia.">
+<meta name="twitter:image" content="../assets/images/images_igo/home_hero.webp">
 <link rel="icon" href="../assets/igo/igo-logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../assets/igo.css">
-<link rel="stylesheet" href="../assets/home.css">
-<link rel="stylesheet" href="../assets/footer.css">
-<link rel="stylesheet" href="../assets/hero.css">
-<link rel="stylesheet" href="../assets/lang.css">
-<link rel="stylesheet" href="../assets/early-access.css">
+<link rel="preload" href="../assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/bundle-home-67c2f600.css">
 <link rel="preload" as="image" href="../assets/images/images_igo/home_hero.webp" type="image/webp" media="(min-width:48em) and (orientation:landscape)">
 <script>
   /* Hide animated elements before first paint only when motion is allowed; failsafe reveals everything if igo.js does not start. */
@@ -49,10 +53,12 @@
     <nav id="site-nav" class="site-nav" aria-label="Principal">
       <ul>
         <li class="site-nav__home"><a href="#hero" aria-current="page">Inicio</a></li>
-        <li><a href="#vision">Vision</a></li>
-        <li><a href="#wellness">Wellness</a></li>
-        <li><a href="#technology">Tecnología</a></li>
-        <li><a href="#about">Nosotros</a></li>
+        <li><a href="vision/index.html">Vision</a></li>
+        <li><a href="wellness/index.html">Wellness</a></li>
+        <li><a href="technology/index.html">Tecnología</a></li>
+        <li><a href="science/index.html">Ciencia</a></li>
+        <li><a href="about/index.html">Nosotros</a></li>
+        <li><a href="sale/index.html">Comprar</a></li>
         <li class="site-nav__products"><a href="#early-access">Acceso anticipado</a></li>
         <li class="site-nav__lang"><span class="lang-inline" role="group" aria-label="Idioma"><a href="../en/index.html" lang="en" hreflang="en" data-lang-switch="en" aria-label="English">EN</a><a href="../es/index.html" lang="es" hreflang="es" data-lang-switch="es" aria-label="Español" aria-current="true">ES</a><a href="../fr/index.html" lang="fr" hreflang="fr" data-lang-switch="fr" aria-label="Français">FR</a></span></li>
       </ul>
@@ -109,20 +115,19 @@
           <li><h3 class="vband__name">Sport Casual</h3><p class="vband__desc">Cada día. En cualquier lugar.</p></li>
           <li><h3 class="vband__name">Sport Mask</h3><p class="vband__desc">Rendimiento. Sin límites.</p></li>
         </ul>
+        <p class="vband__sheet"><a href="sale/index.html">Ver la ficha <span aria-hidden="true">→</span></a></p>
       </figcaption>
     </figure>
   </section>
 
-  <!-- 3 · IGO Wellness -->
-  <section id="wellness" class="scene band band--wellness wband" aria-labelledby="wellness-title" tabindex="-1">
-    <div class="wrap wband__copy" data-motion="text">
-      <p class="kicker">IGO Wellness</p>
-      <h2 id="wellness-title" class="band__title"><span class="wband__line">Conoce mejor</span> <span class="wband__line">tu cuerpo.</span></h2>
-      <p class="wband__sub"><span class="wband__line">Mejor descanso. Más energía.</span> <span class="wband__line">Una versión más sana de ti.</span></p>
-      <p class="wband__cta"><a class="hero__btn" href="#early-access">Solicitar acceso anticipado <span aria-hidden="true">→</span></a></p>
+  <!-- 2b · Breathing band: plain ground between the Vision and Wellness photographs; the ring turns gently with scroll (igo.js) -->
+  <section id="wellness" class="scene band rband" aria-labelledby="essentials-title" tabindex="-1">
+    <div class="wrap rband__copy" data-motion="text">
+      <h2 id="essentials-title" class="band__title rband__title">Lo esencial, siempre contigo.</h2>
+      <p class="rband__sub">IGO Wellness. Discreto por fuera, atento por dentro.</p>
     </div>
-    <div class="wband__media" data-motion="visual">
-      <img src="../assets/images/images_igo/wellness_band.webp" alt="Anillo IGO Wellness suspendido sobre una superficie de piedra bajo una luz cálida" width="2103" height="748" loading="lazy" decoding="async">
+    <div class="rband__stage" data-motion="visual">
+      <img class="rband__ring" data-ring src="../assets/images/images_igo/anillo_recorte-600.webp" srcset="../assets/images/images_igo/anillo_recorte-600.webp 600w, ../assets/images/images_igo/anillo_recorte-1000.webp 1000w" sizes="(min-width:48em) 27.5rem, 66vw" alt="Anillo IGO Wellness" width="1000" height="1000" loading="lazy" decoding="async">
     </div>
   </section>
 
@@ -139,6 +144,73 @@
     </figure>
   </section>
 
+  <!-- 4b · Ecosystem cards: Apple-style horizontal carousel -->
+  <section id="ecosystem" class="scene band cband cband--cols-4 cband--head-titulo cband--video" aria-labelledby="cards-title" tabindex="-1">
+    <div class="wrap cband__head" data-motion="text">
+      <h2 id="cards-title" class="band__title cband__title">Conoce el ecosistema IGO.</h2>
+    </div>
+    <div class="cband__carousel" data-cards>
+      <div class="cband__track" data-cards-track>
+        
+        
+        
+        <article class="ccard ccard--video">
+          <video class="ccard__video" muted loop playsinline preload="none" disablepictureinpicture aria-hidden="true" tabindex="-1" data-card-video poster="../assets/videos/card_camara-poster.webp">
+            <source src="../assets/videos/card_camara.mp4" type="video/mp4">
+          </video>
+          <div class="ccard__overlay">
+            <h3 class="ccard__vtitle">Cámara integrada</h3>
+            <p class="visually-hidden">Fotos y vídeo desde tu punto de vista, sin sacar el móvil.</p>
+          </div>
+        </article>
+        
+        
+        
+        <article class="ccard ccard--video">
+          <video class="ccard__video" muted loop playsinline preload="none" disablepictureinpicture aria-hidden="true" tabindex="-1" data-card-video poster="../assets/videos/card_captura-poster.webp">
+            <source src="../assets/videos/card_captura.mp4" type="video/mp4">
+          </video>
+          <div class="ccard__overlay">
+            <h3 class="ccard__vtitle">Modos de captura</h3>
+            <p class="visually-hidden">Graba en movimiento con Vision Shield.</p>
+          </div>
+        </article>
+        
+        
+        <article class="ccard ccard--video">
+          <video class="ccard__video" muted loop playsinline preload="none" disablepictureinpicture aria-hidden="true" tabindex="-1" data-card-video poster="../assets/videos/card_sensores-poster.webp">
+            <source src="../assets/videos/card_sensores.mp4" type="video/mp4">
+          </video>
+          <div class="ccard__overlay">
+            <h3 class="ccard__vtitle">Sensores del anillo</h3>
+            <p class="visually-hidden">Pulso, sueño y actividad, día y noche.</p>
+          </div>
+        </article>
+        
+        
+        <article class="ccard ccard--video">
+          <video class="ccard__video" muted loop playsinline preload="none" disablepictureinpicture aria-hidden="true" tabindex="-1" data-card-video poster="../assets/videos/card_app-poster.webp">
+            <source src="../assets/videos/card_app.mp4" type="video/mp4">
+          </video>
+          <div class="ccard__overlay">
+            <h3 class="ccard__vtitle">Tus datos en la app</h3>
+            <p class="visually-hidden">Todo lo que mide el anillo, en un vistazo.</p>
+          </div>
+        </article>
+        
+        
+      </div>
+      <div class="cband__nav" data-motion="text">
+        <button type="button" class="cband__btn" data-cards-prev aria-label="Ver tarjetas anteriores">
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M11.5 3.5 6 9l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="cband__btn" data-cards-next aria-label="Ver tarjetas siguientes">
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false"><path d="M6.5 3.5 12 9l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- 5 · Philosophy (nav: About) -->
   <section id="about" class="scene band pband" aria-labelledby="about-title" tabindex="-1">
     <div class="wrap pband__copy" data-motion="text">
@@ -152,6 +224,40 @@
     </div>
   </section>
 
+  <!-- IGOExperiences · after Philosophy, before early access. The build omits it unless scripts/experiences.json has something to show. -->
+  
+  <section id="experiences" class="scene band xband" aria-labelledby="experiences-title" tabindex="-1" data-igo-experiences data-experiences-motion="auto">
+    <div class="wrap xband__head" data-motion="text">
+      <h2 id="experiences-title" class="band__title">La experiencia IGO</h2>
+      <p class="xband__sub">La tecnología se comprende mejor cuando forma parte de tu vida.</p>
+      <p class="xband__note">Texto de muestra para la presentación. IGO todavía no publica opiniones de clientes.</p>
+    </div>
+    <div class="xband__frame">
+      <div class="xband__viewport" data-experiences tabindex="0" aria-label="Experiencias, desplazamiento horizontal">
+        <div class="xband__track" data-experiences-track>
+          <ul class="xband__set" data-experiences-set role="list">
+            <li class="xcard"><article class="xcard__body" data-experience="mock-vision-day" data-product-line="vision"><figure class="xcard__media"><img src="../assets/images/images_igo/card_vision-600.webp" alt="Gafas IGO Vision" width="600" height="600" loading="lazy" decoding="async"></figure><div class="xcard__copy"><p class="xcard__product">IGO Vision</p><p class="xcard__rating"><span class="xcard__stars" aria-hidden="true"><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg></span><span class="visually-hidden">Valoración: 5 de 5</span></p><h3 class="xcard__title">Se integran en el día</h3><p class="xcard__text">Las llevo puestas sin pensar en ellas. La cámara está ahí cuando hace falta y desaparece el resto del tiempo.</p><p class="xcard__by"><span class="xcard__author">Laura M.</span><span class="xcard__sep" aria-hidden="true">·</span><time datetime="2026-09-12">12 sept 2026</time></p></div></article></li><li class="xcard"><article class="xcard__body" data-experience="mock-wellness-quiet" data-product-line="wellness"><figure class="xcard__media"><img src="../assets/images/images_igo/anillo_recorte-600.webp" alt="Anillo IGO Wellness" width="600" height="600" loading="lazy" decoding="async"></figure><div class="xcard__copy"><p class="xcard__product">IGO Wellness</p><p class="xcard__rating"><span class="xcard__stars" aria-hidden="true"><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg></span><span class="visually-hidden">Valoración: 4 de 5</span></p><h3 class="xcard__title">Discreto de verdad</h3><p class="xcard__text">El anillo no pide atención. Por la mañana miro el descanso y sigo. Nada de pantallas de más.</p><p class="xcard__by"><span class="xcard__author">Andrés V.</span><span class="xcard__sep" aria-hidden="true">·</span><time datetime="2026-09-28">28 sept 2026</time></p></div></article></li><li class="xcard"><article class="xcard__body" data-experience="mock-vision-light" data-product-line="vision"><figure class="xcard__media"><img src="../assets/images/images_igo/card_vision-600.webp" alt="Muestra: gafas IGO Vision" width="600" height="600" loading="lazy" decoding="async"></figure><div class="xcard__copy"><p class="xcard__product">IGO Vision</p><p class="xcard__rating"><span class="xcard__stars" aria-hidden="true"><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg></span><span class="visually-hidden">Valoración: 5 de 5</span></p><h3 class="xcard__title">Claridad sin peso</h3><p class="xcard__text">Las uso para entrenar y para salir. Se sienten ligeras y la imagen acompaña, no interrumpe.</p><p class="xcard__by"><span class="xcard__author">Sofía R.</span><span class="xcard__sep" aria-hidden="true">·</span><time datetime="2026-10-04">4 oct 2026</time></p></div></article></li><li class="xcard"><article class="xcard__body" data-experience="mock-wellness-rhythm" data-product-line="wellness"><figure class="xcard__media"><img src="../assets/images/images_igo/anillo_recorte-600.webp" alt="Anillo IGO Wellness" width="600" height="600" loading="lazy" decoding="async"></figure><div class="xcard__copy"><p class="xcard__product">IGO Wellness</p><p class="xcard__rating"><span class="xcard__stars" aria-hidden="true"><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg><svg class="xcard__star is-on" viewBox="0 0 16 16" focusable="false"><path d="M8 1.4l1.55 3.55 3.85.35-2.95 2.55.9 3.8L8 9.85 4.65 11.65l.9-3.8L2.6 5.3l3.85-.35z"/></svg></span><span class="visually-hidden">Valoración: 5 de 5</span></p><h3 class="xcard__title">Un ritmo más claro</h3><p class="xcard__text">Empecé a entender el sueño con una mirada, no con un informe. Eso es lo que quería de un anillo.</p><p class="xcard__by"><span class="xcard__author">Hugo P.</span><span class="xcard__sep" aria-hidden="true">·</span><time datetime="2026-10-18">18 oct 2026</time></p></div></article></li>
+          </ul>
+        </div>
+      </div>
+      <div class="xband__controls">
+        <button class="xband__arrow" type="button" data-experiences-prev aria-label="Experiencia anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5L9 12l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="xband__dots" data-experiences-dots data-dot-label="Experiencia {n}" role="group" aria-label="Experiencias"></div>
+        <button class="xband__arrow" type="button" data-experiences-next aria-label="Experiencia siguiente">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6.5L15 12l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="xband__arrow" type="button" data-experiences-pause hidden aria-pressed="false" aria-label="Pausar experiencias" data-label-pause="Pausar experiencias" data-label-play="Reanudar experiencias">
+          <svg data-icon-pause viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7v10M15 7v10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <svg data-icon-play viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M10 7.5v9l6.5-4.5z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+  <script src="../assets/experiences.js" defer></script>
+  
+
   <!-- 6 · Early access request -->
   <section id="early-access" class="ea" aria-labelledby="ea-title" tabindex="-1">
     <div class="wrap ea__inner">
@@ -159,10 +265,11 @@
         <p class="kicker">Acceso anticipado</p>
         <h2 id="ea-title" class="ea__title">Sé de los primeros.</h2>
         <p class="ea__sub">IGO está en pre-lanzamiento. Déjanos tus datos y te escribiremos cuando se abra el acceso anticipado.</p>
+        <p class="ea__phase" data-ea-phase hidden></p>
       </div>
       <div class="ea__main">
       <form class="ea__form" data-ea-form method="post" action="https://formspree.io/f/xnpjwkwj" data-endpoint="https://formspree.io/f/xnpjwkwj" aria-label="Formulario de solicitud de acceso anticipado"
-            data-msg-sending="Enviando…" data-msg-error="No hemos podido enviar tu solicitud. Inténtalo de nuevo en unos minutos." data-msg-invalid="Completa los campos obligatorios." data-msg-unavailable="El formulario aún no está disponible. Inténtalo más tarde.">
+            data-msg-sending="Enviando…" data-msg-error="No hemos podido enviar tu solicitud. Inténtalo de nuevo en unos minutos." data-msg-invalid="Completa los campos obligatorios." data-msg-unavailable="El formulario aún no está disponible. Inténtalo más tarde." data-msg-already="Este correo ya está registrado. No hace falta enviarlo otra vez." data-msg-phase="Fase comercial" data-msg-other="Usar otro correo">
         <input type="hidden" name="_subject" value="Solicitud de acceso anticipado IGO">
         <input type="hidden" name="lang" value="es">
         <div class="ea__trap" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
@@ -197,6 +304,11 @@
         <p class="ea__done-text">Te escribiremos a <strong data-ea-email></strong>.</p>
         <button class="ea__again" type="button" data-ea-again>Enviar otra solicitud</button>
       </div>
+      <div class="ea__done" data-ea-known hidden tabindex="-1">
+        <h3 class="ea__done-title">Este correo ya está registrado. No hace falta enviarlo otra vez.</h3>
+        <p class="ea__done-text"><strong data-ea-known-email></strong></p>
+        <button class="ea__again" type="button" data-ea-other>Usar otro correo</button>
+      </div>
       </div>
     </div>
   </section>
@@ -210,10 +322,11 @@
     </div>
     <nav class="ft__nav" aria-label="Pie de página">
       <ul>
-        <li><a href="#vision">Vision</a></li>
-        <li><a href="#wellness">Wellness</a></li>
-        <li><a href="#technology">Tecnología</a></li>
-        <li><a href="#about">Nosotros</a></li>
+        <li><a href="vision/index.html">Vision</a></li>
+        <li><a href="wellness/index.html">Wellness</a></li>
+        <li><a href="technology/index.html">Tecnología</a></li>
+        <li><a href="science/index.html">Ciencia</a></li>
+        <li><a href="about/index.html">Nosotros</a></li>
       </ul>
     </nav>
     <div class="ft__side">

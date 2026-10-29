@@ -1,0 +1,3 @@
+# Draft build. Indexing stays off until seo.publish is true and SITE_URL is set.
+User-agent: *
+Disallow: /

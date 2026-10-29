@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PROVISIONAL: product sheet. No price, cart, stock or checkout. The only action is early access. Do not publish. -->
+<meta name="robots" content="{{robots}}">
+<meta name="description" content="{{sale.meta.description}}">
+<meta name="theme-color" content="#141B24">
+<title>{{sale.meta.title}}</title>
+{{seo}}
+<link rel="icon" href="{{root}}assets/igo/igo-logo.svg" type="image/svg+xml">
+<link rel="preload" href="{{root}}assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="{{root}}assets/images/images_igo/card_vision-1000.webp" type="image/webp">
+<link rel="stylesheet" href="{{root}}assets/igo.css">
+<link rel="stylesheet" href="{{root}}assets/footer.css">
+<link rel="stylesheet" href="{{root}}assets/hero.css">
+<link rel="stylesheet" href="{{root}}assets/sale.css">
+<link rel="stylesheet" href="{{root}}assets/lang.css">
+<script>document.documentElement.classList.add('js');</script>
+<script src="{{root}}assets/igo.js" defer></script>
+<script src="{{root}}assets/hero.js" defer></script>
+<script src="{{root}}assets/lang.js" defer></script>
+<script src="{{root}}assets/sale.js" defer></script>
+</head>
+<body class="page page--sale">
+<a class="skip-link" href="#main">{{common.skip}}</a>
+
+<header class="site-header" id="top">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="{{link:home}}" aria-label="{{common.brandAria}}"><img src="{{root}}assets/igo/igo-logo.svg" alt="" width="68" height="38"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-toggle__icon" aria-hidden="true"></span><span class="menu-toggle__label">{{common.menu}}</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="{{common.navAria}}">
+      <ul>
+        <li class="site-nav__home"><a href="{{link:home}}">{{nav.home}}</a></li>
+        <li><a href="{{link:vision}}">{{nav.vision}}</a></li>
+        <li><a href="{{link:wellness}}">{{nav.wellness}}</a></li>
+        <li><a href="{{link:technology}}">{{nav.technology}}</a></li>
+        <li><a href="{{link:science}}">{{nav.science}}</a></li>
+        <li><a href="{{link:about}}">{{nav.about}}</a></li>
+        <li><a href="{{link:sale}}" aria-current="page">{{nav.sale}}</a></li>
+        <li class="site-nav__products"><a href="{{link:home}}#early-access">{{nav.earlyAccess}}</a></li>
+        <li class="site-nav__lang">{{langInline}}</li>
+      </ul>
+    </nav>
+    <a class="header-cta" href="{{link:home}}#early-access">{{nav.earlyAccess}} <span aria-hidden="true">→</span></a>
+    <div class="site-header__tools">
+      {{langMenu}}
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1" data-sale>
+  <section class="wrap buy" data-sale-top aria-labelledby="sale-title">
+    <div class="buy__stage">
+      <a class="buy__try" href="{{root}}probador/index.html">{{sale.try}}</a>
+      <img data-sale-photo src="{{root}}assets/images/images_igo/card_vision-1000.webp" alt="{{sale.photoAlt}}" width="1000" height="1000" decoding="async">
+    </div>
+    <div class="buy__panel">
+      <p class="kicker">{{sale.kicker}}</p>
+      <h1 id="sale-title" class="buy__title"><span data-sale-name>{{sale.casual}}</span></h1>
+      <p class="buy__line" data-sale-line>{{sale.line}}</p>
+      <p class="buy__status">{{sale.status}}</p>
+      <fieldset class="buy__models">
+        <legend>{{sale.models}}</legend>
+        <div class="buy__opts">
+          <label class="buy__opt">
+            <input type="radio" name="sale-model" value="casual" checked data-src="{{root}}assets/images/images_igo/card_vision-1000.webp" data-line="{{sale.line}}">
+            <span>{{sale.casual}}</span>
+          </label>
+          <label class="buy__opt">
+            <input type="radio" name="sale-model" value="mask" data-src="{{root}}assets/images/images_igo/card_shield-1000.webp" data-line="{{sale.maskLine}}">
+            <span>{{sale.mask}}</span>
+          </label>
+        </div>
+      </fieldset>
+      <p class="buy__note">{{sale.note}}</p>
+      <a class="buy__cta" href="{{link:home}}#early-access">{{sale.cta}} <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="buy-also" aria-labelledby="sale-also">
+    <div class="wrap">
+      <h2 id="sale-also">{{sale.also}}</h2>
+      <div class="buy-also__list">
+        <button class="buy-card is-on" type="button" data-sale-model="casual" aria-pressed="true">
+          <img src="{{root}}assets/images/images_igo/card_vision-1000.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async">
+          <span class="buy-card__name">{{sale.casual}}</span>
+          <span class="buy-card__line">{{sale.line}}</span>
+          <span class="buy-card__more">{{sale.select}}</span>
+        </button>
+        <button class="buy-card" type="button" data-sale-model="mask" aria-pressed="false">
+          <img src="{{root}}assets/images/images_igo/card_shield-1000.webp" alt="{{sale.maskAlt}}" width="1000" height="1000" loading="lazy" decoding="async">
+          <span class="buy-card__name">{{sale.mask}}</span>
+          <span class="buy-card__line">{{sale.maskLine}}</span>
+          <span class="buy-card__more">{{sale.select}}</span>
+        </button>
+        <a class="buy-card" href="{{link:wellness}}">
+          <img src="{{root}}assets/images/images_igo/anillo_recorte-1000.webp" alt="{{sale.wellAlt}}" width="1000" height="1000" loading="lazy" decoding="async">
+          <span class="buy-card__name">{{sale.wellTitle}}</span>
+          <span class="buy-card__line">{{sale.wellLine}}</span>
+          <span class="buy-card__more">{{sale.more}}</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="buy-notes" aria-label="{{sale.aboutTitle}}">
+    <div class="wrap buy-notes__inner">
+      <article>
+        <h2>{{sale.aboutTitle}}</h2>
+        <p>{{sale.aboutText}}</p>
+      </article>
+      <article>
+        <h2>{{sale.boxTitle}}</h2>
+        <p>{{sale.boxText}}</p>
+      </article>
+      <article>
+        <h2>{{sale.howTitle}}</h2>
+        <p>{{sale.howText}}</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft__top">
+    <div class="ft__brand">
+      <a class="ft__logo" href="{{link:home}}" aria-label="{{common.brandAria}}"><img src="{{root}}assets/igo/igo-logo-white.svg" alt="IGO" width="112" height="63"></a>
+      <p class="ft__tagline">{{footer.tagline}}</p>
+    </div>
+    <nav class="ft__nav" aria-label="{{footer.aria}}">
+      <ul>
+        <li><a href="{{link:vision}}">{{nav.vision}}</a></li>
+        <li><a href="{{link:wellness}}">{{nav.wellness}}</a></li>
+        <li><a href="{{link:technology}}">{{nav.technology}}</a></li>
+        <li><a href="{{link:science}}">{{nav.science}}</a></li>
+        <li><a href="{{link:about}}">{{nav.about}}</a></li>
+      </ul>
+    </nav>
+    <div class="ft__side">
+      <a class="ft__contact" href="{{link:home}}#early-access">{{footer.contact}}</a>
+    </div>
+  </div>
+  <div class="wrap ft__bottom">
+    <p class="ft__legal">{{footer.legal}}</p>
+    <ul class="ft__policy" role="list">
+      <li><a href="{{link:privacy}}">{{footer.privacy}}</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

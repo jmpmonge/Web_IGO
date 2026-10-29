@@ -248,6 +248,14 @@ function articleMain(helpers, page, lang) {
 }
 
 function token(name, page, lang, helpers) {
+  if (name === 'landingLibrary') {
+    const articles = visible(helpers.preview);
+    if (!articles.length) return '';
+    const {esc, t, link, pages} = helpers;
+    const target = pages.find(p => p.id === 'scienceLibrary');
+    return '<section id="library" class="research-block" aria-labelledby="picks-title"><div class="wrap"><h2 id="picks-title">' + esc(t(lang, 'science.picks.title')) + '</h2><p>' + esc(t(lang, 'science.picks.text')) + '</p><div class="research-cards">' + articles.slice(0, 3).map(a => card(helpers, page, lang, a)).join('') + '</div><p class="research-more"><a href="' + link(page, target) + '">' + esc(t(lang, 'science.picks.all')) + '</a></p></div></section>';
+  }
+
   if (name === 'banner') return banner(helpers, lang);
   if (name === 'crumbs') return crumbs(helpers, page, lang);
   if (name === 'selection') {
@@ -269,4 +277,11 @@ function token(name, page, lang, helpers) {
   throw new Error('Unknown research token: ' + name);
 }
 
-module.exports = { load, assertFilter, extraPages, slugs, token };
+function pageMeta(page, lang) {
+  if (!page.articleId) return null;
+  const article = byId(page.articleId);
+  const text = textOf(lang, article);
+  return { title: text.title + ' | IGO Research', description: text.summary };
+}
+
+module.exports = { load, assertFilter, extraPages, slugs, token, pageMeta };

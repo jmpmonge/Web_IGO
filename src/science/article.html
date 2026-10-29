@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="{{robots}}">
 <meta name="description" content="{{research:seoDescription}}">
 <meta name="theme-color" content="#141B24">
 <title>{{research:seoTitle}}</title>
 {{seo}}
 {{research:jsonld}}
 <link rel="icon" href="{{root}}assets/igo/igo-logo.svg" type="image/svg+xml">
+<link rel="preload" href="{{root}}assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{root}}assets/igo.css">
 <link rel="stylesheet" href="{{root}}assets/footer.css">
 <link rel="stylesheet" href="{{root}}assets/hero.css">
@@ -40,11 +41,12 @@
     <nav id="site-nav" class="site-nav" aria-label="{{common.navAria}}">
       <ul>
         <li class="site-nav__home"><a href="{{link:home}}">{{nav.home}}</a></li>
-        <li><a href="{{link:home}}#vision">{{nav.vision}}</a></li>
-        <li><a href="{{link:home}}#wellness">{{nav.wellness}}</a></li>
-        <li><a href="{{link:home}}#technology">{{nav.technology}}</a></li>
+        <li><a href="{{link:vision}}">{{nav.vision}}</a></li>
+        <li><a href="{{link:wellness}}">{{nav.wellness}}</a></li>
+        <li><a href="{{link:technology}}">{{nav.technology}}</a></li>
         <li><a href="{{link:science}}" aria-current="page">{{nav.science}}</a></li>
-        <li><a href="{{link:home}}#about">{{nav.about}}</a></li>
+        <li><a href="{{link:about}}">{{nav.about}}</a></li>
+        <li><a href="{{link:sale}}">{{nav.sale}}</a></li>
         <li class="site-nav__products"><a href="{{link:home}}#early-access">{{nav.earlyAccess}}</a></li>
         <li class="site-nav__lang">{{langInline}}</li>
       </ul>
@@ -79,11 +81,11 @@
     </div>
     <nav class="ft__nav" aria-label="{{footer.aria}}">
       <ul>
-        <li><a href="{{link:home}}#vision">{{nav.vision}}</a></li>
-        <li><a href="{{link:home}}#wellness">{{nav.wellness}}</a></li>
-        <li><a href="{{link:home}}#technology">{{nav.technology}}</a></li>
+        <li><a href="{{link:vision}}">{{nav.vision}}</a></li>
+        <li><a href="{{link:wellness}}">{{nav.wellness}}</a></li>
+        <li><a href="{{link:technology}}">{{nav.technology}}</a></li>
         <li><a href="{{link:science}}" aria-current="page">{{nav.science}}</a></li>
-        <li><a href="{{link:home}}#about">{{nav.about}}</a></li>
+        <li><a href="{{link:about}}">{{nav.about}}</a></li>
       </ul>
     </nav>
     <div class="ft__side">
