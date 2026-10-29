@@ -1,0 +1,98 @@
+{
+  "mode": "mock",
+  "motion": "auto",
+  "note": "motion auto avanza una tarjeta cada 7 segundos. motion manual lo deja estático: solo flechas, puntos y deslizamiento. mode mock muestra solo las entradas con mock true. mode live publica solo approved true. modelName (es/en/fr) es el nombre comercial; si falta, se muestra la línea y nunca las dos. modelId es el identificador del modelo. verifiedPurchase solo se muestra en mode live.",
+  "reviews": [
+    {
+      "id": "mock-vision-day",
+      "mock": true,
+      "approved": false,
+      "product": "vision",
+      "rating": 5,
+      "title": {
+        "es": "Se integran en el día",
+        "en": "They disappear into the day",
+        "fr": "Elles s'effacent dans la journée"
+      },
+      "text": {
+        "es": "Las llevo puestas sin pensar en ellas. La cámara está ahí cuando hace falta y desaparece el resto del tiempo.",
+        "en": "I wear them without thinking about them. The camera is there when I need it and gone the rest of the time.",
+        "fr": "Je les porte sans y penser. La caméra est là quand il le faut et disparaît le reste du temps."
+      },
+      "author": "Laura M.",
+      "date": "2026-09-12",
+      "source": "sample",
+      "verifiedPurchase": false
+    },
+    {
+      "id": "mock-wellness-quiet",
+      "mock": true,
+      "approved": false,
+      "product": "wellness",
+      "rating": 4,
+      "title": {
+        "es": "Discreto de verdad",
+        "en": "Quiet, actually",
+        "fr": "Vraiment discrète"
+      },
+      "text": {
+        "es": "El anillo no pide atención. Por la mañana miro el descanso y sigo. Nada de pantallas de más.",
+        "en": "The ring does not ask for attention. In the morning I look at my rest and carry on. No extra screens.",
+        "fr": "La bague ne réclame pas l'attention. Le matin, je regarde le repos et je continue. Pas d'écran de plus."
+      },
+      "author": "Andrés V.",
+      "date": "2026-09-28",
+      "source": "sample",
+      "verifiedPurchase": true
+    },
+    {
+      "id": "mock-vision-light",
+      "mock": true,
+      "approved": false,
+      "product": "vision",
+      "rating": 5,
+      "title": {
+        "es": "Claridad sin peso",
+        "en": "Clear, and light",
+        "fr": "Nettes et légères"
+      },
+      "text": {
+        "es": "Las uso para entrenar y para salir. Se sienten ligeras y la imagen acompaña, no interrumpe.",
+        "en": "I use them to train and to go out. They feel light, and the picture stays with me instead of interrupting.",
+        "fr": "Je les utilise pour m'entraîner et pour sortir. Elles sont légères, et l'image accompagne au lieu d'interrompre."
+      },
+      "author": "Sofía R.",
+      "date": "2026-10-04",
+      "source": "sample",
+      "verifiedPurchase": false,
+      "image": "assets/images/images_igo/card_vision-600.webp",
+      "imageAlt": {
+        "es": "Muestra: gafas IGO Vision",
+        "en": "Sample: IGO Vision glasses",
+        "fr": "Exemple : lunettes IGO Vision"
+      }
+    },
+    {
+      "id": "mock-wellness-rhythm",
+      "mock": true,
+      "approved": false,
+      "product": "wellness",
+      "rating": 5,
+      "title": {
+        "es": "Un ritmo más claro",
+        "en": "A clearer rhythm",
+        "fr": "Un rythme plus clair"
+      },
+      "text": {
+        "es": "Empecé a entender el sueño con una mirada, no con un informe. Eso es lo que quería de un anillo.",
+        "en": "I started to understand my sleep at a glance, not in a report. That is what I wanted from a ring.",
+        "fr": "J'ai commencé à comprendre mon sommeil d'un regard, pas dans un rapport. C'est ce que je voulais d'une bague."
+      },
+      "author": "Hugo P.",
+      "date": "2026-10-18",
+      "source": "amazon",
+      "verifiedPurchase": false,
+      "sourceUrl": "https://www.amazon.com/"
+    }
+  ]
+}

@@ -14,6 +14,7 @@
     "science": "Science",
     "about": "About",
     "products": "Products",
+    "sale": "Buy",
     "earlyAccess": "Early access"
   },
   "footer": {
@@ -69,6 +70,11 @@
       "casual": "Everyday. Everywhere.",
       "mask": "Performance. Without limits."
     },
+    "essentials": {
+      "title": "The essentials, always with you.",
+      "sub": "IGO Wellness. Discreet outside, attentive inside.",
+      "alt": "IGO Wellness ring"
+    },
     "wellness": {
       "title": "Understand\nyour body.",
       "sub": "Better sleep. More energy.\nA healthier you.",
@@ -81,12 +87,90 @@
       "cta": "Explore Technology",
       "alt": "IGO smart glasses, the IGO app on a phone and the IGO ring on a stone terrace at sunset"
     },
+    "experiences": {
+      "title": "The IGO experience",
+      "sub": "Technology is understood best when it is part of your life.",
+      "note": "Sample text for the layout. IGO does not publish customer reviews yet.",
+      "carousel": "Experiences, horizontal scrolling",
+      "prev": "Previous experience",
+      "next": "Next experience",
+      "pause": "Pause experiences",
+      "play": "Resume experiences",
+      "dots": "Experiences",
+      "dot": "Experience {n}",
+      "rating": "Rating: {n} out of 5",
+      "verified": "Verified purchase",
+      "sourceLink": "original source",
+      "products": {
+        "vision": "IGO Vision",
+        "visionAlt": "IGO Vision glasses",
+        "wellness": "IGO Wellness",
+        "wellnessAlt": "IGO Wellness ring"
+      },
+      "sources": {
+        "sample": "Sample",
+        "amazon": "Amazon"
+      }
+    },
+    "cards": {
+      "heading": "Meet the IGO ecosystem.",
+      "title": "The IGO ecosystem",
+      "cta": "Request early access ›",
+      "prev": "Previous cards",
+      "next": "Next cards",
+      "vision": {
+        "eyebrow": "IGO Vision",
+        "title": "Look, record, keep going.",
+        "line": "Glasses with a built-in camera for every day.",
+        "alt": "IGO Vision smart glasses"
+      },
+      "shield": {
+        "eyebrow": "Vision Shield",
+        "title": "Built for sport.",
+        "line": "Wraparound protection and a camera for your training.",
+        "alt": "IGO Vision Shield sport glasses"
+      },
+      "wellness": {
+        "eyebrow": "IGO Wellness",
+        "title": "Discreet outside, attentive inside.",
+        "line": "A ring that keeps track of your rest and activity.",
+        "alt": "IGO Wellness smart ring"
+      },
+      "app": {
+        "eyebrow": "IGO App",
+        "title": "Everything in one place.",
+        "line": "Sleep, activity and recovery at a glance.",
+        "alt": "IGO app on a phone"
+      }
+    },
     "about": {
       "kicker": "Philosophy",
       "title": "Designed\nwith purpose.",
       "sub": "Technology should feel natural.\nDesign should be intentional.",
       "cta": "Discover our philosophy",
       "alt": "IGO ring and smart glasses on a stone ledge facing a sunset over the sea"
+    },
+    "vcards": {
+      "camara": {
+        "title": "Built-in camera",
+        "line": "Photos and video from your point of view, phone in your pocket."
+      },
+      "manoslibres": {
+        "title": "Hands-free",
+        "line": "Control the glasses by voice or with a tap on the temple."
+      },
+      "captura": {
+        "title": "Capture modes",
+        "line": "Record on the move with Vision Shield."
+      },
+      "sensores": {
+        "title": "Ring sensors",
+        "line": "Heart rate, sleep and activity, day and night."
+      },
+      "app": {
+        "title": "Your data in the app",
+        "line": "Everything the ring measures, at a glance."
+      }
     }
   },
   "products": {
@@ -105,6 +189,37 @@
       "title": "Smart ring",
       "cta": "Explore Wellness"
     }
+  },
+  "sale": {
+    "meta": {
+      "title": "IGO Vision — Product sheet",
+      "description": "IGO Vision product sheet. Early access only: no price and no checkout."
+    },
+    "kicker": "IGO Vision",
+    "casual": "Sport Casual",
+    "mask": "Sport Mask",
+    "line": "Smart glasses for every day.",
+    "status": "Coming soon. This page shows no price and does not take orders.",
+    "try": "Try them on",
+    "models": "Model",
+    "note": "Colour and size will be published with the product.",
+    "cta": "Request early access",
+    "also": "You may also like",
+    "select": "View this model",
+    "more": "Learn more",
+    "maskLine": "The same system, with a closer frame.",
+    "maskAlt": "IGO Vision Sport Mask glasses",
+    "wellTitle": "IGO Wellness",
+    "wellLine": "The ring that measures and stays with you.",
+    "wellAlt": "IGO Wellness ring",
+    "photoAlt": "IGO Vision glasses",
+    "aboutTitle": "The product",
+    "aboutText": "IGO Vision is a pair of glasses with a built-in camera. This page shows the product-sheet layout. Materials and measurements will be published when the product is ready.",
+    "boxTitle": "What is included",
+    "boxText": "The final sheet will list what is in the box. There is no published pack today.",
+    "howTitle": "How to request it",
+    "howText": "There is no basket. To be among the first, request early access and we will write when it opens.",
+    "entry": "View the product sheet"
   },
   "cta": {
     "request": "Request early access"
@@ -135,6 +250,9 @@
     "error": "We could not send your request. Please try again in a moment.",
     "invalid": "Please complete the required fields.",
     "unavailable": "The form is not available yet. Please try again later.",
+    "already": "This email is already registered. There is no need to send it again.",
+    "phase": "Commercial phase",
+    "otherEmail": "Use another email",
     "subject": "IGO early access request",
     "note": "We only use your details to reply to this request."
   },
@@ -178,8 +296,8 @@
   },
   "science": {
     "meta": {
-      "title": "Science and technology | IGO Research",
-      "description": "Understand wearables, smart glasses and artificial intelligence: mechanisms, uses, evidence and limitations through human experience."
+      "title": "Science and technology | IGO",
+      "description": "Quality at IGO is not a product tier. How a smart ring uses sensors to record signals, and the difference between a technology, a device and a certification."
     },
     "libraryMeta": {
       "title": "Knowledge library | IGO Research",
@@ -190,6 +308,7 @@
       "title": "IGO Research",
       "sub": "Technology, science and human experience.",
       "intro": "A space to understand the technology we carry with us: how it works, what information it provides and which questions to ask before trusting its results.",
+      "philosophy": "Our approach to quality",
       "cta": "How it works",
       "library": "Explore the library",
       "note": "Educational content and analysis of public sources on technology and human experience.",
@@ -247,6 +366,51 @@
       "text": "IGO Research brings together explanations to help you ask better questions when reading a specification: what the device records, what depends on a phone or connection, and what evidence supports each feature. Product capabilities must be checked against the documentation for that model.",
       "cta": "Explore the knowledge library"
     },
+    "philosophy": {
+      "title": "Our approach to quality",
+      "p1": "At IGO we look for technological excellence in every category, from the most accessible to the most advanced.",
+      "p2": "We believe quality does not depend only on price or on the number of features, but on the balance between technology, usefulness and the experience of use.",
+      "close": "IGO. Quality is not a product tier. It is our approach."
+    },
+    "rings": {
+      "title": "The technology of smart rings",
+      "sub": "Advanced technology in a discreet form",
+      "p1": "Smart rings bring together miniaturised sensors and electronic components that can record different signals related to physical activity and how the body functions.",
+      "p2": "Their design allows measurements during everyday activities and rest, combining monitoring technology with comfort and ease of use.",
+      "p3": "The information collected by the sensors is processed by algorithms that identify patterns and present data the wearer can understand.",
+      "sensorsTitle": "How the sensors work",
+      "sensorsIntro": "A smart ring may rely on different technologies, depending on the model and its features.",
+      "opticalTitle": "Optical sensors",
+      "optical": "Some rings use photoplethysmography (PPG), a technology that analyses variations in light reflected by tissue to estimate parameters related to pulse.",
+      "opticalAlt": "Conceptual view of an optical sensor, without showing the inside of the ring",
+      "motionTitle": "Motion sensors",
+      "motion": "Accelerometers record movement and produce estimates related to physical activity and rest.",
+      "motionAlt": "Space reserved for an image of everyday movement",
+      "motionCaption": "Image still needed: everyday activity, without a product teardown.",
+      "temperatureTitle": "Temperature sensors",
+      "temperature": "Some devices record changes in skin temperature that can help identify trends over time.",
+      "temperatureAlt": "Space reserved for an image of a temperature trend",
+      "temperatureCaption": "Image still needed: a trend over time, without a chart presented as a real measurement.",
+      "sensorsNote": "Whether these measurements are available, and how precise they are, depends on the sensors, the algorithms and the conditions of use.",
+      "dataTitle": "From data to information",
+      "data1": "A smart device is useful not only because it records data, but because of how it interprets and presents that data.",
+      "data2": "Algorithms turn the signals captured by the sensors into estimates and indicators that make it easier to follow certain aspects of activity and rest.",
+      "data3": "These indicators should be understood within the possibilities and the limits of each technology.",
+      "signalAlt": "Space reserved for the step from a signal to an indicator",
+      "signalCaption": "Image still needed: from signal to indicator, without an invented chart.",
+      "toLimits": "Measuring, estimating and interpreting are not the same thing."
+    },
+    "foundation": {
+      "title": "Scientific basis",
+      "intro": "Validating a technology, validating a specific device and holding a health certification are three different things. They are not presented here as equivalent.",
+      "techTitle": "Validation of a technology",
+      "tech": "Publications that study a principle, such as photoplethysmography. That knowledge does not, by itself, establish the accuracy of a product.",
+      "deviceTitle": "Validation of a specific device",
+      "device": "Studies that assess the accuracy of a particular model, under the conditions of that test. The result does not extend to other models.",
+      "certTitle": "Health certification",
+      "cert": "Authorisations that apply to a specific medical device. They do not cover other products, or the brand as a whole.",
+      "note": "References will be added when a verifiable source exists, with its scope. None are published here yet."
+    },
     "ui": {
       "crumbs": "Breadcrumb",
       "libraryTitle": "Knowledge library",
@@ -277,6 +441,35 @@
         "evidence-review": "Evidence review",
         "insight": "Insight"
       }
+    },
+    "layout": {
+      "index": "On this page",
+      "technologies": "Technologies",
+      "evidence": "Evidence and limits"
+    }
+  },
+  "vision": {
+    "meta": {
+      "title": "Vision — IGO (provisional)",
+      "description": "IGO Vision. Provisional page, content pending."
+    }
+  },
+  "wellness": {
+    "meta": {
+      "title": "Wellness — IGO (provisional)",
+      "description": "IGO Wellness. Provisional page, content pending."
+    }
+  },
+  "technology": {
+    "meta": {
+      "title": "Technology — IGO (provisional)",
+      "description": "IGO Technology. Provisional page, content pending."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About — IGO (provisional)",
+      "description": "About IGO. Provisional page, content pending."
     }
   }
 }

@@ -14,6 +14,7 @@
     "science": "Ciencia",
     "about": "Nosotros",
     "products": "Productos",
+    "sale": "Comprar",
     "earlyAccess": "Acceso anticipado"
   },
   "footer": {
@@ -69,6 +70,11 @@
       "casual": "Cada día. En cualquier lugar.",
       "mask": "Rendimiento. Sin límites."
     },
+    "essentials": {
+      "title": "Lo esencial, siempre contigo.",
+      "sub": "IGO Wellness. Discreto por fuera, atento por dentro.",
+      "alt": "Anillo IGO Wellness"
+    },
     "wellness": {
       "title": "Conoce mejor\ntu cuerpo.",
       "sub": "Mejor descanso. Más energía.\nUna versión más sana de ti.",
@@ -81,12 +87,90 @@
       "cta": "Explorar Tecnología",
       "alt": "Gafas inteligentes IGO, la app de IGO en un teléfono y el anillo IGO sobre una terraza de piedra al atardecer"
     },
+    "experiences": {
+      "title": "La experiencia IGO",
+      "sub": "La tecnología se comprende mejor cuando forma parte de tu vida.",
+      "note": "Texto de muestra para la presentación. IGO todavía no publica opiniones de clientes.",
+      "carousel": "Experiencias, desplazamiento horizontal",
+      "prev": "Experiencia anterior",
+      "next": "Experiencia siguiente",
+      "pause": "Pausar experiencias",
+      "play": "Reanudar experiencias",
+      "dots": "Experiencias",
+      "dot": "Experiencia {n}",
+      "rating": "Valoración: {n} de 5",
+      "verified": "Compra verificada",
+      "sourceLink": "fuente original",
+      "products": {
+        "vision": "IGO Vision",
+        "visionAlt": "Gafas IGO Vision",
+        "wellness": "IGO Wellness",
+        "wellnessAlt": "Anillo IGO Wellness"
+      },
+      "sources": {
+        "sample": "Muestra",
+        "amazon": "Amazon"
+      }
+    },
+    "cards": {
+      "heading": "Conoce el ecosistema IGO.",
+      "title": "El ecosistema IGO",
+      "cta": "Solicitar acceso anticipado ›",
+      "prev": "Ver tarjetas anteriores",
+      "next": "Ver tarjetas siguientes",
+      "vision": {
+        "eyebrow": "IGO Vision",
+        "title": "Mira, graba, sigue.",
+        "line": "Gafas con cámara integrada para el día a día.",
+        "alt": "Gafas inteligentes IGO Vision"
+      },
+      "shield": {
+        "eyebrow": "Vision Shield",
+        "title": "Hecha para el deporte.",
+        "line": "Protección envolvente y cámara para tus entrenamientos.",
+        "alt": "Gafas deportivas IGO Vision Shield"
+      },
+      "wellness": {
+        "eyebrow": "IGO Wellness",
+        "title": "Discreto por fuera, atento por dentro.",
+        "line": "Un anillo que acompaña tu descanso y tu actividad.",
+        "alt": "Anillo inteligente IGO Wellness"
+      },
+      "app": {
+        "eyebrow": "App IGO",
+        "title": "Todo en un solo lugar.",
+        "line": "Sueño, actividad y recuperación, de un vistazo.",
+        "alt": "Aplicación IGO en un teléfono"
+      }
+    },
     "about": {
       "kicker": "Filosofía",
       "title": "Diseño\ncon propósito.",
       "sub": "La tecnología debe sentirse natural.\nEl diseño debe ser intencionado.",
       "cta": "Descubre nuestra filosofía",
       "alt": "Anillo y gafas inteligentes IGO sobre un saliente de piedra frente a un atardecer sobre el mar"
+    },
+    "vcards": {
+      "camara": {
+        "title": "Cámara integrada",
+        "line": "Fotos y vídeo desde tu punto de vista, sin sacar el móvil."
+      },
+      "manoslibres": {
+        "title": "Manos libres",
+        "line": "Controla las gafas con la voz o con un toque en la patilla."
+      },
+      "captura": {
+        "title": "Modos de captura",
+        "line": "Graba en movimiento con Vision Shield."
+      },
+      "sensores": {
+        "title": "Sensores del anillo",
+        "line": "Pulso, sueño y actividad, día y noche."
+      },
+      "app": {
+        "title": "Tus datos en la app",
+        "line": "Todo lo que mide el anillo, en un vistazo."
+      }
     }
   },
   "products": {
@@ -105,6 +189,37 @@
       "title": "Anillo inteligente",
       "cta": "Explorar Wellness"
     }
+  },
+  "sale": {
+    "meta": {
+      "title": "IGO Vision — Ficha",
+      "description": "Ficha de IGO Vision. Acceso anticipado: sin precio y sin compra."
+    },
+    "kicker": "IGO Vision",
+    "casual": "Sport Casual",
+    "mask": "Sport Mask",
+    "line": "Gafas inteligentes para llevar cada día.",
+    "status": "Próximamente. Esta ficha no muestra precio ni permite comprar.",
+    "try": "Probar virtualmente",
+    "models": "Modelo",
+    "note": "El color y la talla se publicarán con el producto.",
+    "cta": "Solicitar acceso anticipado",
+    "also": "Puede que también te interese",
+    "select": "Ver este modelo",
+    "more": "Conocer",
+    "maskLine": "El mismo sistema, con un frontal más cerrado.",
+    "maskAlt": "Gafas IGO Vision Sport Mask",
+    "wellTitle": "IGO Wellness",
+    "wellLine": "El anillo que mide y acompaña.",
+    "wellAlt": "Anillo IGO Wellness",
+    "photoAlt": "Gafas IGO Vision",
+    "aboutTitle": "El producto",
+    "aboutText": "IGO Vision son unas gafas con cámara integrada. Esta página muestra el formato de la ficha. Los materiales y las medidas se publicarán cuando el producto esté listo.",
+    "boxTitle": "Qué incluye",
+    "boxText": "La ficha definitiva indicará el contenido de la caja. Hoy no hay un pack publicado.",
+    "howTitle": "Cómo pedirlo",
+    "howText": "No hay cesta. Si quieres estar entre los primeros, solicita el acceso anticipado y te escribiremos cuando se abra.",
+    "entry": "Ver la ficha"
   },
   "cta": {
     "request": "Solicitar acceso anticipado"
@@ -135,6 +250,9 @@
     "error": "No hemos podido enviar tu solicitud. Inténtalo de nuevo en unos minutos.",
     "invalid": "Completa los campos obligatorios.",
     "unavailable": "El formulario aún no está disponible. Inténtalo más tarde.",
+    "already": "Este correo ya está registrado. No hace falta enviarlo otra vez.",
+    "phase": "Fase comercial",
+    "otherEmail": "Usar otro correo",
     "subject": "Solicitud de acceso anticipado IGO",
     "note": "Solo usamos tus datos para responder a esta solicitud."
   },
@@ -178,8 +296,8 @@
   },
   "science": {
     "meta": {
-      "title": "Ciencia y tecnología | IGO Research",
-      "description": "Comprende wearables, gafas inteligentes e inteligencia artificial: mecanismos, usos, evidencia y límites desde la experiencia humana."
+      "title": "Ciencia y tecnología | IGO",
+      "description": "La calidad en IGO no es una gama. Cómo un anillo inteligente registra señales con sensores y qué distingue una tecnología, un dispositivo y una certificación."
     },
     "libraryMeta": {
       "title": "Biblioteca de conocimiento | IGO Research",
@@ -190,6 +308,7 @@
       "title": "IGO Research",
       "sub": "Tecnología, ciencia y experiencia humana.",
       "intro": "Un espacio para comprender la tecnología que llevamos con nosotros: cómo funciona, qué información ofrece y qué preguntas conviene hacer antes de confiar en sus resultados.",
+      "philosophy": "Nuestra filosofía",
       "cta": "Cómo funciona",
       "library": "Explorar la biblioteca",
       "note": "Divulgación y análisis de fuentes públicas sobre tecnología y experiencia humana.",
@@ -247,6 +366,51 @@
       "text": "IGO Research reúne explicaciones para leer una ficha técnica con mejores preguntas: qué registra el dispositivo, qué depende del teléfono o de la conexión y qué evidencia respalda cada función. Las capacidades de un producto deben comprobarse en la documentación de su modelo.",
       "cta": "Explorar el conocimiento"
     },
+    "philosophy": {
+      "title": "Nuestra filosofía de calidad",
+      "p1": "En IGO buscamos la excelencia tecnológica en cada categoría, desde lo más accesible hasta lo más avanzado.",
+      "p2": "Creemos que la calidad no depende solo del precio ni del número de funciones, sino del equilibrio entre tecnología, utilidad y experiencia de uso.",
+      "close": "IGO. La calidad no es una gama, es nuestra filosofía."
+    },
+    "rings": {
+      "title": "La tecnología de los anillos inteligentes",
+      "sub": "Tecnología avanzada en un formato discreto",
+      "p1": "Los anillos inteligentes integran sensores y componentes electrónicos miniaturizados capaces de registrar diferentes señales relacionadas con la actividad física y el funcionamiento del organismo.",
+      "p2": "Su diseño permite realizar mediciones durante las actividades cotidianas y el descanso, combinando tecnología de monitorización con comodidad y facilidad de uso.",
+      "p3": "La información recogida por los sensores se procesa mediante algoritmos que permiten identificar patrones y presentar datos comprensibles para el usuario.",
+      "sensorsTitle": "Cómo funcionan los sensores",
+      "sensorsIntro": "El funcionamiento de un anillo inteligente puede apoyarse en diferentes tecnologías, según el modelo y sus características.",
+      "opticalTitle": "Sensores ópticos",
+      "optical": "Algunos anillos utilizan fotopletismografía (PPG), una tecnología que analiza las variaciones de la luz reflejada por los tejidos para estimar parámetros relacionados con el pulso.",
+      "opticalAlt": "Representación conceptual de un sensor óptico, sin mostrar el interior del anillo",
+      "motionTitle": "Sensores de movimiento",
+      "motion": "Los acelerómetros permiten registrar movimientos y generar estimaciones relacionadas con la actividad física y el descanso.",
+      "motionAlt": "Espacio reservado para una imagen de movimiento cotidiano",
+      "motionCaption": "Imagen pendiente: actividad cotidiana, sin despiece del producto.",
+      "temperatureTitle": "Sensores de temperatura",
+      "temperature": "Determinados dispositivos registran variaciones de temperatura de la piel que pueden ayudar a identificar tendencias a lo largo del tiempo.",
+      "temperatureAlt": "Espacio reservado para una imagen de tendencia de temperatura",
+      "temperatureCaption": "Imagen pendiente: seguimiento de una tendencia, sin un gráfico presentado como medición real.",
+      "sensorsNote": "La disponibilidad y precisión de estas mediciones dependen de los sensores, los algoritmos y las condiciones de utilización.",
+      "dataTitle": "Del dato a la información",
+      "data1": "La utilidad de un dispositivo inteligente no depende únicamente de su capacidad para registrar datos, sino también de cómo los interpreta y presenta.",
+      "data2": "Los algoritmos transforman las señales captadas por los sensores en estimaciones e indicadores que facilitan el seguimiento de determinados aspectos de la actividad y del descanso.",
+      "data3": "Estos indicadores deben entenderse dentro de las posibilidades y limitaciones de cada tecnología.",
+      "signalAlt": "Espacio reservado para el paso de la señal a un indicador",
+      "signalCaption": "Imagen pendiente: de la señal al indicador, sin un gráfico inventado.",
+      "toLimits": "Medir, estimar e interpretar no son lo mismo."
+    },
+    "foundation": {
+      "title": "Fundamento científico",
+      "intro": "Validar una tecnología, validar un dispositivo concreto y obtener una certificación sanitaria son tres cosas distintas. No se presentan aquí como equivalentes.",
+      "techTitle": "Validación de una tecnología",
+      "tech": "Publicaciones que estudian un principio, por ejemplo la fotopletismografía. Ese conocimiento no acredita por sí solo la precisión de un producto.",
+      "deviceTitle": "Validación de un dispositivo concreto",
+      "device": "Estudios que evalúan la precisión de un modelo determinado, en las condiciones de esa prueba. El resultado no se extiende a otros modelos.",
+      "certTitle": "Certificación sanitaria",
+      "cert": "Autorizaciones aplicables a un dispositivo sanitario específico. No cubren al resto de productos ni a la marca en su conjunto.",
+      "note": "Las referencias se añadirán cuando haya una fuente verificable, con su alcance. Ahora no hay ninguna publicada."
+    },
     "ui": {
       "crumbs": "Ruta de navegación",
       "libraryTitle": "Biblioteca de conocimiento",
@@ -277,6 +441,35 @@
         "evidence-review": "Revisión de evidencia",
         "insight": "Perspectiva"
       }
+    },
+    "layout": {
+      "index": "En esta página",
+      "technologies": "Tecnologías",
+      "evidence": "Evidencia y límites"
+    }
+  },
+  "vision": {
+    "meta": {
+      "title": "Vision — IGO (provisional)",
+      "description": "IGO Vision. Página provisional, contenido pendiente."
+    }
+  },
+  "wellness": {
+    "meta": {
+      "title": "Wellness — IGO (provisional)",
+      "description": "IGO Wellness. Página provisional, contenido pendiente."
+    }
+  },
+  "technology": {
+    "meta": {
+      "title": "Tecnología — IGO (provisional)",
+      "description": "IGO Tecnología. Página provisional, contenido pendiente."
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Nosotros — IGO (provisional)",
+      "description": "Sobre IGO. Página provisional, contenido pendiente."
     }
   }
 }

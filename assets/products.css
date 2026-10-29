@@ -29,6 +29,8 @@ body.page--products{ --rise:14px; --hero-nav-h:72px; }
   .prod__media{ aspect-ratio:2.3/1; }
 }
 .page--products .cta{ align-self:start; justify-self:start; }
+.prod__sheet{ justify-self:start; font-size:.9375rem; color:var(--c-ink); text-decoration:none; }
+.prod__sheet:hover{ text-decoration:underline; text-underline-offset:.3em; }
 
 /* Motion: same data-motion system as igo.js. Text fade + short rise; photos fade only. Initial states only under html.motion. */
 html.motion body.page--products [data-motion="text"]:not(.is-in){ opacity:0; transform:translateY(var(--rise)); }

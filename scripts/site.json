@@ -1,4 +1,39 @@
 {
   "siteUrl": "",
-  "formEndpoint": "https://formspree.io/f/xnpjwkwj"
+  "seo": {
+    "publish": false,
+    "title": { "warnMin": 30, "warnMax": 60 },
+    "description": { "warnMin": 70, "warnMax": 160 },
+    "pages": {
+      "home": { "provisional": true, "index": false, "follow": true },
+      "products": { "provisional": true, "index": false, "follow": true },
+      "sale": { "provisional": true, "index": false, "follow": true },
+      "science": { "provisional": true, "index": false, "follow": true },
+      "scienceLibrary": { "provisional": true, "index": false, "follow": true },
+      "scienceArticle": { "provisional": true, "index": false, "follow": true },
+      "privacy": { "provisional": true, "index": false, "follow": true },
+      "vision": { "provisional": true, "index": false, "follow": true },
+      "wellness": { "provisional": true, "index": false, "follow": true },
+      "technology": { "provisional": true, "index": false, "follow": true },
+      "about": { "provisional": true, "index": false, "follow": true }
+    }
+  },
+  "formEndpoint": "https://formspree.io/f/xnpjwkwj",
+  "homeCards": {
+    "style": "video",
+    "columns": 4,
+    "heading": "titulo",
+    "cards": [
+      "vision",
+      "shield",
+      "wellness",
+      "app"
+    ],
+    "videos": [
+      "camara",
+      "captura",
+      "sensores",
+      "app"
+    ]
+  }
 }

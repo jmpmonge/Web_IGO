@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/igo/seo-registry.schema.json",
+  "title": "Future SEO registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "status", "languages", "keywords", "clusters", "categories", "schemaTypes", "images", "editorial", "claims"],
+  "properties": {
+    "version": { "const": 1 },
+    "status": { "enum": ["prepared", "active"] },
+    "notes": { "type": "string" },
+    "languages": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": { "enum": ["es", "en", "fr"] }
+    },
+    "keywords": { "$ref": "#/$defs/pageItems" },
+    "clusters": { "$ref": "#/$defs/pageItems" },
+    "categories": { "$ref": "#/$defs/pageItems" },
+    "editorial": { "$ref": "#/$defs/pageItems" },
+    "schemaTypes": { "$ref": "#/$defs/pageItems" },
+    "images": { "$ref": "#/$defs/pageItems" },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "statement"],
+        "properties": {
+          "kind": { "enum": ["confirmed", "supplier", "hypothesis"] },
+          "statement": { "type": "string", "minLength": 1 },
+          "source": { "type": "string", "pattern": "^https://\\S+$" },
+          "pageId": { "type": "string" },
+          "publishable": { "type": "boolean" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "pageItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pageId": { "type": "string" },
+          "type": { "type": "string" },
+          "src": { "type": "string" }
+        },
+        "not": { "required": ["route"] }
+      }
+    }
+  }
+}

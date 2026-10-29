@@ -1,0 +1,380 @@
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./vendor/fonts/jost-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./vendor/fonts/jost-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --c-ink: #141b24;
+  --c-warm: #f7f5f1;
+  --c-white: #ffffff;
+  --c-muted: #5b616b;
+  --c-line: #e6e2db;
+  --c-navy: rgb(29, 58, 92);
+  --c-navy-hover: rgb(22, 46, 74);
+  --radius: 1.75rem;
+  --font: "Jost", "Avenir Next", Avenir, "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 280ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--c-ink);
+  background: var(--c-warm);
+  overflow-wrap: break-word;
+}
+
+.tryon {
+  width: min(100%, 52rem);
+  margin-inline: auto;
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 4vw, 2rem) 3rem;
+}
+
+.tryon__header { text-align: center; margin-bottom: 1.75rem; }
+
+.tryon__kicker {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  font-weight: 500;
+}
+
+.tryon__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.tryon__lead {
+  margin: 0.85rem auto 0;
+  max-width: 36ch;
+  color: var(--c-muted);
+  font-size: 0.98rem;
+}
+
+.tryon__models {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.model-btn {
+  appearance: none;
+  border: 1px solid var(--c-line);
+  background: var(--c-white);
+  border-radius: calc(var(--radius) - 0.35rem);
+  padding: 1rem 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.model-btn:hover { border-color: #cfc9c0; }
+.model-btn:focus-visible { outline: 2px solid var(--c-ink); outline-offset: 3px; }
+
+.model-btn.is-active {
+  border-color: var(--c-navy);
+  box-shadow: 0 0 0 1px var(--c-navy);
+}
+
+.model-btn__name {
+  display: block;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.model-btn__desc {
+  display: block;
+  color: var(--c-muted);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+.stage-card {
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  padding: clamp(0.85rem, 2vw, 1.15rem);
+  box-shadow: 0 12px 40px rgba(20, 27, 36, 0.04);
+}
+
+.stage {
+  /* Aspect follows the camera/photo (set by tryon.js as --stage-ar, clamped 3:4…16:9) so a
+     landscape webcam is shown full-width instead of a narrow portrait crop. */
+  --stage-ar: 1.3333;
+  --stage-max-h: min(70dvh, 640px);
+  position: relative;
+  aspect-ratio: var(--stage-ar);
+  width: min(100%, calc(var(--stage-max-h) * var(--stage-ar)));
+  margin-inline: auto;
+  border-radius: calc(var(--radius) - 0.55rem);
+  overflow: hidden;
+  background: #0e131a;
+  color: #c8cdd4;
+}
+
+.stage__video,
+.stage__frame,
+.stage__overlay,
+.stage__still {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stage__video,
+.stage__frame,
+.stage__overlay,
+.stage__still {
+  /* Mirror display so selfie feels natural; MediaPipe reads unmirrored frames.
+     Overlay is CSS-mirrored too so landmark space stays aligned with the video. */
+  transform: scaleX(-1);
+}
+
+.stage__video,
+.stage__still {
+  z-index: 1;
+}
+
+/* The exact frame the face was measured on, drawn right before the glasses. It covers the live video, so
+   image and glasses always come from the same instant. Transparent until the first frame is painted. */
+.stage__frame {
+  z-index: 1;
+  display: none;
+}
+.stage.is-live .stage__frame { display: block; }
+
+.stage__overlay {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stage__placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: #a9b0ba;
+  font-size: 0.95rem;
+}
+
+.stage.is-live .stage__placeholder,
+.stage.is-still .stage__placeholder { display: none; }
+
+.stage__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline: auto;
+  opacity: 0.7;
+}
+
+.stage__status {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(20, 27, 36, 0.72);
+  color: #fff;
+  font-size: 0.8125rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.stage__status.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stage__status.is-error { background: rgba(140, 40, 40, 0.85); }
+.stage__status.is-ok { background: rgba(29, 58, 92, 0.85); }
+
+.tryon__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  appearance: none;
+  border: none;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 0.8rem 1.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+  color: var(--c-ink);
+  background: transparent;
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn:focus-visible { outline: 2px solid var(--c-ink); outline-offset: 3px; }
+
+.btn--primary {
+  background: var(--c-navy);
+  color: #fff;
+}
+.btn--primary:hover:not(:disabled) { background: var(--c-navy-hover); }
+
+.btn--ghost {
+  border: 1px solid var(--c-line);
+  background: var(--c-white);
+}
+.btn--ghost:hover:not(:disabled) { border-color: #cfc9c0; }
+
+.btn--file { display: inline-flex; align-items: center; }
+
+.tryon__privacy {
+  margin: 1.35rem auto 0;
+  max-width: 42ch;
+  text-align: center;
+  color: var(--c-muted);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+/* ---- Side panel: model name, copy and buy link (like a product sheet next to the preview) ---- */
+.tryon__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.tryon__info {
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  padding: clamp(1.25rem, 2.4vw, 1.75rem);
+  box-shadow: 0 12px 40px rgba(20, 27, 36, 0.04);
+}
+
+/* Product card in the format of a store sheet: brand, big name, rule, key line, selector, facts, button. */
+.info__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: -0.35rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.info__logo { display: block; width: 3.1rem; height: auto; margin-left: -0.5rem; }
+
+.info__name {
+  margin: 0.55rem 0 0;
+  font-size: clamp(1.9rem, 1.4rem + 1.6vw, 2.45rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.info__rule {
+  margin: 1.15rem 0 1.1rem;
+  border: 0;
+  border-top: 1px solid var(--c-line);
+}
+
+.info__tag {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.info__line {
+  margin: 0.3rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.info__label {
+  margin: 1.35rem 0 0.55rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.tryon__info .tryon__models { gap: 0.5rem; margin-bottom: 0; }
+.tryon__info .model-btn { padding: 0.62rem 0.9rem; border-radius: 999px; text-align: center; }
+.tryon__info .model-btn__name { margin-bottom: 0; font-size: 0.92rem; }
+.tryon__info .model-btn__desc { display: none; }
+
+.info__facts { margin: 1.25rem 0 0; display: grid; gap: 1rem; }
+.info__facts div { display: grid; gap: 0.1rem; }
+.info__facts dt { font-weight: 600; font-size: 0.95rem; }
+.info__facts dd { margin: 0; color: var(--c-muted); font-size: 0.95rem; line-height: 1.4; }
+
+.info__cta {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media (min-width: 900px) {
+  .tryon { width: min(100%, 68rem); }
+  .tryon__layout { grid-template-columns: minmax(0, 1fr) 21.5rem; }
+  .tryon__info { position: sticky; top: 1.5rem; }
+}
+
+@media (max-width: 520px) {
+  .tryon__models { grid-template-columns: 1fr; }
+  .tryon__actions { flex-direction: column; }
+  .btn, .btn--file { width: 100%; justify-content: center; text-align: center; }
+  .stage { --stage-max-h: min(62dvh, 560px); }
+  .stage:not([style*="--stage-ar"]) { --stage-ar: 0.75; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .stage__status { transform: none; }
+}
