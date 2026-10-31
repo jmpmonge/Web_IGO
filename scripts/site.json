@@ -15,10 +15,12 @@
       "vision": { "provisional": true, "index": false, "follow": true },
       "wellness": { "provisional": true, "index": false, "follow": true },
       "technology": { "provisional": true, "index": false, "follow": true },
-      "about": { "provisional": true, "index": false, "follow": true }
+      "about": { "provisional": true, "index": false, "follow": true },
+      "support": { "provisional": true, "index": false, "follow": true }
     }
   },
   "formEndpoint": "https://formspree.io/f/xnpjwkwj",
+  "supportEndpoint": "",
   "homeCards": {
     "style": "video",
     "columns": 4,

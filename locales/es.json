@@ -471,5 +471,38 @@
       "title": "Nosotros — IGO (provisional)",
       "description": "Sobre IGO. Página provisional, contenido pendiente."
     }
+  },
+  "support": {
+    "meta": {
+      "title": "Consulta IGO (página provisional)",
+      "description": "Envía una consulta sobre el anillo IGO Wellness. Una persona la revisa. Esta página confirma la recepción y no entrega una respuesta."
+    },
+    "kicker": "Consultas",
+    "title": "Pregunta sobre el anillo.",
+    "notice": "Una persona revisa cada consulta. Esta página confirma que la hemos recibido. No te envía una respuesta.",
+    "formTitle": "Tu consulta",
+    "review": "Tu consulta queda a la espera de que una persona la revise.",
+    "continuing": "Este navegador continuará la conversación guardada en este dispositivo.",
+    "privacy": "La clave de continuación permanece solo en este navegador. No va en la dirección y no se envía por correo. Quien pueda usar este navegador puede continuar el hilo. Si borras los datos del sitio, el hilo desaparece y no se puede recuperar. Este navegador no muestra la conversación de otra persona.",
+    "aria": "Formulario de consulta",
+    "product": "Producto",
+    "productName": "Anillo IGO Wellness",
+    "language": "Idioma",
+    "langEn": "Inglés",
+    "langEs": "Español",
+    "langFr": "Francés",
+    "question": "Consulta",
+    "submit": "Enviar consulta",
+    "sending": "Enviando…",
+    "received": "Hemos recibido tu consulta.",
+    "receivedDetail": "Una persona la revisará. Esta página no envía la respuesta.",
+    "another": "Hacer otra consulta",
+    "fresh": "Empezar una conversación nueva",
+    "error": "No hemos podido llegar a IGO. Puedes intentarlo de nuevo. La misma consulta conserva su identificador.",
+    "invalid": "Escribe la consulta antes de enviarla.",
+    "unavailable": "Las consultas todavía no están conectadas.",
+    "rejected": "IGO no ha aceptado esta consulta. Revísala e inténtalo de nuevo.",
+    "limited": "Demasiadas consultas desde este navegador. Espera un momento e inténtalo de nuevo.",
+    "unauthorized": "Este navegador no puede continuar esa conversación. Empieza una nueva."
   }
 }

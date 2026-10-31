@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- PROVISIONAL. Not linked from the public menu. supportEndpoint empty: the form does not send. -->
+<meta name="robots" content="{{robots}}">
+<meta name="description" content="{{support.meta.description}}">
+<meta name="theme-color" content="#141B24">
+<title>{{support.meta.title}}</title>
+{{seo}}
+<link rel="icon" href="{{root}}assets/igo/igo-logo.svg" type="image/svg+xml">
+<link rel="preload" href="{{root}}assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{root}}assets/igo.css">
+<link rel="stylesheet" href="{{root}}assets/igo-pages.css">
+<link rel="stylesheet" href="{{root}}assets/hero.css">
+<link rel="stylesheet" href="{{root}}assets/lang.css">
+<link rel="stylesheet" href="{{root}}assets/early-access.css">
+<link rel="stylesheet" href="{{root}}assets/support-consult.css">
+<script>document.documentElement.classList.add('js');</script>
+<script src="{{root}}assets/igo.js" defer></script>
+<script src="{{root}}assets/lang.js" defer></script>
+<script src="{{root}}assets/support-consult.js" defer></script>
+</head>
+<body class="page page--support">
+<a class="skip-link" href="#main">{{common.skip}}</a>
+
+<header class="site-header" id="top">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="{{link:home}}" aria-label="{{common.brandAria}}"><img src="{{root}}assets/igo/igo-logo.svg" alt="" width="68" height="38"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-toggle__icon" aria-hidden="true"></span><span class="menu-toggle__label">{{common.menu}}</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="{{common.navAria}}">
+      <ul>
+        <li class="site-nav__home"><a href="{{link:home}}">{{nav.home}}</a></li>
+        <li><a href="{{link:vision}}">{{nav.vision}}</a></li>
+        <li><a href="{{link:wellness}}">{{nav.wellness}}</a></li>
+        <li><a href="{{link:technology}}">{{nav.technology}}</a></li>
+        <li><a href="{{link:science}}">{{nav.science}}</a></li>
+        <li><a href="{{link:about}}">{{nav.about}}</a></li>
+        <li><a href="{{link:sale}}">{{nav.sale}}</a></li>
+        <li class="site-nav__products"><a href="{{link:home}}#early-access">{{nav.earlyAccess}}</a></li>
+        <li class="site-nav__lang">{{langInline}}</li>
+      </ul>
+    </nav>
+    <a class="header-cta" href="{{link:home}}#early-access">{{nav.earlyAccess}} <span aria-hidden="true">→</span></a>
+    <div class="site-header__tools">
+      {{langMenu}}
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <article aria-labelledby="page-title">
+    <header class="page-hero">
+      <div class="wrap">
+        <p class="kicker">{{support.kicker}}</p>
+        <h1 id="page-title" class="page-hero__title">{{support.title}}</h1>
+        <p class="page-notice">{{support.notice}}</p>
+      </div>
+    </header>
+
+    <section class="ea" id="consulta" aria-labelledby="consulta-title">
+      <div class="wrap ea__inner">
+        <div class="ea__intro">
+          <h2 id="consulta-title" class="ea__title">{{support.formTitle}}</h2>
+          <p class="ea__sub">{{support.review}}</p>
+          <p class="support__continuing" data-support-continuing hidden>{{support.continuing}}</p>
+          <p class="support__privacy">{{support.privacy}}</p>
+        </div>
+        <div class="ea__main">
+          <form class="ea__form" data-support-form method="post" action="{{supportEndpoint}}" data-endpoint="{{supportEndpoint}}" data-lang="{{lang}}" autocomplete="off" aria-label="{{support.aria}}"
+                data-msg-sending="{{support.sending}}" data-msg-error="{{support.error}}" data-msg-invalid="{{support.invalid}}" data-msg-unavailable="{{support.unavailable}}" data-msg-rejected="{{support.rejected}}" data-msg-limited="{{support.limited}}" data-msg-unauthorized="{{support.unauthorized}}">
+            <div class="ea__trap" aria-hidden="true"><input type="text" name="trampa" tabindex="-1" autocomplete="off"></div>
+            <div class="ea__field">
+              <label for="support-product">{{support.product}}</label>
+              <select id="support-product" name="producto_id">
+                <option value="wellness-ring" selected>{{support.productName}}</option>
+              </select>
+            </div>
+            <div class="ea__field">
+              <label for="support-lang">{{support.language}}</label>
+              <select id="support-lang" name="idioma">
+                <option value="en"{{selected:en}}>{{support.langEn}}</option>
+                <option value="es"{{selected:es}}>{{support.langEs}}</option>
+                <option value="fr"{{selected:fr}}>{{support.langFr}}</option>
+              </select>
+            </div>
+            <div class="ea__field">
+              <label for="support-question">{{support.question}}</label>
+              <textarea id="support-question" name="consulta" rows="5" required maxlength="4000"></textarea>
+            </div>
+            <button class="hero__btn ea__submit" type="submit" data-support-submit>{{support.submit}} <span aria-hidden="true">→</span></button>
+            <p class="ea__status" role="status" aria-live="polite" data-support-status></p>
+            <button class="ea__again" type="button" data-support-fresh hidden>{{support.fresh}}</button>
+          </form>
+          <div class="ea__done" data-support-done hidden tabindex="-1">
+            <h2 class="ea__done-title">{{support.received}}</h2>
+            <p class="ea__done-text">{{support.receivedDetail}}</p>
+            <button class="ea__again" type="button" data-support-another>{{support.another}}</button>
+            <button class="ea__again" type="button" data-support-fresh>{{support.fresh}}</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <img src="{{root}}assets/igo/igo-logo-white.svg" alt="IGO" width="56" height="31">
+    <nav aria-label="{{footer.aria}}">
+      <ul>
+        <li><a href="{{link:home}}">{{nav.home}}</a></li>
+        <li><a href="{{link:vision}}">{{nav.vision}}</a></li>
+        <li><a href="{{link:wellness}}">{{nav.wellness}}</a></li>
+        <li><a href="{{link:technology}}">{{nav.technology}}</a></li>
+        <li><a href="{{link:about}}">{{nav.about}}</a></li>
+      </ul>
+    </nav>
+    <p class="site-footer__legal">{{footer.legal}}</p>
+  </div>
+</footer>
+</body>
+</html>

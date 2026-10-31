@@ -471,5 +471,38 @@
       "title": "À propos — IGO (provisoire)",
       "description": "À propos d’IGO. Page provisoire, contenu en attente."
     }
+  },
+  "support": {
+    "meta": {
+      "title": "Question IGO (page provisoire)",
+      "description": "Envoyez une question sur l’anneau IGO Wellness. Une personne la relit. Cette page confirme la réception et n’envoie pas de réponse."
+    },
+    "kicker": "Questions",
+    "title": "Une question sur l’anneau.",
+    "notice": "Une personne relit chaque question. Cette page confirme que nous l’avons reçue. Elle ne vous envoie pas de réponse.",
+    "formTitle": "Votre question",
+    "review": "Votre question attend qu’une personne la relise.",
+    "continuing": "Ce navigateur poursuivra la conversation enregistrée sur cet appareil.",
+    "privacy": "La clé de suite reste uniquement dans ce navigateur. Elle n’est pas dans l’adresse et elle n’est pas envoyée par courriel. Toute personne qui peut utiliser ce navigateur peut poursuivre le fil. Effacer les données du site la supprime, sans récupération possible. Ce navigateur ne montre pas la conversation de quelqu’un d’autre.",
+    "aria": "Formulaire de question",
+    "product": "Produit",
+    "productName": "Anneau IGO Wellness",
+    "language": "Langue",
+    "langEn": "Anglais",
+    "langEs": "Espagnol",
+    "langFr": "Français",
+    "question": "Question",
+    "submit": "Envoyer la question",
+    "sending": "Envoi…",
+    "received": "Nous avons reçu votre question.",
+    "receivedDetail": "Une personne va la relire. Cette page n’envoie pas la réponse.",
+    "another": "Poser une autre question",
+    "fresh": "Commencer une nouvelle conversation",
+    "error": "Nous n’avons pas pu joindre IGO. Vous pouvez réessayer. La même question garde son identifiant.",
+    "invalid": "Écrivez la question avant de l’envoyer.",
+    "unavailable": "Les questions ne sont pas encore reliées.",
+    "rejected": "IGO n’a pas accepté cette question. Vérifiez-la et réessayez.",
+    "limited": "Trop de questions depuis ce navigateur. Attendez un moment et réessayez.",
+    "unauthorized": "Ce navigateur ne peut pas poursuivre cette conversation. Commencez-en une nouvelle."
   }
 }

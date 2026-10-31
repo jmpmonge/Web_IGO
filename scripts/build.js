@@ -28,7 +28,8 @@ const PAGES = [
   { id: 'vision', file: 'vision/index.html' },
   { id: 'wellness', file: 'wellness/index.html' },
   { id: 'technology', file: 'technology/index.html' },
-  { id: 'about', file: 'about/index.html' }
+  { id: 'about', file: 'about/index.html' },
+  { id: 'support', file: 'support/index.html' }
 ];
 const COPY_AS_IS = [];   /* pages not migrated to templates yet: src/<name>/index.html copied unchanged to dist/<name>/ (vision, wellness, technology, about now use the shared template header) */
 const COPY_DIRS = ['probador'];   /* <name>/ at the project root, copied as-is to dist/<name>/ (virtual try-on prototype) */
@@ -48,6 +49,8 @@ const bundleStyles = require('./css-bundle').bundleStyles;
 const scienceSections = JSON.parse(fs.readFileSync(path.join(__dirname, 'science-sections.json'), 'utf8'));
 /* Early access form endpoint (form-handling service). Read on every build so --watch picks up changes to scripts/site.json. */
 const formEndpoint = () => String(JSON.parse(fs.readFileSync(path.join(__dirname, 'site.json'), 'utf8')).formEndpoint || '').trim();
+/* Full POST URL of the local support receptor. Empty means the form is built but does not send. */
+const supportEndpoint = () => String(JSON.parse(fs.readFileSync(path.join(__dirname, 'site.json'), 'utf8')).supportEndpoint || '').trim();
 const posix = (p) => p.split(path.sep).join('/');
 
 /* ---------- locales ---------- */
@@ -100,7 +103,7 @@ function metaFor(page, lang) {
 }
 function imageFor(page) {
   if (page.id === 'sale') return 'assets/images/images_igo/card_vision-1000.webp';
-  if (['home', 'products', 'privacy', 'vision', 'wellness', 'technology', 'about'].includes(page.id)) return 'assets/images/images_igo/home_hero.webp';
+  if (['home', 'products', 'privacy', 'vision', 'wellness', 'technology', 'about', 'support'].includes(page.id)) return 'assets/images/images_igo/home_hero.webp';
   return 'assets/research/research-hero-concept-1200.webp';
 }
 function seo(page, lang) {
@@ -181,6 +184,8 @@ function render(page, lang, tpl) {
     if (tok === 'seo') return seo(page, lang);
     if (tok === 'robots') return seoPolicy.robotsDirective(seoState, page, { preview });
     if (tok === 'formAction') return esc(formEndpoint());
+    if (tok === 'supportEndpoint') return esc(supportEndpoint());
+    if (tok.startsWith('selected:')) return tok.slice(9) === lang ? ' selected' : '';
     if (tok === 'cards:columns') return String(cards.columns);
     if (tok === 'cards:heading') return cards.heading;
     if (tok === 'cards:style') return cards.style;
@@ -251,6 +256,15 @@ function build() {
     });
   });
   if (!/^https:\/\//.test(formEndpoint())) warnings.push('formEndpoint is empty or not https in scripts/site.json: the early access form will NOT send until it is set');
+  const soporte = supportEndpoint();
+  if (soporte) {
+    let destino;
+    try { destino = new URL(soporte); } catch (e) { throw new Error('supportEndpoint is not a URL'); }
+    if (destino.port === '8787' || destino.pathname.indexOf('/api/') !== -1) throw new Error('supportEndpoint must not point at the admin panel');
+    if (destino.username || destino.password || destino.search || destino.hash) throw new Error('supportEndpoint must not carry secrets or a query');
+    if (destino.protocol === 'http:' && destino.hostname !== '127.0.0.1' && destino.hostname !== 'localhost') throw new Error('supportEndpoint may use http only on 127.0.0.1');
+    if (destino.protocol !== 'https:' && destino.protocol !== 'http:') throw new Error('supportEndpoint must be http or https');
+  } else warnings.push('supportEndpoint is empty: the support form is built and will NOT send');
   if (!siteUrl && process.env.NODE_ENV === 'production') throw new Error('SITE_URL (or "siteUrl" in scripts/site.json) is required when NODE_ENV=production: canonical and hreflang must be absolute');
   if (!siteUrl) warnings.push('SITE_URL / siteUrl is empty: canonical and hreflang stay relative (draft). Set SITE_URL=https://your-domain before publishing');
   const generated = [];

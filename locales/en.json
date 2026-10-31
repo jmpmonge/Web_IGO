@@ -471,5 +471,38 @@
       "title": "About — IGO (provisional)",
       "description": "About IGO. Provisional page, content pending."
     }
+  },
+  "support": {
+    "meta": {
+      "title": "Ask IGO — question (provisional)",
+      "description": "Send a question about the IGO Wellness ring. A person reviews it. This page confirms receipt and does not deliver an answer."
+    },
+    "kicker": "Questions",
+    "title": "Ask about the ring.",
+    "notice": "A person reviews each question. This page confirms that we received it. It does not send you an answer.",
+    "formTitle": "Your question",
+    "review": "Your question waits for a person to review it.",
+    "continuing": "This browser will continue the conversation saved on this device.",
+    "privacy": "The continuation key stays in this browser only. It is not placed in the address and it is not sent by email. Anyone who can use this browser can continue the thread. Clearing the site data removes it, and it cannot be recovered. This browser does not show anyone else's conversation.",
+    "aria": "Question form",
+    "product": "Product",
+    "productName": "IGO Wellness ring",
+    "language": "Language",
+    "langEn": "English",
+    "langEs": "Spanish",
+    "langFr": "French",
+    "question": "Question",
+    "submit": "Send question",
+    "sending": "Sending…",
+    "received": "We have received your question.",
+    "receivedDetail": "A person will review it. This page does not send the answer.",
+    "another": "Ask another question",
+    "fresh": "Start a new conversation",
+    "error": "We could not reach IGO. You can try again. The same question keeps its identifier.",
+    "invalid": "Write your question before sending.",
+    "unavailable": "Questions are not connected yet.",
+    "rejected": "IGO did not accept this question. Check it and try again.",
+    "limited": "Too many questions from this browser. Wait a moment and try again.",
+    "unauthorized": "This browser cannot continue that conversation. Start a new one."
   }
 }

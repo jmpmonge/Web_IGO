@@ -1,0 +1,12 @@
+/* Question form. Reuses the early-access field styles. Loaded only on the support page. */
+body.page--support .ea__submit{
+  justify-self:start; border-radius:999px; min-height:52px;
+  background:var(--c-navy); border-color:var(--c-navy); color:var(--c-white);
+}
+body.page--support .ea__submit:hover{ background:var(--c-navy-hover); border-color:var(--c-navy-hover); }
+body.page--support .ea__submit[disabled]{ opacity:.6; cursor:progress; }
+body.page--support .support__privacy{ font-size:var(--fs-small); color:var(--c-muted); }
+body.page--support .support__continuing{ font-size:var(--fs-small); color:var(--c-ink); }
+body.page--support .ea__form[hidden],
+body.page--support .ea__done[hidden],
+body.page--support .support__continuing[hidden]{ display:none; }
