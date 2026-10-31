@@ -475,15 +475,15 @@
   "support": {
     "meta": {
       "title": "Ask IGO — question (provisional)",
-      "description": "Send a question about the IGO Wellness ring. A person reviews it. This page confirms receipt and does not deliver an answer."
+      "description": "Send a question about the IGO Wellness ring. A person reviews it before any answer appears on this page."
     },
     "kicker": "Questions",
     "title": "Ask about the ring.",
-    "notice": "A person reviews each question. This page confirms that we received it. It does not send you an answer.",
+    "notice": "A person reviews each question. An answer appears on this page only after that review.",
     "formTitle": "Your question",
     "review": "Your question waits for a person to review it.",
     "continuing": "This browser will continue the conversation saved on this device.",
-    "privacy": "The continuation key stays in this browser only. It is not placed in the address and it is not sent by email. Anyone who can use this browser can continue the thread. Clearing the site data removes it, and it cannot be recovered. This browser does not show anyone else's conversation.",
+    "privacy": "The continuation key and the text of your questions stay in this browser only. They are not placed in the address and they are not sent by email. Anyone who can use this browser can continue the thread. Clearing the site data removes it, and it cannot be recovered. This browser does not show anyone else's conversation.",
     "aria": "Question form",
     "product": "Product",
     "productName": "IGO Wellness ring",
@@ -495,7 +495,13 @@
     "submit": "Send question",
     "sending": "Sending…",
     "received": "We have received your question.",
-    "receivedDetail": "A person will review it. This page does not send the answer.",
+    "receivedDetail": "We have received your question. It stays here until a person reviews it.",
+  "threadTitle": "This conversation",
+  "you": "You",
+  "answer": "IGO",
+  "pending": "Received. A person still has to review it.",
+  "checking": "Looking for a reviewed answer…",
+  "refresh": "Check for a reviewed answer",
     "another": "Ask another question",
     "fresh": "Start a new conversation",
     "error": "We could not reach IGO. You can try again. The same question keeps its identifier.",

@@ -475,15 +475,15 @@
   "support": {
     "meta": {
       "title": "Question IGO (page provisoire)",
-      "description": "Envoyez une question sur l’anneau IGO Wellness. Une personne la relit. Cette page confirme la réception et n’envoie pas de réponse."
+      "description": "Envoyez une question sur l’anneau IGO Wellness. Une personne la relit avant qu’une réponse apparaisse ici."
     },
     "kicker": "Questions",
     "title": "Une question sur l’anneau.",
-    "notice": "Une personne relit chaque question. Cette page confirme que nous l’avons reçue. Elle ne vous envoie pas de réponse.",
+    "notice": "Une personne relit chaque question. Une réponse n’apparaît sur cette page qu’après cette relecture.",
     "formTitle": "Votre question",
     "review": "Votre question attend qu’une personne la relise.",
     "continuing": "Ce navigateur poursuivra la conversation enregistrée sur cet appareil.",
-    "privacy": "La clé de suite reste uniquement dans ce navigateur. Elle n’est pas dans l’adresse et elle n’est pas envoyée par courriel. Toute personne qui peut utiliser ce navigateur peut poursuivre le fil. Effacer les données du site la supprime, sans récupération possible. Ce navigateur ne montre pas la conversation de quelqu’un d’autre.",
+    "privacy": "La clé de suite et le texte de vos questions restent uniquement dans ce navigateur. Ils ne sont pas dans l’adresse et ils ne sont pas envoyés par courriel. Toute personne qui peut utiliser ce navigateur peut poursuivre le fil. Effacer les données du site le supprime, sans récupération possible. Ce navigateur ne montre pas la conversation de quelqu’un d’autre.",
     "aria": "Formulaire de question",
     "product": "Produit",
     "productName": "Anneau IGO Wellness",
@@ -495,7 +495,13 @@
     "submit": "Envoyer la question",
     "sending": "Envoi…",
     "received": "Nous avons reçu votre question.",
-    "receivedDetail": "Une personne va la relire. Cette page n’envoie pas la réponse.",
+    "receivedDetail": "Nous avons reçu votre question. Elle reste ici jusqu’à ce qu’une personne la relise.",
+  "threadTitle": "Cette conversation",
+  "you": "Vous",
+  "answer": "IGO",
+  "pending": "Reçue. Une personne doit encore la relire.",
+  "checking": "Recherche d’une réponse relue…",
+  "refresh": "Chercher une réponse relue",
     "another": "Poser une autre question",
     "fresh": "Commencer une nouvelle conversation",
     "error": "Nous n’avons pas pu joindre IGO. Vous pouvez réessayer. La même question garde son identifiant.",

@@ -1,9 +1,11 @@
 'use strict';
-/* IGO Support question form. Posts JSON to a configurable receptor URL.
+/* IGO Support conversation. Posts a question, then reads only published answers.
    The continuation token lives only in this browser's localStorage under one key.
-   It is never put in the address, never sent by email, and never used as a list of other people's conversations.
-   Clearing site data removes it; there is no way to recover the thread.
-   The conversation id is stored with the token and is not sent on its own. */
+   It is never put in the address, never sent by email, never written into the page,
+   and never used as a list of other people's conversations.
+   The question text is stored in that same key so this device can show its own history.
+   Anyone who can use this browser can read that key. Clearing site data removes it;
+   there is no way to recover the thread. A published answer is not shown as instant. */
 (function (root, factory) {
   var api = factory();
   if (typeof module === 'object' && module.exports) module.exports = api;
@@ -40,23 +42,61 @@
     return u.protocol === 'http:' && (u.hostname === '127.0.0.1' || u.hostname === 'localhost');
   }
 
+  function preguntasDe(lista) {
+    if (!Array.isArray(lista)) return [];
+    var salida = [];
+    for (var i = 0; i < lista.length && salida.length < 40; i += 1) {
+      var p = lista[i];
+      if (!p || typeof p.id !== 'string' || typeof p.texto !== 'string') continue;
+      var texto = p.texto.trim();
+      if (!texto || texto.length > 4000) continue;
+      if (salida.some(function (x) { return x.id === p.id; })) continue;
+      salida.push({ id: p.id, texto: texto });
+    }
+    return salida;
+  }
+
   function leerSesion(storage) {
     try {
       var data = JSON.parse(storage.getItem(CLAVE) || 'null');
       if (!data || data.v !== 1 || data.producto_id !== PRODUCTO || !IDIOMAS[data.idioma]) return null;
       if (typeof data.conversacion_id !== 'string' || typeof data.token !== 'string' || !data.token) return null;
-      return { conversacion_id: data.conversacion_id, token: data.token, idioma: data.idioma, producto_id: PRODUCTO };
+      return {
+        conversacion_id: data.conversacion_id,
+        token: data.token,
+        idioma: data.idioma,
+        producto_id: PRODUCTO,
+        preguntas: preguntasDe(data.preguntas)
+      };
     } catch (e) { return null; }
   }
 
   function guardarSesion(storage, sesion) {
+    var previa = leerSesion(storage);
     storage.setItem(CLAVE, JSON.stringify({
       v: 1,
       producto_id: PRODUCTO,
       idioma: sesion.idioma,
       conversacion_id: sesion.conversacion_id,
-      token: sesion.token
+      token: sesion.token,
+      preguntas: preguntasDe(sesion.preguntas || (previa && previa.preguntas))
     }));
+  }
+
+  function anotarPregunta(storage, item) {
+    var sesion = leerSesion(storage);
+    if (!sesion || !item) return null;
+    var preguntas = sesion.preguntas.slice();
+    if (!preguntas.some(function (p) { return p.id === item.id; })) {
+      preguntas.push({ id: item.id, texto: item.texto });
+    }
+    guardarSesion(storage, {
+      idioma: sesion.idioma,
+      conversacion_id: sesion.conversacion_id,
+      token: sesion.token,
+      preguntas: preguntas
+    });
+    return leerSesion(storage);
   }
 
   function olvidarSesion(storage) {
@@ -104,6 +144,74 @@
       cuerpo.token = entrada.sesion.token;
     }
     return cuerpo;
+  }
+
+  function rutaLectura(url) {
+    var u = new URL(url);
+    if (!/\/v1\/consultas\/?$/.test(u.pathname)) throw fallo('DESTINO');
+    u.pathname = u.pathname.replace(/\/v1\/consultas\/?$/, '/v1/respuestas/consultar');
+    u.search = '';
+    u.hash = '';
+    return u.toString();
+  }
+
+  function normalizarRespuesta(item) {
+    if (!item || typeof item !== 'object' || Array.isArray(item)) return null;
+    if (typeof item.id !== 'string' || typeof item.texto !== 'string' || !item.texto) return null;
+    if (typeof item.publicada !== 'string' || typeof item.consulta_id !== 'string') return null;
+    return { id: item.id, texto: item.texto, publicada: item.publicada, consulta_id: item.consulta_id };
+  }
+
+  function consultar(entrada) {
+    if (!destinoValido(entrada.url)) return Promise.reject(fallo('DESTINO'));
+    if (!entrada.sesion || typeof entrada.sesion.token !== 'string' || !entrada.sesion.token || typeof entrada.sesion.conversacion_id !== 'string') {
+      return Promise.reject(fallo('NO_AUTORIZADA'));
+    }
+    var fetchImpl = entrada.fetch || globalThis.fetch;
+    var acumulado = [];
+    var cursor = '';
+    var paginas = 0;
+    function paso() {
+      if (paginas >= 5) return Promise.resolve(acumulado);
+      paginas += 1;
+      var cuerpo = { conversacion_id: entrada.sesion.conversacion_id, token: entrada.sesion.token, trampa: '' };
+      if (cursor) cuerpo.cursor = cursor;
+      var ctrl = new AbortController();
+      var timer = setTimeout(function () { ctrl.abort(); }, entrada.esperaMs || ESPERA_MS);
+      var direccion;
+      try { direccion = rutaLectura(entrada.url); }
+      catch (err) { clearTimeout(timer); return Promise.reject(err); }
+      return fetchImpl(direccion, {
+        method: 'POST',
+        redirect: 'error',
+        credentials: 'omit',
+        headers: { 'content-type': 'application/json', accept: 'application/json' },
+        body: JSON.stringify(cuerpo),
+        signal: ctrl.signal
+      }).then(function (res) {
+        return res.text().then(function (text) {
+          var json = null;
+          try { json = text ? JSON.parse(text) : null; } catch (e) { json = null; }
+          if (!res.ok) {
+            throw fallo(res.status === 429 ? 'LIMITE' : res.status === 403 ? 'NO_AUTORIZADA' : res.status === 413 ? 'GRANDE' : 'RECHAZADA');
+          }
+          if (!json || typeof json !== 'object' || Array.isArray(json) || !Array.isArray(json.respuestas)) throw fallo('RESPUESTA_INVALIDA');
+          json.respuestas.forEach(function (item) {
+            var limpio = normalizarRespuesta(item);
+            if (limpio && !acumulado.some(function (x) { return x.id === limpio.id; })) acumulado.push(limpio);
+          });
+          if (typeof json.siguiente === 'string' && json.siguiente && json.siguiente !== cursor) {
+            cursor = json.siguiente;
+            return paso();
+          }
+          return acumulado;
+        });
+      }).catch(function (err) {
+        if (err && err.codigo) throw err;
+        throw fallo(err && err.name === 'AbortError' ? 'TIEMPO' : 'CONEXION');
+      }).finally(function () { clearTimeout(timer); });
+    }
+    return paso();
   }
 
   function recibo(json) {
@@ -172,6 +280,9 @@
     var button = form.querySelector('[data-support-submit]');
     var done = doc.querySelector('[data-support-done]');
     var continuing = doc.querySelector('[data-support-continuing]');
+    var thread = doc.querySelector('[data-support-thread]');
+    var turns = doc.querySelector('[data-support-turns]');
+    var threadStatus = doc.querySelector('[data-support-thread-status]');
     var storage = doc.defaultView && doc.defaultView.localStorage;
     var identidad = crearIdentidad();
     var candado = crearCandado();
@@ -181,6 +292,75 @@
       if (!status) return;
       status.textContent = key ? msg(key) : '';
       if (kind) status.setAttribute('data-kind', kind); else status.removeAttribute('data-kind');
+    }
+    function sayThread(key, kind) {
+      if (!threadStatus) return;
+      threadStatus.textContent = key ? msg(key) : '';
+      if (kind) threadStatus.setAttribute('data-kind', kind); else threadStatus.removeAttribute('data-kind');
+    }
+    function parrafo(clase, texto) {
+      var p = doc.createElement('p');
+      if (clase) p.className = clase;
+      p.textContent = texto;
+      return p;
+    }
+    function pintarHilo(respuestas) {
+      if (!thread || !turns) return;
+      var guardada = sesion();
+      var preguntas = guardada ? guardada.preguntas : [];
+      var publicadas = Array.isArray(respuestas) ? respuestas : [];
+      thread.hidden = preguntas.length === 0 && publicadas.length === 0;
+      while (turns.firstChild) turns.removeChild(turns.firstChild);
+      var vistas = {};
+      function turno(pregunta, respuesta) {
+        var li = doc.createElement('li');
+        li.className = 'support__turn';
+        if (pregunta) {
+          li.appendChild(parrafo('support__who', msg('you')));
+          li.appendChild(parrafo('support__question', pregunta));
+        }
+        if (respuesta) {
+          li.appendChild(parrafo('support__who', msg('answer')));
+          li.appendChild(parrafo('support__answer', respuesta));
+          vistas[respuesta] = true;
+        } else {
+          li.appendChild(parrafo('support__pending', msg('pending')));
+        }
+        turns.appendChild(li);
+      }
+      preguntas.forEach(function (p) {
+        var publicada = null;
+        for (var i = 0; i < publicadas.length; i += 1) {
+          if (publicadas[i].consulta_id === p.id) { publicada = publicadas[i]; break; }
+        }
+        if (publicada) vistas[publicada.id] = true;
+        turno(p.texto, publicada ? publicada.texto : '');
+      });
+      publicadas.forEach(function (r) {
+        if (vistas[r.id]) return;
+        turno('', r.texto);
+        vistas[r.id] = true;
+      });
+    }
+    function refrescar() {
+      var guardada = sesion();
+      var url = (form.getAttribute('data-endpoint') || '').trim();
+      if (!guardada || !destinoValido(url)) {
+        pintarHilo([]);
+        return Promise.resolve([]);
+      }
+      if (thread) thread.setAttribute('aria-busy', 'true');
+      sayThread('checking');
+      return consultar({ url: url, sesion: guardada }).then(function (respuestas) {
+        pintarHilo(respuestas);
+        sayThread('');
+        return respuestas;
+      }).catch(function (err) {
+        sayThread(claveEstado(err && err.codigo), 'error');
+        return [];
+      }).finally(function () {
+        if (thread) thread.removeAttribute('aria-busy');
+      });
     }
     function sesion() { return storage ? leerSesion(storage) : null; }
     function aplicarIdioma() {
@@ -235,6 +415,8 @@
 
     aplicarIdioma();
     pintarContinuacion();
+    pintarHilo([]);
+    if (sesion()) refrescar();
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
       if (!candado.tomar()) return;
@@ -244,21 +426,25 @@
         button.setAttribute('aria-busy', 'true');
       }
       var guardada = sesion();
+      var pregunta = texto();
+      var idExterno = identidad.para(pregunta);
       enviar({
         url: (form.getAttribute('data-endpoint') || '').trim(),
-        consulta: texto(),
+        consulta: pregunta,
         idioma: idiomaElegido(),
         producto: productoElegido(),
         trampa: trampa(),
-        idExterno: identidad.para(texto()),
+        idExterno: idExterno,
         sesion: guardada,
         storage: storage
       }).then(function () {
+        if (storage) anotarPregunta(storage, { id: idExterno, texto: pregunta });
         identidad.cerrar();
         var campo = form.querySelector('[name="consulta"]');
         if (campo) campo.value = '';
-        say('');
-        mostrarHecho();
+        say('received');
+        pintarContinuacion();
+        return refrescar();
       }).catch(function (err) {
         say(claveEstado(err && err.codigo), 'error');
       }).finally(function () {
@@ -274,8 +460,12 @@
       if (storage) olvidarSesion(storage);
       identidad.cerrar();
       aplicarIdioma();
+      sayThread('');
+      pintarHilo([]);
       mostrarFormulario();
     }
+    var refresh = doc.querySelector('[data-support-refresh]');
+    if (refresh) refresh.addEventListener('click', function () { refrescar(); });
     Array.prototype.forEach.call(doc.querySelectorAll('[data-support-fresh]'), function (el) {
       el.addEventListener('click', nueva);
     });
@@ -293,6 +483,9 @@
     crearCandado: crearCandado,
     preparar: preparar,
     enviar: enviar,
+    rutaLectura: rutaLectura,
+    consultar: consultar,
+    anotarPregunta: anotarPregunta,
     montar: montar
   };
 });

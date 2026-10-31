@@ -135,6 +135,105 @@ test('un doble envío, otro producto, el puerto del panel y una trampa no crean 
   }
 });
 
+test('la lectura pide solo el token, ignora borradores y no trata el vacío como un fallo', async () => {
+  const vistos = [];
+  const srv = await escuchar(async (req, res) => {
+    const texto = await leer(req);
+    vistos.push({ url: req.url, texto });
+    const cuerpo = JSON.parse(texto);
+    if (cuerpo.token === 'malo') {
+      res.writeHead(403, { 'content-type': 'application/json' });
+      res.end('{"codigo":"CONTINUACION_NO_AUTORIZADA"}');
+      return;
+    }
+    res.writeHead(200, { 'content-type': 'application/json' });
+    if (!cuerpo.cursor) {
+      res.end(JSON.stringify({
+        respuestas: [{
+          id: '11111111-1111-4111-8111-111111111111',
+          texto: 'Texto definitivo.',
+          publicada: '2026-11-01T00:00:00.000Z',
+          consulta_id: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',
+          estado: 'approved',
+          borrador: 'NO-MOSTRAR',
+          auditoria: { veredicto: 'ok' },
+          token: 'no-repetir'
+        }],
+        siguiente: '11111111-1111-4111-8111-111111111111'
+      }));
+      return;
+    }
+    res.end(JSON.stringify({
+      respuestas: [{
+        id: '22222222-2222-4222-8222-222222222222',
+        texto: 'Segunda respuesta.',
+        publicada: '2026-11-01T00:01:00.000Z',
+        consulta_id: 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb'
+      }],
+      siguiente: null
+    }));
+  });
+  const url = 'http://127.0.0.1:' + srv.address().port + '/v1/consultas';
+  const storage = memoria();
+  const sesion = {
+    idioma: 'es',
+    conversacion_id: 'cccccccc-cccc-4ccc-8ccc-cccccccccccc',
+    token: 'token-de-prueba'
+  };
+  try {
+    assert.strictEqual(api.rutaLectura(url), 'http://127.0.0.1:' + srv.address().port + '/v1/respuestas/consultar');
+    api.guardarSesion(storage, sesion);
+    const anotada = api.anotarPregunta(storage, { id: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', texto: '¿Cómo se carga el anillo?' });
+    assert.strictEqual(anotada.token, 'token-de-prueba');
+    assert.strictEqual(anotada.preguntas.length, 1);
+    assert.ok(!JSON.stringify(anotada.preguntas).includes('token-de-prueba'));
+    const vacio = await api.consultar({
+      url, sesion, fetch, esperaMs: 1000
+    });
+    assert.strictEqual(vacio.length, 2);
+    assert.deepStrictEqual(Object.keys(vacio[0]).sort(), ['consulta_id', 'id', 'publicada', 'texto']);
+    assert.strictEqual(vacio[0].texto, 'Texto definitivo.');
+    assert.strictEqual(vacio[1].texto, 'Segunda respuesta.');
+    assert.ok(!JSON.stringify(vacio).includes('NO-MOSTRAR'));
+    assert.ok(!JSON.stringify(vacio).includes('approved'));
+    assert.ok(!JSON.stringify(vacio).includes('no-repetir'));
+    vistos.forEach((v) => {
+      assert.ok(v.url.startsWith('/v1/respuestas/consultar'));
+      assert.ok(!v.url.includes('token'));
+      const cuerpo = JSON.parse(v.texto);
+      assert.ok(!cuerpo.estado);
+      assert.ok(!cuerpo.borrador);
+    });
+    const otra = await api.consultar({ url, sesion, fetch });
+    assert.strictEqual(otra.length, 2);
+    await assert.rejects(() => api.consultar({ url, sesion: Object.assign({}, sesion, { token: 'malo' }), fetch }), { codigo: 'NO_AUTORIZADA' });
+    api.olvidarSesion(storage);
+    assert.strictEqual(api.leerSesion(storage), null);
+    const antes = vistos.length;
+    await assert.rejects(() => api.consultar({ url, sesion: null, fetch }), { codigo: 'NO_AUTORIZADA' });
+    assert.strictEqual(vistos.length, antes);
+    const caido = await escuchar((req, res) => { res.destroy(); });
+    await assert.rejects(() => api.consultar({
+      url: 'http://127.0.0.1:' + caido.address().port + '/v1/consultas',
+      sesion, fetch, esperaMs: 1000
+    }), { codigo: 'CONEXION' });
+    await cerrar(caido);
+    const mudo = await escuchar(async (req, res) => {
+      await leer(req);
+      res.writeHead(200, { 'content-type': 'application/json' });
+      res.end('{"respuestas":[],"siguiente":null}');
+    });
+    const pendiente = await api.consultar({
+      url: 'http://127.0.0.1:' + mudo.address().port + '/v1/consultas',
+      sesion, fetch
+    });
+    assert.deepStrictEqual(pendiente, []);
+    await cerrar(mudo);
+  } finally {
+    await cerrar(srv);
+  }
+});
+
 test('la página queda fuera del menú, sin clave y sin dirección de envío; Formspree no cambia', () => {
   for (const lang of ['en', 'es', 'fr']) {
     const html = fs.readFileSync(path.join(DIST, lang, 'support', 'index.html'), 'utf8');

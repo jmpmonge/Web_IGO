@@ -9,4 +9,24 @@ body.page--support .support__privacy{ font-size:var(--fs-small); color:var(--c-m
 body.page--support .support__continuing{ font-size:var(--fs-small); color:var(--c-ink); }
 body.page--support .ea__form[hidden],
 body.page--support .ea__done[hidden],
-body.page--support .support__continuing[hidden]{ display:none; }
+body.page--support .support__continuing[hidden],
+body.page--support .support__thread[hidden]{ display:none; }
+body.page--support .support__thread{ display:grid; gap:1rem; margin-bottom:1.5rem; }
+body.page--support .support__thread-title{ margin:0; font-size:var(--fs-h3, 1.25rem); }
+body.page--support .support__turns{ list-style:none; margin:0; padding:0; display:grid; gap:0.75rem; }
+body.page--support .support__turn{
+  margin:0; padding:1rem 1.1rem; border:1px solid var(--c-line, rgba(20,27,36,.14));
+  border-radius:16px; background:var(--c-white, #fff); color:var(--c-ink, #141B24);
+}
+body.page--support .support__who{
+  margin:0 0 0.25rem; font-size:var(--fs-small); letter-spacing:.04em;
+  text-transform:uppercase; color:var(--c-muted, #5c6770);
+}
+body.page--support .support__question,
+body.page--support .support__answer,
+body.page--support .support__pending{ margin:0 0 0.75rem; white-space:pre-wrap; }
+body.page--support .support__turn > :last-child{ margin-bottom:0; }
+body.page--support .support__pending{ color:var(--c-ink, #141B24); }
+@media (max-width:720px){
+  body.page--support .support__turn{ padding:0.9rem; }
+}

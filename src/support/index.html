@@ -70,8 +70,14 @@
           <p class="support__privacy">{{support.privacy}}</p>
         </div>
         <div class="ea__main">
+          <section class="support__thread" data-support-thread hidden aria-labelledby="thread-title">
+            <h2 id="thread-title" class="support__thread-title">{{support.threadTitle}}</h2>
+            <ol class="support__turns" data-support-turns></ol>
+            <button class="ea__again" type="button" data-support-refresh>{{support.refresh}}</button>
+            <p class="ea__status" role="status" aria-live="polite" data-support-thread-status></p>
+          </section>
           <form class="ea__form" data-support-form method="post" action="{{supportEndpoint}}" data-endpoint="{{supportEndpoint}}" data-lang="{{lang}}" autocomplete="off" aria-label="{{support.aria}}"
-                data-msg-sending="{{support.sending}}" data-msg-error="{{support.error}}" data-msg-invalid="{{support.invalid}}" data-msg-unavailable="{{support.unavailable}}" data-msg-rejected="{{support.rejected}}" data-msg-limited="{{support.limited}}" data-msg-unauthorized="{{support.unauthorized}}">
+                data-msg-sending="{{support.sending}}" data-msg-received="{{support.receivedDetail}}" data-msg-error="{{support.error}}" data-msg-invalid="{{support.invalid}}" data-msg-unavailable="{{support.unavailable}}" data-msg-rejected="{{support.rejected}}" data-msg-limited="{{support.limited}}" data-msg-unauthorized="{{support.unauthorized}}" data-msg-checking="{{support.checking}}" data-msg-pending="{{support.pending}}" data-msg-you="{{support.you}}" data-msg-answer="{{support.answer}}">
             <div class="ea__trap" aria-hidden="true"><input type="text" name="trampa" tabindex="-1" autocomplete="off"></div>
             <div class="ea__field">
               <label for="support-product">{{support.product}}</label>
