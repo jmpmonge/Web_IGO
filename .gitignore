@@ -15,3 +15,6 @@ Captura de pantalla*
 !assets/videos/
 !assets/videos/*.mp4
 /seivol-hero.jpg
+
+# Local backup copies
+*.bak*
