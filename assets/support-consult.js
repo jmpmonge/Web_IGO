@@ -15,6 +15,9 @@
   var PRODUCTO = 'wellness-ring';
   var IDIOMAS = { es: true, en: true, fr: true };
   var CLAVE = 'igo-support-web-v1';
+  var CLAVE_RECUPERACION = 'igo-support-recuperacion-v1';
+  var RECEPTOR_LOCAL = 'http://127.0.0.1:8788/v1/consultas';
+  var CREDENCIAL = /^[A-Za-z0-9_-]{43,128}$/;
   var ESPERA_MS = 12000;
 
   function uuid() {
@@ -31,6 +34,53 @@
     var err = new Error(codigo);
     err.codigo = codigo;
     return err;
+  }
+
+  function endpointDe(atributo, loc) {
+    var explicito = String(atributo || '').trim();
+    if (explicito) return explicito;
+    var host = loc && loc.hostname;
+    if (host === '127.0.0.1' || host === 'localhost') return RECEPTOR_LOCAL;
+    return '';
+  }
+
+  function credencialNueva() {
+    var bytes = new Uint8Array(32);
+    if (globalThis.crypto && crypto.getRandomValues) crypto.getRandomValues(bytes);
+    var bin = '';
+    for (var i = 0; i < bytes.length; i += 1) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+  }
+
+  function leerRecuperacion(storage) {
+    try {
+      var data = JSON.parse(storage.getItem(CLAVE_RECUPERACION) || 'null');
+      if (!data || data.v !== 1 || typeof data.credencial !== 'string' || !CREDENCIAL.test(data.credencial)) return null;
+      var primera = null;
+      if (data.primera && typeof data.primera.id === 'string' && typeof data.primera.texto === 'string' && IDIOMAS[data.primera.idioma]) {
+        var texto = data.primera.texto.trim();
+        if (texto && texto.length <= 4000) primera = { id: data.primera.id, texto: texto, idioma: data.primera.idioma };
+      }
+      return { credencial: data.credencial, primera: primera };
+    } catch (e) { return null; }
+  }
+
+  function guardarRecuperacion(storage, datos) {
+    var credencial = datos && datos.credencial;
+    if (!CREDENCIAL.test(credencial)) return null;
+    var primera = null;
+    if (datos.primera && typeof datos.primera.id === 'string' && typeof datos.primera.texto === 'string' && IDIOMAS[datos.primera.idioma]) {
+      var texto = datos.primera.texto.trim();
+      if (texto && texto.length <= 4000) primera = { id: datos.primera.id, texto: texto, idioma: datos.primera.idioma };
+    }
+    storage.setItem(CLAVE_RECUPERACION, JSON.stringify({ v: 1, credencial: credencial, primera: primera }));
+    return leerRecuperacion(storage);
+  }
+
+  function asegurarRecuperacion(storage) {
+    var actual = leerRecuperacion(storage);
+    if (actual) return actual;
+    return guardarRecuperacion(storage, { credencial: credencialNueva(), primera: null });
   }
 
   function destinoValido(url) {
@@ -101,6 +151,7 @@
 
   function olvidarSesion(storage) {
     storage.removeItem(CLAVE);
+    storage.removeItem(CLAVE_RECUPERACION);
   }
 
   function crearIdentidad() {
@@ -143,6 +194,7 @@
       cuerpo.conversacion_id = entrada.sesion.conversacion_id;
       cuerpo.token = entrada.sesion.token;
     }
+    if (typeof entrada.recuperacion === 'string' && CREDENCIAL.test(entrada.recuperacion)) cuerpo.recuperacion = entrada.recuperacion;
     return cuerpo;
   }
 
@@ -235,7 +287,8 @@
       consulta: consulta,
       idioma: entrada.idioma,
       idExterno: entrada.idExterno,
-      sesion: entrada.sesion || null
+      sesion: entrada.sesion || null,
+      recuperacion: entrada.recuperacion
     });
   }
 
@@ -258,7 +311,7 @@
         var json = null;
         try { json = text ? JSON.parse(text) : null; } catch (e) { json = null; }
         if (!res.ok) {
-          throw fallo(res.status === 429 ? 'LIMITE' : res.status === 403 ? 'NO_AUTORIZADA' : res.status === 413 ? 'GRANDE' : 'RECHAZADA');
+          throw fallo(res.status === 429 ? 'LIMITE' : res.status === 403 ? 'NO_AUTORIZADA' : res.status === 413 ? 'GRANDE' : res.status === 409 ? 'CONFLICTO' : 'RECHAZADA');
         }
         var hecho = recibo(json);
         if (entrada.storage) {
@@ -342,9 +395,13 @@
         vistas[r.id] = true;
       });
     }
+    function urlActiva() {
+      var loc = doc.defaultView && doc.defaultView.location;
+      return endpointDe(form.getAttribute('data-endpoint') || '', loc);
+    }
     function refrescar() {
       var guardada = sesion();
-      var url = (form.getAttribute('data-endpoint') || '').trim();
+      var url = urlActiva();
       if (!guardada || !destinoValido(url)) {
         pintarHilo([]);
         return Promise.resolve([]);
@@ -427,14 +484,22 @@
       }
       var guardada = sesion();
       var pregunta = texto();
+      var idioma = idiomaElegido();
+      var rec = storage ? asegurarRecuperacion(storage) : null;
       var idExterno = identidad.para(pregunta);
+      var limpia = String(pregunta || '').trim();
+      if (!guardada && rec && rec.primera && rec.primera.texto === limpia && rec.primera.idioma === idioma) idExterno = rec.primera.id;
+      if (!guardada && rec && limpia && IDIOMAS[idioma]) {
+        guardarRecuperacion(storage, { credencial: rec.credencial, primera: { id: idExterno, texto: limpia, idioma: idioma } });
+      }
       enviar({
-        url: (form.getAttribute('data-endpoint') || '').trim(),
+        url: urlActiva(),
         consulta: pregunta,
-        idioma: idiomaElegido(),
+        idioma: idioma,
         producto: productoElegido(),
         trampa: trampa(),
         idExterno: idExterno,
+        recuperacion: rec ? rec.credencial : '',
         sesion: guardada,
         storage: storage
       }).then(function () {
@@ -446,6 +511,10 @@
         pintarContinuacion();
         return refrescar();
       }).catch(function (err) {
+        if (err && err.codigo === 'CONFLICTO' && storage) {
+          var previa = leerRecuperacion(storage);
+          if (previa) guardarRecuperacion(storage, { credencial: previa.credencial, primera: null });
+        }
         say(claveEstado(err && err.codigo), 'error');
       }).finally(function () {
         candado.soltar();
@@ -476,6 +545,10 @@
   return {
     PRODUCTO: PRODUCTO,
     destinoValido: destinoValido,
+    endpointDe: endpointDe,
+    credencialNueva: credencialNueva,
+    leerRecuperacion: leerRecuperacion,
+    asegurarRecuperacion: asegurarRecuperacion,
     leerSesion: leerSesion,
     guardarSesion: guardarSesion,
     olvidarSesion: olvidarSesion,

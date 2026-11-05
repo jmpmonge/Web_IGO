@@ -483,7 +483,7 @@
     "formTitle": "Your question",
     "review": "Your question waits for a person to review it.",
     "continuing": "This browser will continue the conversation saved on this device.",
-    "privacy": "The continuation key and the text of your questions stay in this browser only. They are not placed in the address and they are not sent by email. Anyone who can use this browser can continue the thread. Clearing the site data removes it, and it cannot be recovered. This browser does not show anyone else's conversation.",
+    "privacy": "The continuation key, the recovery key and the text of your questions stay in this browser only. They are not placed in the address and they are not sent by email. Anyone who can use this browser can continue the thread. Clearing the site data removes it, and it cannot be recovered. This browser does not show anyone else's conversation.",
     "aria": "Question form",
     "product": "Product",
     "productName": "IGO Wellness ring",

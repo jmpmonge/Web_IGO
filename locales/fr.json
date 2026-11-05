@@ -483,7 +483,7 @@
     "formTitle": "Votre question",
     "review": "Votre question attend qu’une personne la relise.",
     "continuing": "Ce navigateur poursuivra la conversation enregistrée sur cet appareil.",
-    "privacy": "La clé de suite et le texte de vos questions restent uniquement dans ce navigateur. Ils ne sont pas dans l’adresse et ils ne sont pas envoyés par courriel. Toute personne qui peut utiliser ce navigateur peut poursuivre le fil. Effacer les données du site le supprime, sans récupération possible. Ce navigateur ne montre pas la conversation de quelqu’un d’autre.",
+    "privacy": "La clé de suite, la clé de récupération et le texte de vos questions restent uniquement dans ce navigateur. Ils ne sont pas dans l’adresse et ils ne sont pas envoyés par courriel. Toute personne qui peut utiliser ce navigateur peut poursuivre le fil. Effacer les données du site le supprime, sans récupération possible. Ce navigateur ne montre pas la conversation de quelqu’un d’autre.",
     "aria": "Formulaire de question",
     "product": "Produit",
     "productName": "Anneau IGO Wellness",

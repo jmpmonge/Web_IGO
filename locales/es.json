@@ -483,7 +483,7 @@
     "formTitle": "Tu consulta",
     "review": "Tu consulta queda a la espera de que una persona la revise.",
     "continuing": "Este navegador continuará la conversación guardada en este dispositivo.",
-    "privacy": "La clave de continuación y el texto de tus consultas permanecen solo en este navegador. No van en la dirección y no se envían por correo. Quien pueda usar este navegador puede continuar el hilo. Si borras los datos del sitio, el hilo desaparece y no se puede recuperar. Este navegador no muestra la conversación de otra persona.",
+    "privacy": "La clave de continuación, la clave de recuperación y el texto de tus consultas permanecen solo en este navegador. No van en la dirección y no se envían por correo. Quien pueda usar este navegador puede continuar el hilo. Si borras los datos del sitio, el hilo desaparece y no se puede recuperar. Este navegador no muestra la conversación de otra persona.",
     "aria": "Formulario de consulta",
     "product": "Producto",
     "productName": "Anillo IGO Wellness",

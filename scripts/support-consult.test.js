@@ -234,6 +234,45 @@ test('la lectura pide solo el token, ignora borradores y no trata el vacío como
   }
 });
 
+test('en local el formulario usa el receptor y fuera no envía; la credencial no viaja en la dirección', async () => {
+  assert.strictEqual(api.endpointDe('', { hostname: 'localhost' }), 'http://127.0.0.1:8788/v1/consultas');
+  assert.strictEqual(api.endpointDe('', { hostname: '127.0.0.1' }), 'http://127.0.0.1:8788/v1/consultas');
+  assert.strictEqual(api.endpointDe('', { hostname: 'jmpmonge.github.io' }), '');
+  assert.strictEqual(api.endpointDe('https://soporte.example/v1/consultas', { hostname: 'localhost' }), 'https://soporte.example/v1/consultas');
+  const credencial = api.credencialNueva();
+  assert.match(credencial, /^[A-Za-z0-9_-]{43,128}$/);
+  const storage = memoria();
+  const rec = api.asegurarRecuperacion(storage);
+  assert.strictEqual(api.asegurarRecuperacion(storage).credencial, rec.credencial);
+  const srv = await escuchar(async (req, res) => {
+    const texto = await leer(req);
+    const cuerpo = JSON.parse(texto);
+    assert.strictEqual(cuerpo.recuperacion, rec.credencial);
+    assert.ok(!req.url.includes(rec.credencial));
+    res.writeHead(200, { 'content-type': 'application/json' });
+    res.end(JSON.stringify({
+      recibida: true,
+      conversacion_id: 'dddddddd-dddd-4ddd-8ddd-dddddddddddd',
+      duplicada: true,
+      token: 'token-recuperado'
+    }));
+  });
+  const url = 'http://127.0.0.1:' + srv.address().port + '/v1/consultas';
+  try {
+    const hecho = await api.enviar({
+      url, consulta: '¿Cómo se carga el anillo?', idioma: 'es', producto: 'wellness-ring',
+      idExterno: '11111111-1111-4111-8111-111111111111', recuperacion: rec.credencial, storage, fetch
+    });
+    assert.strictEqual(hecho.token, 'token-recuperado');
+    assert.strictEqual(api.leerSesion(storage).token, 'token-recuperado');
+    api.olvidarSesion(storage);
+    assert.strictEqual(api.leerSesion(storage), null);
+    assert.strictEqual(api.leerRecuperacion(storage), null);
+  } finally {
+    await cerrar(srv);
+  }
+});
+
 test('la página queda fuera del menú, sin clave y sin dirección de envío; Formspree no cambia', () => {
   for (const lang of ['en', 'es', 'fr']) {
     const html = fs.readFileSync(path.join(DIST, lang, 'support', 'index.html'), 'utf8');
